@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Linux系统函数学习 | 飞翔的傻瓜的博客</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux系统函数学习</h1><a id="logo" href="/.">飞翔的傻瓜的博客</a><p class="description">菜鸟的试飞之旅</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Linux系统函数学习</h1><div class="post-meta">Jul 27, 2018<span> | </span><span class="category"><a href="/categories/操作系统/">操作系统</a></span></div><div class="post-content"><p>Linux系统函数的学习，不间断更新，直到完整</p>
+<h3 id="从fopen看文件FILE结构体"><a href="#从fopen看文件FILE结构体" class="headerlink" title="从fopen看文件FILE结构体"></a>从fopen看文件FILE结构体</h3><p>​    在使用fopen打开文件返回的是FILE结构体，之前并不了解其内部，只是大致会用而已，在这里首先剖析FILE结构体。</p>
+<p>FILE结构体的内容很多，主要分为以下部分</p>
+<p>FILE</p>
+<ul>
+<li><p>文件描述符（整形值）FD</p>
+<ul>
+<li>文件描述符内部有inode信息，再通过inode找到具体的文件</li>
+</ul>
+</li>
+<li><p>文件读写指针位置  FP_POS</p>
+<ul>
+<li><p>首先读写指针是一个指针，因此在切换读写文件的时候需要fseek来移动文件指针</p>
+</li>
+<li><p>对于文件读写是对应的二进制读取，文本文件读取信息的资料补充</p>
+<blockquote>
+<p>知乎：fopen 为什么要区分文本模式和二进制模式？</p>
+<p><a href="https://www.zhihu.com/question/24662572" target="_blank" rel="noopener">https://www.zhihu.com/question/24662572</a></p>
+<p>牵扯到了BOM，下面为总结：</p>
+<p>BOM（byte-order mark）它用来标识该字节流的字节序，是高位在前还是低位在前。从Unicode3.2开始，BOM只能位于流的开头，只能用于标识字节序。</p>
+<p>UTF-8: 若为UTF-8有BOM格式，则文件开头为 EF BB BF； 若为UTF-8无BOM格式，则不能依据上述规则；此时需要依据UTF-8编码格式来判断</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>I/O缓冲区（内存地址）BUFFER<br><img src="https://upload-images.jianshu.io/upload_images/8852615-0539b579f780a484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot_20180720193704.png"></p>
+<ul>
+<li>C标准函数都有Buffer</li>
+<li>I/O缓存区域，根据存储器层次结构，硬盘会比内存慢100万倍，因此要增设缓存，默认是8K，同样需要注意的是IO的形式除了默认的，还有以下形式：<ul>
+<li>直接IO<ul>
+<li>内存映射文件的形式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>读写过程：</p>
+<ul>
+<li>例如Printf(“Hello World”);</li>
+<li>调用write函数将文件描述符传入（系统API write(fd,”hello”,5)）完成将”hello”用户空间到内核空间的传递</li>
+<li>系统调用sys_write 使用设备驱动，通过设备驱动函数写入到驱动操作硬件</li>
+<li>显示器显示</li>
+</ul>
+<h3 id="虚拟地址空间"><a href="#虚拟地址空间" class="headerlink" title="虚拟地址空间"></a>虚拟地址空间</h3><p>32位操作系统当一个可执行文件允许起来成为一个进程的时候操作系统会为其分配一个4G的地址空间，虚拟内存是分段的，而其根据局部性原理也不是一次性加载的，而是分页的</p>
+<p>下面是对虚拟地址空间做一个详细的总结，虚拟地址空间的引出和计算机的发展历程是离不开的的。</p>
+<p>在早期的计算机中，程序是直接运行在物理内存上的，程序直接访问的是物理地址，这种模式的限制在于，只要程序要求的内存空间不要超过超过物理内存的大小，就不会有问题，但是为了提高CPU的使用效率，我们更期望的是同时运行多个程序，现在关键的问题在于，能运行的程序受限于物理内存的大小以及运行程序本身的大小。所以一个需要关键解决的问题就是如何将有限的物理内存分配给多个程序使用，也就是内存分配问题，但除了内存分配问题，传统的方式还存在许多问题。</p>
+<ul>
+<li>地址空间不隔离导致程序的安全性不足，一个程序的崩溃会影响到其他程序，恶意程序可以轻松修改其他程序的数据，总而言之，缺乏安全稳定性</li>
+<li>内存地址分配随机就让程序内部的重定位工作（运行地址不确定）变得异常麻烦</li>
+<li>内存使用效率低下</li>
+<li><p>内存切换过程（将完整程序换入到硬盘或者将完整换出）效率十分低下</p>
+<p>如果引入一个中间层，在外部忽视内存地址的差异，在内部执行一个转换到真实地址的过程，就可以轻松解决第一第二点，这就是虚拟内存。虚拟内存使得应用程序不需要考虑自己加载到什么地方。相互之间也起到了隔离的作用，程序与程序之间安全性得到了一定的保障。但是第三个第四个仍然没有解决。内存毕竟是有限的。为了能让在内存的程序尽可能的多，当然是程序占用内存越小越好，但是程序变小不可能的。但这个思路得以运用，将程序加载到内存的粒度缩小，采用分页模式就有效的解决的这个问题。</p>
+<p>在以上的描述中，并没有深入研究CPU如何做到将虚拟内存映射到实际内存的过程，也没有研究页是如何被操作系统管理，缺页的时候怎么办等等，这个在之后学习。</p>
+</li>
+</ul>
+<p>程序都是按照一定格式存储的，由操作系统统一加载。在内存中映射为4GB的虚拟内存空间（32位）这样的文件格式是分段的，很好的解决了一些资源共享的问题，比如动态库的共享，也为每一个应用程序提供了一个统一的视图，完成功能，下面是Linux的ELF文件在内存的映射</p>
+<ul>
+<li>内核区：内存管理，进程管理，设备驱动管理，VFS虚拟文件系统（4G-3G linux）</li>
+<li>环境变量 env</li>
+<li>命令行参数  <ul>
+<li>int main(int argc,char* argv[])中的参数</li>
+</ul>
+</li>
+<li>栈空间（小）向下增长</li>
+<li>共享库</li>
+<li>堆空间（大）向上增长</li>
+<li>.bass（未初始化的全局变量）全局变量=0</li>
+<li>.data（已初始化全局变量）</li>
+<li>.text（代码段 二进制机器指令）</li>
+<li>受保护的地址（0-4K）其中0是收保护的地址，这也就是NULL的作用</li>
+</ul>
+<h3 id="文件描述符表"><a href="#文件描述符表" class="headerlink" title="文件描述符表"></a>文件描述符表</h3><p>内核进程管理里面由一个叫做PCB(进程控制块)每个进程都在其PCB中保存着一份文件描述符表，而文件描述符作为这个表的索引可以让我们快速的查到每个表项对应的打开文件的指针，文件描述符表最多可以存储1024个文件描述符</p>
+<p><strong>用户不能直接访问具体的文件描述符，就只能通过文件描述符表的下标由内核函数访问。</strong></p>
+<p>文件描述符前3个分别是STDIN_FILENO 标准输入 STDOUT_FILENO 标准输出 STDERR_FILENO 标准错误默认是打开状态，根据该文件描述符可以读写当前终端，每打开一个新文件，则占用一个文件描述符，而且是空闲的最小的一个文件描述符</p>
+<p>文件描述符内含有inode信息，具体的介绍查看:</p>
+<blockquote>
+<p><a href="http://www.docin.com/p-941544538.html" target="_blank" rel="noopener">http://www.docin.com/p-941544538.html</a></p>
+<p>豆丁网-inode,文件描述符</p>
+</blockquote>
+<p>Linux的open函数返回的int类型就是文件描述符表对新创建文件的下标，也就是文件描述符</p>
+<p>而系统函数read传入文件描述符，就可以清楚的知道要操作哪一个文件。</p>
+<h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><p>系统函数在man帮助文档的第二章</p>
+<h3 id="Open函数"><a href="#Open函数" class="headerlink" title="Open函数"></a>Open函数</h3><p>查看文档</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 2 open</span><br></pre></td></tr></table></figure>
+<p>头文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/types.h&gt; //宏定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>open函数看起来是函数重载的原因是使用了变长参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathnamae,<span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathname,<span class="keyword">int</span> flags,<span class="keyword">mode_t</span> mode)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>返回值：文件描述符，失败返回-1</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>flags<ul>
+<li>必选项目 O_RDONLY,O_WRONLY,O_RDWR</li>
+<li>可选项目<ul>
+<li>创建文件：O_CREATE<ul>
+<li>创建文件时检测文件是否存在：O_EXCL</li>
+<li>如果文件存在，返回-1</li>
+<li>必须与O_CREAT一起使用</li>
+</ul>
+</li>
+<li>追加文件：O_APPEND:文件指针移动到末尾</li>
+<li>文件截断：O_TRUNC ：做文件清空的情况</li>
+<li>设置非阻塞：O_NONBLOCK</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mode 八进制文件权限<ul>
+<li>注意设置的权限不等于最终的权限值</li>
+<li>（mode&amp;~umask）</li>
+<li>umask是0002</li>
+</ul>
+</li>
+</ul>
+<h3 id="close函数"><a href="#close函数" class="headerlink" title="close函数"></a>close函数</h3><p>关闭文件描述符</p>
+</div><div class="tags"><a href="/tags/操作系统-Linux/">操作系统 Linux</a></div><div class="post-nav"><a class="pre" href="/2018/07/27/Linux 学习（命令）/">Linux学习（命令）</a><a class="next" href="/2018/07/27/Java反射基础/">Java反射基础</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Java-Servlet/" style="font-size: 15px;">Java Servlet</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/反射/" style="font-size: 15px;">反射</a> <a href="/tags/KMP-算法/" style="font-size: 15px;">KMP 算法</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/操作系统-Linux/" style="font-size: 15px;">操作系统 Linux</a> <a href="/tags/注解/" style="font-size: 15px;">注解</a> <a href="/tags/栈-队列-算法/" style="font-size: 15px;">栈 队列 算法</a> <a href="/tags/设计模式-动态代理/" style="font-size: 15px;">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 15px;">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 15px;">设计模式 观察者模式</a> <a href="/tags/算法-递归/" style="font-size: 15px;">算法 递归</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Linux 学习（命令）/">Linux学习（命令）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Linux系统函数学习（更新中）/">Linux系统函数学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Java反射基础/">Java反射基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Servlet执行过程/">Servlet 执行过程笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Java注解学习/">Java注解学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/动态代理模式/">Java动态代理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/观察者模式（Observer pattern）/">观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/策略模式（Strategy Pattern）/">策略模式（strategy Pattern）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/KMP算法/">KMP算法（待续）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/数组实现栈和队列/">数组实现栈和队列</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">飞翔的傻瓜的博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
