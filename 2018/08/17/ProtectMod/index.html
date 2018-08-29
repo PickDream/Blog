@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>保护模式笔记 | 飞翔的傻瓜</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">保护模式笔记</h1><a id="logo" href="/.">飞翔的傻瓜</a><p class="description">菜鸟的试飞之旅</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">保护模式笔记</h1><div class="post-meta">Aug 17, 2018<span> | </span><span class="category"><a href="/categories/操作系统/">操作系统</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#段寄存器"><span class="toc-number">1.</span> <span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#段寄存器的结构"><span class="toc-number">1.1.</span> <span class="toc-text">段寄存器的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段寄存器的读写"><span class="toc-number">1.2.</span> <span class="toc-text">段寄存器的读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GDT-表和-LDT表"><span class="toc-number">1.3.</span> <span class="toc-text">GDT 表和 LDT表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段描述符"><span class="toc-number">1.4.</span> <span class="toc-text">段描述符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P位和G位"><span class="toc-number">1.5.</span> <span class="toc-text">P位和G位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#S位和Type域"><span class="toc-number">1.6.</span> <span class="toc-text">S位和Type域</span></a></li></ol></li></ol></div></div><div class="post-content"><h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>保护模式笔记 | 飞翔的傻瓜</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">保护模式笔记</h1><a id="logo" href="/.">飞翔的傻瓜</a><p class="description">菜鸟的试飞之旅</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">保护模式笔记</h1><div class="post-meta">Aug 17, 2018<span> | </span><span class="category"><a href="/categories/操作系统/">操作系统</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#段寄存器"><span class="toc-number">1.</span> <span class="toc-text">段寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段寄存器的结构"><span class="toc-number">2.</span> <span class="toc-text">段寄存器的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段寄存器的读写"><span class="toc-number">3.</span> <span class="toc-text">段寄存器的读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GDT-表和-LDT表"><span class="toc-number">4.</span> <span class="toc-text">GDT 表和 LDT表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段描述符"><span class="toc-number">5.</span> <span class="toc-text">段描述符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P位和G位"><span class="toc-number">6.</span> <span class="toc-text">P位和G位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#S位和Type域"><span class="toc-number">7.</span> <span class="toc-text">S位和Type域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-B位"><span class="toc-number">8.</span> <span class="toc-text">D/B位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段权限检查"><span class="toc-number">9.</span> <span class="toc-text">段权限检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据段的段权限检查"><span class="toc-number">10.</span> <span class="toc-text">数据段的段权限检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码的跨段执行"><span class="toc-number">11.</span> <span class="toc-text">代码的跨段执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一致代码段和非一致代码段"><span class="toc-number">12.</span> <span class="toc-text">一致代码段和非一致代码段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#长调用"><span class="toc-number">13.</span> <span class="toc-text">长调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调用门"><span class="toc-number">14.</span> <span class="toc-text">调用门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断门与陷阱门"><span class="toc-number">15.</span> <span class="toc-text">中断门与陷阱门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务段"><span class="toc-number">16.</span> <span class="toc-text">任务段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分页"><span class="toc-number">17.</span> <span class="toc-text">分页</span></a></li></ol></div></div><div class="post-content"><h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
 <p>ds就是段寄存器，真正读写的地址是：ds.base + 0x123456</p>
 <p>其中段寄存器有8个</p>
-<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（）</p>
+<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（Task Register）</p>
 <h3 id="段寄存器的结构"><a href="#段寄存器的结构" class="headerlink" title="段寄存器的结构"></a>段寄存器的结构</h3><p>32位的段寄存器一共96位，16位可见，80位不可见（12个字节）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SegMent</span>&#123;</span></span><br><span class="line">    WORD Selector;<span class="comment">//16位的Selector（2字节）[可见部分]</span></span><br><span class="line">    WORD Attribute;<span class="comment">//16位Attribute 属性，标识可读可写可执行（2字节）</span></span><br><span class="line">    DWORD Base;<span class="comment">//32位Base 偏移地址（4字节）</span></span><br><span class="line">    DWORD Limit;<span class="comment">//32位Limit 段允许的地址偏移（4字节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面是用结构体来描述段寄存器的内容。</p>
@@ -14,7 +14,7 @@
 <p>那么一个问题浮出水面，段寄存器赋值的时候可以写入96位，但是传递给的是一个16位的寄存器，那么另外的80位从哪里得到呢？</p>
 <h3 id="GDT-表和-LDT表"><a href="#GDT-表和-LDT表" class="headerlink" title="GDT 表和 LDT表"></a>GDT 表和 LDT表</h3><p>GDT是全局描述符表，LDT是局部描述符表，要想填写完整段寄存器，需要拿着一个索引到GDT表或者LDT表去查找、这个索引就在传递的16位寄存器的数据当中。而这16位的数据对应到段寄存器的部分是段选择子。</p>
 <p><strong>段选择子</strong></p>
-<p><img src="Selecter.png" alt="段选择子结构"></p>
+<p><img src="ProtectMod/Selecter.png" alt="段选择子结构"></p>
 <p>段选择子分为三部分，一个是Index，一个是Table Indicator 还有一个是请求特权级别RPL</p>
 <ul>
 <li>Index <ul>
@@ -32,8 +32,9 @@
 </ul>
 </li>
 </ul>
+<p><code>001B= 0000-0000-0001-1011</code></p>
 <h3 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h3><p>段描述符是64位的数据，占据了8个字节，下面是其结构：</p>
-<p><img src="02.png" alt="段描述符"></p>
+<p><img src="ProtectMod/02.png" alt="段描述符"></p>
 <p>首先有个大致的印象，首先发现其Base属性和Limit被割裂到不同的部分，这主要是CPU寄存器升级为了向下兼容才形成的这样的情况。回顾段寄存器结构，</p>
 <ul>
 <li>Base一共32位，在段描述符描述完整</li>
@@ -47,7 +48,7 @@
 <p><code>(0000 0FFF-FFFF FFF)</code></p>
 <h3 id="S位和Type域"><a href="#S位和Type域" class="headerlink" title="S位和Type域"></a>S位和Type域</h3><p>S (Descriptor type)位是一个描述段类型的位，当其=0的时候代表的是系统段描述符，当其=1的时候是代码段或者数据段的描述符，具体的信息由type域给出。</p>
 <p>当S=1，代指的是代码段或者数据段，其Type域的值为：</p>
-<p><img src="03.png" alt="代码段或数据段的段描述符"></p>
+<p><img src="ProtectMod/03.png" alt="代码段或数据段的段描述符"></p>
 <p>简要描述下，第11位决定到底是代码段还是数据段，当位数据段的时候，第11位是0，此时</p>
 <table>
 <thead>
@@ -67,12 +68,12 @@
 </tr>
 <tr>
 <td>E</td>
-<td>为0向上拓展，为1向上拓展</td>
+<td>为0向上拓展，为1向下拓展</td>
 </tr>
 </tbody>
 </table>
 <p>所谓向上扩展还是向下扩展针对的是Limit限制的是向下一定范围能访问还是除了向下一部分范围不能访问。</p>
-<p><img src="04.png" alt="向上扩展和向下扩展"></p>
+<p><img src="ProtectMod/04.png" alt="向上扩展和向下扩展"></p>
 <p>如何快速判断一个段描述符描述的是代码段和数据段？就要熟悉其二进制表示：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DPL 不是全0就是全1</span></span><br><span class="line"><span class="comment">/32----24/23------20/19-----16/15---12/11-8/7--0/</span></span><br><span class="line"><span class="comment">/--BASE--/G|DB|0|AVL/--Limit--/P|DPL|S/TYPE/BASE/</span></span><br><span class="line"><span class="comment">-------------------------------1 00  1----------/</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">只需要看倒数第三第四位就可以迅速判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p>如果是代码段的话，要明确其含义是不同的：</p>
@@ -100,5 +101,159 @@
 </table>
 <p>至于一致和非一致代码段代表的是是否可以越权访问，具体的区别在下面学习。</p>
 <p>至于系统段描述符，先将其表格列举如下：</p>
-<p><img src="05.png" alt="系统段描述符的type域"></p>
-</div><iframe src="/donate/?AliPayQR=/img/AliPayQRA.png&amp;WeChatQR=/img/WeChatQRA.png&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/保护模式/">保护模式</a></div><div class="post-nav"><a class="next" href="/2018/08/16/struts2-1/">struts2杂记（一）入门</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Windows/" style="font-size: 15px;">Windows</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/反射/" style="font-size: 15px;">反射</a> <a href="/tags/注解/" style="font-size: 15px;">注解</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/Java-Servlet/" style="font-size: 15px;">Java Servlet</a> <a href="/tags/保护模式/" style="font-size: 15px;">保护模式</a> <a href="/tags/ClassLoader/" style="font-size: 15px;">ClassLoader</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/设计模式-动态代理/" style="font-size: 15px;">设计模式 动态代理</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/栈-队列-算法/" style="font-size: 15px;">栈 队列 算法</a> <a href="/tags/设计模式-策略模式/" style="font-size: 15px;">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 15px;">设计模式 观察者模式</a> <a href="/tags/算法-递归/" style="font-size: 15px;">算法 递归</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/ProtectMod/">保护模式笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/16/struts2-1/">struts2杂记（一）入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/ClassLoader总结/">ClassLoader总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js-1/">蛋疼的JavaScript(一)：作用域与闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/Java验证码图片创建/">Java验证码图片创建</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/动态规划入门/">动态规划入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/Windows进程的创建过程/">Windows进程的创建过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Linux 学习（命令）/">Linux学习（命令）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Linux系统函数学习（更新中）/">Linux系统函数学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Java反射基础/">Java反射基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.guozw.xin/" title="GuoZW的博客" target="_blank">GuoZW的博客</a><ul></ul><a href="http://codermiya.com/" title="Miyang的博客" target="_blank">Miyang的博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">飞翔的傻瓜.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<p><img src="ProtectMod/05.png" alt="系统段描述符的type域"></p>
+<h3 id="D-B位"><a href="#D-B位" class="headerlink" title="D/B位"></a>D/B位</h3><p>D/B位代表的是(Default operation size)决定CPU的寻址方式,0代表的是16位寻址，该段也是16位段，1代表的是32位寻址，该段也是32位段，其寻址方式要对应。</p>
+<h3 id="段权限检查"><a href="#段权限检查" class="headerlink" title="段权限检查"></a>段权限检查</h3><p>段权限检查是相对比较难理解的一部分，段权限的检查发生在段寄存器的变化，确定段寄存器是否能加载一个段描述符。</p>
+<p>首先要知道的是CPU的保护模式之所以称之为保护是其有分级的制度，CPU一共4个不同的级别</p>
+<p><img src="ProtectMod/06.png" alt="CPU特权级别"></p>
+<p>CPU的特权级有四个，分别为0,1,2,3 windows 和 Linux操作系统都只使用了两个环，就是3环和0环，3环是应用程序的权限级别，而0环是系统内核的级别</p>
+<p>那么如何查看当前程序跑在哪一环呢？这就需要查看CPL（Current Privilege Level）当前特权级别。</p>
+<p><strong>CS和SS段的段选择子中的RPL就是CPL（CPU不同的特权级都有其特定的栈）</strong></p>
+<p><strong>DPL在段描述符中，描述的是访问该段需要的最低权限</strong></p>
+<p><strong>RPL描述的是我在能访问到DPL的前提下，我需要用怎样的权限去访问段</strong></p>
+<h3 id="数据段的段权限检查"><a href="#数据段的段权限检查" class="headerlink" title="数据段的段权限检查"></a>数据段的段权限检查</h3><p>CPL&lt;=DPL并且RPL&lt;=DPL</p>
+<p>需要注意的是,段描述符分为三大类，代码段和系统段的权限检查和数据段的方式</p>
+<h3 id="代码的跨段执行"><a href="#代码的跨段执行" class="headerlink" title="代码的跨段执行"></a>代码的跨段执行</h3><p>首先代码的跳转，本身就依赖于段内跳转<code>JMP</code>，段间跳转<code>JMP FAR</code>，段内调用<code>CALL</code>，段间调用<code>CALL FAR</code>，段内返回<code>RET</code>，段间返回<code>RETF</code>，中断<code>INT</code>,中断返回<code>IRETED</code>；</p>
+<p>代码的跨段执行，必然伴随着同时修改段寄存器以及EIP的值，同时修改CS和EIP的指令是：</p>
+<p><code>JMP FAR</code>,<code>CALL FAR</code>,<code>RETF</code>,<code>INT</code>,<code>IRETED</code>则是同时修改寄存器和EIP的值</p>
+<p><strong>代码的段间跳转</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMP 0x20:0x004183D7;操作数一共6个字节，前面两个段选择子，后面是偏移</span><br></pre></td></tr></table></figure>
+<p>执行步骤：</p>
+<ul>
+<li>段选择子的拆分<ul>
+<li><code>0x20</code>对应<code>0000 0000 0010 0000</code></li>
+<li>由于TI=0 所以查找GDT表</li>
+<li>Index=4 找到对应的段描述符需要将Index*8+GDT表的基地址</li>
+<li>判断段描述符的类型，四种情况是可以跳转的：<ul>
+<li>代码段</li>
+<li>调用门</li>
+<li>TSS任务段</li>
+<li>任务门</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权限检查，判断代码段的Type域内标明的是一致性代码段还是非一致性代码段<ul>
+<li>如果是非一致代码段，要求CPL==DPL,RPL&lt;=DPL</li>
+<li>如果是一致性质代码段,要求CPL&gt;=DPL,当前特权级级别可以比一致代码段要求的要低的，专门给低权限来用的，完成所谓的共享的功能。</li>
+</ul>
+</li>
+<li>加载段描述符<ul>
+<li>通过上面权限检查之后，CPU会讲段描述符加载到CS段寄存器</li>
+</ul>
+</li>
+<li>代码执行<ul>
+<li>CPU将<code>CS.BASE+OFFSET</code>的值写入到EIP然后执行对应的代码段，段间跳转执行完毕</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致代码段和非一致代码段"><a href="#一致代码段和非一致代码段" class="headerlink" title="一致代码段和非一致代码段"></a>一致代码段和非一致代码段</h3><ul>
+<li>对于一致代码段：也就是共享的段<ul>
+<li><strong>特权级高的程序不允许访问特权级低的数据，核心态不允许访问用户态的数据</strong></li>
+<li><strong>特权级低的程序可以访问到特权级高的数据，但是特权级不会改变：用户态还是用户态</strong></li>
+<li>C=0表示一致，C=1表示非一致</li>
+</ul>
+</li>
+<li>对于普通代码段：也就是非一致代码段<ul>
+<li>只允许同级访问</li>
+<li>绝对禁止不同级别的访问：核心态不是用户态</li>
+</ul>
+</li>
+<li>直接对代码段进行JMP或者CALL的操作，无论目标是一致代码段还是非一致代码段，CPL都不会发生改变，如果想要提升CPL的权限，只能通过调用门</li>
+</ul>
+<p><strong>简而言之，一致代码段高权限访问不了低权限的数据，低权限可以访问高权限的数据，但是RPL不会发生变化，非一致代码段很严格的1对1，只允许同级访问</strong></p>
+<h3 id="长调用"><a href="#长调用" class="headerlink" title="长调用"></a>长调用</h3><p>CALL FAR要比JMP FAR 复杂，因为JMP不影响堆栈，但是CALL会同时影响堆栈和EIP</p>
+<p><strong>情况一：跨段不提权</strong></p>
+<p>跨段不提权表示的是段要切换，而访问的代码段对应的段描述符所对应的DPL和当前的CPL是一样的，那么这个时候相比不同的，在段内的CALL指令不同的是其还需要在栈中保存一个原来代码段的段描述符CS</p>
+<p><img src="ProtectMod/07.png" alt="长调用跨段不提权"></p>
+<p>堆栈段先压入调用者CS，再压入返回地址。返回的时候注意使用RETF</p>
+<p><strong>情况二：跨段并提权</strong></p>
+<p>长调用跨段并提权，关键的变化在于提权，在切换CPU特权级别的时候注意，堆栈段也要发生变化，也就是说，要用新的堆栈（每一个特权级对应一个堆栈），现在总结一下，在</p>
+<p><code>CALL CS:EIP</code>这样的指令中，要在新的特权级的堆栈中保存以下内容：返回地址，原来的堆栈段描述符，原来的代码段描述符，调用者的ESP，这样就表现的原来的ESP毫无影响。</p>
+<p><img src="ProtectMod/08.png" alt="跨段并提权"></p>
+<p><strong>为什么说EIP是废弃的？</strong></p>
+<p>对于跨权限调用的时候是要提权的，而提权的时候需要通过一个门，门内信息有一个段选择子，指向真正要跳转的段，门内信息还有真正的偏移，因此，对于<code>CALL CS:EIP</code>来说，其CS有用，EIP没有用，是废弃的，大致过程如下：</p>
+<p>CALL CS:EIP  -&gt; 门描述符（偏移信息+段选择子）-&gt;高权限代码段描述符-&gt;段信息</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>跨段调用的时候，一旦有权限切换，就会切换堆栈</li>
+<li>CS的权限一旦改变，SS的权限也要随着改变，CS和SS的等级必须一样</li>
+<li><strong>JMP FAR只能跳转到同级非一致代码段，但是CALL FAR可以通过调用门提权，提升CPL的权限</strong></li>
+<li><strong>SS与ESP从哪儿来，参见TSS段</strong></li>
+</ul>
+<h3 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h3><p><strong>调用门执行流程</strong></p>
+<p>指令格式 <code>CALL CS:EIP(EIP是废弃的)</code></p>
+<p><strong>执行步骤</strong></p>
+<ol>
+<li>根据CS的值，查GDT表，找到对应的段描述符，这个描述符是调用门</li>
+<li>在调用门描述符中存储另一个代码段的段选择子</li>
+<li>选择子指向的段的BASE+选择子内部包含的偏移地址=真正要执行的地址</li>
+</ol>
+<p><img src="ProtectMod/09.png" alt="门描述符"></p>
+<p>首先调用门P=1，要想“敲门”DPL=11，第12位S=0，暂时不讨论门描述符的参数问题，Param Count = 0，而除了选择子，其也包含了32位的偏移。</p>
+<p><code>0000EC00-00080000</code> 8:1000</p>
+<p><strong>带有参数的调用门</strong></p>
+<p>注意，首先要使用有参数的调用门的时候参数必须要自己先压栈的（压入三环的堆栈）</p>
+<p>先来观察下老师给的实例代码观察下：</p>
+<p><img src="ProtectMod/10.png" alt="示例代码片段1"></p>
+<p><img src="ProtectMod/11.png" alt="示例代码片段1"></p>
+<p>可以看出在通过调用门提权之前，首先PUSH进三环堆栈3个参数，之后进行调用，在执行到裸函数的函数体内已经得到了提权，之后进行了两个相对陌生的指令：</p>
+<p><code>pushad</code>,<code>pushfd</code> 查询相关资料:</p>
+<blockquote>
+<p>pushad: 将所有的32位通用寄存器压入堆栈  pusha:将所有的16位通用寄存器压入堆栈 pushfd:然后将32位标志寄存器EFLAGS压入堆栈  pushf::将的16位标志寄存器EFLAGS压入堆栈 popad:将所有的32位通用寄存器取出堆栈  popa:将所有的16位通用寄存器取出堆栈 popfd:将32位标志寄存器EFLAGS取出堆栈  popf:将16位标志寄存器EFLAGS取出堆栈</p>
+</blockquote>
+<p><code>pushad</code> push进去的寄存器按照顺序为EDI,ESI,EBP,ESP,EBX,EDX,ECX,EAX</p>
+<p><code>pushfd</code> push进去的寄存器是32位标志寄存器</p>
+<p>执行玩<code>pushad</code>和<code>pushfd</code>之后的esp下降了4*9=36 -&gt;0x24 </p>
+<p><strong>调用门总结</strong></p>
+<ol>
+<li>当通过门，权限不变的时候，只会push两个值。CS，返回地址新的CS的值由调用门觉得</li>
+<li>当通过门，权限改变的时候，会PUSH四个值。SS，ESP.CS返回地址 新的CS的值由调用门决定。<strong>新的SS和ESP由TSS提供</strong></li>
+<li>通过门调用的时候，要执行哪行代码由调用门决定，但使用RETF返回的时候，由堆栈中压入的值决定，这就是说，进门的时候只能按照指定路线走，出门的时候可以翻墙（可以想去哪就去哪）</li>
+</ol>
+<h3 id="中断门与陷阱门"><a href="#中断门与陷阱门" class="headerlink" title="中断门与陷阱门"></a>中断门与陷阱门</h3><p>Windows没有使用调用门，但是使用了中断门，在windowsAPI当中使用中断门进入0环（现在新的CPU使用快速调用），中断的时候其实相当于在对于汇编就是0xCC(<code>int 3</code>)int 3就是用来执行中断门。中断门查询的表不是GDT表而是IDT表，是中断描述符，与GDT不同的是，IDT都是系统段描述符，并且第一个描述符不是都是0。</p>
+<p>同样，LDT的地址可以通过以下的windbg命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; r ldtr</span><br><span class="line">kd&gt; r ldtl</span><br></pre></td></tr></table></figure>
+<p>IDT表有三种描述符：</p>
+<ul>
+<li>中断门描述符</li>
+<li>任务门描述符</li>
+<li>陷阱门描述符</li>
+</ul>
+<p>其中中断门的结构如下：</p>
+<p><img src="ProtectMod/12.png" alt="中断门结构"></p>
+<p><strong>陷阱门</strong></p>
+<p>陷阱门基本上和中断门差不多，关键就在中断门通过修改标志寄存器的IF位来屏蔽中断，而陷阱门不屏蔽</p>
+<h3 id="任务段"><a href="#任务段" class="headerlink" title="任务段"></a>任务段</h3><p>在调用门，中断门与陷阱门中，一旦出现权限的切换，那么就会有堆栈的切换。而且，由于CS的CPL发生改变，也导致了SS也必须切换。切换的时候，会有新的ESP和SS(CS是由中断门或者调用门)这两个值从哪里来呢？这些都保存到TSS(Task Stage Segment)任务状态段中，<strong>TSS是在内存当中的。</strong></p>
+<p><img src="ProtectMod/13.bmp" alt="任务状态段TSS结构"></p>
+<p>里面保存了所有的通用寄存器以及标志寄存器ELF，以及CR3寄存器（在后面会接触到）以及不同的CPU权限等级对应的SS段选择子的值以及对应的ESP的值。</p>
+<p><strong>TSS注意事项</strong></p>
+<ul>
+<li>不要把TSS与“任务切换”联系在一起</li>
+<li>TSS的意义就在于可以同时换掉“一堆”寄存器</li>
+<li>TSS一共有104字节</li>
+</ul>
+<p><strong>CPU如何找到TSS</strong></p>
+<p><img src="ProtectMod/14.png" alt="Task Register"></p>
+<p><strong>TSS段描述符</strong></p>
+<p>当type的二进制是1001 = 9 的时候，是段描述符，没有加载到段寄存器当中</p>
+<p>当type的二进制是1011 = B 的时候，也是段描述符，表示加载到了段寄存器当中</p>
+<p><strong>TR寄存器的读写</strong></p>
+<ul>
+<li>当TSS段描述符加载到TR寄存器<ul>
+<li>指令：LTR</li>
+<li>说明：<ul>
+<li>用LTR指令去装载的话，仅仅是改变TR寄存器的值（96位），并不会改变TSS</li>
+<li>LTR指令只能在系统层调用（是特权指令）</li>
+<li>加载后TSS 段描述符的状态位会发生变化（Type从9变为b）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读TR寄存器<ul>
+<li>指令 STR</li>
+<li>说明：如果用STR去读的话，只读了TR的16位 也就是其选择子</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3></div><iframe src="/donate/?AliPayQR=/img/AliPayQRA.png&amp;WeChatQR=/img/WeChatQRA.png&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/保护模式/">保护模式</a></div><div class="post-nav"><a class="pre" href="/2018/08/29/从Java泛型谈起/">从Java泛型谈起</a><a class="next" href="/2018/08/16/struts2-1/">struts2杂记（一）入门</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/保护模式/" style="font-size: 15px;">保护模式</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/jdbc/" style="font-size: 15px;">jdbc</a> <a href="/tags/反射/" style="font-size: 15px;">反射</a> <a href="/tags/注解/" style="font-size: 15px;">注解</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Java-Servlet/" style="font-size: 15px;">Java Servlet</a> <a href="/tags/ClassLoader/" style="font-size: 15px;">ClassLoader</a> <a href="/tags/Windows/" style="font-size: 15px;">Windows</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/设计模式-策略模式/" style="font-size: 15px;">设计模式 策略模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 15px;">设计模式 动态代理</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/算法-递归/" style="font-size: 15px;">算法 递归</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 15px;">设计模式 观察者模式</a> <a href="/tags/栈-队列-算法/" style="font-size: 15px;">栈 队列 算法</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/JDBC设计思想/">JDBC设计思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/从Java泛型谈起/">从Java泛型谈起</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/17/ProtectMod/">保护模式笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/16/struts2-1/">struts2杂记（一）入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/ClassLoader总结/">ClassLoader总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js-1/">蛋疼的JavaScript(一)：作用域与闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/Java验证码图片创建/">Java验证码图片创建</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/动态规划入门/">动态规划入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/Windows进程的创建过程/">Windows进程的创建过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/27/Linux 学习（命令）/">Linux学习（命令）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.guozw.xin/" title="GuoZW的博客" target="_blank">GuoZW的博客</a><ul></ul><a href="http://codermiya.com/" title="Miyang的博客" target="_blank">Miyang的博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">飞翔的傻瓜.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
