@@ -1,4 +1,2230 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>飞翔的傻瓜 | 菜鸟的试飞之旅</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">飞翔的傻瓜</h1><a id="logo" href="/.">飞翔的傻瓜</a><p class="description">菜鸟的试飞之旅</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2018/10/06/js-08/">js-08</a></h1><div class="post-meta">2018-10-06</div><p class="readmore"><a href="/2018/10/06/js-08/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/10/03/ucore-Lab1/">ucore Lab1</a></h1><div class="post-meta">2018-10-03</div><div class="post-content"><h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1><h2 id="实验1-bootloader的启动"><a href="#实验1-bootloader的启动" class="headerlink" title="实验1: bootloader的启动"></a>实验1: bootloader的启动</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><p>要求：</p></div><p class="readmore"><a href="/2018/10/03/ucore-Lab1/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/27/js-07/">ECMAScript 6</a></h1><div class="post-meta">2018-09-27</div><div class="post-content"><h2 id="历史与概念"><a href="#历史与概念" class="headerlink" title="历史与概念"></a>历史与概念</h2><h3 id="Evergreen-Browsers"><a href="#Evergreen-Browsers" class="headerlink" title="Evergreen Browsers"></a>Evergreen Browsers</h3><p>长期浏览器，支持最新标准</p></div><p class="readmore"><a href="/2018/09/27/js-07/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/26/js-6/">面向对象的JavaScript</a></h1><div class="post-meta">2018-09-26</div><div class="post-content"><h2 id="定义对象属性"><a href="#定义对象属性" class="headerlink" title="定义对象属性"></a>定义对象属性</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.a = <span class="number">1</span>;</span><br><span class="line">person[<span class="string">"a"</span>]=<span class="number">1</span>;</span><br><span class="line">person = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/09/26/js-6/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/25/Server-01/">JSON与AJAX和跨域通信</a></h1><div class="post-meta">2018-09-25</div><div class="post-content"><h2 id="JSON表示值的类型"><a href="#JSON表示值的类型" class="headerlink" title="JSON表示值的类型"></a>JSON表示值的类型</h2><ul>
-<li><strong>不能</strong>表示<code>Undefined</code></li></div><p class="readmore"><a href="/2018/09/25/Server-01/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/23/js-5/">蛋疼的JavaScript(五)引用类型</a></h1><div class="post-meta">2018-09-23</div><div class="post-content"><h2 id="配置式构造对象"><a href="#配置式构造对象" class="headerlink" title="配置式构造对象"></a>配置式构造对象</h2><p>常用的传入参数在不能满足成员是动态的时候的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">name,age,school</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age,</span><br><span class="line">        school:school</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></div><p class="readmore"><a href="/2018/09/23/js-5/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/19/JS-04/">蛋疼的JavaScript(四) 语句与函数</a></h1><div class="post-meta">2018-09-19</div><div class="post-content"><h3 id="JavaScript中的-的语意"><a href="#JavaScript中的-的语意" class="headerlink" title="JavaScript中的()的语意"></a>JavaScript中的<code>()</code>的语意</h3><ol>
-<li>作为函数调用运算符</li></div><p class="readmore"><a href="/2018/09/19/JS-04/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/18/js-03/">蛋疼的JavaScript(三)数据类型&amp;运算符</a></h1><div class="post-meta">2018-09-18</div><div class="post-content"><h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
-<li>type探测的类型是基本的数据类型，对于对象，他分不清是哪种object（除了function）,也就是说它深入不到构造方法级别的类型检测，这也是与instanceof的区别</li></div><p class="readmore"><a href="/2018/09/18/js-03/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/18/HTML5-1/">HTML5_1</a></h1><div class="post-meta">2018-09-18</div><div class="post-content"><h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2><p><img src="1.png" alt="HTML的语义化元素"></p></div><p class="readmore"><a href="/2018/09/18/HTML5-1/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/09/16/WindowsAPI_01/">WindowsAPI常用概念&amp;结构体&amp;工具函数（一）</a></h1><div class="post-meta">2018-09-16</div><div class="post-content"><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="进程与线程的关系"><a href="#进程与线程的关系" class="headerlink" title="进程与线程的关系"></a>进程与线程的关系</h3><ul></div><p class="readmore"><a href="/2018/09/16/WindowsAPI_01/">阅读全文</a></p></div><nav class="page-navigator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/jdbc/" style="font-size: 15px;">jdbc</a> <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/ClassLoader/" style="font-size: 15px;">ClassLoader</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/反射/" style="font-size: 15px;">反射</a> <a href="/tags/注解/" style="font-size: 15px;">注解</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/Java-Servlet/" style="font-size: 15px;">Java Servlet</a> <a href="/tags/保护模式/" style="font-size: 15px;">保护模式</a> <a href="/tags/Server杂项/" style="font-size: 15px;">Server杂项</a> <a href="/tags/Windows/" style="font-size: 15px;">Windows</a> <a href="/tags/设计模式-动态代理/" style="font-size: 15px;">设计模式 动态代理</a> <a href="/tags/栈-队列-算法/" style="font-size: 15px;">栈 队列 算法</a> <a href="/tags/设计模式-策略模式/" style="font-size: 15px;">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 15px;">设计模式 观察者模式</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/算法-递归/" style="font-size: 15px;">算法 递归</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/06/js-08/">js-08</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/ucore-Lab1/">ucore Lab1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/27/js-07/">ECMAScript 6</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/26/js-6/">面向对象的JavaScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/25/Server-01/">JSON与AJAX和跨域通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/23/js-5/">蛋疼的JavaScript(五)引用类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/19/JS-04/">蛋疼的JavaScript(四) 语句与函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/js-03/">蛋疼的JavaScript(三)数据类型&运算符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/HTML5-1/">HTML5_1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/WindowsAPI_01/">WindowsAPI常用概念&结构体&工具函数（一）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.codergzw.com" title="GuoZW的博客" target="_blank">GuoZW的博客</a><ul></ul><a href="http://codermiya.com/" title="Miyang的博客" target="_blank">Miyang的博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">飞翔的傻瓜.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="编程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="飞翔的傻瓜">
+<meta property="og:url" content="http://www.maoxin.site/index.html">
+<meta property="og:site_name" content="飞翔的傻瓜">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="飞翔的傻瓜">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.maoxin.site/"/>
+
+
+
+
+
+  <title>飞翔的傻瓜</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">飞翔的傻瓜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">菜鸟的试飞之旅</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/10/06/js-08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/06/js-08/" itemprop="url">ES6异步编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-06T11:18:57+08:00">
+                2018-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/10/03/ucore-Lab1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/03/ucore-Lab1/" itemprop="url">ucore Lab1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-03T22:46:42+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1><h2 id="实验1-bootloader的启动"><a href="#实验1-bootloader的启动" class="headerlink" title="实验1: bootloader的启动"></a>实验1: bootloader的启动</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><p>要求：</p>
+<ol>
+<li>操作系统镜像文件ucore.img是如何一步一步生成的？(需要比较详细地解释Makefile中每一条相关命令和命令参数的含义，以及说明命令导致的结果)</li>
+<li>一个被认为是符合规范的硬盘主引导扇区的特征是什么？<br>实验过程:</li>
+<li><p>在构建过程中使用<code>make V=</code>来查看具体执行过程，具体执行过程如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下均为将各个文件编译为目标文件</span></span><br><span class="line">+ cc kern/init/init.c  //编译 init.c</span><br><span class="line">+ kern/libs/readline.c //编译 readline.c</span><br><span class="line">+ cc kern/libs/stdio.c //编译 stdio.c</span><br><span class="line">+ cc kern/debug/kdebug.c//编译 kdebug.c </span><br><span class="line">+ cc kern/debug/kmonitor.c //编译 kmonitor</span><br><span class="line">+ cc kern/debug/panic.c//编译 panic.c</span><br><span class="line">+ cc kern/driver/clock.c //编译 clock.c</span><br><span class="line">+ cc kern/driver/console.c //编译 console.c</span><br><span class="line">+ cc kern/driver/intr.c//编译 intr.c</span><br><span class="line">+ cc kern/driver/picirq.c //编译 picirq.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trap.c //编译 trap.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trapentry.S //编译 trapentry.S</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/vectors.S //编译 vector.S</span><br><span class="line">+ cc kern/mm/pmm.c//编译 pmm.c</span><br><span class="line">+ cc libs/printfmt.c // printgmt.c</span><br><span class="line">+ cc libs/string.c //编译 string.c</span><br><span class="line">+ ld bin/kernel//接下来用ld合并目标文件(object) 和 库文件(archive),生成kernel程序</span><br><span class="line">+ cc boot/bootasm.S //编译 bootasm.S</span><br><span class="line">+ cc boot/bootmain.c //编译 bootmain.c</span><br><span class="line">+ cc tools/sign.c //编译 sign.c</span><br><span class="line"><span class="comment"># 以上执行过程均附加了gcc参数如下,以第一行init.c为例</span></span><br><span class="line">gcc -Ikern/init/ -fno-builtin -Wall -ggdb -m32 -gstabs -nostdinc  -fno-stack-protector -Ilibs/ -Ikern/debug/ -Ikern/driver/ -Ikern/<span class="built_in">trap</span>/ -Ikern/mm/ -c kern/init/init.c -o obj/kern/init/init.o</span><br><span class="line"><span class="comment"># gcc -I 指明包含路径名称 -fno-builtin表明不使用内建函数 -Wall开启所有警告  -ggdb生成GDB调试信息 -gstabs此选项以stabs格式声称调试信息,但是不包括gdb调试信息，-m32生成32位机器的汇编代码 -nostdincgcc编译的时候不要在标准系统目录中找头文件 -fnostack-protector 不启用溢出检测机制 </span></span><br><span class="line">+ ld bin/bootblock //链接生成block文件</span><br><span class="line">//最后将bootloader放入虚拟硬盘ucore.img中去。</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=bin/ucore.img count=10000</span><br><span class="line">dd <span class="keyword">if</span>=bin/bootblock of=bin/ucore.img conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=bin/kernel of=bin/ucore.img seek=1 conv=notrunc</span><br><span class="line"><span class="comment"># 这里用到了dd命令，if是输入of是输出count是块大小，关于conv参数可以参考 https://www.cnblogs.com/dkblog/archive/2009/09/18/1980715.html  https://blog.csdn.net/u011616400/article/details/41575745 ,其作用睡觉哦不截断输出文件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？</p>
+</li>
+</ol>
+<p>查看tools/sign.c文件如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">    <span class="comment">//检查输入参数</span></span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: &lt;input filename&gt; &lt;output filename&gt;\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//stat函数传入文件名和结构体对象可以返回一个结构体信息，检测是否是吧</span></span><br><span class="line">    <span class="keyword">if</span> (stat(argv[<span class="number">1</span>], &amp;st) != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Error opening file '%s': %s\n"</span>, argv[<span class="number">1</span>], strerror(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输出长度</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"'%s' size: %lld bytes\n"</span>, argv[<span class="number">1</span>], (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">    <span class="comment">//检测是否超过510个字节</span></span><br><span class="line">    <span class="keyword">if</span> (st.st_size &gt; <span class="number">510</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"%lld &gt;&gt; 510!!\n"</span>, (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//建立缓冲区，将缓冲区置0</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">512</span>];</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    <span class="comment">//读取文件，填充缓冲区</span></span><br><span class="line">    FILE *ifp = fopen(argv[<span class="number">1</span>], <span class="string">"rb"</span>);</span><br><span class="line">    <span class="keyword">int</span> size = fread(buf, <span class="number">1</span>, st.st_size, ifp);</span><br><span class="line">    <span class="comment">//判断文件大小是否如文件信息所述</span></span><br><span class="line">    <span class="keyword">if</span> (size != st.st_size) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"read '%s' error, size is %d.\n"</span>, argv[<span class="number">1</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//关闭流</span></span><br><span class="line">    fclose(ifp);</span><br><span class="line">    <span class="comment">//写入标识</span></span><br><span class="line">    buf[<span class="number">510</span>] = <span class="number">0x55</span>;</span><br><span class="line">    buf[<span class="number">511</span>] = <span class="number">0xAA</span>;</span><br><span class="line">    <span class="comment">//打开新文件，写出</span></span><br><span class="line">    FILE *ofp = fopen(argv[<span class="number">2</span>], <span class="string">"wb+"</span>);</span><br><span class="line">    size = fwrite(buf, <span class="number">1</span>, <span class="number">512</span>, ofp);</span><br><span class="line">    <span class="comment">//再次检测大小是否符合要求</span></span><br><span class="line">    <span class="keyword">if</span> (size != <span class="number">512</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"write '%s' error, size is %d.\n"</span>, argv[<span class="number">2</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(ofp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"build 512 bytes boot sector: '%s' success!\n"</span>, argv[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h3><p>要求：<br>使用qemu执行并调试lab1中的软件。（要求在报告中简要写出练习过程）</p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">V=@</span><br><span class="line">BINDIR=bin</span><br><span class="line"><span class="section">lab1-mon: <span class="variable">$(UCOREIMG)</span></span></span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"<span class="variable">$(QEMU)</span> -S -s -d in_asm -D <span class="variable">$(BINDIR)</span>/q.log -monitor stdio -hda <span class="variable">$&lt;</span> -serial null"</span></span><br><span class="line"><span class="variable">$(V)</span>sleep 2</span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"gdb -q -x tools/lab1init"</span></span><br></pre></td></tr></table></figure>
+<p>第一行参数表</p>
+<ul>
+<li>-S 在启动时不启动 CPU， 需要在 monitor 中输入 ‘c’，才能让qemu继续模拟工作</li>
+<li>-s 等待gdb连接到端口1234</li>
+<li>-d 输出日志到 qemu</li>
+<li>-hda 指明使用file作为硬盘0镜像</li>
+<li>-serial dev 重定向虚拟串口到主机设备dev中</li>
+</ul>
+<p>第三行参数表</p>
+<ul>
+<li>-x 指明预设命令文件,预设文件如下<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file bin/kernel #加载符号信息 </span><br><span class="line">target remote :1234 #与qemu进行链接</span><br><span class="line">set architecture i8086 #设置处理器架构</span><br><span class="line">b *0x7c00 #在0x7c00设置断点</span><br><span class="line">continue #继续</span><br><span class="line">x /2i $pc #显示PC之后的两条指令</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用GDB命令完成以下工作:</p>
+<ol>
+<li>查看PC之后的10行命令<code>x/10i $pc</code></li>
+<li>查看具体位置的内存数据<code>x/</code></li>
+<li>查看GDTR寄存器的值</li>
+<li>断点<code>b *0x7c0a</code></li>
+<li>打印所有寄存器<code>info register</code>，也可以是<code>i r</code></li>
+<li>在开启保护模式后设置架构<code>set architecture i386</code></li>
+<li>单步源代码的下一行，不进入函数<code>next</code></li>
+<li>单步一条机器指令，不进入函数<code>nexti</code></li>
+<li>单步到下一个不同的源代码行,进入函数<code>step</code></li>
+<li>单步到一条机器指令，进入函数<code>stepi</code><h4 id="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"><a href="#从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行" class="headerlink" title="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"></a>从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行</h4>由于开机时处于实模式，开机的时候CS:IP=0xf000:fff0因此应该查看这里的指令</li>
+</ol>
+<p><img src="1.png" alt="输出"></p>
+<p>之后执行一系列BIOS操作最够将控制权转交给0x7c00的bootloader部分</p>
+<h3 id="练习3-分析bootloader进入保护模式的过程"><a href="#练习3-分析bootloader进入保护模式的过程" class="headerlink" title="练习3 分析bootloader进入保护模式的过程"></a>练习3 分析bootloader进入保护模式的过程</h3><h4 id="步骤-关键步骤前加"><a href="#步骤-关键步骤前加" class="headerlink" title="步骤(关键步骤前加*)"></a>步骤(关键步骤前加*)</h4><ol start="0">
+<li>准备基本的GDT表项以供使用进入保护模式之后使用</li>
+<li>初始化寄存器</li>
+<li>*检测并发送A20开启信号来开启A20</li>
+<li>*通过修改CR0寄存器的保护模式使能位进入保护模式</li>
+<li>*用保护模式的寻址机制跳转到初始化保护寄存器的代码段(protcseg)长跳转指令进入</li>
+<li>*初始化堆栈部分一便于C语言程序的调用堆栈区域是从0–start(0x7c00)<h4 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h4><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootasm.S" target="_blank" rel="noopener">代码注释</a><h3 id="练习4：分析bootloader加载ELF格式的OS的过程。"><a href="#练习4：分析bootloader加载ELF格式的OS的过程。" class="headerlink" title="练习4：分析bootloader加载ELF格式的OS的过程。"></a>练习4：分析bootloader加载ELF格式的OS的过程。</h3>bootloader在前面可以看到，分为两部分，一部分是汇编代码写的，主要完成进入保护模式并初始化寄存器，第二部分是C代码写的，主要完成加载ELF格式的内核文件到内存中，这里就涉及到原生的C并不能完成的任务，例如读取硬盘扇区，在这里使用的是GCC内联汇编来完成基本功能被C代码使用的。<h4 id="读取硬盘部分"><a href="#读取硬盘部分" class="headerlink" title="读取硬盘部分"></a>读取硬盘部分</h4>读取扇区(readsect)的操作可以分为如下几部分</li>
+<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
+<li>发出读取磁盘的命令   (向硬盘的IO端口输出读取信息)</li>
+<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
+<li>将磁盘扇区的数据读到指定的内存中去<blockquote>
+<p>0号磁盘的IO端口详细信息:<br>1F0H 0号硬盘数据寄存器<br>1F1H 0号硬盘错误寄存器(读时),0号硬盘Features寄存器(写时)<br>1F2H 0号硬盘数据扇区计数<br>1F3H 0号硬盘扇区数<br>1F4H 0号硬盘柱面(低字节)<br>1F5H 0号硬盘柱面(高字节)<br>1F6H 0号磁盘驱动器/磁头寄存器<br>1F7H 0号硬盘状态寄存器(读时)，0号硬盘命令寄存器(写时)</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootmain.c" target="_blank" rel="noopener">读取硬盘的详细阅读代码注释</a></p>
+<h4 id="装载ELF格式内核"><a href="#装载ELF格式内核" class="headerlink" title="装载ELF格式内核"></a>装载ELF格式内核</h4><p><img src="Elf-layout.svg" alt="ELF布局"><br>在这里需要简单的了解ELF文件布局如下</p>
+<p><img src="ELF.png" alt="ELF部分功能"></p>
+<p>使用<code>objdump -h</code>查看ELF文件信息，可以查看在相关节的信息<br><img src="objdump.png" alt="objdumo查看信息"></p>
+<ul>
+<li>链接地址(Virtual Memory Address)和加载地址(Load Memory Address):程序在链接的时候会确定链接地址，这个地址是逻辑上的，代码中绝对的跳转都按照此基准进行，而加载地址是事实加载的地址。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bootmain - bootloader的入口 */</span></span><br><span class="line"><span class="keyword">void</span></span><br><span class="line">bootmain(<span class="keyword">void</span>) &#123;</span><br><span class="line">    <span class="comment">// 将文件的前4KB读取内存</span></span><br><span class="line">    readseg((<span class="keyword">uintptr_t</span>)ELFHDR, SECTSIZE * <span class="number">8</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检测加载进内存的内核模块是否是ELF文件</span></span><br><span class="line">    <span class="keyword">if</span> (ELFHDR-&gt;e_magic != ELF_MAGIC) &#123;  </span><br><span class="line">        <span class="keyword">goto</span> bad;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">proghdr</span> *<span class="title">ph</span>, *<span class="title">eph</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过结构体的偏移找到程序头表的入口，并加载程序段(ignores ph flags)</span></span><br><span class="line">    ph = (struct proghdr *)((<span class="keyword">uintptr_t</span>)ELFHDR + ELFHDR-&gt;e_phoff);</span><br><span class="line">    <span class="comment">// 通过指针的偏移,找到程序头表结束的地址</span></span><br><span class="line">    eph = ph + ELFHDR-&gt;e_phnum;</span><br><span class="line">    <span class="comment">//开始对程序头表包含的具体的信息进行遍历处理</span></span><br><span class="line">    <span class="keyword">for</span> (; ph &lt; eph; ph ++) &#123;</span><br><span class="line">        <span class="comment">//用readreg这个函数将文件的每一个段都读到内存中由程序头表的相应位置</span></span><br><span class="line">        <span class="comment">//由于kernel 程序的链接地址太高，而实际内存没有那么大的情况下，实际地址就是&amp;0xFFFFFF的结果(Mark，这个还不是太懂)</span></span><br><span class="line">        readseg(ph-&gt;p_va &amp; <span class="number">0xFFFFFF</span>, ph-&gt;p_memsz, ph-&gt;p_offset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用elf文件格式指明的程序入口点地址，转交控制权</span></span><br><span class="line">    <span class="comment">// note: 不会返回</span></span><br><span class="line">    ((<span class="keyword">void</span> (*)(<span class="keyword">void</span>))(ELFHDR-&gt;e_entry &amp; <span class="number">0xFFFFFF</span>))();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*加载失败跳转到这里*/</span></span><br><span class="line">bad:</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8A00</span>);</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8E00</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 无限循环 */</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="实现函数调用堆栈跟踪函数-（需要编程）"><a href="#实现函数调用堆栈跟踪函数-（需要编程）" class="headerlink" title="实现函数调用堆栈跟踪函数 （需要编程）"></a>实现函数调用堆栈跟踪函数 （需要编程）</h4><p>一个函数调用的大致步骤分为以下阶段，由于调用约定多样，这里只总结大致步骤</p>
+<ol>
+<li>参数的传入，可以push参数，也可以传入具体的寄存器</li>
+<li><code>call</code> 将返回地址压入堆栈中，ESP-4(32位)，此时ESP指向的是保存返回值的地址</li>
+<li><code>push %ebp</code> 将上一个堆栈的栈底指针传入，ESP再次-4</li>
+<li><code>mov %esp,%ebp</code> 设置新的栈底</li>
+<li>提升栈空间，用于函数操作</li>
+<li>保护现场，具体是保存将要修改的寄存器</li>
+<li>其他初始化工作</li>
+<li>执行函数核心内容</li>
+<li>恢复现场</li>
+<li><code>pop %ebp</code> 恢复堆栈</li>
+<li><code>ret</code><br>依据上述过程易得：</li>
+</ol>
+<ul>
+<li>如果函数传入参数是通过在call之前压入参数来做到了，那么其参数地址是ebp+8+4*(n+1),n=1,2,3…</li>
+<li>函数的返回地址是ebp+4</li>
+<li>ebp指示的位置是上一个函数调用esp的位置，ebp内保存的内容是原来ebp的值</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/27/js-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/27/js-07/" itemprop="url">ECMAScript 6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T16:18:56+08:00">
+                2018-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="历史与概念"><a href="#历史与概念" class="headerlink" title="历史与概念"></a>历史与概念</h2><h3 id="Evergreen-Browsers"><a href="#Evergreen-Browsers" class="headerlink" title="Evergreen Browsers"></a>Evergreen Browsers</h3><p>长期浏览器，支持最新标准</p>
+<ul>
+<li>Microsoft Edge</li>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Opera</li>
+<li>Safari<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3></li>
+<li>node  </li>
+<li>npm js的包管理工具</li>
+<li>babel 针对ES标准的转译器，将新版本的语法转换为老版本<h3 id="shim-amp-polyfill"><a href="#shim-amp-polyfill" class="headerlink" title="shim&amp;polyfill"></a>shim&amp;polyfill</h3></li>
+<li>提供API来在旧的基础之上支持类似的新标准的功能</li>
+<li>polyfill 更贴近标准，扩展原生对象来提供几乎一样的新标准支持<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="let-与-const"><a href="#let-与-const" class="headerlink" title="let 与 const"></a>let 与 const</h3></li>
+</ul>
+<ol>
+<li>let和const不可以重复声明</li>
+<li><p>let和const都在块级作用域有效</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;<span class="keyword">return</span> a*<span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line">(a)=&gt;&#123;<span class="keyword">return</span> a*<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line">(a)=&gt;a*<span class="number">2</span></span><br><span class="line"></span><br><span class="line">a =&gt; a*<span class="number">2</span></span><br><span class="line"><span class="comment">//返回值</span></span><br><span class="line"><span class="comment">//返回对象，注意｛｝的语义可能冲突</span></span><br><span class="line"><span class="keyword">const</span> funObj = <span class="function"><span class="params">name</span> =&gt;</span>&#123;&#123;name,<span class="attr">age</span>:<span class="number">27</span>&#125;&#125;</span><br><span class="line"><span class="comment">//不能作为构造函数</span></span><br><span class="line"><span class="keyword">const</span> A =<span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;</span><br><span class="line"><span class="keyword">new</span> A()</span><br><span class="line"><span class="comment">//this指向问题</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.info(<span class="keyword">this</span>.c);</span><br><span class="line">    &#125;,</span><br><span class="line">    b:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.info(<span class="keyword">this</span>.c)</span><br><span class="line">    &#125;</span><br><span class="line">    c:<span class="number">123</span></span><br><span class="line">&#125;;</span><br><span class="line">obj.a();<span class="comment">//undefined</span></span><br><span class="line">obj.b();<span class="comment">//123</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数只能替换函数表达式，不能替换函数声明，因为它是匿名的</p>
+</li>
+<li>不能赋值常量作为构造函数</li>
+<li>this指向是在定义时决定的而不是之前普通函数调用时定义的，this取决于父执行上下文的this<h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module A</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">moduleMethod</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">//module</span></span><br><span class="line"><span class="keyword">import</span> method form <span class="string">'./moduleA'</span></span><br><span class="line">method();</span><br></pre></td></tr></table></figure>
+<p>引入多个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module A</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">methodA</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">methodB</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">//module B</span></span><br><span class="line"><span class="keyword">import</span> &#123;methodA,methodB&#125; <span class="keyword">from</span> <span class="string">'./moduleA'</span></span><br><span class="line">methodA()</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> util <span class="keyword">from</span> <span class="string">"./moduleA"</span></span><br><span class="line">util.methodA()</span><br></pre></td></tr></table></figure></p>
+<h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><p>ES5中的方法推荐挂载到原型中，在ES6可以直接申明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> options = options ||&#123;&#125;;</span><br><span class="line">    <span class="keyword">this</span>.name = options.name ||<span class="string">'stefan'</span></span><br><span class="line">&#125;</span><br><span class="line">Teacher.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher1</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">"stefan"</span></span><br><span class="line">    &#125;</span><br><span class="line">    getName()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> teacher1 = <span class="keyword">new</span> Teacher1();</span><br></pre></td></tr></table></figure></p>
+<p>深入理解类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(<span class="keyword">typeof</span> Teacher1)<span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.info(Teacher1.prototype.constructor==Teacher1)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.assign(Teacher1.prototype,&#123;</span><br><span class="line">    getName()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//区别</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="built_in">Object</span>.keys(Teacher.prototype));<span class="comment">//['getName']</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="built_in">Object</span>.keys(Teacher1.prototype))<span class="comment">//[]</span></span><br><span class="line"><span class="comment">//说明ES6是不可枚举的</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>extends关键字<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PangTeacher</span> <span class="keyword">extends</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(...args)&#123;</span><br><span class="line">        <span class="comment">//子类没有自己的this对象，通过继承父类的this对象进行扩充的</span></span><br><span class="line">        <span class="keyword">super</span>(...args);</span><br><span class="line">        <span class="keyword">this</span>.weight = <span class="number">180</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> PangTeacher();</span><br></pre></td></tr></table></figure></p>
+<h2 id="ES6高级特性"><a href="#ES6高级特性" class="headerlink" title="ES6高级特性"></a>ES6高级特性</h2><h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>解构赋值(Destructuring Assignment)，学习Python<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.info(a,b,c);<span class="comment">//1 2 3</span></span><br><span class="line"><span class="keyword">var</span>[a,,b]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.info(a,b)<span class="comment">//1 3</span></span><br><span class="line"><span class="comment">//-------------------------</span></span><br><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> &#123;a,b&#125;= o;</span><br><span class="line"><span class="built_in">console</span>.info(a,b);<span class="comment">//1.2</span></span><br><span class="line"><span class="comment">//-------------------------</span></span><br><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> &#123;b,a&#125;=o;</span><br><span class="line"><span class="built_in">console</span>.info(a,b);<span class="comment">//1,2</span></span><br><span class="line"><span class="comment">//-------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">&#123;a,b,c&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b+c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.info(test(&#123;<span class="attr">a</span>:<span class="number">3</span>,<span class="attr">b</span>:<span class="number">4</span>,<span class="attr">c</span>:<span class="number">1</span>&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>解构赋值很方便的将声明和传参结合在了一起</p>
+<h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3><ul>
+<li>Spread Elements &amp; Properties<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> spread = [<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> n = [x,y,...spread];</span><br><span class="line"><span class="built_in">console</span>.log(n)<span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> y =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> spread = &#123;<span class="attr">a</span>:<span class="number">3</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> n = &#123;x,y,...spread&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(n);<span class="comment">//&#123;x:1,y:2,a:3,b:4&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spreadFunc</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(a+b+c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> args = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">spreadFunc(...args)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Rest Element &amp; Properties<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b,...rest] = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="built_in">console</span>.log(b)</span><br><span class="line"><span class="built_in">console</span>.log(rest)<span class="comment">//[30,40,50]</span></span><br><span class="line"><span class="comment">//-----------------</span></span><br><span class="line"><span class="keyword">let</span>&#123;x,y,..rest&#125; = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>,<span class="attr">a</span>:<span class="number">3</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br><span class="line"><span class="built_in">console</span>.log(y);</span><br><span class="line"><span class="built_in">console</span>.log(rest);<span class="comment">//&#123;a:3,b:4&#125;</span></span><br><span class="line"><span class="comment">//------------------</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">restFunc</span>(<span class="params">a,...args</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h3><p>针对字符串拼接<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'stefan'</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'My name is'</span>+ name+<span class="string">'.'</span>);</span><br><span class="line"><span class="comment">//这里第一个\是转义，最后一个\是换行链接字符串</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'My name is'</span>+ name+<span class="string">'.\n\</span></span><br><span class="line"><span class="string">I love this world'</span>)</span><br><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">`My name is <span class="subst">$&#123;name&#125;</span>.`</span>);</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">`My name is <span class="subst">$&#123;name&#125;</span>。</span></span><br><span class="line"><span class="string">I love this world.`</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(<span class="built_in">Symbol</span>(<span class="string">'a'</span>)==<span class="built_in">Symbol</span>(<span class="string">'a'</span>))<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h3 id="Map-amp-Set"><a href="#Map-amp-Set" class="headerlink" title="Map&amp;Set"></a>Map&amp;Set</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.info([...set])<span class="comment">//[1,2,3,4]</span></span><br><span class="line">set.add(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">console</span>.info([...set])<span class="comment">//[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">    [<span class="string">'a'</span>,<span class="number">1</span>],</span><br><span class="line">    [<span class="string">'b'</span>,<span class="number">2</span>]</span><br><span class="line">])</span><br><span class="line"><span class="built_in">console</span>.info(a.get(<span class="string">'a'</span>),a.get(<span class="string">'b'</span>));</span><br><span class="line">a.set(<span class="string">'c'</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Generator-amp-Iterator"><a href="#Generator-amp-Iterator" class="headerlink" title="Generator &amp; Iterator"></a>Generator &amp; Iterator</h3><p>Generator 函数是一个状态机，封装了多个内部状态<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用function* 标明是一个Generator</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibonacci</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> v1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> v2 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="comment">//进行求斐波那契数列的迭代</span></span><br><span class="line">        [v1,v2] = [v2,v1+v2];</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">let</span> reset = <span class="keyword">yield</span> v1;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">if</span>(reset)&#123;</span><br><span class="line">            v1 = <span class="number">0</span>;</span><br><span class="line">            v2 = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用迭代器函数，返回一个对象，带有next方法</span></span><br><span class="line"><span class="keyword">let</span> a = fibonacci();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a)</span><br><span class="line"><span class="comment">//调用对象的next方法返回一个对象带有value属性和done属性,next语义会生成下一个值</span></span><br><span class="line"><span class="comment">//value属性代表的是每次执行到yield的状态值</span></span><br><span class="line"><span class="comment">//down属性代表的是迭代是否结束</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'1'</span>,a.next());</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'1111'</span>,a.next());</span><br><span class="line"><span class="comment">//如果不取值，就不会生产值</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'2'</span>,a.next().value);</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'3'</span>,a.next().value);</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'4'</span>,a.next().value);</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'5'</span>,a.next().value);</span><br><span class="line"><span class="comment">//next传入的值会返回到yield 执行之后的返回值</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'6'</span>,a.next(<span class="literal">true</span>).value);</span><br></pre></td></tr></table></figure></p>
+<p>迭代器<br>迭代器希望提供一致的迭代方式，那么对于不同对象，我们需要指明的是</p>
+<ul>
+<li>迭代的下一个对象是什么？</li>
+<li><p>迭代什么时候结束<br>正是因为有了迭代器，ES6可以使用统一的访问机制for …of循环来遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeIterator</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nextIndex = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        next:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> nextIndex&lt;array.length?</span><br><span class="line">            &#123;<span class="attr">value</span>:array[nextIndex++],<span class="attr">done</span>:<span class="literal">false</span>&#125;:</span><br><span class="line">            &#123;<span class="attr">value</span>:<span class="literal">undefined</span>,<span class="attr">done</span>:<span class="literal">true</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> it = makeIterator([<span class="string">'a'</span>,<span class="string">'b'</span>])</span><br><span class="line"><span class="built_in">console</span>.log(it.next())<span class="comment">//&#123; value: 'a', done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())<span class="comment">//&#123; value: 'b', done: false &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(it.next())<span class="comment">//&#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一种数据结构只要部署了Iterator接口，我们就称为这种数据结构是”可遍历的”</p>
+</li>
+<li>一个数据几个只要具有Symbol.iterator属性，就认为是”可遍历的”(iterable)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> counter = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    b:<span class="number">2</span>,</span><br><span class="line">    <span class="comment">//实现接口</span></span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]:<span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">        next:<span class="function"><span class="params">()</span>=&gt;</span>(&#123;</span><br><span class="line">            value:<span class="number">1</span>,</span><br><span class="line">            done:counter++&gt;<span class="number">3</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> j <span class="keyword">of</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="string">'obj'</span>,j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>与Generator函数除了状态机，还是一个便利器对象的生成函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OddDouble</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(list)&#123;</span><br><span class="line">        <span class="keyword">this</span>.list = list;</span><br><span class="line">    &#125;</span><br><span class="line">    *[Symble.iterator]()&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> <span class="keyword">this</span>.list)&#123;</span><br><span class="line">            <span class="keyword">yield</span> item%<span class="number">2</span>?item*<span class="number">2</span>:item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> <span class="keyword">new</span> OddDouble([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/26/js-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/26/js-6/" itemprop="url">面向对象的JavaScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T11:19:20+08:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="定义对象属性"><a href="#定义对象属性" class="headerlink" title="定义对象属性"></a>定义对象属性</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.a = <span class="number">1</span>;</span><br><span class="line">person[<span class="string">"a"</span>]=<span class="number">1</span>;</span><br><span class="line">person = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="高级方法"><a href="#高级方法" class="headerlink" title="高级方法"></a>高级方法</h3><p>需要明确一下几个概念：</p>
+<ul>
+<li><p>数据属性:</p>
+<ul>
+<li>Configurable:表示能否通过delete属性而重新定义属性</li>
+<li>enumerable:表示能否通过foreach循环来获得属性</li>
+<li>writable:表名属性是否可以修改</li>
+<li>value: 定义初始值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    value:<span class="string">"Nicholas"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.info(person.name);</span><br><span class="line">person.name = <span class="string">"Greg"</span>;</span><br><span class="line"><span class="built_in">console</span>.info(person.name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>访问器属性:</p>
+<ul>
+<li>访问器属性相比于数据属性没有writable和value，新增了get和set属性,一般对私有属性进行get/set方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    _year:<span class="number">2004</span>,</span><br><span class="line">    edition:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(book,<span class="string">"year"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._year;</span><br><span class="line">    &#125;</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(newValue&gt;<span class="number">2004</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>._year = newValue;</span><br><span class="line">            <span class="keyword">this</span>.edition+=newValue - <span class="number">2004</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">book.year = <span class="number">2005</span>;</span><br><span class="line">alert(book.edition);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>创建私有的访问器属性之后设置具体的值经过get/set方法为数据的访问增加了一个中间层，在中间层内部增加类似监听器的东西可以实现“观察者模式”,例如MVVM框架所能做到的对对象属性的修改能及时反馈到对应的界面上。</p>
+<h3 id="创建对象-工厂模式"><a href="#创建对象-工厂模式" class="headerlink" title="创建对象-工厂模式"></a>创建对象-工厂模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.age = age;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建对象-构造函数"><a href="#创建对象-构造函数" class="headerlink" title="创建对象-构造函数"></a>创建对象-构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>,<span class="number">29</span>,<span class="string">"Software Engineer"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>new 构造函数的执行步骤<ul>
+<li>在内存中创建一个对象</li>
+<li>将作用域指向这个对象</li>
+<li>执行构造函数的代码</li>
+<li>将该对象的引用返回<h2 id="创建对象-原型模式"><a href="#创建对象-原型模式" class="headerlink" title="创建对象-原型模式"></a>创建对象-原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">29</span>;</span><br><span class="line">Person.prototype.sayhello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName();<span class="comment">//"Nicholas"</span></span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person2.sayName();<span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>首先prototype是一个指针，指向这个对象</p>
+<h3 id="hasOwnProperty-NaN"><a href="#hasOwnProperty-NaN" class="headerlink" title="hasOwnProperty()"></a>hasOwnProperty()</h3><p>检测来自实例的属性，而不是来自原型</p>
+<h3 id="delete-Person1-name"><a href="#delete-Person1-name" class="headerlink" title="delete Person1.name"></a>delete Person1.name</h3><p>删除实例属性</p>
+<h3 id="in-关键字"><a href="#in-关键字" class="headerlink" title="in 关键字"></a>in 关键字</h3><p>判断原型和实例中是否有</p>
+<h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>遍历时无差别对待原型属性和实例属性</p>
+<h3 id="认识构造函数和原型的问题"><a href="#认识构造函数和原型的问题" class="headerlink" title="认识构造函数和原型的问题"></a>认识构造函数和原型的问题</h3><ul>
+<li>首先，构造函数每次执行相当于创建一个全新的对象，每一个实例都有自己的属性和方法，这样在效率上消耗太高</li>
+<li>原型的缺点在于如果修改了一个属性值，其他所有属性值都变了。<h3 id="创建对象-组合"><a href="#创建对象-组合" class="headerlink" title="创建对象-组合"></a>创建对象-组合</h3>将属性值放到实例属性中，将方法写到原型中去。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.friends = [<span class="string">"shelby"</span>,<span class="string">"Court"</span>];</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,</span><br><span class="line">    sayName:function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义SuperType的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义Supertype的原型方法</span></span><br><span class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.proprety;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义子类的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//指明继承关系</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//添加子类方法</span></span><br><span class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subProperty;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//重写父类方法</span></span><br><span class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义子类的原型方法</span></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.info(instance2.colors);<span class="comment">//[ 'red', 'blue', 'green', 'black' ]</span></span><br></pre></td></tr></table></figure>
+<p>发现一个问题，通过原型链继承的数据对象是在原型中的，这个会最大的问题就是数据成员的共享，当然在特定的条件下可以利用该特点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//继承独立的数据成员的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//将构造函数的数据成员强制绑定到本地</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.info(instance2.colors)</span><br></pre></td></tr></table></figure></p>
+<h2 id="两种方法的折中，组合继承"><a href="#两种方法的折中，组合继承" class="headerlink" title="两种方法的折中，组合继承"></a>两种方法的折中，组合继承</h2><ul>
+<li>将想要继承的独立的数据成员使用构造函数继承方式</li>
+<li>将函数成员或者共享的数据成员使用原型链继承<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//设置继承父类的数据成员作为自己的独立的</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以说下面的三行代码都是完善继承关系的步骤</span></span><br><span class="line"><span class="comment">//指明prototype是从supertype()，使得subType具有了继承的层次,但是这里父类中有冗余的字段,优化步骤写在[2]中</span></span><br><span class="line"><span class="comment">//[1]</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//[2]上面代码的优化版本，通过定义空方法来</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">F.prototype = SuperType.prototype;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> F();</span><br><span class="line"><span class="comment">//添加SuperType的构造函数为Subtype</span></span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"><span class="comment">//再添加函数成员到原型中</span></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType(<span class="string">"Nicholas"</span>,<span class="number">29</span>);</span><br><span class="line">instance1.color.push(<span class="string">"black"</span>)</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)</span><br><span class="line">instance1.sayName();</span><br><span class="line">instance1.sayAge();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType(<span class="string">"Greg"</span>,<span class="number">27</span>);</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)</span><br><span class="line">instance1.sayName();</span><br><span class="line">instance1.sayAge();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="JavaScript语言的二义性"><a href="#JavaScript语言的二义性" class="headerlink" title="JavaScript语言的二义性"></a>JavaScript语言的二义性</h2><p>动态的语言许多看似简单的东西有丰富的用法，这个需要注意，这也往往是其坑所在</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/25/Server-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/25/Server-01/" itemprop="url">JSON与AJAX和跨域通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-25T00:27:19+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JSON表示值的类型"><a href="#JSON表示值的类型" class="headerlink" title="JSON表示值的类型"></a>JSON表示值的类型</h2><ul>
+<li><strong>不能</strong>表示<code>Undefined</code></li>
+<li><code>Null</code>,<code>Boolean</code>,<code>number</code>,<code>String</code></li>
+<li>对象</li>
+<li>数组<h2 id="JSON-规范"><a href="#JSON-规范" class="headerlink" title="JSON 规范"></a>JSON 规范</h2></li>
+<li>JSON是一种规范，是一种组织数据的格式</li>
+<li>JSON字符串不能用单引号</li>
+<li>JSON的属性必须是一个字符串表示<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wrong in json, but right in javascript</span></span><br><span class="line">&#123;</span><br><span class="line">    name:<span class="string">"Maoxin"</span>,</span><br><span class="line">    age:<span class="number">29</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//right in json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"Maoxin"</span>,</span><br><span class="line">    <span class="string">"age"</span>:<span class="number">29</span>    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="JSON-序列化"><a href="#JSON-序列化" class="headerlink" title="JSON 序列化"></a>JSON 序列化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//javascript object -&gt; JSON String</span></span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"C++ Learn"</span>,</span><br><span class="line">    authors:[</span><br><span class="line">        <span class="string">"Nicholas C. Zakas"</span></span><br><span class="line">    ],</span><br><span class="line">    year:<span class="number">2011</span>,</span><br><span class="line">    edition:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="comment">//get attributes which we need to stringify</span></span><br><span class="line"><span class="keyword">var</span> need = <span class="built_in">JSON</span>.stringfy(book,[<span class="string">"title"</span>,<span class="string">"edition"</span>])</span><br><span class="line"><span class="comment">//&#123;"title":"C++ Learn","edition":3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//execute function according to attribute</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(key)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"authors"</span>:</span><br><span class="line">            <span class="keyword">return</span> value.join(<span class="string">","</span>)</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"year"</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"edition"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//deliver the number of space to get a formated string</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="literal">null</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以在对象中添加<code>toJSON</code>的属性来控制格式化那些东西<h2 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"Javascript"</span>,</span><br><span class="line">    releaseDate: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2011</span>,<span class="number">11</span>,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="keyword">var</span> bookCopy = <span class="built_in">JSON</span>.parse(jsonText,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(key==<span class="string">"releaseDate"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(value);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h3 id="XMLHttpRequest-基本"><a href="#XMLHttpRequest-基本" class="headerlink" title="XMLHttpRequest 基本"></a>XMLHttpRequest 基本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">// 第三个参数是是否是异步的</span></span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//注意调用的时候，不会真正的指向请求，而是准备发送，用send发送</span></span><br><span class="line"><span class="comment">//如果是GET请求，将body设置为null即可</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="XMLHttpRequest-填充属性"><a href="#XMLHttpRequest-填充属性" class="headerlink" title="XMLHttpRequest - 填充属性"></a>XMLHttpRequest - 填充属性</h3><ul>
+<li>responseText<br>如果返回的是文本将返回结果挂载在这里</li>
+<li>responseXML 返回的是XML</li>
+<li>status 状态码&gt;=200时候代表能够正确返回，当status=304通知浏览器本地缓存还可以使用</li>
+<li>statusText</li>
+</ul>
+<p>以下为同步情况：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同步情况</span></span><br><span class="line"><span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以下为异步情况：采用注册事件的方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在open和send之前</span></span><br><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这里需要明确<code>readState</code>的变化过程</p>
+<ul>
+<li>0 未初始化</li>
+<li>1 启动</li>
+<li>2 发送</li>
+<li>3 接收</li>
+<li>4 完成<h3 id="abort-终止"><a href="#abort-终止" class="headerlink" title="abort 终止"></a>abort 终止</h3>使请求提前终止<h3 id="AJAX-XMLHttpRequest-Header"><a href="#AJAX-XMLHttpRequest-Header" class="headerlink" title="AJAX XMLHttpRequest Header"></a>AJAX XMLHttpRequest Header</h3></li>
+<li>Accept: 浏览器能处理的内容类型</li>
+<li>Accept-Charset：浏览器能显示的字符串</li>
+<li>Accept-Encoding: 浏览器能够处理的压缩编码</li>
+<li>Accept-Language:浏览器当前设置的语言</li>
+<li>Connection：浏览器与服务器之间的连接的类型</li>
+<li>Cookie:不解释</li>
+<li>Host:发出请求页面所在的域</li>
+<li>Referer:发送请求的页面URL，注意这个词是拼写错了，将错就错,referrer是正确的</li>
+<li>User-Agent：浏览器用户代理字符串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"MyHeader"</span>,<span class="string">"MyValue"</span>)</span><br><span class="line"><span class="comment">//Demo 模拟表单发送</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line">xhr.send(serialize(form));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">xhr.send(serialize(form));</span><br><span class="line"><span class="comment">//B</span></span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line">formData.append(<span class="string">"name"</span>,<span class="string">"Maoxin"</span>);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
+<h3 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h3><ul>
+<li><code>onload</code> 响应完成触发</li>
+<li><code>onprocess</code> 接受过程中触发的事件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> divStatus = <span class="built_in">document</span>.getElementById(<span class="string">"status"</span>);</span><br><span class="line">    <span class="keyword">if</span>(event.lengthComputable)&#123;</span><br><span class="line">        divStatus.innerHTML = <span class="string">"Received"</span> +event.position+<span class="string">"of"</span>+event.totalSize+<span class="string">"bytes"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="跨域通信"><a href="#跨域通信" class="headerlink" title="跨域通信"></a>跨域通信</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/23/js-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/23/js-5/" itemprop="url">蛋疼的JavaScript(五)引用类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T09:53:40+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="配置式构造对象"><a href="#配置式构造对象" class="headerlink" title="配置式构造对象"></a>配置式构造对象</h2><p>常用的传入参数在不能满足成员是动态的时候的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">name,age,school</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age,</span><br><span class="line">        school:school</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以使用配置式的来满足动态需求<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">configure</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> configure</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="列表的简单操作"><a href="#列表的简单操作" class="headerlink" title="列表的简单操作"></a>列表的简单操作</h2><h3 id="栈方法和队列方法"><a href="#栈方法和队列方法" class="headerlink" title="栈方法和队列方法"></a>栈方法和队列方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.push(<span class="number">4</span>);      <span class="comment">//4加入末尾</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">0</span>)    <span class="comment">//0加入队首</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.pop()         <span class="comment">//4从尾部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//0从队首弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">7</span>)    <span class="comment">//7加入在首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">8</span>)    <span class="comment">//8加入到首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//从首部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br></pre></td></tr></table></figure>
+<p>注意JavaScript不是说队列或者栈方法将整体看作一个队列，而是说通过以上方法来实现栈和队列的操作。</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
+<li>倒置:reverse()</li>
+<li>排序:sort()<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line">a.sort(<span class="function"><span class="keyword">function</span>(<span class="params">prev,next</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> prec - next;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul>
+<li><p>foreach方法，传入两个参数，一个是元素的值，一个是下标</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.foreach(<span class="function"><span class="keyword">function</span>(<span class="params">obj,index</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(obj,index)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>filter方法，传入一个参数，元素值，返回数组是经过过滤为true的新的数据集</p>
+</li>
+<li><p>map方法，map是将迭代的元素都经过一次操作，最终返回一个新数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.map(<span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c*<span class="number">2</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.info(b)</span><br><span class="line"><span class="comment">//[2,4,6]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reduce方法</p>
+</li>
+</ul>
+<p>先上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c+d;</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
+<p>就这样完成了数组相加,首先reduce接受两个参数，一个是回调，这个回调负责将问题规模减小，第二个值是初始值，而回调接受两个参数，一个是初始值，一个是当前值，将初始值与当前值相加之后返回到作为初始值继续操作。下面的代码很容易猜到就是10<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c+d;</span><br><span class="line">&#125;,<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br></pre></td></tr></table></figure></p>
+<p>下面这个利用reduce完成map方法的功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    c.push(d*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><ul>
+<li>函数命名在递归程序的耦合<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&lt;=<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> num + <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可见这个<code>callee</code>是在该函数中被调用的方法,<code>caller</code>是调用者的方法，注意在严格模式下无法访问</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>表征函数当前作用域，详情见之前的this总结</p>
+<h3 id="call-amp-apply"><a href="#call-amp-apply" class="headerlink" title="call&amp;apply"></a>call&amp;apply</h3><p>其都是说让函数在特定的，apply和call的区别在于call传入的是单个参数，apply是传入的数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">result = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    result:<span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.result = (+a + +b);</span><br><span class="line">&#125;</span><br><span class="line">sum.call(o,<span class="string">'1'</span>,<span class="string">'2'</span>)</span><br><span class="line"><span class="built_in">console</span>.info(o.result);<span class="comment">//3</span></span><br><span class="line">sum.apply(o,[<span class="string">'1'</span>,<span class="string">'3'</span>])</span><br><span class="line"><span class="built_in">console</span>.info(o.result)<span class="comment">//4</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/19/JS-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/19/JS-04/" itemprop="url">蛋疼的JavaScript(四) 语句与函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-19T10:58:37+08:00">
+                2018-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript中的-的语意"><a href="#JavaScript中的-的语意" class="headerlink" title="JavaScript中的()的语意"></a>JavaScript中的<code>()</code>的语意</h3><ol>
+<li>作为函数调用运算符</li>
+<li>函数参数占位符号</li>
+<li>强制运算符，返回结果</li>
+</ol>
+<p>只要以上明白了，下面就很好理解了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
+<p>由于函数是一个作用域块，所以能够做到变量的隐藏。</p>
+<h3 id="void-运算符"><a href="#void-运算符" class="headerlink" title="void()运算符"></a>void()运算符</h3><p>与()的第三个语意相反，是求值但是不返回</p>
+<h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><ul>
+<li>在堆中的对象在函数参数传递的时候是传递指针的值，所以能够做到共享</li>
+<li>但是如果在栈中的值得拷贝就需要注意没有修改原值。</li>
+</ul>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><ul>
+<li>在严格模式下(严格模式下在函数前使用<code>&quot;use strict&quot;;</code>) arguments与传入的形参是没有联系的，修改arguments下的值是不会反映到形参的变化的</li>
+<li>在非严格模式下，有联系</li>
+<li>JS没有函数重载，使用arguments可以模拟重载</li>
+<li>arguments不是数组，想要转换为数组可以使用数组原型对应的方法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].slice.call(<span class="built_in">arguments</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/18/js-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/18/js-03/" itemprop="url">蛋疼的JavaScript(三)数据类型&运算符</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-18T22:45:49+08:00">
+                2018-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
+<li>type探测的类型是基本的数据类型，对于对象，他分不清是哪种object（除了function）,也就是说它深入不到构造方法级别的类型检测，这也是与instanceof的区别</li>
+<li><img src="1.png" alt="类型检测"></li>
+<li>在控制台下有个好处可以很具体的看到返回的类型都是string的</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>从常见的几种转换入手：</p>
+<ul>
+<li>布尔类型的转换</li>
+</ul>
+<p><img src="2.png" alt="布尔类型转换"></p>
+<ul>
+<li>数字类型的强制类型转换</li>
+</ul>
+<p><img src="3.png" alt="整数类型转换"></p>
+<p>注意其可以做数值的进制转换</p>
+<ul>
+<li>转换为字符串</li>
+</ul>
+<p><img src="4.png" alt="字符串类型转换"></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="一元"><a href="#一元" class="headerlink" title="一元+"></a>一元+</h3><p>如果后面是字符串那么就变为数字</p>
+<h3 id="快捷转换为字符串"><a href="#快捷转换为字符串" class="headerlink" title="快捷转换为字符串"></a>快捷转换为字符串</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="number">1</span>+<span class="string">""</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="逻辑运算符-布尔类型的强制转换"><a href="#逻辑运算符-布尔类型的强制转换" class="headerlink" title="逻辑运算符:布尔类型的强制转换"></a>逻辑运算符:布尔类型的强制转换</h3><ul>
+<li><p>两个逻辑非可以将其他类型转换为布尔类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(!!<span class="string">""</span>)<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(!<span class="string">""</span>)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.info(![])<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(![<span class="number">1</span>])<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成代码的精，利用短路特性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="literal">true</span> &amp;&amp; (a=<span class="number">2</span>);<span class="comment">//加括号是运算符优先级的问题</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用于给一个默认值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认5分</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">score</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s || <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/18/HTML5-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/18/HTML5-1/" itemprop="url">HTML5_1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-18T22:20:50+08:00">
+                2018-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2><p><img src="1.png" alt="HTML的语义化元素"></p>
+<h2 id="HTML的最佳实践"><a href="#HTML的最佳实践" class="headerlink" title="HTML的最佳实践"></a>HTML的最佳实践</h2><ul>
+<li>选择标记元素要有代表性，不要老是<code>&lt;div&gt;&lt;/div&gt;</code></li>
+<li>不要忘记文档类型申明</li>
+<li>不要忘记字符编码申明，在<code>&lt;head&gt;</code>元素中应该有<code>&lt;meta charset=&#39;UTF=8&#39;&gt;</code></li>
+<li>不要使用HTML5不再支持的标记，如<code>&lt;center&gt;</code>,<code>&lt;font&gt;</code>,<code>&lt;basefont&gt;</code>,<code>&lt;big&gt;</code></li>
+<li>不要使用HTML5不再支持的Tag属性 如<code>table</code>、<code>img</code>等标记的<code>align</code>和<code>border</code>属性，能用CSS就用CSS</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/09/16/WindowsAPI_01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/16/WindowsAPI_01/" itemprop="url">WindowsAPI常用概念&结构体&工具函数（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-16T17:09:15+08:00">
+                2018-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="进程与线程的关系"><a href="#进程与线程的关系" class="headerlink" title="进程与线程的关系"></a>进程与线程的关系</h3><ul>
+<li>进程更像是一个空间上的概念，而线程是真正的代码执行过程，利用进程的的资源，所以在Windows调用<code>CreateProcess</code>来创建一个进程的时候返回的<code>_PROCESS_INFOMATION</code>结构体包含了进程标识和线程标识两方面的信息</li>
+<li>进程在执行过程中可能创建多个新的进程。创建进程成为称为父进程，而新的进程称之为子进程，构成的是一个“进程树”的结构<h3 id="ID与句柄"><a href="#ID与句柄" class="headerlink" title="ID与句柄"></a>ID与句柄</h3></li>
+<li><p>在windows下内核对象的种类很多，物理是文件、进程、线程、事件、管道、互斥锁、信号量等等都是都是内核对象的，具体可以查阅MSDN文档关于<code>CloseHandle</code>函数的解释：<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">点击前往</a></p>
+</li>
+<li><p>在内核中管理这些对象是通过内核对象ID的来维护的，能够通过ID来指向内核区具体的数据结构，不会将地址直接暴露给应用层。</p>
+</li>
+<li>句柄表是进程所拥有的，每个进程都有一个句柄表来维护这个进程所创建&amp;打开的内核对象</li>
+<li>之前提到了进程树，子进程是可以共享父进程的资源（内核对象），共享的方式是继承，在创建进程的时候可以选择继承进程句柄和线程句柄</li>
+<li>内核对象在内核中的ID是一定的，但是句柄中的值是不一定的，就好比两个进程同时打开同一个对象，在进程中记录的句柄表同一个的对象对应的句柄是不一样的，但是ID是一样的。</li>
+<li>每个内核对象都有对应的表示标明是否可以被继承<h2 id="内核对象的生命周期"><a href="#内核对象的生命周期" class="headerlink" title="内核对象的生命周期"></a>内核对象的生命周期</h2>内核对象都有个计数器，计数器计数的值代表的是被引用的次数，一般的内核对象只需要</li>
+<li>内核对象计数器为0</li>
+</ul>
+<p>就可以关闭，但是对于Thread以及Process内核对象情况有些特殊它要满足：</p>
+<ul>
+<li>内核对象计数器为０</li>
+<li>执行流程结束</li>
+</ul>
+<h2 id="相关结构体"><a href="#相关结构体" class="headerlink" title="相关结构体"></a>相关结构体</h2><h3 id="STARTUPINFO"><a href="#STARTUPINFO" class="headerlink" title="STARTUPINFO"></a>STARTUPINFO</h3><p>从名字也可以看出，StartUpInfo保存着一些启动的信息</p>
+<h3 id="PROCESS-INFOMATION"><a href="#PROCESS-INFOMATION" class="headerlink" title="_PROCESS_INFOMATION"></a>_PROCESS_INFOMATION</h3><p>进程结构体类型，具体的内容如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">PROCESS_INFORMATION</span> &#123;</span></span><br><span class="line">  HANDLE hProcess;<span class="comment">//进程句柄</span></span><br><span class="line">  HANDLE hThread;<span class="comment">//线程句柄</span></span><br><span class="line">  DWORD  dwProcessId;<span class="comment">//进程ID</span></span><br><span class="line">  DWORD  dwThreadId;<span class="comment">//线程ID</span></span><br><span class="line">&#125; PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SECURITY-ATTRIBUTES"><a href="#SECURITY-ATTRIBUTES" class="headerlink" title="SECURITY_ATTRIBUTES"></a>SECURITY_ATTRIBUTES</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">SECURITY_ATTRIBUTES</span> &#123;</span></span><br><span class="line">  DWORD  nLength;<span class="comment">//结构体长度</span></span><br><span class="line">  LPVOID lpSecurityDescriptor;<span class="comment">//指向安全描述符，指明当前对象的用户权限信息等等，默认与父进程相同</span></span><br><span class="line">  BOOL   bInheritHandle;<span class="comment">//当前内核对象是否允许继承</span></span><br><span class="line">&#125; SECURITY_ATTRIBUTES, *PSECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;</span><br></pre></td></tr></table></figure>
+<p>如果在创建内核对象的时候不想继承，那么传入该项结构体的值只需要填写<code>NULL</code>即可<br><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa379560%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">文档地址</a></p>
+<h2 id="工具函数"><a href="#工具函数" class="headerlink" title="工具函数"></a>工具函数</h2><h3 id="GetStartupInfo"><a href="#GetStartupInfo" class="headerlink" title="GetStartupInfo()"></a>GetStartupInfo()</h3><p>获取当前进程的初始化信息，由父进程负责填充相关的<code>STARTUPINFO</code>结构体<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">GetStartupInfo(&amp;si)</span><br></pre></td></tr></table></figure></p>
+<p>由于我们即使填写了部分内容也不会都作用到最终的进程创建，我们常规的初始化步骤是：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">ZeroMemory(&amp;si,sizeod(si))</span><br><span class="line">si.cb = <span class="keyword">sizeof</span>(si)</span><br></pre></td></tr></table></figure></p>
+<h3 id="CloseHandle"><a href="#CloseHandle" class="headerlink" title="CloseHandle()"></a>CloseHandle()</h3><p>将内核对象计数器的值减一</p>
+<h3 id="GetStdHandle"><a href="#GetStdHandle" class="headerlink" title="GetStdHandle()"></a>GetStdHandle()</h3><p><a href="https://docs.microsoft.com/en-us/windows/console/getstdhandle" target="_blank" rel="noopener">文档地址</a></p>
+<h3 id="WaitForSingleObject"><a href="#WaitForSingleObject" class="headerlink" title="WaitForSingleObject()"></a>WaitForSingleObject()</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FlyingFool</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
