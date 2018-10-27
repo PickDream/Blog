@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="设计模式 观察者模式," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="场景我们先预想一个这样的情景，有一个类负责监听随时随地都可能发生的事件，例如：天气的变化，用户在桌面上执行操作出发的事件。。有许多类对象需要接收这些信息并进行处理，而且这些类对象往往还不止一个，还需要动态的添加和替换，比如天气显示器，比如事件处理函数。我们需要将“通知”分发给多个对象。假设负责监听的类一旦发现变化，便触发了changed函数，我们想要通知对象，最粗暴最干脆的做法就是：1234567">
-<meta name="keywords" content="设计模式 观察者模式">
+<meta name="description" content="此博客是对知乎海纳文章的理解与总结 引入多路复用的原因 服务器与客户端通信时，原来的场景需要大量的服务线程，连接时间很短，数据量发送很小，大量的服务线程使得竞争加剧，大量的开销会严重影响OS的效率 IO多路复用，可以解决线程切换的问题，可以同在很少的线程中管理多路IO 不是说IO多路复用效率一定高，要看具体场景，如果是两个对等机器之间建立了TCP连接，并且通过TCP连接来发送一个大文件，有大量的数">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="观察者模式">
-<meta property="og:url" content="http://www.maoxin.site/2018/07/27/观察者模式（Observer pattern）/index.html">
+<meta property="og:title" content="NIO-Selector">
+<meta property="og:url" content="http://www.maoxin.site/2018/10/13/NIO-02/index.html">
 <meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:description" content="场景我们先预想一个这样的情景，有一个类负责监听随时随地都可能发生的事件，例如：天气的变化，用户在桌面上执行操作出发的事件。。有许多类对象需要接收这些信息并进行处理，而且这些类对象往往还不止一个，还需要动态的添加和替换，比如天气显示器，比如事件处理函数。我们需要将“通知”分发给多个对象。假设负责监听的类一旦发现变化，便触发了changed函数，我们想要通知对象，最粗暴最干脆的做法就是：1234567">
+<meta property="og:description" content="此博客是对知乎海纳文章的理解与总结 引入多路复用的原因 服务器与客户端通信时，原来的场景需要大量的服务线程，连接时间很短，数据量发送很小，大量的服务线程使得竞争加剧，大量的开销会严重影响OS的效率 IO多路复用，可以解决线程切换的问题，可以同在很少的线程中管理多路IO 不是说IO多路复用效率一定高，要看具体场景，如果是两个对等机器之间建立了TCP连接，并且通过TCP连接来发送一个大文件，有大量的数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-28T12:18:50.557Z">
+<meta property="og:updated_time" content="2018-10-15T13:55:19.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="观察者模式">
-<meta name="twitter:description" content="场景我们先预想一个这样的情景，有一个类负责监听随时随地都可能发生的事件，例如：天气的变化，用户在桌面上执行操作出发的事件。。有许多类对象需要接收这些信息并进行处理，而且这些类对象往往还不止一个，还需要动态的添加和替换，比如天气显示器，比如事件处理函数。我们需要将“通知”分发给多个对象。假设负责监听的类一旦发现变化，便触发了changed函数，我们想要通知对象，最粗暴最干脆的做法就是：1234567">
+<meta name="twitter:title" content="NIO-Selector">
+<meta name="twitter:description" content="此博客是对知乎海纳文章的理解与总结 引入多路复用的原因 服务器与客户端通信时，原来的场景需要大量的服务线程，连接时间很短，数据量发送很小，大量的服务线程使得竞争加剧，大量的开销会严重影响OS的效率 IO多路复用，可以解决线程切换的问题，可以同在很少的线程中管理多路IO 不是说IO多路复用效率一定高，要看具体场景，如果是两个对等机器之间建立了TCP连接，并且通过TCP连接来发送一个大文件，有大量的数">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.maoxin.site/2018/07/27/观察者模式（Observer pattern）/"/>
+  <link rel="canonical" href="http://www.maoxin.site/2018/10/13/NIO-02/"/>
 
 
 
 
 
-  <title>观察者模式 | 飞翔的傻瓜</title>
+  <title>NIO-Selector | 飞翔的傻瓜</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/27/观察者模式（Observer pattern）/">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/10/13/NIO-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FlyingFool">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">观察者模式</h1>
+          <h1 class="post-title" itemprop="name headline">NIO-Selector</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T22:41:59+08:00">
-                2018-07-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-13T19:50:28+08:00">
+                2018-10-13
               </time>
             
 
@@ -285,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -322,18 +322,16 @@
       
 
       
-        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们先预想一个这样的情景，有一个类负责监听随时随地都可能发生的事件，例如：天气的变化，用户在桌面上执行操作出发的事件。。有许多类对象需要接收这些信息并进行处理，而且这些类对象往往还不止一个，还需要动态的添加和替换，比如天气显示器，比如事件处理函数。我们需要将“通知”分发给多个对象。<br>假设负责监听的类一旦发现变化，便触发了changed函数，我们想要通知对象，最粗暴最干脆的做法就是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> info = getChanged();</span><br><span class="line">    classA.update(info);</span><br><span class="line">    classB.update(info);</span><br><span class="line">    classC.update(info);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码主要有以下问题：</p>
-<ul>
-<li>大量使用update方法，可以用一个接口来处理</li>
-<li>针对具体的实现编程，我们在添加或者删除对象的时候必须修改changed函数</li>
-<li>上面几个问题结合起来的问题就是，对象与对象之间的联系太紧密了！</li>
-</ul>
-<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个目标对象管理所有相依于它的观察者对象，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实时事件处理系统。</p>
-<h3 id="如何解决问题？"><a href="#如何解决问题？" class="headerlink" title="如何解决问题？"></a>如何解决问题？</h3><p>从最简单的着手，既然出现了大量的update方法，我们首先用一个接口封装起来，既然描述的是观察者，我们就起名Observer接口，里面有一个update方法。观察者的管理者是前面提到的起到监听作用的类，对观察者对象的管理主要有几个内容：1.添加观察者2.删除观察者3.通知。我们将这些方法抽象一下，作为一个Subject接口。<br>具体的细节还有，多个观察者对象如何管理，我们可以利用Java内置的数据结构。<br>就这样，两个本来关系紧密的类现在只暴露出了几个来让两者建立联系的方法。这就是所谓的松耦合。</p>
-<p>松耦合：两个对象之间松耦合指的是，他们仍然可以交互，但是不太清楚彼此的细节。</p>
-<h3 id="JDK中应用到观察者模式的场景"><a href="#JDK中应用到观察者模式的场景" class="headerlink" title="JDK中应用到观察者模式的场景"></a>JDK中应用到观察者模式的场景</h3><p>Swing中注册事件处理函数的时候我们首先创建的类要实现ActionListener接口，之后将该对象通过addActionListener注册到相对应的控件中去。</p>
-<p>Java内置了观察者模式的类和接口，内部数据结构是用Vector实现的。</p>
+        <p>此博客是对知乎海纳文章的理解与总结</p>
+<h2 id="引入多路复用的原因"><a href="#引入多路复用的原因" class="headerlink" title="引入多路复用的原因"></a>引入多路复用的原因</h2><ol>
+<li>服务器与客户端通信时，原来的场景需要大量的服务线程，连接时间很短，数据量发送很小，大量的服务线程使得竞争加剧，大量的开销会严重影响OS的效率</li>
+<li>IO多路复用，可以解决线程切换的问题，可以同在很少的线程中管理多路IO</li>
+<li>不是说IO多路复用效率一定高，要看具体场景，如果是两个对等机器之间建立了TCP连接，并且通过TCP连接来发送一个大文件，有大量的数据传输。在这种场景中，阻塞式的写法简单高效。</li>
+<li>另外加深理解，需要明白一台服务器能创建的线程数是十分有限的，在Java中创建线程，一个线程默认就会预留1M的空间，那么1G的内存也不过只能支持1000个线程创建而已。<h2 id="Linux中的Poll"><a href="#Linux中的Poll" class="headerlink" title="Linux中的Poll"></a>Linux中的Poll</h2><h3 id="什么是poll"><a href="#什么是poll" class="headerlink" title="什么是poll?"></a>什么是poll?</h3>poll系统调用让操作系统管理多个链接，监视其发生的事件，并</li>
+</ol>
+<blockquote>
+<p>参考资料: <a href="https://zhuanlan.zhihu.com/p/27419141" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27419141</a> 海纳<br>问题与实现: select poll epoll <a href="https://blog.csdn.net/davidsguo008/article/details/73556811" target="_blank" rel="noopener">https://blog.csdn.net/davidsguo008/article/details/73556811</a></p>
+</blockquote>
 
       
     </div>
@@ -351,7 +349,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式-观察者模式/" rel="tag"># 设计模式 观察者模式</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -364,8 +362,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/27/策略模式（Strategy Pattern）/" rel="next" title="策略模式（strategy Pattern）">
-                <i class="fa fa-chevron-left"></i> 策略模式（strategy Pattern）
+              <a href="/2018/10/13/NIO-01/" rel="next" title="NIO-Buffer">
+                <i class="fa fa-chevron-left"></i> NIO-Buffer
               </a>
             
           </div>
@@ -374,8 +372,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/27/动态代理模式/" rel="prev" title="Java动态代理">
-                Java动态代理 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/27/design-1/" rel="prev" title="7种方式去重构Java的Switch语句">
+                7种方式去重构Java的Switch语句 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -508,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式"><span class="nav-number">2.</span> <span class="nav-text">观察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何解决问题？"><span class="nav-number">2.2.</span> <span class="nav-text">如何解决问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK中应用到观察者模式的场景"><span class="nav-number">2.3.</span> <span class="nav-text">JDK中应用到观察者模式的场景</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入多路复用的原因"><span class="nav-number">1.</span> <span class="nav-text">引入多路复用的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux中的Poll"><span class="nav-number">2.</span> <span class="nav-text">Linux中的Poll</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是poll"><span class="nav-number">2.1.</span> <span class="nav-text">什么是poll?</span></a></li></ol></li></ol></div>
             
 
           </div>

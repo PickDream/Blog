@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计模式," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自己翻译的，英语渣，其实看代码意思就都能理解，这里放上原网址  https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html  1.通过Java的枚举实现策略模式一个典型的例子涉及到一个Java的枚举，并且在枚举的基础上有一个或者多个switch语句，让我们假设有如下简单的Java枚举，">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7种方式去重构Java的Switch语句">
+<meta property="og:url" content="http://www.maoxin.site/2018/10/27/design-1/index.html">
+<meta property="og:site_name" content="飞翔的傻瓜">
+<meta property="og:description" content="自己翻译的，英语渣，其实看代码意思就都能理解，这里放上原网址  https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html  1.通过Java的枚举实现策略模式一个典型的例子涉及到一个Java的枚举，并且在枚举的基础上有一个或者多个switch语句，让我们假设有如下简单的Java枚举，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-27T03:22:55.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7种方式去重构Java的Switch语句">
+<meta name="twitter:description" content="自己翻译的，英语渣，其实看代码意思就都能理解，这里放上原网址  https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html  1.通过Java的枚举实现策略模式一个典型的例子涉及到一个Java的枚举，并且在枚举的基础上有一个或者多个switch语句，让我们假设有如下简单的Java枚举，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.maoxin.site/2018/10/27/design-1/"/>
+
+
+
+
+
+  <title>7种方式去重构Java的Switch语句 | 飞翔的傻瓜</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">飞翔的傻瓜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">菜鸟的试飞之旅</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/10/27/design-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FlyingFool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞翔的傻瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">7种方式去重构Java的Switch语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-27T11:18:25+08:00">
+                2018-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>自己翻译的，英语渣，其实看代码意思就都能理解，这里放上原网址</p>
+<blockquote>
+<p><a href="https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html" target="_blank" rel="noopener">https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html</a></p>
+</blockquote>
+<h2 id="1-通过Java的枚举实现策略模式"><a href="#1-通过Java的枚举实现策略模式" class="headerlink" title="1.通过Java的枚举实现策略模式"></a>1.通过Java的枚举实现策略模式</h2><p>一个典型的例子涉及到一个Java的枚举，并且在枚举的基础上有一个或者多个switch语句，让我们假设有如下简单的Java枚举，代表不同的运动员类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> PlayerTypes &#123;</span><br><span class="line">    TENNIS,FOOTBALL,SNOOKER</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面的switch语句用来创建不同类型的“运动员”<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerCreator</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(PlayerTypes playerType)</span></span>&#123; </span><br><span class="line">        <span class="keyword">switch</span> (playerType) &#123;</span><br><span class="line">            <span class="keyword">case</span> TENNIS:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer();</span><br><span class="line">            <span class="keyword">case</span> FOOTBALL:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer();</span><br><span class="line">            <span class="keyword">case</span> SNOOKER:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid player type: "</span></span><br><span class="line">                    + playerType);</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>想要创建网球运动员，就使用<code>PlayerTypes.TENNIS</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PlayerCreator playerCreator = <span class="keyword">new</span> PlayerCreator();</span><br><span class="line">Player tennisPlayer =</span><br><span class="line">   playerCreator.createPlayer(PlayerTypes.TENNIS);</span><br></pre></td></tr></table></figure></p>
+<h3 id="依赖使用常量特定方法实现的枚举"><a href="#依赖使用常量特定方法实现的枚举" class="headerlink" title="依赖使用常量特定方法实现的枚举"></a>依赖使用常量特定方法实现的枚举</h3><p>但是，这里有一种更好的方式去将每个枚举常量本身和其行为联系在一起，这种方式被称为：具有常量特定方法实现的枚举类型（enum type with constant-specific method implementation）并且它在Joshua Bloch的《Effective Java 第二版》中被描述。遵循着这一思想，我们可以通过增加一个抽象的方法来丰富我们的<code>playertypes</code>枚举类，而对于枚举类中的每个值，我们提供一个实现，如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> PlayerTypes &#123; </span><br><span class="line">TENNIS &#123;</span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;,</span><br><span class="line">FOOTBALL &#123;</span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;,</span><br><span class="line">SNOOKER &#123;</span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Player <span class="title">createPlayer</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果想要创建一个足球运动员,使用<code>PlayersType.FOOTBLL</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Player footballPlayer =</span><br><span class="line">   PlayerTypes.valueOf(<span class="string">"FOOTBALL"</span>).createPlayer();</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-实现命令模式"><a href="#2-实现命令模式" class="headerlink" title="2.实现命令模式"></a>2.实现命令模式</h2><p>现在，让我们写一个同样的<code>switch</code>逻辑，但是是基于字符串类型的，在Java 7及以上，我们是可以使用一个字符串对象放在switch语句中，毕竟，大多数的Java编译器将会针对这种实现方式生成比类似<code>if-else-if</code>链更加高效的字节码，当然，这并不是太坏:),但是，一个siwtch仍然使得类与类之间的关系错综复杂，并且缺点也是一样的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerCreator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(String playerType)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (playerType) &#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"TENNIS"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer();</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"FOOTBALL"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer();</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"SNOOKER"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer();</span><br><span class="line"></span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException</span><br><span class="line">               (<span class="string">"Invalid player type: "</span> + playerType);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个网球运动员只需要一个“TENNIS”<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerCreator playerCreator = <span class="keyword">new</span> PlayerCreator();</span><br><span class="line">Player tennisPlayer = playerCreator.createPlayer(<span class="string">"TENNIS"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="实现命令模式"><a href="#实现命令模式" class="headerlink" title="实现命令模式"></a>实现命令模式</h3><p>另外，我们可以依赖“命令”模式，我们可以通过两步来构建命令模式，首先，我们定义一个接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Command</span> </span>&#123;</span><br><span class="line">   <span class="function">Player <span class="title">create</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着，我们为每个运动员类型类型提供对应该接口的具体实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreatePlayerCommand</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Command&gt; PLAYERS;</span><br><span class="line">   <span class="keyword">static</span> &#123;</span><br><span class="line">      <span class="keyword">final</span> Map&lt;String, Command&gt; players = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">      players.put(<span class="string">"TENNIS"</span>, <span class="keyword">new</span> Command() &#123;</span><br><span class="line">         <span class="meta">@Override</span></span><br><span class="line">         <span class="function"><span class="keyword">public</span> Player <span class="title">create</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      players.put(<span class="string">"FOOTBALL"</span>, <span class="keyword">new</span> Command() &#123;</span><br><span class="line">         <span class="meta">@Override</span></span><br><span class="line">         <span class="function"><span class="keyword">public</span> Player <span class="title">create</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      players.put(<span class="string">"SNOOKER"</span>, <span class="keyword">new</span> Command() &#123;</span><br><span class="line">         <span class="meta">@Override</span></span><br><span class="line">         <span class="function"><span class="keyword">public</span> Player <span class="title">create</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      PLAYERS = Collections.unmodifiableMap(players);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(String playerType)</span> </span>&#123;</span><br><span class="line">      Command command = PLAYERS.get(playerType);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (command == <span class="keyword">null</span>) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid player type: "</span></span><br><span class="line">            + playerType);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> command.create();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，创建一个斯诺克运动员<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CreatePlayerCommand createCommand = <span class="keyword">new</span> CreatePlayerCommand();</span><br><span class="line">Player snookerPlayer = createCommand.createPlayer(<span class="string">"SNOOKER"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-使用Java8以及之后版本的Supplier接口"><a href="#3-使用Java8以及之后版本的Supplier接口" class="headerlink" title="3.使用Java8以及之后版本的Supplier接口"></a>3.使用Java8以及之后版本的Supplier接口</h2><p>将Switch语句的内容转换为一个<code>Map</code>类型是一种常用方法，这个想法的关键是将每一个<code>case</code>分支作为<code>Map</code>的值并且使用<code>case</code>的条件作为key，在Java 8以及之后的版本，我们可以充分利用<code>Supplier</code>和构造器引用，因此，让我们创建一个Map通过使用类的名字和关键字new一个构造器的引用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerSupplier</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Supplier&lt;Player&gt;&gt;</span><br><span class="line">      PLAYER_SUPPLIER;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> &#123;</span><br><span class="line">      <span class="keyword">final</span> Map&lt;String, Supplier&lt;Player&gt;&gt;</span><br><span class="line">         players = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">      players.put(<span class="string">"TENNIS"</span>, TennisPlayer::<span class="keyword">new</span>);</span><br><span class="line">      players.put(<span class="string">"FOOTBALL"</span>, FootballPlayer::<span class="keyword">new</span>);</span><br><span class="line">      players.put(<span class="string">"SNOOKER"</span>, SnookerPlayer::<span class="keyword">new</span>);</span><br><span class="line"></span><br><span class="line">      PLAYER_SUPPLIER = Collections.unmodifiableMap(players);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">supplyPlayer</span><span class="params">(String playerType)</span> </span>&#123;</span><br><span class="line">      Supplier&lt;Player&gt; player = PLAYER_SUPPLIER.get(playerType);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (player == <span class="keyword">null</span>) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid player type: "</span></span><br><span class="line">            + playerType);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> player.get();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样创建一个斯诺克运动员：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerSupplier playerSupplier = <span class="keyword">new</span> PlayerSupplier();</span><br><span class="line">Player snookerPlayer = playerSupplier.supplyPlayer(<span class="string">"SNOOKER"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-定义一个通用的函数式接口"><a href="#4-定义一个通用的函数式接口" class="headerlink" title="4.定义一个通用的函数式接口"></a>4.定义一个通用的函数式接口</h2><p>与第三点几乎相似的实现如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeTennisPlayerStatistics</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="title">ComputeTennisPlayerStatistics</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">computeTrend</span><span class="params">(TennisPlayer tennisPlayer,</span></span></span><br><span class="line"><span class="function"><span class="params">         Period period, String owner, String trend)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (trend) &#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"SERVE"</span>:</span><br><span class="line">            <span class="keyword">return</span> Statistics.computeServeTrend(tennisPlayer,</span><br><span class="line">               period, owner);</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"FOREHAND"</span>:</span><br><span class="line">            <span class="keyword">return</span> Statistics.computeForehandTrend(tennisPlayer,</span><br><span class="line">               period, owner);</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"BACKHAND"</span>:</span><br><span class="line">            <span class="keyword">return</span> Statistics.computeBackhandTrend(tennisPlayer,</span><br><span class="line">               period, owner);</span><br><span class="line"></span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException</span><br><span class="line">               (<span class="string">"Invalid trend attribute: "</span> + trend);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>得到SERVE趋势(我们使用了伪参数，在这里他们并不相关):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String serveTrend = ComputeTennisPlayerStatistics.</span><br><span class="line">computeTrend(<span class="keyword">new</span> TennisPlayer(), Period.ZERO, <span class="string">"TENNIS MAGAZINE"</span>,</span><br><span class="line">   <span class="string">"SERVE"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="实现-TriFunction-接口"><a href="#实现-TriFunction-接口" class="headerlink" title="实现 TriFunction 接口"></a>实现 TriFunction 接口</h3><p>这次，每个case语句执行一个接受三个参数的静态方法并且返回一个字符串类型，在这样的情况下，一个<code>Supplier</code>不能使用，因为我们有多于两个参数，我们不能使用<code>BiFunction</code>,在这里有一个方法将会通过我们定义自己的函数式接口，之后和我们之前使用Map一样<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TriFunction</span>&lt;<span class="title">T</span>, <span class="title">U</span>, <span class="title">V</span>, <span class="title">R</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function">R <span class="title">apply</span><span class="params">(T t, U u, V v)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">FunctionalStatistics</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="title">FunctionalStatistics</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, TriFunction&lt;TennisPlayer,</span><br><span class="line">         Period, String, String&gt;&gt;</span><br><span class="line">      STATISTICS = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> &#123;</span><br><span class="line">      STATISTICS.put(<span class="string">"SERVE"</span>, Statistics::computeServeTrend);</span><br><span class="line">      STATISTICS.put(<span class="string">"FOREHAND"</span>, Statistics::computeForehandTrend);</span><br><span class="line">      STATISTICS.put(<span class="string">"BACKHAND"</span>, Statistics::computeBackhandTrend);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">computeTrend</span><span class="params">(TennisPlayer tennisPlayer,</span></span></span><br><span class="line"><span class="function"><span class="params">      Period period, String owner, String trend)</span> </span>&#123;</span><br><span class="line">      TriFunction&lt;TennisPlayer, Period, String, String&gt;</span><br><span class="line">            function = STATISTICS.get(trend);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (function == <span class="keyword">null</span>) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid trend type: "</span></span><br><span class="line">            + trend);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> function.apply(tennisPlayer, period, owner);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>得到 FOREHAND 趋势 (我们使用了伪参数，在这里他们并不相关):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String forehandTrend = FunctionalStatistics.</span><br><span class="line">computeTrend(<span class="keyword">new</span> TennisPlayer(), Period.ZERO, <span class="string">"SPORT TV"</span>,</span><br><span class="line">   <span class="string">"FOREHAND"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-依赖抽象工厂"><a href="#5-依赖抽象工厂" class="headerlink" title="5. 依赖抽象工厂"></a>5. 依赖抽象工厂</h2><p>在这个小结，我们将会遵循Robert C. Martin的代码整洁之道的相关内容，我们以一个可以通过抽象工厂设计模式来隐藏的<code>switch</code>开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassicPlayer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> Type type;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> delta;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ClassicPlayer</span><span class="params">(Type type, <span class="keyword">int</span> delta)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.type = type;</span><br><span class="line">      <span class="keyword">this</span>.delta = delta;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Type <span class="title">getType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> type;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDelta</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> delta;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Statistics</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">playerEndurance</span><span class="params">(ClassicPlayer player)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> delta = player.getDelta();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">switch</span> (player.getType()) &#123;</span><br><span class="line">         <span class="keyword">case</span> TENNIS:</span><br><span class="line">            <span class="keyword">return</span> ComputeEnduranceAlgorithm.basicEndurance(delta)</span><br><span class="line">               + ComputeEnduranceAlgorithm.hardEndurance(delta);</span><br><span class="line">         <span class="keyword">case</span> FOOTBALL:</span><br><span class="line">            <span class="keyword">return</span> ComputeEnduranceAlgorithm.hardEndurance(delta)</span><br><span class="line">               * ComputeEnduranceAlgorithm.factorEndurance(delta);</span><br><span class="line">         <span class="keyword">case</span> SNOOKER:</span><br><span class="line">            <span class="keyword">return</span> ComputeEnduranceAlgorithm.basicEndurance(delta);</span><br><span class="line"></span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException</span><br><span class="line">               (<span class="string">"Invalid player type: "</span> + player.getType());</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>计算一个网球运动员的耐力如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Statistics statistics = <span class="keyword">new</span> Statistics();</span><br><span class="line"></span><br><span class="line">ClassicPlayer player = <span class="keyword">new</span> ClassicPlayer(Type.TENNIS, <span class="number">54</span>);</span><br><span class="line"><span class="keyword">int</span> tennisPlayerEndurance = statistics.playerEndurance(player);</span><br></pre></td></tr></table></figure></p>
+<p>当然，这是一个混乱的实现，想象一下你需要去添加另外一个方法去计算一个运动员的反应速度，这将需要另外一个<code>switch</code>语句，也许你将在每个case分支中嵌套更多的if并且重命名之前的方法名类似playerStatistics,每次一个新的方法将被增加，代码就需要进行相应的调整</p>
+<h2 id="实现抽象工厂模式"><a href="#实现抽象工厂模式" class="headerlink" title="实现抽象工厂模式"></a>实现抽象工厂模式</h2><p>我们可以重写这个代码通过使用多态性性并且和一个抽象工厂方法的实线，首先，我们删除<code>ClasssicPlayer</code>类并且创建一个抽象类<code>player</code>如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> Type type;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> delta;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Player</span><span class="params">(Type type, <span class="keyword">int</span> delta)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.type = type;</span><br><span class="line">      <span class="keyword">this</span>.delta = delta;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Type <span class="title">getType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> type;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDelta</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> delta;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">playerEndurance</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// More similar methods</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在我们可以实现一个足球,网球，和斯诺克等运动员类，比如，一个斯诺克运动员类如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SnookerPlayer</span> <span class="keyword">extends</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SnookerPlayer</span><span class="params">(Type type, <span class="keyword">int</span> delta)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>(type, delta);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">playerEndurance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> ComputeEnduranceAlgorithm.basicEndurance</span><br><span class="line">         (<span class="keyword">this</span>.getDelta());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更进一步，我们创建一个运动员工厂(AbstractPlayerFactory)接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbstractPlayerFactory</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(Type type, <span class="keyword">int</span> delta)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最终，我们将switch的实现埋在这个接口的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerFactory</span> <span class="keyword">implements</span> <span class="title">AbstractPlayerFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(Type type, <span class="keyword">int</span> delta)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">         <span class="keyword">case</span> TENNIS:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer(type, delta);</span><br><span class="line">         <span class="keyword">case</span> FOOTBALL:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer(type, delta);</span><br><span class="line">         <span class="keyword">case</span> SNOOKER:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer(type, delta);</span><br><span class="line"></span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid player type: "</span></span><br><span class="line">            + type);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>计算一个斯诺克运动员的耐力<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PlayerFactory playerFactory = <span class="keyword">new</span> PlayerFactory();</span><br><span class="line">Player snookerPlayer = playerFactory.createPlayer(Type.SNOOKER, <span class="number">8</span>);</span><br><span class="line"><span class="keyword">int</span> snookerPlayerEndurance = snookerPlayer.playerEndurance();</span><br></pre></td></tr></table></figure></p>
+<p>或者，我们可以直接初始化一个正确的Player类，而完全不使用Switch<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SnookerPlayer snookerPlayer = <span class="keyword">new</span> SnookerPlayer(<span class="number">7</span>);</span><br><span class="line"><span class="keyword">int</span> snookerPlayerEndurance  = snookerPlayer.playerEndurance();</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-实现状态模式"><a href="#6-实现状态模式" class="headerlink" title="6.实现状态模式"></a>6.实现状态模式</h2><p>让我们假设我们有如下两个相互依存的switch<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassicPlayer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> state;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">         state = <span class="number">1</span>; System.out.println(<span class="string">"Registering ..."</span>);</span><br><span class="line">         <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">         System.out.println(<span class="string">"Aready Registered ..."</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unregister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            state = <span class="number">0</span>;</span><br><span class="line">            System.out.println(<span class="string">"Un-registering ..."</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">            System.out.println(<span class="string">"Aready Unregistered ..."</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>简而言之，在这个例子中，我们只有两个相互依存的switch结构，并且我们可以调用他们按照如下方式:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ClassicPlayer classicPlayer = <span class="keyword">new</span> ClassicPlayer();</span><br><span class="line">classicPlayer.register();</span><br><span class="line">classicPlayer.unregister();</span><br><span class="line"><span class="comment">// Causes "Already Unregistered ..." message</span></span><br><span class="line">classicPlayer.unregister();</span><br></pre></td></tr></table></figure></p>
+<h3 id="实现状态模式"><a href="#实现状态模式" class="headerlink" title="实现状态模式"></a>实现状态模式</h3><p>跟进一步，让我们应用状态模式去消除这些<code>switch</code>语句，我们首先创建一个接口为我们的状态定义一些方法（动作）接口，<code>register</code>and<code>unregister</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PlayerState</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">register</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">unregister</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，我们定义一个<code>Player</code>类来实现<code>PlayerState</code>接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Player</span> <span class="keyword">implements</span> <span class="title">PlayerState</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> PlayerState registered;</span><br><span class="line">   <span class="keyword">private</span> PlayerState unregistered;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> PlayerState state;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Player</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.registered = <span class="keyword">new</span> PlayerRegister(<span class="keyword">this</span>);</span><br><span class="line">      <span class="keyword">this</span>.unregistered = <span class="keyword">new</span> PlayerUnregister(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">this</span>.state = <span class="keyword">this</span>.unregistered;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      state.register();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unregister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      state.unregister();</span><br><span class="line">   &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//以下为Registered、unregistered、state的getter和setter</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> PlayerState <span class="title">getRegistered</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> registered;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRegistered</span><span class="params">(PlayerState registered)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.registered = registered;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> PlayerState <span class="title">getUnregistered</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> unregistered;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUnregistered</span><span class="params">(PlayerState unregistered)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.unregistered = unregistered;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> PlayerState <span class="title">getState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setState</span><span class="params">(PlayerState state)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.state = state;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>PlayerRegister</code>和<code>PlayerUnregister</code>的代码列举在下面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerRegister</span> <span class="keyword">implements</span> <span class="title">PlayerState</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> Player player;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">PlayerRegister</span><span class="params">(Player player)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.player = player;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Already Registered ..."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unregister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Unregistering ..."</span>);</span><br><span class="line">      player.setState(player.getUnregistered());</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerUnregister</span> <span class="keyword">implements</span> <span class="title">PlayerState</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> Player player;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">PlayerUnregister</span><span class="params">(Player player)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.player = player;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Registering ..."</span>);</span><br><span class="line">      player.setState(player.getRegistered());</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unregister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Already Unregistered ..."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，我们可以创建一个Player并且完成如下状态的切换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Player player = <span class="keyword">new</span> Player();</span><br><span class="line">player.register();</span><br><span class="line">player.unregister();</span><br><span class="line"><span class="comment">// Causes an "Already Unregistered ..." message</span></span><br><span class="line">player.unregister();</span><br></pre></td></tr></table></figure>
+<h2 id="7-通过Predicate来实现"><a href="#7-通过Predicate来实现" class="headerlink" title="7. 通过Predicate来实现"></a>7. 通过Predicate来实现</h2><p>在最后一个例子中，让我们假设在switch语句中的每个case包含多个if分支，如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerCreator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">(String playerType, <span class="keyword">int</span> rank)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (playerType) &#123;</span><br><span class="line">         <span class="keyword">case</span> <span class="string">"TENNIS"</span>:</span><br><span class="line">            <span class="keyword">if</span> (rank == <span class="number">1</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer(<span class="string">"Rafael Nadal"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank &gt; <span class="number">1</span> &amp;&amp; rank &lt; <span class="number">5</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer(<span class="string">"Roger Federer"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank &gt;= <span class="number">5</span> &amp;&amp; rank &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> TennisPlayer(<span class="string">"Andy Murray"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">case</span> <span class="string">"FOOTBALL"</span>:</span><br><span class="line">            <span class="keyword">if</span> (rank == <span class="number">1</span> || rank == <span class="number">2</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer(<span class="string">"Lionel Messi"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank &gt; <span class="number">2</span> &amp;&amp; rank &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> FootballPlayer(<span class="string">"Cristiano Ronaldo"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">case</span> <span class="string">"SNOOKER"</span>:</span><br><span class="line">            <span class="keyword">if</span> (rank == <span class="number">1</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer(<span class="string">"Ronnie O'Sullivan"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank == <span class="number">2</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer(<span class="string">"Mark Selby"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank &gt; <span class="number">3</span> &amp;&amp; rank &lt; <span class="number">7</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer(<span class="string">"John Higgins"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (rank &gt;= <span class="number">7</span> &amp;&amp; rank &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">new</span> SnookerPlayer(<span class="string">"Neil Robertson"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException</span><br><span class="line">               (<span class="string">"Invalid player type: "</span> + playerType);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>获得一个输出: <code>Tennis player: Andy Murray</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PlayerCreator playerCreator = <span class="keyword">new</span> PlayerCreator();</span><br><span class="line">Player tennisPlayer = playerCreator.createPlayer(<span class="string">"TENNIS"</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>如果我们假设if语句可以被视作是<code>Predicate&lt;Integer&gt;</code>我们可以重写这个工具类，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">PlayerSupplier</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="title">PlayerSupplier</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String,</span><br><span class="line">      Map&lt;Predicate&lt;Integer&gt;,</span><br><span class="line">      Supplier&lt;Player&gt;&gt;&gt; PLAYER_CREATOR;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">static</span> &#123;</span><br><span class="line">      <span class="keyword">final</span> Map&lt;String, Map&lt;Predicate&lt;Integer&gt;,</span><br><span class="line">         Supplier&lt;Player&gt;&gt;&gt; playerCreator = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">final</span> Map&lt;Predicate&lt;Integer&gt;,</span><br><span class="line">         Supplier&lt;Player&gt;&gt; tennisPlayers = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">      tennisPlayers.put(rank -&gt; rank == <span class="number">1</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Rafael Nadal"</span>));</span><br><span class="line">      tennisPlayers.put(rank -&gt; rank &gt; <span class="number">1</span> &amp;&amp; rank &lt; <span class="number">5</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Roger Federer"</span>));</span><br><span class="line">      tennisPlayers.put(rank -&gt; rank &gt;= <span class="number">5</span> &amp;&amp; rank &lt;= <span class="number">10</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Andy Murray"</span>));</span><br><span class="line"></span><br><span class="line">      <span class="keyword">final</span> Map&lt;Predicate&lt;Integer&gt;, Supplier&lt;Player&gt;&gt;</span><br><span class="line">         footballPlayers = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">      footballPlayers.put(rank -&gt; rank == <span class="number">1</span> || rank == <span class="number">2</span>,()-&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Lionel Messsi"</span>));</span><br><span class="line">      footballPlayers.put(rank -&gt; rank &gt; <span class="number">2</span> &amp;&amp; rank &lt;= <span class="number">10</span>,()-&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Cristiano Ronaldo"</span>));</span><br><span class="line"></span><br><span class="line">      <span class="keyword">final</span> Map&lt;Predicate&lt;Integer&gt;, Supplier&lt;Player&gt;&gt;</span><br><span class="line">         snookerPlayers = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">      snookerPlayers.put(rank -&gt; rank == <span class="number">1</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Ronnie O'Sullivan"</span>));</span><br><span class="line">      snookerPlayers.put(rank -&gt; rank == <span class="number">2</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Mark Selby"</span>));</span><br><span class="line">      snookerPlayers.put(rank -&gt; rank &gt; <span class="number">3</span> &amp;&amp; rank &lt; <span class="number">7</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"John Higgins"</span>));</span><br><span class="line">      snookerPlayers.put(rank -&gt; rank &gt;= <span class="number">7</span> &amp;&amp; rank &lt;= <span class="number">10</span>, () -&gt;</span><br><span class="line">         <span class="keyword">new</span> TennisPlayer(<span class="string">"Neil Robertson"</span>));</span><br><span class="line"></span><br><span class="line">      playerCreator.put(<span class="string">"TENNIS"</span>, tennisPlayers);</span><br><span class="line">      playerCreator.put(<span class="string">"FOOTBALL"</span>, footballPlayers);</span><br><span class="line">      playerCreator.put(<span class="string">"SNOOKER"</span>, snookerPlayers);</span><br><span class="line"></span><br><span class="line">      PLAYER_CREATOR = Collections.unmodifiableMap(playerCreator);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Player <span class="title">supplyPlayer</span><span class="params">(String playerType,</span></span></span><br><span class="line"><span class="function"><span class="params">         <span class="keyword">int</span> rank)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (rank &lt; <span class="number">1</span> || rank &gt; <span class="number">10</span>) &#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid rank: "</span> +</span><br><span class="line">            rank);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!PLAYER_CREATOR.containsKey(playerType)) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid player type: "</span></span><br><span class="line">            + playerType);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      Map&lt;Predicate&lt;Integer&gt;, Supplier&lt;Player&gt;&gt; players =</span><br><span class="line">         PLAYER_CREATOR.get(playerType);</span><br><span class="line">      <span class="keyword">for</span> (Entry&lt;Predicate&lt;Integer&gt;, Supplier&lt;Player&gt;&gt;</span><br><span class="line">            entry : players.entrySet()) &#123;</span><br><span class="line">         <span class="keyword">if</span> (entry.getKey().test(rank)) &#123;</span><br><span class="line">            <span class="keyword">return</span> entry.getValue().get();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"The players map is</span></span><br><span class="line"><span class="string">         corrupted"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如下的使用方式可以获取到 <code>Football player: Cristiano Ronaldo</code> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Player footballPlayer = PlayerSupplier.supplyPlayer(<span class="string">"FOOTBALL"</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+<p>其他方法可以使用枚举来构成，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> PlayerTypes &#123;</span><br><span class="line"></span><br><span class="line">   TENNIS(Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      () -&gt; <span class="keyword">new</span> TennisPlayer(<span class="string">"Rafael Nadal"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> TennisPlayer(<span class="string">"Roger Federer"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> TennisPlayer(<span class="string">"Andy Murray"</span>))</span><br><span class="line">   ),</span><br><span class="line">   Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      rank -&gt; rank == <span class="number">1</span>, rank -&gt; rank &gt; <span class="number">1</span> &amp;&amp;</span><br><span class="line">      rank &lt; <span class="number">5</span>, rank -&gt; rank &gt;= <span class="number">5</span> &amp;&amp; rank &lt;= <span class="number">10</span>))</span><br><span class="line">   ),</span><br><span class="line">   FOOTBALL(Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      () -&gt; <span class="keyword">new</span> FootballPlayer(<span class="string">"Lionel Messi"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> FootballPlayer(<span class="string">"Cristiano Ronaldo"</span>))</span><br><span class="line">   ),</span><br><span class="line">   Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      rank -&gt; rank == <span class="number">1</span> || rank == <span class="number">2</span>,</span><br><span class="line">      rank -&gt; rank &gt; <span class="number">2</span> &amp;&amp; rank &lt;= <span class="number">10</span>))</span><br><span class="line">   ),</span><br><span class="line">   SNOOKER(Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      () -&gt; <span class="keyword">new</span> SnookerPlayer(<span class="string">"Ronnie O'Sullivan"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> SnookerPlayer(<span class="string">"Mark Selby"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> SnookerPlayer(<span class="string">"John Higgins"</span>),</span><br><span class="line">      () -&gt; <span class="keyword">new</span> SnookerPlayer(<span class="string">"Neil Robertson"</span>))</span><br><span class="line">   ),</span><br><span class="line">   Collections.unmodifiableList(Arrays.asList(</span><br><span class="line">      rank -&gt; rank == <span class="number">1</span>, rank -&gt; rank == <span class="number">2</span>,</span><br><span class="line">      rank -&gt; rank &gt; <span class="number">3</span> &amp;&amp; rank &lt; <span class="number">7</span>,</span><br><span class="line">      rank -&gt; rank &gt;= <span class="number">7</span> &amp;&amp; rank &lt;= <span class="number">10</span>))</span><br><span class="line">   );</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> List&lt;Supplier&lt;Player&gt;&gt; names;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">final</span> List&lt;Predicate&lt;Integer&gt;&gt; conditions;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="title">PlayerTypes</span><span class="params">(List&lt;Supplier&lt;Player&gt;&gt; names,</span></span></span><br><span class="line"><span class="function"><span class="params">         List&lt;Predicate&lt;Integer&gt;&gt; conditions)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.names = names;</span><br><span class="line">      <span class="keyword">this</span>.conditions = conditions;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Player <span class="title">supplyPlayer</span><span class="params">(String playerType,</span></span></span><br><span class="line"><span class="function"><span class="params">         <span class="keyword">int</span> rank)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (rank &lt; <span class="number">1</span> || rank &gt; <span class="number">10</span>) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid rank: "</span> +</span><br><span class="line">            rank);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      List&lt;Predicate&lt;Integer&gt;&gt; selectors =</span><br><span class="line">         PlayerTypes.valueOf(playerType).conditions;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; selectors.size(); i++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (selectors.get(i).test(rank)) &#123;</span><br><span class="line">            <span class="keyword">return</span> PlayerTypes.valueOf(playerType)</span><br><span class="line">               .names.get(i).get();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"The enum is corrupted"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到如下输出:<code>Snooker player: Neil Robertson</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Player snookerPlayer = PlayerTypes.supplyPlayer(<span class="string">"SNOOKER"</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这篇文章中，你看到了七种方法去解决switch结构，如下</p>
+<ul>
+<li>用枚举的形式实现策略模式</li>
+<li>实现命令模式</li>
+<li>使用Java8 之后的 Supplier</li>
+<li>定义一个通用的函数式接口</li>
+<li>使用抽象工厂</li>
+<li>实现状态模式</li>
+<li>通过Predicate</li>
+</ul>
+<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h2><p>几种方式都离不开表驱动，如何构成这张表，第一个枚举形式是将枚举值本身构成了表</p>
+<p>命令模式是将表项抽象了一个接口”命令“来放到Map中构成表</p>
+<p>之后包括Java8的函数式接口等等只是表的填充方式不同</p>
+<p>抽象工厂还是以Switch来实现的，这个表只不过被抽象层压在下面，抽象工厂接口提供了工厂的统一访问方式，而具体类去实现这个接口，由工厂类去实现管理</p>
+<p>状态模式适用于状态之间关系相互依赖，相对复杂，将依赖项揪出来，将依赖项的状态独立出来，依赖项影响的方法作为接口交给具体类去实现</p>
+<p>最后一个通过Predicate感觉略有鸡肋。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/13/NIO-02/" rel="next" title="NIO-Selector">
+                <i class="fa fa-chevron-left"></i> NIO-Selector
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FlyingFool</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-通过Java的枚举实现策略模式"><span class="nav-number">1.</span> <span class="nav-text">1.通过Java的枚举实现策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖使用常量特定方法实现的枚举"><span class="nav-number">1.1.</span> <span class="nav-text">依赖使用常量特定方法实现的枚举</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现命令模式"><span class="nav-number">2.</span> <span class="nav-text">2.实现命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现命令模式"><span class="nav-number">2.1.</span> <span class="nav-text">实现命令模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用Java8以及之后版本的Supplier接口"><span class="nav-number">3.</span> <span class="nav-text">3.使用Java8以及之后版本的Supplier接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-定义一个通用的函数式接口"><span class="nav-number">4.</span> <span class="nav-text">4.定义一个通用的函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-TriFunction-接口"><span class="nav-number">4.1.</span> <span class="nav-text">实现 TriFunction 接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-依赖抽象工厂"><span class="nav-number">5.</span> <span class="nav-text">5. 依赖抽象工厂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现抽象工厂模式"><span class="nav-number">6.</span> <span class="nav-text">实现抽象工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-实现状态模式"><span class="nav-number">7.</span> <span class="nav-text">6.实现状态模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现状态模式"><span class="nav-number">7.1.</span> <span class="nav-text">实现状态模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-通过Predicate来实现"><span class="nav-number">8.</span> <span class="nav-text">7. 通过Predicate来实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人总结"><span class="nav-number">10.</span> <span class="nav-text">个人总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
