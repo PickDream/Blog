@@ -1,329 +1,125 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞翔的傻瓜">
-<meta property="og:url" content="http://www.maoxin.site/page/3/index.html">
-<meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞翔的傻瓜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.maoxin.site/page/3/"/>
-
-
-
-
-
   <title>飞翔的傻瓜</title>
-  
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
-
-
-
-
-
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飞翔的傻瓜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">菜鸟的试飞之旅</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
             
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+<section class="post-list">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/08/16/struts2-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/struts2-1/" itemprop="url">struts2杂记（一）入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T18:21:20+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        <div class='post-wrapper'>
+            <article class="post revealno-title">
+                <section class="meta">
+                    <h2 class="title" style="color:#EF503A">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        还剩最后一步就成功了
+                    </h2>
+                    <p>
+                        请按照下面的指示进行操作：
+                    </p>
+                </section>
+                <iframe frameborder="no" width=100% height=600 src="https://xaoxuu.com/wiki/material-x/#/?id=主题配置"></iframe>
+            </article>
         </div>
-      </header>
-    
-
     
     
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/16/struts2-1/">
+                
+                    struts2杂记（一）入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-16
+        </time>
         
-          
-            <h2 id="Struts2-配置文件"><a href="#Struts2-配置文件" class="headerlink" title="Struts2 配置文件"></a>Struts2 配置文件</h2><h3 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h3><p>一些默认配置在导入的<code>struts2-core.jar</code>下有<code>org.apache.struts2</code>包下的default.properties文件，里面包含了一些配置，这些配置包含编码，请求扩展名，想要相应的修改就通过在struts.xml设置常量的方式</p>
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="Struts2-配置文件"><a href="#Struts2-配置文件" class="headerlink" title="Struts2 配置文件"></a>Struts2 配置文件</h2><h3 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h3><p>一些默认配置在导入的<code>struts2-core.jar</code>下有<code>org.apache.struts2</code>包下的default.properties文件，里面包含了一些配置，这些配置包含编码，请求扩展名，想要相应的修改就通过在struts.xml设置常量的方式</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.name.extension"</span> <span class="attr">value</span>=<span class="string">"action,do,html"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="result子结点"><a href="#result子结点" class="headerlink" title="result子结点"></a>result子结点</h3><p>result子节点通过name与具体的execute方法返回值比对来完成控制器的功能，其中有隐含的type属性代表响应的类型，该默认值在<code>struts-default</code>中被指明：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--struts-default.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"struts-default"</span> <span class="attr">abstract</span>=<span class="string">"true"</span> <span class="attr">strict-method-invocation</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result-types</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"chain"</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionChainResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"dispatcher"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletDispatcherResult"</span> <span class="attr">default</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"freemarker"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.freemarker.FreemarkerResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"httpheader"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.HttpHeaderResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirect"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirectAction"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletActionRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"stream"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.StreamResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"velocity"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.VelocityResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"xslt"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.xslt.XSLTResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"plainText"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PlainTextResult"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"postback"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PostbackResult"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">result-types</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--省略其他的内容--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -437,147 +233,44 @@
 <li>LocaleProvider</li>
 </ul>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/08/05/ClassLoader总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/08/05/ClassLoader总结/" itemprop="url">ClassLoader总结</a></h1>
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-05T21:06:58+08:00">
-                2018-08-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/05/ClassLoader总结/">
+                
+                    ClassLoader总结
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-05
+        </time>
         
-          
-            <p>在学习过程中，一次又一次的遇到类加载器的问题，一次又一次的重新去看，感觉有必要对ClassLoader的知识做一个详细的总结，以便于之后能熟练运用ClassLoader。</p>
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>在学习过程中，一次又一次的遇到类加载器的问题，一次又一次的重新去看，感觉有必要对ClassLoader的知识做一个详细的总结，以便于之后能熟练运用ClassLoader。</p>
 <h3 id="ClassLoader是什么"><a href="#ClassLoader是什么" class="headerlink" title="ClassLoader是什么"></a>ClassLoader是什么</h3><p>类加载器，<code>.class</code>文件描述的具体信息在加载到JVM之后才能被运行和使用，加载这些文件到虚拟机的过程就是类加载的过程。JAVA本身相较于其他语言的灵活性与Java本身可以在运行期动态加载息息相关。</p>
 <h3 id="类的生命周期"><a href="#类的生命周期" class="headerlink" title="类的生命周期"></a>类的生命周期</h3><ul>
 <li>类加载过程<ul>
@@ -704,147 +397,46 @@
 <p>《码农翻身》 刘欣  电子工业出版社 </p>
 </blockquote>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/08/01/js-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/08/01/js-1/" itemprop="url">蛋疼的JavaScript(一)：作用域与闭包</a></h1>
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/ClassLoader/"><i class="fa fa-tag fa-fw"></i>&nbsp;ClassLoader</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-01T14:55:37+08:00">
-                2018-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/01/js-1/">
+                
+                    蛋疼的JavaScript(一)：作用域与闭包
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-01
+        </time>
         
-          
-            <p>在使用JavaScript的时候各种奇葩的结果真的让人头大，于是系统的学习一下JavaScript的一些知识。深入了解下JavaScript。（注：以下均为浅尝则止）</p>
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>在使用JavaScript的时候各种奇葩的结果真的让人头大，于是系统的学习一下JavaScript的一些知识。深入了解下JavaScript。（注：以下均为浅尝则止）</p>
 <h2 id="JavaScript-的坑"><a href="#JavaScript-的坑" class="headerlink" title="JavaScript 的坑"></a>JavaScript 的坑</h2><p>创建变量的时候，我们一般用：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
 <p>JS引擎在看到上述代码的时候会做两步操作</p>
@@ -894,147 +486,44 @@
 <p>当函数可以记住并访问所在词法作用域的时，就产生了闭包，及时函数是在当前词法作用域之外进行的。–《你不知道的JavaScript上》</p>
 </blockquote>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/29/Java验证码图片创建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/29/Java验证码图片创建/" itemprop="url">Java验证码图片创建</a></h1>
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-29T16:49:02+08:00">
-                2018-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/29/Java验证码图片创建/">
+                
+                    Java验证码图片创建
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-29
+        </time>
         
-          
-            <p>最近需要实现一个验证码生成工具类，之前完全没有接触过Java图形方面的知识，临时上网查阅资料，总结下自己学到的内容，到最后学习实现一个自己可以用的上的工具类,所有参阅的资料都在文末的引用部分。</p>
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>最近需要实现一个验证码生成工具类，之前完全没有接触过Java图形方面的知识，临时上网查阅资料，总结下自己学到的内容，到最后学习实现一个自己可以用的上的工具类,所有参阅的资料都在文末的引用部分。</p>
 <h3 id="java-awt下的Image类与BufferedImage"><a href="#java-awt下的Image类与BufferedImage" class="headerlink" title="java.awt下的Image类与BufferedImage"></a>java.awt下的Image类与BufferedImage</h3><ul>
 <li>java.awt.Image ：抽象类Image是表示图形图像的所有类的超类</li>
 <li>java.awt.image.BufferedImage 是Image的子类，描述具有可访问图像数据缓冲区的Image</li>
@@ -1130,147 +619,44 @@
 <p>Java生成验证码</p>
 </blockquote>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/29/动态规划入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/29/动态规划入门/" itemprop="url">动态规划入门</a></h1>
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-29T08:40:17+08:00">
-                2018-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/29/动态规划入门/">
+                
+                    动态规划入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-29
+        </time>
         
-          
-            <h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><p><strong>参考邓俊辉老师《数据结构》的MOOC</strong></p>
+    
+    <div class='cats'>
+        <a href="/categories/算法/">算法</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><p><strong>参考邓俊辉老师《数据结构》的MOOC</strong></p>
 <p><strong>理解问题</strong></p>
 <p>两个序列的子序列指的是，由序列中的若干字符，按照原来的相对次序组成的。其中有几个注意事项</p>
 <ul>
@@ -1309,147 +695,44 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">LCS</span><span class="params">(String str1,String str2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[][] solve = <span class="keyword">new</span> <span class="keyword">int</span>[str1.length()+<span class="number">1</span>][str2.length()+<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str1.length();i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;str2.length();j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str1.charAt(i)==str2.charAt(j))</span><br><span class="line">					solve[i+<span class="number">1</span>][j+<span class="number">1</span>]=solve[i][j]+<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">int</span> a = solve[i][j+<span class="number">1</span>];</span><br><span class="line">					<span class="keyword">int</span> b = solve[i+<span class="number">1</span>][j];</span><br><span class="line">					solve[i+<span class="number">1</span>][j+<span class="number">1</span>]=a&gt;b?a:b;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> solve[str1.length()][str2.length()];</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>在牛客网中查询相应的习题，对代码在其规定的环境中略作修改即可通过。</p>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/28/Windows进程的创建过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/28/Windows进程的创建过程/" itemprop="url">Windows进程的创建过程</a></h1>
+                    <a href="/tags/算法/"><i class="fa fa-tag fa-fw"></i>&nbsp;算法</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-28T20:54:37+08:00">
-                2018-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/28/Windows进程的创建过程/">
+                
+                    Windows进程的创建过程
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-28
+        </time>
         
-          
-            <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。</p>
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。</p>
 <h3 id="Windows进程创建过程"><a href="#Windows进程创建过程" class="headerlink" title="Windows进程创建过程"></a>Windows进程创建过程</h3><p>内存中的程序是其本身文件的映射。Windows的PE文件格式和Linux的ELF文件格式都是源于COFF文件格式，该格式是分段划分的，以满足对动态链接的要求以及对每个段数据的管理与保护，在32位操作系统下，windows 的PE文件格式会映射到一个2GB（低地址，高2G是操作系统占用的）大小的虚拟地址空间，这些地址空间由PE文件映射而来，同时加载许多动态库文件。对虚拟内存地址空间大致是如下的分布：</p>
 <table>
 <thead>
@@ -1532,147 +815,46 @@
 </li>
 </ul>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/27/Linux 学习（命令）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/27/Linux 学习（命令）/" itemprop="url">Linux学习（命令）</a></h1>
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+                    <a href="/tags/Windows/"><i class="fa fa-tag fa-fw"></i>&nbsp;Windows</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T22:46:41+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux 学习（命令）/">
+                
+                    Linux学习（命令）
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
         
-          
-            <p>Linux常用命令的学习，不间断更新，逐渐让它完整</p>
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux常用命令的学习，不间断更新，逐渐让它完整</p>
 <h2 id="Shell-操作"><a href="#Shell-操作" class="headerlink" title="Shell 操作"></a>Shell 操作</h2><ul>
 <li>history<ul>
 <li>显示之前输入过的命令</li>
@@ -2103,147 +1285,44 @@
 </li>
 </ul>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/27/Linux系统函数学习（更新中）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/27/Linux系统函数学习（更新中）/" itemprop="url">Linux系统函数学习</a></h1>
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T22:45:37+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux系统函数学习（更新中）/">
+                
+                    Linux系统函数学习
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
         
-          
-            <p>Linux系统函数的学习，不间断更新，直到完整</p>
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux系统函数的学习，不间断更新，直到完整</p>
 <h3 id="从fopen看文件FILE结构体"><a href="#从fopen看文件FILE结构体" class="headerlink" title="从fopen看文件FILE结构体"></a>从fopen看文件FILE结构体</h3><p>​    在使用fopen打开文件返回的是FILE结构体，之前并不了解其内部，只是大致会用而已，在这里首先剖析FILE结构体。</p>
 <p>FILE结构体的内容很多，主要分为以下部分</p>
 <p>FILE</p>
@@ -2361,147 +1440,46 @@
 </ul>
 <h3 id="close函数"><a href="#close函数" class="headerlink" title="close函数"></a>close函数</h3><p>关闭文件描述符</p>
 <h3 id="read函数"><a href="#read函数" class="headerlink" title="read函数"></a>read函数</h3><h3 id="write函数"><a href="#write函数" class="headerlink" title="write函数"></a>write函数</h3>
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/27/Java反射基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/27/Java反射基础/" itemprop="url">Java反射基础</a></h1>
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T22:44:59+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Java反射基础/">
+                
+                    Java反射基础
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
         
-          
-            <p>Java反射机制的学习</p>
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Java反射机制的学习</p>
 <h2 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h2><blockquote>
 <p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。 –百度百科</p>
 </blockquote>
@@ -2525,147 +1503,46 @@
 <h3 id="获得方法"><a href="#获得方法" class="headerlink" title="获得方法"></a>获得方法</h3><p>对应Method对象，通过getMethods方法可以得到所有的公共的方法，包括继承的公有方法，如果想要获取私有方法，就通过getDeclaredMethods方法，但是直接执行是不行的，由于是private的限制，但是这个总是有办法去解决的，就是对Method执行setAccessible函数来设置为true（暴力执行）。方法的到之后我们需要执行，执行函数是invoke方法的作用，执行函数是依赖与具体对象的，除了传入对象当然还有具体的参数。上面都是得到方法的数组，得到具体的方法就把后面的s去掉即可。<br>下面是一个简单的Demo<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(message);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sayByebye</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"ByeBye:"</span>+message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ref</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IllegalAccessException, InstantiationException, InvocationTargetException </span>&#123;</span><br><span class="line">        Class&lt;Test&gt; test = Test.class;</span><br><span class="line">        Test obj =(Test) test.newInstance();</span><br><span class="line">        Method[] methods = test.getDeclaredMethods();</span><br><span class="line">        <span class="keyword">for</span>(Method method:methods)&#123;</span><br><span class="line">            method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            method.invoke(obj,<span class="string">"HelloWorld!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>### </p>
 
-          
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.maoxin.site/2018/07/27/Servlet执行过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FlyingFool">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞翔的傻瓜">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
+            <div class="full-width auto-padding tags">
                 
-                <a class="post-title-link" href="/2018/07/27/Servlet执行过程/" itemprop="url">Servlet 执行过程笔记</a></h1>
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/反射/"><i class="fa fa-tag fa-fw"></i>&nbsp;反射</a>
+                
+            </div>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T22:44:18+08:00">
-                2018-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+    </section>
+</article>
 
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Servlet执行过程/">
+                
+                    Servlet 执行过程笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
         
-          
-            <p>首先必须明确，Servlet是JavaEE一个规范，包括JDBC，都是提供了一个规范，而Servlet的具体实现以及运行过程是Tomcat来具体进行的。Servlet本身就是一个接口。HttpServlet只是它的一个具体的实现。</p>
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>首先必须明确，Servlet是JavaEE一个规范，包括JDBC，都是提供了一个规范，而Servlet的具体实现以及运行过程是Tomcat来具体进行的。Servlet本身就是一个接口。HttpServlet只是它的一个具体的实现。</p>
 <h2 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h2><p>Web容器说白了就是Web服务器，Tomcat在收到客户端发来的请求之后，创建HttpServletRequest，HttpServletResponse等，它得到请求信息封装起来，交给Servlet去处理。</p>
 <h2 id="Servlet容器"><a href="#Servlet容器" class="headerlink" title="Servlet容器"></a>Servlet容器</h2><p>在Tomcat启动之后也会初始化一个Servlet容器，其会检索web.xml或者是注解来生成ServletConfig对象，ServletConfig本身也是接口，其定义了获取在web.xml或者注解中指明的参数。其接口的具体方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Servlet 接口则指明了Servlet生命期的几个关键的函数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span><span class="keyword">throws</span> ServletExection</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span><span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -2686,329 +1563,82 @@
 </ul>
 <h2 id="其他注意点"><a href="#其他注意点" class="headerlink" title="其他注意点"></a>其他注意点</h2><p>loadonstartup指明是否在Servlet容器启动的时候就进行初始化，其值代表一个优先级顺序。</p>
 
-          
         
-      
-    </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java-Servlet/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java Servlet</a>
+                
+            </div>
+        
+    </section>
+</article>
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
+</section>
 
-      
 
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <br>
+    <div class="prev-next">
+        <div class="prev-next">
             
-              <p class="site-author-name" itemprop="name">FlyingFool</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
+                <a class="prev" rel="prev" href="/page/2/">
+                    <section class="post prev" >
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+                    </section>
                 </a>
-              </div>
             
-
+            <p class="current">
+                3 / 4
+            </p>
             
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">categories</span>
-                
-              </div>
+                <a class="next" rel="next" href="/page/4/">
+                    <section class="post next">
+                        &nbsp;下一页&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </section>
+                </a>
             
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
 
         </div>
-      </section>
-
-      
-
-      
-
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
+        </div>
+        <aside class='l_side'>
+            
 
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-    
 
-  </div>
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/jquery.fitvids.js"></script>
 
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
 
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <script>setLoadingBarProgress(100);</script>
 </body>
-</html>

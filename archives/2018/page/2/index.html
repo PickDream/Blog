@@ -1,906 +1,1111 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <title>Archives: 2018 | 飞翔的傻瓜</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞翔的傻瓜">
-<meta property="og:url" content="http://www.maoxin.site/archives/2018/page/2/index.html">
-<meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞翔的傻瓜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.maoxin.site/archives/2018/page/2/"/>
-
-
-
-
-
-  <title>Archive | 飞翔的傻瓜</title>
-  
-
-
-
-
-
-
-
-
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-archive">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飞翔的傻瓜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">菜鸟的试飞之旅</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 36 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/18/js-03/" itemprop="url">
-              
-                <span itemprop="name">蛋疼的JavaScript(三)数据类型&运算符</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T22:45:49+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/18/HTML5-1/" itemprop="url">
-              
-                <span itemprop="name">HTML5_1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T22:20:50+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/16/WindowsAPI_01/" itemprop="url">
-              
-                <span itemprop="name">WindowsAPI常用概念&结构体&工具函数（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-16T17:09:15+08:00"
-              content="2018-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/14/C-1/" itemprop="url">
-              
-                <span itemprop="name">C中sizeof的实现</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-14T22:46:52+08:00"
-              content="2018-09-14" >
-          09-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/12/Type类型/" itemprop="url">
-              
-                <span itemprop="name">Type类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-12T22:43:19+08:00"
-              content="2018-09-12" >
-          09-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/Git/" itemprop="url">
-              
-                <span itemprop="name">Git 学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T21:55:26+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/js2/" itemprop="url">
-              
-                <span itemprop="name">蛋疼的JavaScript(二)this</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T21:14:30+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/29/JDBC设计思想/" itemprop="url">
-              
-                <span itemprop="name">JDBC设计思想</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-29T11:29:33+08:00"
-              content="2018-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/29/从Java泛型谈起/" itemprop="url">
-              
-                <span itemprop="name">从Java泛型谈起</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-29T11:19:39+08:00"
-              content="2018-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/17/ProtectMod/" itemprop="url">
-              
-                <span itemprop="name">保护模式笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-17T10:01:16+08:00"
-              content="2018-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
-  </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FlyingFool</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">categories</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
-
-  
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
 	
+    <script>
+        window.subData= { title:'year : 2018'}
+    </script>
+
+
+<section class="post-list">
+    
+        <div class='post-wrapper'>
+            <article class="post revealno-title">
+                <section class="meta">
+                    <h2 class="title" style="color:#EF503A">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        还剩最后一步就成功了
+                    </h2>
+                    <p>
+                        请按照下面的指示进行操作：
+                    </p>
+                </section>
+                <iframe frameborder="no" width=100% height=600 src="https://xaoxuu.com/wiki/material-x/#/?id=主题配置"></iframe>
+            </article>
+        </div>
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/18/js-03/">
+                
+                    蛋疼的JavaScript(三)数据类型&amp;运算符
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
+<li>type探测的类型是基本的数据类型，对于对象，他分不清是哪种object（除了function）,也就是说它深入不到构造方法级别的类型检测，这也是与instanceof的区别</li>
+<li><img src="1.png" alt="类型检测"></li>
+<li>在控制台下有个好处可以很具体的看到返回的类型都是string的</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>从常见的几种转换入手：</p>
+<ul>
+<li>布尔类型的转换</li>
+</ul>
+<p><img src="2.png" alt="布尔类型转换"></p>
+<ul>
+<li>数字类型的强制类型转换</li>
+</ul>
+<p><img src="3.png" alt="整数类型转换"></p>
+<p>注意其可以做数值的进制转换</p>
+<ul>
+<li>转换为字符串</li>
+</ul>
+<p><img src="4.png" alt="字符串类型转换"></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="一元"><a href="#一元" class="headerlink" title="一元+"></a>一元+</h3><p>如果后面是字符串那么就变为数字</p>
+<h3 id="快捷转换为字符串"><a href="#快捷转换为字符串" class="headerlink" title="快捷转换为字符串"></a>快捷转换为字符串</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="number">1</span>+<span class="string">""</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="逻辑运算符-布尔类型的强制转换"><a href="#逻辑运算符-布尔类型的强制转换" class="headerlink" title="逻辑运算符:布尔类型的强制转换"></a>逻辑运算符:布尔类型的强制转换</h3><ul>
+<li><p>两个逻辑非可以将其他类型转换为布尔类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(!!<span class="string">""</span>)<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(!<span class="string">""</span>)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.info(![])<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(![<span class="number">1</span>])<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成代码的精，利用短路特性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="literal">true</span> &amp;&amp; (a=<span class="number">2</span>);<span class="comment">//加括号是运算符优先级的问题</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用于给一个默认值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认5分</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">score</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s || <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/18/HTML5-1/">
+                
+                    HTML5_1
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-18
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2><p><img src="1.png" alt="HTML的语义化元素"></p>
+<h2 id="HTML的最佳实践"><a href="#HTML的最佳实践" class="headerlink" title="HTML的最佳实践"></a>HTML的最佳实践</h2><ul>
+<li>选择标记元素要有代表性，不要老是<code>&lt;div&gt;&lt;/div&gt;</code></li>
+<li>不要忘记文档类型申明</li>
+<li>不要忘记字符编码申明，在<code>&lt;head&gt;</code>元素中应该有<code>&lt;meta charset=&#39;UTF=8&#39;&gt;</code></li>
+<li>不要使用HTML5不再支持的标记，如<code>&lt;center&gt;</code>,<code>&lt;font&gt;</code>,<code>&lt;basefont&gt;</code>,<code>&lt;big&gt;</code></li>
+<li>不要使用HTML5不再支持的Tag属性 如<code>table</code>、<code>img</code>等标记的<code>align</code>和<code>border</code>属性，能用CSS就用CSS</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/前端/"><i class="fa fa-tag fa-fw"></i>&nbsp;前端</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/16/WindowsAPI_01/">
+                
+                    WindowsAPI常用概念&amp;结构体&amp;工具函数（一）
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-16
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="进程与线程的关系"><a href="#进程与线程的关系" class="headerlink" title="进程与线程的关系"></a>进程与线程的关系</h3><ul>
+<li>进程更像是一个空间上的概念，而线程是真正的代码执行过程，利用进程的的资源，所以在Windows调用<code>CreateProcess</code>来创建一个进程的时候返回的<code>_PROCESS_INFOMATION</code>结构体包含了进程标识和线程标识两方面的信息</li>
+<li>进程在执行过程中可能创建多个新的进程。创建进程成为称为父进程，而新的进程称之为子进程，构成的是一个“进程树”的结构<h3 id="ID与句柄"><a href="#ID与句柄" class="headerlink" title="ID与句柄"></a>ID与句柄</h3></li>
+<li><p>在windows下内核对象的种类很多，物理是文件、进程、线程、事件、管道、互斥锁、信号量等等都是都是内核对象的，具体可以查阅MSDN文档关于<code>CloseHandle</code>函数的解释：<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">点击前往</a></p>
+</li>
+<li><p>在内核中管理这些对象是通过内核对象ID的来维护的，能够通过ID来指向内核区具体的数据结构，不会将地址直接暴露给应用层。</p>
+</li>
+<li>句柄表是进程所拥有的，每个进程都有一个句柄表来维护这个进程所创建&amp;打开的内核对象</li>
+<li>之前提到了进程树，子进程是可以共享父进程的资源（内核对象），共享的方式是继承，在创建进程的时候可以选择继承进程句柄和线程句柄</li>
+<li>内核对象在内核中的ID是一定的，但是句柄中的值是不一定的，就好比两个进程同时打开同一个对象，在进程中记录的句柄表同一个的对象对应的句柄是不一样的，但是ID是一样的。</li>
+<li>每个内核对象都有对应的表示标明是否可以被继承<h2 id="内核对象的生命周期"><a href="#内核对象的生命周期" class="headerlink" title="内核对象的生命周期"></a>内核对象的生命周期</h2>内核对象都有个计数器，计数器计数的值代表的是被引用的次数，一般的内核对象只需要</li>
+<li>内核对象计数器为0</li>
+</ul>
+<p>就可以关闭，但是对于Thread以及Process内核对象情况有些特殊它要满足：</p>
+<ul>
+<li>内核对象计数器为０</li>
+<li>执行流程结束</li>
+</ul>
+<h2 id="相关结构体"><a href="#相关结构体" class="headerlink" title="相关结构体"></a>相关结构体</h2><h3 id="STARTUPINFO"><a href="#STARTUPINFO" class="headerlink" title="STARTUPINFO"></a>STARTUPINFO</h3><p>从名字也可以看出，StartUpInfo保存着一些启动的信息</p>
+<h3 id="PROCESS-INFOMATION"><a href="#PROCESS-INFOMATION" class="headerlink" title="_PROCESS_INFOMATION"></a>_PROCESS_INFOMATION</h3><p>进程结构体类型，具体的内容如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">PROCESS_INFORMATION</span> &#123;</span></span><br><span class="line">  HANDLE hProcess;<span class="comment">//进程句柄</span></span><br><span class="line">  HANDLE hThread;<span class="comment">//线程句柄</span></span><br><span class="line">  DWORD  dwProcessId;<span class="comment">//进程ID</span></span><br><span class="line">  DWORD  dwThreadId;<span class="comment">//线程ID</span></span><br><span class="line">&#125; PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SECURITY-ATTRIBUTES"><a href="#SECURITY-ATTRIBUTES" class="headerlink" title="SECURITY_ATTRIBUTES"></a>SECURITY_ATTRIBUTES</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">SECURITY_ATTRIBUTES</span> &#123;</span></span><br><span class="line">  DWORD  nLength;<span class="comment">//结构体长度</span></span><br><span class="line">  LPVOID lpSecurityDescriptor;<span class="comment">//指向安全描述符，指明当前对象的用户权限信息等等，默认与父进程相同</span></span><br><span class="line">  BOOL   bInheritHandle;<span class="comment">//当前内核对象是否允许继承</span></span><br><span class="line">&#125; SECURITY_ATTRIBUTES, *PSECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;</span><br></pre></td></tr></table></figure>
+<p>如果在创建内核对象的时候不想继承，那么传入该项结构体的值只需要填写<code>NULL</code>即可<br><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa379560%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">文档地址</a></p>
+<h2 id="工具函数"><a href="#工具函数" class="headerlink" title="工具函数"></a>工具函数</h2><h3 id="GetStartupInfo"><a href="#GetStartupInfo" class="headerlink" title="GetStartupInfo()"></a>GetStartupInfo()</h3><p>获取当前进程的初始化信息，由父进程负责填充相关的<code>STARTUPINFO</code>结构体<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">GetStartupInfo(&amp;si)</span><br></pre></td></tr></table></figure></p>
+<p>由于我们即使填写了部分内容也不会都作用到最终的进程创建，我们常规的初始化步骤是：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">ZeroMemory(&amp;si,sizeod(si))</span><br><span class="line">si.cb = <span class="keyword">sizeof</span>(si)</span><br></pre></td></tr></table></figure></p>
+<h3 id="CloseHandle"><a href="#CloseHandle" class="headerlink" title="CloseHandle()"></a>CloseHandle()</h3><p>将内核对象计数器的值减一</p>
+<h3 id="GetStdHandle"><a href="#GetStdHandle" class="headerlink" title="GetStdHandle()"></a>GetStdHandle()</h3><p><a href="https://docs.microsoft.com/en-us/windows/console/getstdhandle" target="_blank" rel="noopener">文档地址</a></p>
+<h3 id="WaitForSingleObject"><a href="#WaitForSingleObject" class="headerlink" title="WaitForSingleObject()"></a>WaitForSingleObject()</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/14/C-1/">
+                
+                    C中sizeof的实现
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-14
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/C-C/">C/C++</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：</p>
+<ul>
+<li>sizeof不是一个函数，是一个宏</li>
+<li>对于非数组的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#defne _sizeof(T) ( (size_t)((T*)0 + 1))</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>首先将对应类型转换为指针地址，通过指针加一地址自动移动位置之后确定位置</p>
+<ul>
+<li>数组类型的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> array_sizeof(T)   ( (size_t)(&amp;T+1)  - (size_t)(&amp;T)  )</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>假设传入的是一个<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>求地址操作会返回一个类型为<code>int[10]*</code>的指针，那么它一次移动的位数就是一个<code>int[10]</code>的长度</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>其都是通过指针移位的步长来解决的</li>
+<li>对具体类型，用具体类型的指针</li>
+<li>对于数组，用指向数组的指针</li>
+</ol>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/C/"><i class="fa fa-tag fa-fw"></i>&nbsp;C</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/12/Type类型/">
+                
+                    Type类型
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-12
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="从泛型到Type类型接口"><a href="#从泛型到Type类型接口" class="headerlink" title="从泛型到Type类型接口"></a>从泛型到Type类型接口</h2><p>众所周知，Java的泛型都是通过类型擦除来完成的，也就是说当Javac编译之后，所以的泛型参数都被打回原型，而之所以使用类型擦除实现泛型的原因主要是为了向下兼容。那么这样会有如下的问题：</p>
+<ul>
+<li>Java不能描述通过参数化之后的泛型类型，里面怎么参数化的一概不知</li>
+</ul>
+<p>但是在有些场景我们需要对传入的具体的参数化类型进行检测处理，之前的类型系统都依赖与<code>Class</code>本身描述信息，现在Java需要能够描述泛型的参数化过程，通过参数化泛型产生的新类型无非不过是基本的<code>Class</code>类型的组合,Java最后引入了Type接口以及一些子类来统一引入泛型之后的类型系统。</p>
+<h2 id="Type是怎样统一Java的类型系统的"><a href="#Type是怎样统一Java的类型系统的" class="headerlink" title="Type是怎样统一Java的类型系统的"></a>Type是怎样统一Java的类型系统的</h2><p><strong>以下为个人的理解</strong></p>
+<p>在泛型之前，Java类型除了原生类型都可以使用Class来描述，在泛型之后，新增了许多“新”的类型：</p>
+<ol>
+<li>参数化泛型类的类型，如<code>Collection&lt;T&gt;</code></li>
+<li>参数化泛型类型构成的数组类型，如<code>Animal&lt;T&gt;[]</code></li>
+<li>泛型参数构成的类型（泛型方法），如<code>&lt;E&gt;void method(E e){}</code>中的<code>E e</code>又或者是<code>ArrayList&lt;E&gt;</code>中的<code>E</code></li>
+<li>通配符表达的类型，如<code>void printColl(ArrayList&lt;? extends Number&gt;al)</code>中的<code>? extends Number</code><br>上面四种类型和Class为了统一都实现了<code>Type</code>接口<h2 id="Type类型的关系"><a href="#Type类型的关系" class="headerlink" title="Type类型的关系"></a>Type类型的关系</h2><h3 id="Parameterizedtype"><a href="#Parameterizedtype" class="headerlink" title="Parameterizedtype"></a>Parameterizedtype</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang.reflect;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.MalformedParameterizedTypeException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ParameterizedType</span> <span class="keyword">extends</span> <span class="title">Type</span> </span>&#123;</span><br><span class="line">   Type[] getActualTypeArguments();</span><br><span class="line">   <span class="function">Type <span class="title">getRawType</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function">Type <span class="title">getOwnerType</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>由于对于参数化泛型类对象中的泛型是可以嵌套的，所以需要注意返回的是除去一个嵌套之后的Type子类型。</p>
+<ol>
+<li>对于ArrayList&lt;ArrayList<integer>&gt; al,执行该方法去掉&lt;&gt;返回的是ArrayList<integer>所以还是参数化类型。如果再执行一次返回的就是Class类型</integer></integer></li>
+<li>对于传入的不是具体如ArrayList<e>返回的就是TypeVariable</e></li>
+<li>对于<code>ArrayList&lt;? extends Number&gt;</code>返回的是<code>? extends Number</code> 是WildcardType</li>
+<li>对于<code>ArrayList&lt;E[]&gt;</code>返回<code>E[]</code>是GenericArrayType</li>
+</ol>
+<ul>
+<li>getRawType()<br>简单的说就是得到&lt;&gt;前的原始类型</li>
+<li>getOwnerType();得到类型的所有者类型，例如Map.Entry就是Map的所有者类型</li>
+<li>getActualTypeArguments()<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来自https://segmentfault.com/q/1010000000655631</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Method method = <span class="keyword">new</span> GenericDemo().getClass().getMethod(<span class="string">"applyMethod"</span>,Map.Entry.class);</span><br><span class="line">    Type[] types = method.getGenericParameterTypes();</span><br><span class="line">    ParameterizedType pType = (ParameterizedType)types[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回所有者类型，打印结果是interface java.util.Map</span></span><br><span class="line">    System.out.println(pType.getOwnerType());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,U&gt; <span class="function"><span class="keyword">void</span> <span class="title">applyMethod</span><span class="params">(Map.Entry&lt;T,U&gt; mapEntry)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="认识具体的Type类型以及相关方法"><a href="#认识具体的Type类型以及相关方法" class="headerlink" title="认识具体的Type类型以及相关方法"></a>认识具体的Type类型以及相关方法</h2><p>### </p>
+<h2 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p> <a href="https://blog.csdn.net/gdutxiaoxu/article/details/68926515" target="_blank" rel="noopener">java Type详解</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.csdn.net/z69183787/article/details/54314169" target="_blank" rel="noopener">Java类型中ParameterizedType，GenericArrayType，TypeVariabl，WildcardType详解</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/10/Git/">
+                
+                    Git 学习
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-10
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Tools/">Tools</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="GIT精简教程"><a href="#GIT精简教程" class="headerlink" title="GIT精简教程"></a>GIT精简教程</h2><h3 id="集中式和分布式"><a href="#集中式和分布式" class="headerlink" title="集中式和分布式"></a>集中式和分布式</h3><p>集中式类似CVS必须联网工作，这样对带宽有要求，在网络环境下缺陷显著。而分布式管理系统没有“中央服务器”之称，每个人的电脑是一个完整的版本库。“单点失败”的问题可以被解决，每个人在自己的电脑上修改了文件，相互之间将各自的修改推送给对方即可<br>其他要点：</p>
+<ul>
+<li><p>CVS是最早开源的集中式版本控制系统，本身有缺陷，同样是开源且免费的SVN修正CVS稳定性问题，是目前使用最多的集中式版本控制系统</p>
+<h3 id="安装之后的配置"><a href="#安装之后的配置" class="headerlink" title="安装之后的配置"></a>安装之后的配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"maoxin"</span></span><br><span class="line">git config --global user.email <span class="string">"lumaoxin@aliyun.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中–global 表示所以的git仓库都使用该配置</p>
+</li>
+</ul>
+<h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><p>在文件夹内部使用<code>git init</code>命令将当前文件夹变为git仓库，这时会创建隐藏目录<code>.git</code></p>
+<h3 id="添加文件到仓库"><a href="#添加文件到仓库" class="headerlink" title="添加文件到仓库"></a>添加文件到仓库</h3><p>首先需要明确，所有的版本控制系统，只能跟踪文本文件的改动，而二进制文件的改动不能被跟踪<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add readme.txt</span><br></pre></td></tr></table></figure></p>
+<p>没有消息就是最好的消息，</p>
+<h3 id="提交文件到仓库"><a href="#提交文件到仓库" class="headerlink" title="提交文件到仓库"></a>提交文件到仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"wrote a readme file"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用commit来提交 -m之后是本次提交的说明</li>
+<li>可以add多个文件之后一次性commit<h3 id="管理版本"><a href="#管理版本" class="headerlink" title="管理版本"></a>管理版本</h3>使用git log来查看版本的变更，提交的信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样会输入大量多行信息，如果想要精简信息，就需要：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=online</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>在信息会看到commitid是一串16进制值，这主要是git生成的Hash码，这样可以有效防止冲突</li>
+<li>在git中HEAD表示当前版本，上一个是HEAD^,再上一个是HEAD^^,上100个版本是HEAD~100<h3 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h3>使用git reset来完成回退<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这个时候再去看log已经找不到来自属于“未来”的信息了，要想回到未来，就需要使用commitid去寻找，没有必要写全<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 1094a</span><br></pre></td></tr></table></figure></p>
+<p>而如何找到版本号，可以使用git reflog来查看每一次记录的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure></p>
+<h3 id="工作区和暂存区的概念"><a href="#工作区和暂存区的概念" class="headerlink" title="工作区和暂存区的概念"></a>工作区和暂存区的概念</h3><p>由于对于git这样的分布式版本管理工具，在本机有Master库，我们做的每一次修改如果都作为Master库的修改的话是不应该的，应该是我们先做一定的修改，确定后提交给Master库。那么在commit之前保存修改信息就是非常需要的，在git中使用stage，暂存区的概念。而我们再未add到暂存区之前对文件所做的所有操作，都是到“工作区”<br>我们通过以下命令来查看暂存区的状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3><p>git管理的是修改而不是文件，修改之后首先得add进storge中才会被之后的commit提交。</p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><p>当修改的文件已经被add进缓存区中，可以使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- readme.txt</span><br></pre></td></tr></table></figure></p>
+<p>这个时候是从撤销了该文件在暂存区的记录，同时注意它还会将在暂存取的记录还原到工作区</p>
+<p><strong>总之以上命令相当于将文件恢复到add或者commit之前</strong><br>但是如果已经提交到暂存区，上面得到修改方式就不灵了，只能回到add之后的状态<br>我们可以使用一下命令将暂存区的修改撤销掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD readme.txt</span><br></pre></td></tr></table></figure></p>
+<p>之后再丢弃工作区的修改即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- readme.txt</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>文件的删除本身也是修改，我们再add到git之后在工作区删除文件之后，用<code>git status</code>命令也可以找到本次的修改,使用如下的<code>git rm</code>来从版本库中删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm test.txt</span><br></pre></td></tr></table></figure></p>
+<p>之后再去commit<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure></p>
+<p>如果删除错了，可以时候check来回到commit之前的状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- test.txt</span><br></pre></td></tr></table></figure></p>
+<h3 id="SSH加密认证原理"><a href="#SSH加密认证原理" class="headerlink" title="SSH加密认证原理"></a>SSH加密认证原理</h3><p><strong>对称加密</strong>：加密解密用同一个密钥，使用同一套加密算法，只是密钥不同（只要在网上传输这个密钥就是不安全的）</p>
+<p><strong>RSA 非对称加密</strong>：这里不探讨非对称加密的原理，但是非对称加密有如下有意思的特点：</p>
+<ul>
+<li>用私钥加密的数据，只有对应的公钥才能够解密</li>
+<li>用公钥加密的数据，只有对应的私钥才能解密</li>
+<li>只要互相公布自己的公钥，即可完成双方信息的加密传输</li>
+</ul>
+<p>例如：B向A发送数据，A公布自己的公钥，B拿着公钥加密数据，传输到A之后A拿自己的私钥去解密。反之亦然，</p>
+<p>稍微详细的过程如下：</p>
+<ol>
+<li>首先A、B双方，在通信前构建专属于自己的密钥对，假设分别是公钥A，私钥A，公钥B，私钥B； </li>
+<li>A将自己的公钥A暴露给B，B通过私钥B和公钥A经过一定的运算产生出本地的密钥B； </li>
+<li>同样，B将自己的公钥B暴露给A，A通过私钥A和公钥B经过一定的运算产生出本地的密钥A； </li>
+<li>最后，这个算法有意思的一点就是，密钥A和密钥B是一致的，这样A、B双方就拥有了一个属于双方的“秘密”口令</li>
+</ol>
+<p><strong>非对称加密+对称加密</strong></p>
+<p>RSA非对称加密速度很慢，每次都要采用非对称加密的方式传输太浪费资源，而对称加密速度比RSA快上数百倍，不如将对称加密密钥通过RSA传输之后通过对称加密方式。</p>
+<p><strong>中间人劫持问题</strong></p>
+<p>对于非对称加密，B要向A发送加密之后的信息首先要获取A的公钥，A在发送的时候被截取之后被中间人替换为中间人的公钥，这时，B就会拿着中间人的公钥去加密数据，再返回中间人，中间人用自己的私钥去解密，之后再用A的公钥加密。这种方式叫做中间人劫持</p>
+<p><strong>问题的解决策略</strong>：CA 数字签名与证书（略）</p>
+<p><strong>SSH简介</strong></p>
+<p>简单说，SSH（Secure Shell）是一种<strong>非对称加密与对称加密算法相结合的安全网络协议</strong>，用于计算机通信加密。一个SSH会话的建立过程分为两个阶段：第一阶段，双方沟通并同意建立一个加密连接通道以供后续信息传输用；第二阶段，对请求接入的用户进行身份验证以确定服务器端是否要给该用户开放访问权限。</p>
+<p><strong>SSH步骤</strong></p>
+<ul>
+<li><p>首先通过非对称加密来建立一条加密通道，通过得知双方的公钥和私钥可以获得这一特殊的密钥来加密数据</p>
+</li>
+<li><p>SSH密钥对的验证过程起始于上一部分加密通道建立之后，其具体执行步骤如下：客户端发送自己的密钥ID给服务器端，服务器在自己的authorized_keys文件中检查是否有此ID的公钥。如果有，则服务器生成一个随机数，用该公钥加密之后，服务器将加密后的随机数发给客户端。客户端用私钥解密该随机数，然后在本地为随机数做MD5哈希，客户端将该MD5哈希发给服务器端，服务器端为一开始自己生成的随机数也做一个MD5哈希，然后用通讯通道“公共的密钥”将该哈希加密，再跟客户端发来的内容进行对比。如果双方内容一致，则通过验证，开放访问权限给客户端</p>
+<p>简单来说，服务器端用公钥加密信息，客户端用私钥解密信息以证明自己持有私钥。</p>
+</li>
+</ul>
+<blockquote>
+<p>参考：</p>
+<p>CSDN博客  <a href="https://blog.csdn.net/u014206910/article/details/54691886" target="_blank" rel="noopener">啊塔-SSH加密认证原理</a></p>
+<p>刘欣 《码农翻身》-机械工业出版社</p>
+</blockquote>
+<h3 id="使用远程仓库"><a href="#使用远程仓库" class="headerlink" title="使用远程仓库"></a>使用远程仓库</h3><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br></pre></td></tr></table></figure>
+<p>为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。</p>
+<h3 id="添加到远程库"><a href="#添加到远程库" class="headerlink" title="添加到远程库"></a>添加到远程库</h3><ol>
+<li>首先在github中创建远程库</li>
+<li>在本地仓库中链接</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add orgin git@github.com:XXXX/XXXX.git</span><br></pre></td></tr></table></figure>
+<p>这样设置远程库的名字就是origin</p>
+<ol start="3">
+<li>推送到远程库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>由于远程库是空的，我们第一次推送<code>master</code>分支时，加上了<code>-u</code>参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<h3 id="从远程库拉取"><a href="#从远程库拉取" class="headerlink" title="从远程库拉取"></a>从远程库拉取</h3><p>使用<code>git clone</code>克隆本地库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:xxx/xxx.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考廖雪峰老师的GIT教程  <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374027586935cf69c53637d8458c9aec27dd546a6cd6000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374027586935cf69c53637d8458c9aec27dd546a6cd6000</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Git/"><i class="fa fa-tag fa-fw"></i>&nbsp;Git</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/10/js2/">
+                
+                    蛋疼的JavaScript(二)this
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-10
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="烦人的this"><a href="#烦人的this" class="headerlink" title="烦人的this"></a>烦人的this</h3><p>JavaScript的表现与之前学的任何传统的语言都不一样，这个就很烦人，这几天把这个坑扫除了</p>
+<h3 id="this到底指向什么"><a href="#this到底指向什么" class="headerlink" title="this到底指向什么"></a>this到底指向什么</h3><p>总的来说，总结下，this其实取决于调用者的上下文环境，好比直接调用函数，是在全局作用域下的，就是直接this就是Window<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">fn()<span class="comment">//Window</span></span><br></pre></td></tr></table></figure></p>
+<p>而如果将作为对象中的属性，objA.objB.fun（）这个时候this就是objB<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">objA=&#123;</span><br><span class="line">    a:<span class="number">123</span>,</span><br><span class="line">    myfun:fun</span><br><span class="line">&#125;</span><br><span class="line">objA.fun()<span class="comment">//objA</span></span><br></pre></td></tr></table></figure></p>
+<p>同样的道理可以延伸到对象的事件，注册事件其实就是将对应对象的上下文环境中的某个属性例如click绑定一个函数，这样的话，函数内部的this就是调用者本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#btn"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;<span class="comment">//&lt;input type="button"/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，理解什么是上下文环境，千万不要把上下文环境错认为就是所谓的作用域<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnChain_1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    fnChain_2()</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnChain_2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    fnChain_3()</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnChain_3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">fnChain_1()</span><br><span class="line"><span class="comment">//三个都是Window</span></span><br></pre></td></tr></table></figure></p>
+<p>上面实例代码是错误理解上下问环境的典范</p>
+<h3 id="new-操作符创建时的this"><a href="#new-操作符创建时的this" class="headerlink" title="new 操作符创建时的this"></a>new 操作符创建时的this</h3><p>首先看一个简单的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">foo()<span class="comment">//Window</span></span><br><span class="line"><span class="keyword">new</span> foo()<span class="comment">//foo</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里需要校正的观念是这里不存在类似其他语言的new调用构造函数，而是使用了“构造调用”，使用构造调用的方式来创建一个新的对象<br><code>new</code>操作符执行的步骤如下：</p>
+<ol>
+<li>首先创建一个新的对象</li>
+<li>这个新对象执行[[原型]]链接</li>
+<li>新对象会被绑定到执行函数调用的this<br>简而言之，new操作的this有点类似其他语言的this<br>下面是实例代码：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> foo(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> foo(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(a)<span class="comment">//foo&#123;a:2&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(b)<span class="comment">//foo&#123;a:1&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="ES6的this"><a href="#ES6的this" class="headerlink" title="ES6的this"></a>ES6的this</h3><p>ES6引入了箭头函数，这时this的表现与我们之前接触的又不一样了，具体不同点如下:</p>
+<ul>
+<li>普通的函数的this取决于调用上下文</li>
+<li>而ES6里面的this是继承父执行上下文的this<br>实例代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来自于https://blog.csdn.net/qq_38563845/article/details/78145814</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'obj'</span>,</span><br><span class="line">    <span class="comment">//普通函数</span></span><br><span class="line">    one: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//箭头函数</span></span><br><span class="line">    two: <span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">	    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//普通函数中的箭头函数</span></span><br><span class="line">    three: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    	(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">   		&#125;)()</span><br><span class="line">    &#125;, </span><br><span class="line">    <span class="comment">//多层箭头函数</span></span><br><span class="line">    four: <span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">    	(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">   		&#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.one();    <span class="comment">//obj  </span></span><br><span class="line">obj.two();	  <span class="comment">//window </span></span><br><span class="line">obj.three();  <span class="comment">//obj</span></span><br><span class="line">obj.four()    <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下面分析我们的想法来个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">         &#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">   &#125;;</span><br><span class="line">&#125;</span><br><span class="line">foo()()()()<span class="comment">//Window</span></span><br></pre></td></tr></table></figure></p>
+<p>如果将上面的代码改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo().call(&#123;<span class="attr">a</span>:<span class="string">"HelloWorld"</span>&#125;)()()()</span><br><span class="line"><span class="comment">//&#123;a:"HelloWorld"&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>至于call是干什么的，接下来来解释</p>
+<h3 id="主动修改this？call-amp-apply-amp-bind"><a href="#主动修改this？call-amp-apply-amp-bind" class="headerlink" title="主动修改this？call&amp;apply&amp;bind"></a>主动修改this？call&amp;apply&amp;bind</h3><p>call 和 apply 的效果都是一样的，只是参数不同，他们显式的修改要执行函数的this指向，如果将这种指向被一个函数包起来，那么这个绑定就被不会被解绑了，例如这个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">retValue</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a</span><br><span class="line">    &#125;.call(obj)<span class="comment">//2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而apply就是有了参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单bind函数的实现，argument是参数列表</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bind</span>(<span class="params">fn, obj</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fn.apply( obj, <span class="built_in">arguments</span> );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在 ES5 中提供了内置的方法 Function.prototype.bind，它的用法如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">something</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.a, something );</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a + something;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = foo.bind( obj );</span><br><span class="line"><span class="keyword">var</span> b = bar( <span class="number">3</span> ); <span class="comment">// 2 3</span></span><br><span class="line"><span class="built_in">console</span>.log( b ); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure></p>
+<p><code>bind(..)</code> 会返回一个硬编码的新函数，它会把参数设置为 this 的上下文并调用原始</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/29/JDBC设计思想/">
+                
+                    JDBC设计思想
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>从《码农翻身》，作者：刘欣   一书中了解JDBC的设计思想：</p>
+<ul>
+<li>首先，为了统一各大数据库不同数据库的具体实现，应该加一个抽象层，统一出一个一致的访问方式，利用接口规范方法，各大数据库厂商实现接口，这个问题可以解决。但是也引入了一个新的问题，这个问题就是在代码中要使用接口首先得声明具体实现，这就出现了违背了面向接口编程，是面向实现编程。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = <span class="keyword">new</span> MySqlConnectionImpl(info)；</span><br><span class="line"><span class="comment">//如果数据库厂商除了一个新的版本并且修改了名字是，MySqlConnectionJDBC4Impl,以上代码就无法编译通过</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决上面的问题就是再增加一个抽象层，类比我们计算机的外界设备的接口都是相同的，例如USB，但对不同的实现例如U盘，键盘只需安装不同的驱动即可，这样抽象出了一个驱动层，而JDBC吸收了这样的思想，抽象出一个Driver层。这个Driver层是一个简单工厂，其具体实现可以类比如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">(String dbType,Properties info)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"mysql"</span>.equals(dbType))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySqlConnectionImpl(info);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"oracle"</span>.equals(dbType))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> OracleConnectionImpl(info);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"unsupported db type:"</span>+dbType);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样其实是将原来的问题提升了个层次，在原来的代码中是不需要修改了，但是需要着重修改工厂方法中的具体实现，是相当于将问题转移。到目前为止我们是可以通过一下的方式来获取驱动：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = Driver.getConnection(<span class="string">"mysql"</span>,info);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正如上面所说，问题转移到了Driver这个静态工厂中，如果这个Driver是JDK提供的，那么就无法修改，除了修改又增加了一个问题。最后的解决方法是使用配置文件的方式，用配置文件这样“数据驱动”方式可以有效解决这样一个问题。但是这样的方式为用户暴露了太多东西，本身也是比较Low的，下面引入一种“工厂方法”的设计模式。</li>
+<li>工厂方法与简单工厂最大的区别就是，工厂本身也变成了接口，将简单工厂中创建具体对象的责任通过厂商实现Driver接口来分配到各大厂商的JDBC实现类中去了，连创建都交给了数据库厂商的驱动中实现，这样对于我们自己写的程序就很少了，只需要使用类加载器加载驱动之后创建实例强转成Driver了类似与以下代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(Properties info)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySqlDriver</span> <span class="keyword">implements</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(Properties info)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MySqlConnection(info);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>创建过程：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt;clz = Class.forName(<span class="string">"com.coderising.mysql.MySqlDriver"</span>);</span><br><span class="line">Driver driver = (Driver)clz.newInstace();</span><br><span class="line">Connection conn = driver.getConnection(info);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面的代码已经相当于把职责分清楚了，数据库厂商负责Driver的具体实现，已经可以做到不用修改源代码了。这个时候唯一的问题就是将反射创建以及强转的过程暴露给开发者了，想办法再将反射隐藏操作隐藏起来，将Driver隐藏起来。这个时候就需要一个类来完成，通过这个类能够得到具体的Connection，而些Connection能来自不同的数据库厂商，因此它能够管理众多的数据库驱动。而数据库驱动本身也应该到这样一个类中注册。实现代码如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> DriverManager&#123;</span><br><span class="line">    List&lt;Driver&gt; lists = <span class="keyword">new</span> ArrayList&lt;Driver&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">(Driver driver)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!registeredDrivers.contains(driver))&#123;</span><br><span class="line">            registeredDrivers.add(driver);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">(String url,String user,String password)</span></span>&#123;</span><br><span class="line">        Properties info = <span class="keyword">new</span> Properties();</span><br><span class="line">        info.put(<span class="string">"user"</span>,user);</span><br><span class="line">        info.put(<span class="string">"password"</span>,password);</span><br><span class="line">        <span class="keyword">for</span>(Driver driver:registeredDrivers)&#123;</span><br><span class="line">            Connection conn = driver.getConnection(url,info);</span><br><span class="line">            <span class="keyword">if</span>(conn!=<span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">return</span> conn;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"can't create a connection"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="过程回顾"><a href="#过程回顾" class="headerlink" title="过程回顾"></a>过程回顾</h3><p>JDBC如何从面向实现编程到完全的面向接口编程的。</p>
+<ol>
+<li>在出现面向实现编程的问题时，首先使用简单工厂这样一个抽象层使得通具体实现的解耦</li>
+<li>在简单工厂需要频繁在代码中修改的时候使用数据驱动的方式使得修改的内容与类解耦</li>
+<li>这样各大厂商的<code>Connection</code>的创建是由第三方来维护的，没有体现职责分明，就需要使用工厂方法，由<code>JDBC</code>定义接口<code>Driver</code>，将创建<code>Connection</code>的方法交给具体厂商实现。</li>
+<li>上面已经可以解耦了，但是为了屏蔽反射细节，就使用<code>DriverManager</code>来统一管理驱动</li>
+</ol>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/jdbc/"><i class="fa fa-tag fa-fw"></i>&nbsp;jdbc</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/29/从Java泛型谈起/">
+                
+                    从Java泛型谈起
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="泛型的好处"><a href="#泛型的好处" class="headerlink" title="泛型的好处"></a>泛型的好处</h2><p>在泛型出现之前，要想实现一个类型通用的实现必须要使用Object，而Object本身就是所有对象的父类，这就难免会由于类型检查的缺乏而影响程序本身。这些规范完全依赖于程序员的自律。这个时候如果既能保留C++泛型能创建通用代码的特性，又能对类型做到一定的检查就好了，而Java泛型应运而生，需要注意的是，Java语言是本身能够实现通用代码的编写的，而现在只需要对类型做一些限制，这和C++的泛型的思想有很大的不同，这就导致了Java的泛型采用了类型擦除的思路。</p>
+<h2 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h2><p>与C++语言每次根据传入类型生成代码的“膨胀”法不同，Java使用了类型擦除机制来实现泛型，本质上还是Object，只不过就是增加了编译器检查，正因为如此，可以总结如下两个特性：</p>
+<ul>
+<li>所写的泛型代码在最后都被擦除成Object</li>
+<li>泛型可以不写强制转换的原因是编译的时候编译器加了自动的转型</li>
+</ul>
+<h2 id="精确的泛型"><a href="#精确的泛型" class="headerlink" title="精确的泛型"></a>精确的泛型</h2><h3 id="泛型类与泛型方法"><a href="#泛型类与泛型方法" class="headerlink" title="泛型类与泛型方法"></a>泛型类与泛型方法</h3><p>总之就是一个<code>&lt;T&gt;</code>里面填写具体的泛型参数的表示,在类上申明就是泛型类，在方法上申明就是泛型方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛型类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDao</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//泛型方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tools</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">copyOf</span><span class="params">(T ori)</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当一个类被实例化参数话之后，T全部变成了具体的类型</p>
+<h3 id="再加点限制-super-amp-extends"><a href="#再加点限制-super-amp-extends" class="headerlink" title="再加点限制: super &amp; extends"></a>再加点限制: super &amp; extends</h3><p>泛型类或者泛型方法中的泛型逻辑需要利用一些特殊的类，例如需要某接口实现的方法等等，这个时候需要对这样一个具体的类进行限制，这种限制分为两种，上界和下界</p>
+<ul>
+<li><p>extends</p>
+<ul>
+<li><p>例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Comparable&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(T[] array)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extends指定了上界，传入的元素会检查是否是Comparable的子类</p>
+</li>
+</ul>
+</li>
+<li><p>super</p>
+<ul>
+<li>super指定上界。</li>
+</ul>
+</li>
+</ul>
+<h2 id="精确泛型满足不了的场景"><a href="#精确泛型满足不了的场景" class="headerlink" title="精确泛型满足不了的场景"></a>精确泛型满足不了的场景</h2><p>这写情况发生再泛型参数赋值的情景。</p>
+<p>我们上面讨论的都是精确的泛型，“精确的泛型”是我根据自己理解来描述的，它满足不了不需要精确泛型的应用场景：下面用码农翻身公众号的例子来说明：</p>
+<h3 id="当泛型遇到了继承的场景"><a href="#当泛型遇到了继承的场景" class="headerlink" title="当泛型遇到了继承的场景"></a>当泛型遇到了继承的场景</h3><p><img src="从Java泛型谈起/1.png" alt="类图"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(ArrayList&lt;Fruit&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(Fruit e:list)&#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ArrayList&lt;Apple&gt; list = <span class="keyword">new</span> ArrayList&lt;Apple&gt;();</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line"></span><br><span class="line">print(list)<span class="comment">//编译错误</span></span><br></pre></td></tr></table></figure>
+<p>为什么会出现这个问题，说到底就是传入的参数类型不符，我们想要去做到一个不精确的匹配，为了达到这个目的，Java引入了通配符<code>?</code> </p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>Java引入的通配符来满足不精确匹配的场景，刚才由于<code>List&lt;Fruit&gt;</code>和<code>List&lt;Apple&gt;</code>是两个完全不同的类型，因此编译失败，两个不同的类型是不能直接赋值的，虽然<strong>里面的成分</strong>有继承关系。为了解决这个问题，引入了通配符，通配符就表示这个泛型实例的类型是未知的，那么，完成下面的赋值操作就是再正常不过的了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Double&gt;();</span><br></pre></td></tr></table></figure>
+<h3 id="的使用"><a href="#的使用" class="headerlink" title="? 的使用"></a>? 的使用</h3><p>简单的说，？的使用场景</p>
+<h3 id="extends-amp-super"><a href="#extends-amp-super" class="headerlink" title="extends &amp; super"></a>extends &amp; super</h3><blockquote>
+<p><a href="https://segmentfault.com/a/1190000008423240#articleHeader0" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008423240#articleHeader0</a></p>
+</blockquote>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><blockquote>
+<p><a href="https://www.cnblogs.com/shadowdoor/p/6817346.html" target="_blank" rel="noopener">https://www.cnblogs.com/shadowdoor/p/6817346.html</a></p>
+<p><a href="http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html</a></p>
+<p><a href="https://blog.csdn.net/u010884123/article/details/78189395" target="_blank" rel="noopener">https://blog.csdn.net/u010884123/article/details/78189395</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/17/ProtectMod/">
+                
+                    保护模式笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-17
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
+<p>ds就是段寄存器，真正读写的地址是：ds.base + 0x123456</p>
+<p>其中段寄存器有8个</p>
+<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（Task Register）</p>
+<h3 id="段寄存器的结构"><a href="#段寄存器的结构" class="headerlink" title="段寄存器的结构"></a>段寄存器的结构</h3><p>32位的段寄存器一共96位，16位可见，80位不可见（12个字节）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SegMent</span>&#123;</span></span><br><span class="line">    WORD Selector;<span class="comment">//16位的Selector（2字节）[可见部分]</span></span><br><span class="line">    WORD Attribute;<span class="comment">//16位Attribute 属性，标识可读可写可执行（2字节）</span></span><br><span class="line">    DWORD Base;<span class="comment">//32位Base 偏移地址（4字节）</span></span><br><span class="line">    DWORD Limit;<span class="comment">//32位Limit 段允许的地址偏移（4字节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面是用结构体来描述段寄存器的内容。</p>
+<h3 id="段寄存器的读写"><a href="#段寄存器的读写" class="headerlink" title="段寄存器的读写"></a>段寄存器的读写</h3><p><strong>READ</strong></p>
+<p>段寄存器读取的时候只能读可见部分，16位，因此读的时候只能读16位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,ES</span><br></pre></td></tr></table></figure>
+<p><strong>WRITE</strong></p>
+<p>段寄存器写入的时候是要写96位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV DS,AX</span><br></pre></td></tr></table></figure>
+<p>那么一个问题浮出水面，段寄存器赋值的时候可以写入96位，但是传递给的是一个16位的寄存器，那么另外的80位从哪里得到呢？</p>
+<h3 id="GDT-表和-LDT表"><a href="#GDT-表和-LDT表" class="headerlink" title="GDT 表和 LDT表"></a>GDT 表和 LDT表</h3><p>GDT是全局描述符表，LDT是局部描述符表，要想填写完整段寄存器，需要拿着一个索引到GDT表或者LDT表去查找、这个索引就在传递的16位寄存器的数据当中。而这16位的数据对应到段寄存器的部分是段选择子。</p>
+<p><strong>段选择子</strong></p>
+<p><img src="ProtectMod/Selecter.png" alt="段选择子结构"></p>
+<p>段选择子分为三部分，一个是Index，一个是Table Indicator 还有一个是请求特权级别RPL</p>
+<ul>
+<li>Index <ul>
+<li>13位，起到索引的作用，从GDT表或者LDT表中查找数据</li>
+<li>索引查找的规则是将索引值乘以8再加上GDT或者LDT表的基地址，就是要加载的段描述符位置，也相当于2进制左移三位再加上基地址。</li>
+</ul>
+</li>
+<li>Table Indicator 表指示器<ul>
+<li>用来选择是从哪张表去选取</li>
+</ul>
+</li>
+<li>RPL 请求特权级别<ul>
+<li>其有两位，表示了0,1,2,3四种CPU特权访问级别</li>
+<li>其代表这</li>
+</ul>
+</li>
+</ul>
+<p><code>001B= 0000-0000-0001-1011</code></p>
+<h3 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h3><p>段描述符是64位的数据，占据了8个字节，下面是其结构：</p>
+<p><img src="ProtectMod/02.png" alt="段描述符"></p>
+<p>首先有个大致的印象，首先发现其Base属性和Limit被割裂到不同的部分，这主要是CPU寄存器升级为了向下兼容才形成的这样的情况。回顾段寄存器结构，</p>
+<ul>
+<li>Base一共32位，在段描述符描述完整</li>
+<li>Limit一共32位，而在段描述符中只描述16+4=20位</li>
+<li>其他部分充当段属性，应当是16位，在段描述符中描述完整，8位到第23位，23+1-8=16</li>
+</ul>
+<p>以上并不能构成整个80位的除去段选择子的剩下部分，这是我们的问题，留在下面解决。</p>
+<h3 id="P位和G位"><a href="#P位和G位" class="headerlink" title="P位和G位"></a>P位和G位</h3><p>P（Segment present） 位是表示段是否有效的位，当其=1代表有效，加载段描述首先要判断的就是P位是否标识该段描述符有效</p>
+<p>G （Granularity） n. 间隔 ，它代表的是Limit描述数值的单位，如果G=0，那么单位就是字节，Limit在段描述符保存的值一共12位，因此Limit此时的最大范围是：</p>
+<p><code>(0000 0000-000F FFFF)</code>如果G位位1，那么其是4KB，2^12，那么此时的范围是</p>
+<p><code>(0000 0FFF-FFFF FFF)</code></p>
+<h3 id="S位和Type域"><a href="#S位和Type域" class="headerlink" title="S位和Type域"></a>S位和Type域</h3><p>S (Descriptor type)位是一个描述段类型的位，当其=0的时候代表的是系统段描述符，当其=1的时候是代码段或者数据段的描述符，具体的信息由type域给出。</p>
+<p>当S=1，代指的是代码段或者数据段，其Type域的值为：</p>
+<p><img src="ProtectMod/03.png" alt="代码段或数据段的段描述符"></p>
+<p>简要描述下，第11位决定到底是代码段还是数据段，当位数据段的时候，第11位是0，此时</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>表示是否访问(Access)过 为1代表访问过</td>
+</tr>
+<tr>
+<td>W</td>
+<td>表示是否可写是，为1代表可写</td>
+</tr>
+<tr>
+<td>E</td>
+<td>为0向上拓展，为1向下拓展</td>
+</tr>
+</tbody>
+</table>
+<p>所谓向上扩展还是向下扩展针对的是Limit限制的是向下一定范围能访问还是除了向下一部分范围不能访问。</p>
+<p><img src="ProtectMod/04.png" alt="向上扩展和向下扩展"></p>
+<p>如何快速判断一个段描述符描述的是代码段和数据段？就要熟悉其二进制表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DPL 不是全0就是全1</span></span><br><span class="line"><span class="comment">/32----24/23------20/19-----16/15---12/11-8/7--0/</span></span><br><span class="line"><span class="comment">/--BASE--/G|DB|0|AVL/--Limit--/P|DPL|S/TYPE/BASE/</span></span><br><span class="line"><span class="comment">-------------------------------1 00  1----------/</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">只需要看倒数第三第四位就可以迅速判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>如果是代码段的话，要明确其含义是不同的：</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>是否访问过</td>
+</tr>
+<tr>
+<td>R</td>
+<td>是否可读</td>
+</tr>
+<tr>
+<td>C</td>
+<td>一致代码段还是非一致代码段=1表示一致，=0表示非一致</td>
+</tr>
+</tbody>
+</table>
+<p>至于一致和非一致代码段代表的是是否可以越权访问，具体的区别在下面学习。</p>
+<p>至于系统段描述符，先将其表格列举如下：</p>
+<p><img src="ProtectMod/05.png" alt="系统段描述符的type域"></p>
+<h3 id="D-B位"><a href="#D-B位" class="headerlink" title="D/B位"></a>D/B位</h3><p>D/B位代表的是(Default operation size)决定CPU的寻址方式,0代表的是16位寻址，该段也是16位段，1代表的是32位寻址，该段也是32位段，其寻址方式要对应。</p>
+<h3 id="段权限检查"><a href="#段权限检查" class="headerlink" title="段权限检查"></a>段权限检查</h3><p>段权限检查是相对比较难理解的一部分，段权限的检查发生在段寄存器的变化，确定段寄存器是否能加载一个段描述符。</p>
+<p>首先要知道的是CPU的保护模式之所以称之为保护是其有分级的制度，CPU一共4个不同的级别</p>
+<p><img src="ProtectMod/06.png" alt="CPU特权级别"></p>
+<p>CPU的特权级有四个，分别为0,1,2,3 windows 和 Linux操作系统都只使用了两个环，就是3环和0环，3环是应用程序的权限级别，而0环是系统内核的级别</p>
+<p>那么如何查看当前程序跑在哪一环呢？这就需要查看CPL（Current Privilege Level）当前特权级别。</p>
+<p><strong>CS和SS段的段选择子中的RPL就是CPL（CPU不同的特权级都有其特定的栈）</strong></p>
+<p><strong>DPL在段描述符中，描述的是访问该段需要的最低权限</strong></p>
+<p><strong>RPL描述的是我在能访问到DPL的前提下，我需要用怎样的权限去访问段</strong></p>
+<h3 id="数据段的段权限检查"><a href="#数据段的段权限检查" class="headerlink" title="数据段的段权限检查"></a>数据段的段权限检查</h3><p>CPL&lt;=DPL并且RPL&lt;=DPL</p>
+<p>需要注意的是,段描述符分为三大类，代码段和系统段的权限检查和数据段的方式</p>
+<h3 id="代码的跨段执行"><a href="#代码的跨段执行" class="headerlink" title="代码的跨段执行"></a>代码的跨段执行</h3><p>首先代码的跳转，本身就依赖于段内跳转<code>JMP</code>，段间跳转<code>JMP FAR</code>，段内调用<code>CALL</code>，段间调用<code>CALL FAR</code>，段内返回<code>RET</code>，段间返回<code>RETF</code>，中断<code>INT</code>,中断返回<code>IRETED</code>；</p>
+<p>代码的跨段执行，必然伴随着同时修改段寄存器以及EIP的值，同时修改CS和EIP的指令是：</p>
+<p><code>JMP FAR</code>,<code>CALL FAR</code>,<code>RETF</code>,<code>INT</code>,<code>IRETED</code>则是同时修改寄存器和EIP的值</p>
+<p><strong>代码的段间跳转</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMP 0x20:0x004183D7;操作数一共6个字节，前面两个段选择子，后面是偏移</span><br></pre></td></tr></table></figure>
+<p>执行步骤：</p>
+<ul>
+<li>段选择子的拆分<ul>
+<li><code>0x20</code>对应<code>0000 0000 0010 0000</code></li>
+<li>由于TI=0 所以查找GDT表</li>
+<li>Index=4 找到对应的段描述符需要将Index*8+GDT表的基地址</li>
+<li>判断段描述符的类型，四种情况是可以跳转的：<ul>
+<li>代码段</li>
+<li>调用门</li>
+<li>TSS任务段</li>
+<li>任务门</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权限检查，判断代码段的Type域内标明的是一致性代码段还是非一致性代码段<ul>
+<li>如果是非一致代码段，要求CPL==DPL,RPL&lt;=DPL</li>
+<li>如果是一致性质代码段,要求CPL&gt;=DPL,当前特权级级别可以比一致代码段要求的要低的，专门给低权限来用的，完成所谓的共享的功能。</li>
+</ul>
+</li>
+<li>加载段描述符<ul>
+<li>通过上面权限检查之后，CPU会讲段描述符加载到CS段寄存器</li>
+</ul>
+</li>
+<li>代码执行<ul>
+<li>CPU将<code>CS.BASE+OFFSET</code>的值写入到EIP然后执行对应的代码段，段间跳转执行完毕</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致代码段和非一致代码段"><a href="#一致代码段和非一致代码段" class="headerlink" title="一致代码段和非一致代码段"></a>一致代码段和非一致代码段</h3><ul>
+<li>对于一致代码段：也就是共享的段<ul>
+<li><strong>特权级高的程序不允许访问特权级低的数据，核心态不允许访问用户态的数据</strong></li>
+<li><strong>特权级低的程序可以访问到特权级高的数据，但是特权级不会改变：用户态还是用户态</strong></li>
+<li>C=0表示一致，C=1表示非一致</li>
+</ul>
+</li>
+<li>对于普通代码段：也就是非一致代码段<ul>
+<li>只允许同级访问</li>
+<li>绝对禁止不同级别的访问：核心态不是用户态</li>
+</ul>
+</li>
+<li>直接对代码段进行JMP或者CALL的操作，无论目标是一致代码段还是非一致代码段，CPL都不会发生改变，如果想要提升CPL的权限，只能通过调用门</li>
+</ul>
+<p><strong>简而言之，一致代码段高权限访问不了低权限的数据，低权限可以访问高权限的数据，但是RPL不会发生变化，非一致代码段很严格的1对1，只允许同级访问</strong></p>
+<h3 id="长调用"><a href="#长调用" class="headerlink" title="长调用"></a>长调用</h3><p>CALL FAR要比JMP FAR 复杂，因为JMP不影响堆栈，但是CALL会同时影响堆栈和EIP</p>
+<p><strong>情况一：跨段不提权</strong></p>
+<p>跨段不提权表示的是段要切换，而访问的代码段对应的段描述符所对应的DPL和当前的CPL是一样的，那么这个时候相比不同的，在段内的CALL指令不同的是其还需要在栈中保存一个原来代码段的段描述符CS</p>
+<p><img src="ProtectMod/07.png" alt="长调用跨段不提权"></p>
+<p>堆栈段先压入调用者CS，再压入返回地址。返回的时候注意使用RETF</p>
+<p><strong>情况二：跨段并提权</strong></p>
+<p>长调用跨段并提权，关键的变化在于提权，在切换CPU特权级别的时候注意，堆栈段也要发生变化，也就是说，要用新的堆栈（每一个特权级对应一个堆栈），现在总结一下，在</p>
+<p><code>CALL CS:EIP</code>这样的指令中，要在新的特权级的堆栈中保存以下内容：返回地址，原来的堆栈段描述符，原来的代码段描述符，调用者的ESP，这样就表现的原来的ESP毫无影响。</p>
+<p><img src="ProtectMod/08.png" alt="跨段并提权"></p>
+<p><strong>为什么说EIP是废弃的？</strong></p>
+<p>对于跨权限调用的时候是要提权的，而提权的时候需要通过一个门，门内信息有一个段选择子，指向真正要跳转的段，门内信息还有真正的偏移，因此，对于<code>CALL CS:EIP</code>来说，其CS有用，EIP没有用，是废弃的，大致过程如下：</p>
+<p>CALL CS:EIP  -&gt; 门描述符（偏移信息+段选择子）-&gt;高权限代码段描述符-&gt;段信息</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>跨段调用的时候，一旦有权限切换，就会切换堆栈</li>
+<li>CS的权限一旦改变，SS的权限也要随着改变，CS和SS的等级必须一样</li>
+<li><strong>JMP FAR只能跳转到同级非一致代码段，但是CALL FAR可以通过调用门提权，提升CPL的权限</strong></li>
+<li><strong>SS与ESP从哪儿来，参见TSS段</strong></li>
+</ul>
+<h3 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h3><p><strong>调用门执行流程</strong></p>
+<p>指令格式 <code>CALL CS:EIP(EIP是废弃的)</code></p>
+<p><strong>执行步骤</strong></p>
+<ol>
+<li>根据CS的值，查GDT表，找到对应的段描述符，这个描述符是调用门</li>
+<li>在调用门描述符中存储另一个代码段的段选择子</li>
+<li>选择子指向的段的BASE+选择子内部包含的偏移地址=真正要执行的地址</li>
+</ol>
+<p><img src="ProtectMod/09.png" alt="门描述符"></p>
+<p>首先调用门P=1，要想“敲门”DPL=11，第12位S=0，暂时不讨论门描述符的参数问题，Param Count = 0，而除了选择子，其也包含了32位的偏移。</p>
+<p><code>0000EC00-00080000</code> 8:1000</p>
+<p><strong>带有参数的调用门</strong></p>
+<p>注意，首先要使用有参数的调用门的时候参数必须要自己先压栈的（压入三环的堆栈）</p>
+<p>先来观察下老师给的实例代码观察下：</p>
+<p><img src="ProtectMod/10.png" alt="示例代码片段1"></p>
+<p><img src="ProtectMod/11.png" alt="示例代码片段1"></p>
+<p>可以看出在通过调用门提权之前，首先PUSH进三环堆栈3个参数，之后进行调用，在执行到裸函数的函数体内已经得到了提权，之后进行了两个相对陌生的指令：</p>
+<p><code>pushad</code>,<code>pushfd</code> 查询相关资料:</p>
+<blockquote>
+<p>pushad: 将所有的32位通用寄存器压入堆栈  pusha:将所有的16位通用寄存器压入堆栈 pushfd:然后将32位标志寄存器EFLAGS压入堆栈  pushf::将的16位标志寄存器EFLAGS压入堆栈 popad:将所有的32位通用寄存器取出堆栈  popa:将所有的16位通用寄存器取出堆栈 popfd:将32位标志寄存器EFLAGS取出堆栈  popf:将16位标志寄存器EFLAGS取出堆栈</p>
+</blockquote>
+<p><code>pushad</code> push进去的寄存器按照顺序为EDI,ESI,EBP,ESP,EBX,EDX,ECX,EAX</p>
+<p><code>pushfd</code> push进去的寄存器是32位标志寄存器</p>
+<p>执行玩<code>pushad</code>和<code>pushfd</code>之后的esp下降了4*9=36 -&gt;0x24 </p>
+<p><strong>调用门总结</strong></p>
+<ol>
+<li>当通过门，权限不变的时候，只会push两个值。CS，返回地址新的CS的值由调用门觉得</li>
+<li>当通过门，权限改变的时候，会PUSH四个值。SS，ESP.CS返回地址 新的CS的值由调用门决定。<strong>新的SS和ESP由TSS提供</strong></li>
+<li>通过门调用的时候，要执行哪行代码由调用门决定，但使用RETF返回的时候，由堆栈中压入的值决定，这就是说，进门的时候只能按照指定路线走，出门的时候可以翻墙（可以想去哪就去哪）</li>
+</ol>
+<h3 id="中断门与陷阱门"><a href="#中断门与陷阱门" class="headerlink" title="中断门与陷阱门"></a>中断门与陷阱门</h3><p>Windows没有使用调用门，但是使用了中断门，在windowsAPI当中使用中断门进入0环（现在新的CPU使用快速调用），中断的时候其实相当于在对于汇编就是0xCC(<code>int 3</code>)int 3就是用来执行中断门。中断门查询的表不是GDT表而是IDT表，是中断描述符，与GDT不同的是，IDT都是系统段描述符，并且第一个描述符不是都是0。</p>
+<p>同样，LDT的地址可以通过以下的windbg命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; r ldtr</span><br><span class="line">kd&gt; r ldtl</span><br></pre></td></tr></table></figure>
+<p>IDT表有三种描述符：</p>
+<ul>
+<li>中断门描述符</li>
+<li>任务门描述符</li>
+<li>陷阱门描述符</li>
+</ul>
+<p>其中中断门的结构如下：</p>
+<p><img src="ProtectMod/12.png" alt="中断门结构"></p>
+<p><strong>陷阱门</strong></p>
+<p>陷阱门基本上和中断门差不多，关键就在中断门通过修改标志寄存器的IF位来屏蔽中断，而陷阱门不屏蔽</p>
+<h3 id="任务段"><a href="#任务段" class="headerlink" title="任务段"></a>任务段</h3><p>在调用门，中断门与陷阱门中，一旦出现权限的切换，那么就会有堆栈的切换。而且，由于CS的CPL发生改变，也导致了SS也必须切换。切换的时候，会有新的ESP和SS(CS是由中断门或者调用门)这两个值从哪里来呢？这些都保存到TSS(Task Stage Segment)任务状态段中，<strong>TSS是在内存当中的。</strong></p>
+<p><img src="ProtectMod/13.bmp" alt="任务状态段TSS结构"></p>
+<p>里面保存了所有的通用寄存器以及标志寄存器ELF，以及CR3寄存器（在后面会接触到）以及不同的CPU权限等级对应的SS段选择子的值以及对应的ESP的值。</p>
+<p><strong>TSS注意事项</strong></p>
+<ul>
+<li>不要把TSS与“任务切换”联系在一起</li>
+<li>TSS的意义就在于可以同时换掉“一堆”寄存器</li>
+<li>TSS一共有104字节</li>
+</ul>
+<p><strong>CPU如何找到TSS</strong></p>
+<p><img src="ProtectMod/14.png" alt="Task Register"></p>
+<p><strong>TSS段描述符</strong></p>
+<p>当type的二进制是1001 = 9 的时候，是段描述符，没有加载到段寄存器当中</p>
+<p>当type的二进制是1011 = B 的时候，也是段描述符，表示加载到了段寄存器当中</p>
+<p><strong>TR寄存器的读写</strong></p>
+<ul>
+<li>当TSS段描述符加载到TR寄存器<ul>
+<li>指令：LTR</li>
+<li>说明：<ul>
+<li>用LTR指令去装载的话，仅仅是改变TR寄存器的值（96位），并不会改变TSS</li>
+<li>LTR指令只能在系统层调用（是特权指令）</li>
+<li>加载后TSS 段描述符的状态位会发生变化（Type从9变为b）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读TR寄存器<ul>
+<li>指令 STR</li>
+<li>说明：如果用STR去读的话，只读了TR的16位 也就是其选择子</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/保护模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;保护模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+    <br>
+    <div class="prev-next">
+        <div class="prev-next">
+            
+                <a class="prev" rel="prev" href="/archives/2018/">
+                    <section class="post prev" >
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+                    </section>
+                </a>
+            
+            <p class="current">
+                2 / 4
+            </p>
+            
+                <a class="next" rel="next" href="/archives/2018/page/3/">
+                    <section class="post next">
+                        &nbsp;下一页&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </section>
+                </a>
+            
+
+        </div>
+    </div>
 
 
 
 
 
-  
+        </div>
+        <aside class='l_side'>
+            
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <script>setLoadingBarProgress(100);</script>
 </body>
-</html>

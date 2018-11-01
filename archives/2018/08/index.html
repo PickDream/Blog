@@ -1,754 +1,992 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <title>Archives: 2018/8 | 飞翔的傻瓜</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞翔的傻瓜">
-<meta property="og:url" content="http://www.maoxin.site/archives/2018/08/index.html">
-<meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞翔的傻瓜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.maoxin.site/archives/2018/08/"/>
-
-
-
-
-
-  <title>Archive | 飞翔的傻瓜</title>
-  
-
-
-
-
-
-
-
-
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-archive">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飞翔的傻瓜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">菜鸟的试飞之旅</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 36 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/29/JDBC设计思想/" itemprop="url">
-              
-                <span itemprop="name">JDBC设计思想</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-29T11:29:33+08:00"
-              content="2018-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/29/从Java泛型谈起/" itemprop="url">
-              
-                <span itemprop="name">从Java泛型谈起</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-29T11:19:39+08:00"
-              content="2018-08-29" >
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/17/ProtectMod/" itemprop="url">
-              
-                <span itemprop="name">保护模式笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-17T10:01:16+08:00"
-              content="2018-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/16/struts2-1/" itemprop="url">
-              
-                <span itemprop="name">struts2杂记（一）入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-16T18:21:20+08:00"
-              content="2018-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/05/ClassLoader总结/" itemprop="url">
-              
-                <span itemprop="name">ClassLoader总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-05T21:06:58+08:00"
-              content="2018-08-05" >
-          08-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/01/js-1/" itemprop="url">
-              
-                <span itemprop="name">蛋疼的JavaScript(一)：作用域与闭包</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-01T14:55:37+08:00"
-              content="2018-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
-  </div>
-  
-  
-  
-
-  
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FlyingFool</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">categories</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
-
-  
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
 	
+    <script>
+        window.subData= { title:'year : 2018.8'}
+    </script>
+
+
+<section class="post-list">
+    
+        <div class='post-wrapper'>
+            <article class="post revealno-title">
+                <section class="meta">
+                    <h2 class="title" style="color:#EF503A">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        还剩最后一步就成功了
+                    </h2>
+                    <p>
+                        请按照下面的指示进行操作：
+                    </p>
+                </section>
+                <iframe frameborder="no" width=100% height=600 src="https://xaoxuu.com/wiki/material-x/#/?id=主题配置"></iframe>
+            </article>
+        </div>
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/29/JDBC设计思想/">
+                
+                    JDBC设计思想
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>从《码农翻身》，作者：刘欣   一书中了解JDBC的设计思想：</p>
+<ul>
+<li>首先，为了统一各大数据库不同数据库的具体实现，应该加一个抽象层，统一出一个一致的访问方式，利用接口规范方法，各大数据库厂商实现接口，这个问题可以解决。但是也引入了一个新的问题，这个问题就是在代码中要使用接口首先得声明具体实现，这就出现了违背了面向接口编程，是面向实现编程。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = <span class="keyword">new</span> MySqlConnectionImpl(info)；</span><br><span class="line"><span class="comment">//如果数据库厂商除了一个新的版本并且修改了名字是，MySqlConnectionJDBC4Impl,以上代码就无法编译通过</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决上面的问题就是再增加一个抽象层，类比我们计算机的外界设备的接口都是相同的，例如USB，但对不同的实现例如U盘，键盘只需安装不同的驱动即可，这样抽象出了一个驱动层，而JDBC吸收了这样的思想，抽象出一个Driver层。这个Driver层是一个简单工厂，其具体实现可以类比如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">(String dbType,Properties info)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"mysql"</span>.equals(dbType))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MySqlConnectionImpl(info);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"oracle"</span>.equals(dbType))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> OracleConnectionImpl(info);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"unsupported db type:"</span>+dbType);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样其实是将原来的问题提升了个层次，在原来的代码中是不需要修改了，但是需要着重修改工厂方法中的具体实现，是相当于将问题转移。到目前为止我们是可以通过一下的方式来获取驱动：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = Driver.getConnection(<span class="string">"mysql"</span>,info);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正如上面所说，问题转移到了Driver这个静态工厂中，如果这个Driver是JDK提供的，那么就无法修改，除了修改又增加了一个问题。最后的解决方法是使用配置文件的方式，用配置文件这样“数据驱动”方式可以有效解决这样一个问题。但是这样的方式为用户暴露了太多东西，本身也是比较Low的，下面引入一种“工厂方法”的设计模式。</li>
+<li>工厂方法与简单工厂最大的区别就是，工厂本身也变成了接口，将简单工厂中创建具体对象的责任通过厂商实现Driver接口来分配到各大厂商的JDBC实现类中去了，连创建都交给了数据库厂商的驱动中实现，这样对于我们自己写的程序就很少了，只需要使用类加载器加载驱动之后创建实例强转成Driver了类似与以下代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(Properties info)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySqlDriver</span> <span class="keyword">implements</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">(Properties info)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MySqlConnection(info);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>创建过程：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt;clz = Class.forName(<span class="string">"com.coderising.mysql.MySqlDriver"</span>);</span><br><span class="line">Driver driver = (Driver)clz.newInstace();</span><br><span class="line">Connection conn = driver.getConnection(info);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面的代码已经相当于把职责分清楚了，数据库厂商负责Driver的具体实现，已经可以做到不用修改源代码了。这个时候唯一的问题就是将反射创建以及强转的过程暴露给开发者了，想办法再将反射隐藏操作隐藏起来，将Driver隐藏起来。这个时候就需要一个类来完成，通过这个类能够得到具体的Connection，而些Connection能来自不同的数据库厂商，因此它能够管理众多的数据库驱动。而数据库驱动本身也应该到这样一个类中注册。实现代码如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> DriverManager&#123;</span><br><span class="line">    List&lt;Driver&gt; lists = <span class="keyword">new</span> ArrayList&lt;Driver&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">(Driver driver)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!registeredDrivers.contains(driver))&#123;</span><br><span class="line">            registeredDrivers.add(driver);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">(String url,String user,String password)</span></span>&#123;</span><br><span class="line">        Properties info = <span class="keyword">new</span> Properties();</span><br><span class="line">        info.put(<span class="string">"user"</span>,user);</span><br><span class="line">        info.put(<span class="string">"password"</span>,password);</span><br><span class="line">        <span class="keyword">for</span>(Driver driver:registeredDrivers)&#123;</span><br><span class="line">            Connection conn = driver.getConnection(url,info);</span><br><span class="line">            <span class="keyword">if</span>(conn!=<span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">return</span> conn;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"can't create a connection"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="过程回顾"><a href="#过程回顾" class="headerlink" title="过程回顾"></a>过程回顾</h3><p>JDBC如何从面向实现编程到完全的面向接口编程的。</p>
+<ol>
+<li>在出现面向实现编程的问题时，首先使用简单工厂这样一个抽象层使得通具体实现的解耦</li>
+<li>在简单工厂需要频繁在代码中修改的时候使用数据驱动的方式使得修改的内容与类解耦</li>
+<li>这样各大厂商的<code>Connection</code>的创建是由第三方来维护的，没有体现职责分明，就需要使用工厂方法，由<code>JDBC</code>定义接口<code>Driver</code>，将创建<code>Connection</code>的方法交给具体厂商实现。</li>
+<li>上面已经可以解耦了，但是为了屏蔽反射细节，就使用<code>DriverManager</code>来统一管理驱动</li>
+</ol>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/jdbc/"><i class="fa fa-tag fa-fw"></i>&nbsp;jdbc</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/29/从Java泛型谈起/">
+                
+                    从Java泛型谈起
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="泛型的好处"><a href="#泛型的好处" class="headerlink" title="泛型的好处"></a>泛型的好处</h2><p>在泛型出现之前，要想实现一个类型通用的实现必须要使用Object，而Object本身就是所有对象的父类，这就难免会由于类型检查的缺乏而影响程序本身。这些规范完全依赖于程序员的自律。这个时候如果既能保留C++泛型能创建通用代码的特性，又能对类型做到一定的检查就好了，而Java泛型应运而生，需要注意的是，Java语言是本身能够实现通用代码的编写的，而现在只需要对类型做一些限制，这和C++的泛型的思想有很大的不同，这就导致了Java的泛型采用了类型擦除的思路。</p>
+<h2 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h2><p>与C++语言每次根据传入类型生成代码的“膨胀”法不同，Java使用了类型擦除机制来实现泛型，本质上还是Object，只不过就是增加了编译器检查，正因为如此，可以总结如下两个特性：</p>
+<ul>
+<li>所写的泛型代码在最后都被擦除成Object</li>
+<li>泛型可以不写强制转换的原因是编译的时候编译器加了自动的转型</li>
+</ul>
+<h2 id="精确的泛型"><a href="#精确的泛型" class="headerlink" title="精确的泛型"></a>精确的泛型</h2><h3 id="泛型类与泛型方法"><a href="#泛型类与泛型方法" class="headerlink" title="泛型类与泛型方法"></a>泛型类与泛型方法</h3><p>总之就是一个<code>&lt;T&gt;</code>里面填写具体的泛型参数的表示,在类上申明就是泛型类，在方法上申明就是泛型方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛型类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDao</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//泛型方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tools</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">copyOf</span><span class="params">(T ori)</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当一个类被实例化参数话之后，T全部变成了具体的类型</p>
+<h3 id="再加点限制-super-amp-extends"><a href="#再加点限制-super-amp-extends" class="headerlink" title="再加点限制: super &amp; extends"></a>再加点限制: super &amp; extends</h3><p>泛型类或者泛型方法中的泛型逻辑需要利用一些特殊的类，例如需要某接口实现的方法等等，这个时候需要对这样一个具体的类进行限制，这种限制分为两种，上界和下界</p>
+<ul>
+<li><p>extends</p>
+<ul>
+<li><p>例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Comparable&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(T[] array)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extends指定了上界，传入的元素会检查是否是Comparable的子类</p>
+</li>
+</ul>
+</li>
+<li><p>super</p>
+<ul>
+<li>super指定上界。</li>
+</ul>
+</li>
+</ul>
+<h2 id="精确泛型满足不了的场景"><a href="#精确泛型满足不了的场景" class="headerlink" title="精确泛型满足不了的场景"></a>精确泛型满足不了的场景</h2><p>这写情况发生再泛型参数赋值的情景。</p>
+<p>我们上面讨论的都是精确的泛型，“精确的泛型”是我根据自己理解来描述的，它满足不了不需要精确泛型的应用场景：下面用码农翻身公众号的例子来说明：</p>
+<h3 id="当泛型遇到了继承的场景"><a href="#当泛型遇到了继承的场景" class="headerlink" title="当泛型遇到了继承的场景"></a>当泛型遇到了继承的场景</h3><p><img src="从Java泛型谈起/1.png" alt="类图"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(ArrayList&lt;Fruit&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(Fruit e:list)&#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ArrayList&lt;Apple&gt; list = <span class="keyword">new</span> ArrayList&lt;Apple&gt;();</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line"></span><br><span class="line">print(list)<span class="comment">//编译错误</span></span><br></pre></td></tr></table></figure>
+<p>为什么会出现这个问题，说到底就是传入的参数类型不符，我们想要去做到一个不精确的匹配，为了达到这个目的，Java引入了通配符<code>?</code> </p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>Java引入的通配符来满足不精确匹配的场景，刚才由于<code>List&lt;Fruit&gt;</code>和<code>List&lt;Apple&gt;</code>是两个完全不同的类型，因此编译失败，两个不同的类型是不能直接赋值的，虽然<strong>里面的成分</strong>有继承关系。为了解决这个问题，引入了通配符，通配符就表示这个泛型实例的类型是未知的，那么，完成下面的赋值操作就是再正常不过的了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Double&gt;();</span><br></pre></td></tr></table></figure>
+<h3 id="的使用"><a href="#的使用" class="headerlink" title="? 的使用"></a>? 的使用</h3><p>简单的说，？的使用场景</p>
+<h3 id="extends-amp-super"><a href="#extends-amp-super" class="headerlink" title="extends &amp; super"></a>extends &amp; super</h3><blockquote>
+<p><a href="https://segmentfault.com/a/1190000008423240#articleHeader0" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008423240#articleHeader0</a></p>
+</blockquote>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><blockquote>
+<p><a href="https://www.cnblogs.com/shadowdoor/p/6817346.html" target="_blank" rel="noopener">https://www.cnblogs.com/shadowdoor/p/6817346.html</a></p>
+<p><a href="http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html</a></p>
+<p><a href="https://blog.csdn.net/u010884123/article/details/78189395" target="_blank" rel="noopener">https://blog.csdn.net/u010884123/article/details/78189395</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/17/ProtectMod/">
+                
+                    保护模式笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-17
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
+<p>ds就是段寄存器，真正读写的地址是：ds.base + 0x123456</p>
+<p>其中段寄存器有8个</p>
+<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（Task Register）</p>
+<h3 id="段寄存器的结构"><a href="#段寄存器的结构" class="headerlink" title="段寄存器的结构"></a>段寄存器的结构</h3><p>32位的段寄存器一共96位，16位可见，80位不可见（12个字节）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SegMent</span>&#123;</span></span><br><span class="line">    WORD Selector;<span class="comment">//16位的Selector（2字节）[可见部分]</span></span><br><span class="line">    WORD Attribute;<span class="comment">//16位Attribute 属性，标识可读可写可执行（2字节）</span></span><br><span class="line">    DWORD Base;<span class="comment">//32位Base 偏移地址（4字节）</span></span><br><span class="line">    DWORD Limit;<span class="comment">//32位Limit 段允许的地址偏移（4字节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面是用结构体来描述段寄存器的内容。</p>
+<h3 id="段寄存器的读写"><a href="#段寄存器的读写" class="headerlink" title="段寄存器的读写"></a>段寄存器的读写</h3><p><strong>READ</strong></p>
+<p>段寄存器读取的时候只能读可见部分，16位，因此读的时候只能读16位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,ES</span><br></pre></td></tr></table></figure>
+<p><strong>WRITE</strong></p>
+<p>段寄存器写入的时候是要写96位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV DS,AX</span><br></pre></td></tr></table></figure>
+<p>那么一个问题浮出水面，段寄存器赋值的时候可以写入96位，但是传递给的是一个16位的寄存器，那么另外的80位从哪里得到呢？</p>
+<h3 id="GDT-表和-LDT表"><a href="#GDT-表和-LDT表" class="headerlink" title="GDT 表和 LDT表"></a>GDT 表和 LDT表</h3><p>GDT是全局描述符表，LDT是局部描述符表，要想填写完整段寄存器，需要拿着一个索引到GDT表或者LDT表去查找、这个索引就在传递的16位寄存器的数据当中。而这16位的数据对应到段寄存器的部分是段选择子。</p>
+<p><strong>段选择子</strong></p>
+<p><img src="ProtectMod/Selecter.png" alt="段选择子结构"></p>
+<p>段选择子分为三部分，一个是Index，一个是Table Indicator 还有一个是请求特权级别RPL</p>
+<ul>
+<li>Index <ul>
+<li>13位，起到索引的作用，从GDT表或者LDT表中查找数据</li>
+<li>索引查找的规则是将索引值乘以8再加上GDT或者LDT表的基地址，就是要加载的段描述符位置，也相当于2进制左移三位再加上基地址。</li>
+</ul>
+</li>
+<li>Table Indicator 表指示器<ul>
+<li>用来选择是从哪张表去选取</li>
+</ul>
+</li>
+<li>RPL 请求特权级别<ul>
+<li>其有两位，表示了0,1,2,3四种CPU特权访问级别</li>
+<li>其代表这</li>
+</ul>
+</li>
+</ul>
+<p><code>001B= 0000-0000-0001-1011</code></p>
+<h3 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h3><p>段描述符是64位的数据，占据了8个字节，下面是其结构：</p>
+<p><img src="ProtectMod/02.png" alt="段描述符"></p>
+<p>首先有个大致的印象，首先发现其Base属性和Limit被割裂到不同的部分，这主要是CPU寄存器升级为了向下兼容才形成的这样的情况。回顾段寄存器结构，</p>
+<ul>
+<li>Base一共32位，在段描述符描述完整</li>
+<li>Limit一共32位，而在段描述符中只描述16+4=20位</li>
+<li>其他部分充当段属性，应当是16位，在段描述符中描述完整，8位到第23位，23+1-8=16</li>
+</ul>
+<p>以上并不能构成整个80位的除去段选择子的剩下部分，这是我们的问题，留在下面解决。</p>
+<h3 id="P位和G位"><a href="#P位和G位" class="headerlink" title="P位和G位"></a>P位和G位</h3><p>P（Segment present） 位是表示段是否有效的位，当其=1代表有效，加载段描述首先要判断的就是P位是否标识该段描述符有效</p>
+<p>G （Granularity） n. 间隔 ，它代表的是Limit描述数值的单位，如果G=0，那么单位就是字节，Limit在段描述符保存的值一共12位，因此Limit此时的最大范围是：</p>
+<p><code>(0000 0000-000F FFFF)</code>如果G位位1，那么其是4KB，2^12，那么此时的范围是</p>
+<p><code>(0000 0FFF-FFFF FFF)</code></p>
+<h3 id="S位和Type域"><a href="#S位和Type域" class="headerlink" title="S位和Type域"></a>S位和Type域</h3><p>S (Descriptor type)位是一个描述段类型的位，当其=0的时候代表的是系统段描述符，当其=1的时候是代码段或者数据段的描述符，具体的信息由type域给出。</p>
+<p>当S=1，代指的是代码段或者数据段，其Type域的值为：</p>
+<p><img src="ProtectMod/03.png" alt="代码段或数据段的段描述符"></p>
+<p>简要描述下，第11位决定到底是代码段还是数据段，当位数据段的时候，第11位是0，此时</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>表示是否访问(Access)过 为1代表访问过</td>
+</tr>
+<tr>
+<td>W</td>
+<td>表示是否可写是，为1代表可写</td>
+</tr>
+<tr>
+<td>E</td>
+<td>为0向上拓展，为1向下拓展</td>
+</tr>
+</tbody>
+</table>
+<p>所谓向上扩展还是向下扩展针对的是Limit限制的是向下一定范围能访问还是除了向下一部分范围不能访问。</p>
+<p><img src="ProtectMod/04.png" alt="向上扩展和向下扩展"></p>
+<p>如何快速判断一个段描述符描述的是代码段和数据段？就要熟悉其二进制表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DPL 不是全0就是全1</span></span><br><span class="line"><span class="comment">/32----24/23------20/19-----16/15---12/11-8/7--0/</span></span><br><span class="line"><span class="comment">/--BASE--/G|DB|0|AVL/--Limit--/P|DPL|S/TYPE/BASE/</span></span><br><span class="line"><span class="comment">-------------------------------1 00  1----------/</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">只需要看倒数第三第四位就可以迅速判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>如果是代码段的话，要明确其含义是不同的：</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>是否访问过</td>
+</tr>
+<tr>
+<td>R</td>
+<td>是否可读</td>
+</tr>
+<tr>
+<td>C</td>
+<td>一致代码段还是非一致代码段=1表示一致，=0表示非一致</td>
+</tr>
+</tbody>
+</table>
+<p>至于一致和非一致代码段代表的是是否可以越权访问，具体的区别在下面学习。</p>
+<p>至于系统段描述符，先将其表格列举如下：</p>
+<p><img src="ProtectMod/05.png" alt="系统段描述符的type域"></p>
+<h3 id="D-B位"><a href="#D-B位" class="headerlink" title="D/B位"></a>D/B位</h3><p>D/B位代表的是(Default operation size)决定CPU的寻址方式,0代表的是16位寻址，该段也是16位段，1代表的是32位寻址，该段也是32位段，其寻址方式要对应。</p>
+<h3 id="段权限检查"><a href="#段权限检查" class="headerlink" title="段权限检查"></a>段权限检查</h3><p>段权限检查是相对比较难理解的一部分，段权限的检查发生在段寄存器的变化，确定段寄存器是否能加载一个段描述符。</p>
+<p>首先要知道的是CPU的保护模式之所以称之为保护是其有分级的制度，CPU一共4个不同的级别</p>
+<p><img src="ProtectMod/06.png" alt="CPU特权级别"></p>
+<p>CPU的特权级有四个，分别为0,1,2,3 windows 和 Linux操作系统都只使用了两个环，就是3环和0环，3环是应用程序的权限级别，而0环是系统内核的级别</p>
+<p>那么如何查看当前程序跑在哪一环呢？这就需要查看CPL（Current Privilege Level）当前特权级别。</p>
+<p><strong>CS和SS段的段选择子中的RPL就是CPL（CPU不同的特权级都有其特定的栈）</strong></p>
+<p><strong>DPL在段描述符中，描述的是访问该段需要的最低权限</strong></p>
+<p><strong>RPL描述的是我在能访问到DPL的前提下，我需要用怎样的权限去访问段</strong></p>
+<h3 id="数据段的段权限检查"><a href="#数据段的段权限检查" class="headerlink" title="数据段的段权限检查"></a>数据段的段权限检查</h3><p>CPL&lt;=DPL并且RPL&lt;=DPL</p>
+<p>需要注意的是,段描述符分为三大类，代码段和系统段的权限检查和数据段的方式</p>
+<h3 id="代码的跨段执行"><a href="#代码的跨段执行" class="headerlink" title="代码的跨段执行"></a>代码的跨段执行</h3><p>首先代码的跳转，本身就依赖于段内跳转<code>JMP</code>，段间跳转<code>JMP FAR</code>，段内调用<code>CALL</code>，段间调用<code>CALL FAR</code>，段内返回<code>RET</code>，段间返回<code>RETF</code>，中断<code>INT</code>,中断返回<code>IRETED</code>；</p>
+<p>代码的跨段执行，必然伴随着同时修改段寄存器以及EIP的值，同时修改CS和EIP的指令是：</p>
+<p><code>JMP FAR</code>,<code>CALL FAR</code>,<code>RETF</code>,<code>INT</code>,<code>IRETED</code>则是同时修改寄存器和EIP的值</p>
+<p><strong>代码的段间跳转</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMP 0x20:0x004183D7;操作数一共6个字节，前面两个段选择子，后面是偏移</span><br></pre></td></tr></table></figure>
+<p>执行步骤：</p>
+<ul>
+<li>段选择子的拆分<ul>
+<li><code>0x20</code>对应<code>0000 0000 0010 0000</code></li>
+<li>由于TI=0 所以查找GDT表</li>
+<li>Index=4 找到对应的段描述符需要将Index*8+GDT表的基地址</li>
+<li>判断段描述符的类型，四种情况是可以跳转的：<ul>
+<li>代码段</li>
+<li>调用门</li>
+<li>TSS任务段</li>
+<li>任务门</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权限检查，判断代码段的Type域内标明的是一致性代码段还是非一致性代码段<ul>
+<li>如果是非一致代码段，要求CPL==DPL,RPL&lt;=DPL</li>
+<li>如果是一致性质代码段,要求CPL&gt;=DPL,当前特权级级别可以比一致代码段要求的要低的，专门给低权限来用的，完成所谓的共享的功能。</li>
+</ul>
+</li>
+<li>加载段描述符<ul>
+<li>通过上面权限检查之后，CPU会讲段描述符加载到CS段寄存器</li>
+</ul>
+</li>
+<li>代码执行<ul>
+<li>CPU将<code>CS.BASE+OFFSET</code>的值写入到EIP然后执行对应的代码段，段间跳转执行完毕</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致代码段和非一致代码段"><a href="#一致代码段和非一致代码段" class="headerlink" title="一致代码段和非一致代码段"></a>一致代码段和非一致代码段</h3><ul>
+<li>对于一致代码段：也就是共享的段<ul>
+<li><strong>特权级高的程序不允许访问特权级低的数据，核心态不允许访问用户态的数据</strong></li>
+<li><strong>特权级低的程序可以访问到特权级高的数据，但是特权级不会改变：用户态还是用户态</strong></li>
+<li>C=0表示一致，C=1表示非一致</li>
+</ul>
+</li>
+<li>对于普通代码段：也就是非一致代码段<ul>
+<li>只允许同级访问</li>
+<li>绝对禁止不同级别的访问：核心态不是用户态</li>
+</ul>
+</li>
+<li>直接对代码段进行JMP或者CALL的操作，无论目标是一致代码段还是非一致代码段，CPL都不会发生改变，如果想要提升CPL的权限，只能通过调用门</li>
+</ul>
+<p><strong>简而言之，一致代码段高权限访问不了低权限的数据，低权限可以访问高权限的数据，但是RPL不会发生变化，非一致代码段很严格的1对1，只允许同级访问</strong></p>
+<h3 id="长调用"><a href="#长调用" class="headerlink" title="长调用"></a>长调用</h3><p>CALL FAR要比JMP FAR 复杂，因为JMP不影响堆栈，但是CALL会同时影响堆栈和EIP</p>
+<p><strong>情况一：跨段不提权</strong></p>
+<p>跨段不提权表示的是段要切换，而访问的代码段对应的段描述符所对应的DPL和当前的CPL是一样的，那么这个时候相比不同的，在段内的CALL指令不同的是其还需要在栈中保存一个原来代码段的段描述符CS</p>
+<p><img src="ProtectMod/07.png" alt="长调用跨段不提权"></p>
+<p>堆栈段先压入调用者CS，再压入返回地址。返回的时候注意使用RETF</p>
+<p><strong>情况二：跨段并提权</strong></p>
+<p>长调用跨段并提权，关键的变化在于提权，在切换CPU特权级别的时候注意，堆栈段也要发生变化，也就是说，要用新的堆栈（每一个特权级对应一个堆栈），现在总结一下，在</p>
+<p><code>CALL CS:EIP</code>这样的指令中，要在新的特权级的堆栈中保存以下内容：返回地址，原来的堆栈段描述符，原来的代码段描述符，调用者的ESP，这样就表现的原来的ESP毫无影响。</p>
+<p><img src="ProtectMod/08.png" alt="跨段并提权"></p>
+<p><strong>为什么说EIP是废弃的？</strong></p>
+<p>对于跨权限调用的时候是要提权的，而提权的时候需要通过一个门，门内信息有一个段选择子，指向真正要跳转的段，门内信息还有真正的偏移，因此，对于<code>CALL CS:EIP</code>来说，其CS有用，EIP没有用，是废弃的，大致过程如下：</p>
+<p>CALL CS:EIP  -&gt; 门描述符（偏移信息+段选择子）-&gt;高权限代码段描述符-&gt;段信息</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>跨段调用的时候，一旦有权限切换，就会切换堆栈</li>
+<li>CS的权限一旦改变，SS的权限也要随着改变，CS和SS的等级必须一样</li>
+<li><strong>JMP FAR只能跳转到同级非一致代码段，但是CALL FAR可以通过调用门提权，提升CPL的权限</strong></li>
+<li><strong>SS与ESP从哪儿来，参见TSS段</strong></li>
+</ul>
+<h3 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h3><p><strong>调用门执行流程</strong></p>
+<p>指令格式 <code>CALL CS:EIP(EIP是废弃的)</code></p>
+<p><strong>执行步骤</strong></p>
+<ol>
+<li>根据CS的值，查GDT表，找到对应的段描述符，这个描述符是调用门</li>
+<li>在调用门描述符中存储另一个代码段的段选择子</li>
+<li>选择子指向的段的BASE+选择子内部包含的偏移地址=真正要执行的地址</li>
+</ol>
+<p><img src="ProtectMod/09.png" alt="门描述符"></p>
+<p>首先调用门P=1，要想“敲门”DPL=11，第12位S=0，暂时不讨论门描述符的参数问题，Param Count = 0，而除了选择子，其也包含了32位的偏移。</p>
+<p><code>0000EC00-00080000</code> 8:1000</p>
+<p><strong>带有参数的调用门</strong></p>
+<p>注意，首先要使用有参数的调用门的时候参数必须要自己先压栈的（压入三环的堆栈）</p>
+<p>先来观察下老师给的实例代码观察下：</p>
+<p><img src="ProtectMod/10.png" alt="示例代码片段1"></p>
+<p><img src="ProtectMod/11.png" alt="示例代码片段1"></p>
+<p>可以看出在通过调用门提权之前，首先PUSH进三环堆栈3个参数，之后进行调用，在执行到裸函数的函数体内已经得到了提权，之后进行了两个相对陌生的指令：</p>
+<p><code>pushad</code>,<code>pushfd</code> 查询相关资料:</p>
+<blockquote>
+<p>pushad: 将所有的32位通用寄存器压入堆栈  pusha:将所有的16位通用寄存器压入堆栈 pushfd:然后将32位标志寄存器EFLAGS压入堆栈  pushf::将的16位标志寄存器EFLAGS压入堆栈 popad:将所有的32位通用寄存器取出堆栈  popa:将所有的16位通用寄存器取出堆栈 popfd:将32位标志寄存器EFLAGS取出堆栈  popf:将16位标志寄存器EFLAGS取出堆栈</p>
+</blockquote>
+<p><code>pushad</code> push进去的寄存器按照顺序为EDI,ESI,EBP,ESP,EBX,EDX,ECX,EAX</p>
+<p><code>pushfd</code> push进去的寄存器是32位标志寄存器</p>
+<p>执行玩<code>pushad</code>和<code>pushfd</code>之后的esp下降了4*9=36 -&gt;0x24 </p>
+<p><strong>调用门总结</strong></p>
+<ol>
+<li>当通过门，权限不变的时候，只会push两个值。CS，返回地址新的CS的值由调用门觉得</li>
+<li>当通过门，权限改变的时候，会PUSH四个值。SS，ESP.CS返回地址 新的CS的值由调用门决定。<strong>新的SS和ESP由TSS提供</strong></li>
+<li>通过门调用的时候，要执行哪行代码由调用门决定，但使用RETF返回的时候，由堆栈中压入的值决定，这就是说，进门的时候只能按照指定路线走，出门的时候可以翻墙（可以想去哪就去哪）</li>
+</ol>
+<h3 id="中断门与陷阱门"><a href="#中断门与陷阱门" class="headerlink" title="中断门与陷阱门"></a>中断门与陷阱门</h3><p>Windows没有使用调用门，但是使用了中断门，在windowsAPI当中使用中断门进入0环（现在新的CPU使用快速调用），中断的时候其实相当于在对于汇编就是0xCC(<code>int 3</code>)int 3就是用来执行中断门。中断门查询的表不是GDT表而是IDT表，是中断描述符，与GDT不同的是，IDT都是系统段描述符，并且第一个描述符不是都是0。</p>
+<p>同样，LDT的地址可以通过以下的windbg命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; r ldtr</span><br><span class="line">kd&gt; r ldtl</span><br></pre></td></tr></table></figure>
+<p>IDT表有三种描述符：</p>
+<ul>
+<li>中断门描述符</li>
+<li>任务门描述符</li>
+<li>陷阱门描述符</li>
+</ul>
+<p>其中中断门的结构如下：</p>
+<p><img src="ProtectMod/12.png" alt="中断门结构"></p>
+<p><strong>陷阱门</strong></p>
+<p>陷阱门基本上和中断门差不多，关键就在中断门通过修改标志寄存器的IF位来屏蔽中断，而陷阱门不屏蔽</p>
+<h3 id="任务段"><a href="#任务段" class="headerlink" title="任务段"></a>任务段</h3><p>在调用门，中断门与陷阱门中，一旦出现权限的切换，那么就会有堆栈的切换。而且，由于CS的CPL发生改变，也导致了SS也必须切换。切换的时候，会有新的ESP和SS(CS是由中断门或者调用门)这两个值从哪里来呢？这些都保存到TSS(Task Stage Segment)任务状态段中，<strong>TSS是在内存当中的。</strong></p>
+<p><img src="ProtectMod/13.bmp" alt="任务状态段TSS结构"></p>
+<p>里面保存了所有的通用寄存器以及标志寄存器ELF，以及CR3寄存器（在后面会接触到）以及不同的CPU权限等级对应的SS段选择子的值以及对应的ESP的值。</p>
+<p><strong>TSS注意事项</strong></p>
+<ul>
+<li>不要把TSS与“任务切换”联系在一起</li>
+<li>TSS的意义就在于可以同时换掉“一堆”寄存器</li>
+<li>TSS一共有104字节</li>
+</ul>
+<p><strong>CPU如何找到TSS</strong></p>
+<p><img src="ProtectMod/14.png" alt="Task Register"></p>
+<p><strong>TSS段描述符</strong></p>
+<p>当type的二进制是1001 = 9 的时候，是段描述符，没有加载到段寄存器当中</p>
+<p>当type的二进制是1011 = B 的时候，也是段描述符，表示加载到了段寄存器当中</p>
+<p><strong>TR寄存器的读写</strong></p>
+<ul>
+<li>当TSS段描述符加载到TR寄存器<ul>
+<li>指令：LTR</li>
+<li>说明：<ul>
+<li>用LTR指令去装载的话，仅仅是改变TR寄存器的值（96位），并不会改变TSS</li>
+<li>LTR指令只能在系统层调用（是特权指令）</li>
+<li>加载后TSS 段描述符的状态位会发生变化（Type从9变为b）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读TR寄存器<ul>
+<li>指令 STR</li>
+<li>说明：如果用STR去读的话，只读了TR的16位 也就是其选择子</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/保护模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;保护模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/16/struts2-1/">
+                
+                    struts2杂记（一）入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-16
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="Struts2-配置文件"><a href="#Struts2-配置文件" class="headerlink" title="Struts2 配置文件"></a>Struts2 配置文件</h2><h3 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h3><p>一些默认配置在导入的<code>struts2-core.jar</code>下有<code>org.apache.struts2</code>包下的default.properties文件，里面包含了一些配置，这些配置包含编码，请求扩展名，想要相应的修改就通过在struts.xml设置常量的方式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.name.extension"</span> <span class="attr">value</span>=<span class="string">"action,do,html"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="result子结点"><a href="#result子结点" class="headerlink" title="result子结点"></a>result子结点</h3><p>result子节点通过name与具体的execute方法返回值比对来完成控制器的功能，其中有隐含的type属性代表响应的类型，该默认值在<code>struts-default</code>中被指明：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--struts-default.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"struts-default"</span> <span class="attr">abstract</span>=<span class="string">"true"</span> <span class="attr">strict-method-invocation</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result-types</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"chain"</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionChainResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"dispatcher"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletDispatcherResult"</span> <span class="attr">default</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"freemarker"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.freemarker.FreemarkerResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"httpheader"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.HttpHeaderResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirect"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirectAction"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletActionRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"stream"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.StreamResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"velocity"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.VelocityResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"xslt"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.xslt.XSLTResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"plainText"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PlainTextResult"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"postback"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PostbackResult"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">result-types</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--省略其他的内容--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>下面对其中常用的几项做一个总结：</p>
+<ul>
+<li>dispatcher(默认):转发</li>
+<li>redirect:重定向</li>
+<li>redirectAction:重定向到一个Action</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">type</span>=<span class="string">"redirectAction"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"actionName"</span>&gt;</span>TestAction<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"namespace"</span>&gt;</span>/maoxin<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其指向的包定义为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"testPackage"</span> <span class="attr">namespace</span>=<span class="string">"/maoxin"</span> <span class="attr">extends</span>=<span class="string">"struts-defult"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"testAction"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.TestAction"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当眼重定向到Action也可以不用这个type</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"index"</span> <span class="attr">type</span>=<span class="string">"redirect"</span>&gt;</span>/maoxin/testAction.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>chain:转发到一个Action</p>
+<p>与之上同理，但是需要注意<strong>不能通过dispacter的方式转发到一个Action</strong></p>
+</li>
+</ul>
+<h3 id="通配符映射"><a href="#通配符映射" class="headerlink" title="通配符映射"></a>通配符映射</h3><p>通配符映射是一种方便的写result标签的方式。</p>
+<p><strong>通配符映射规则</strong></p>
+<ul>
+<li>精确的将会覆盖不精确的，就是说明确指定的和通配符方式冲突的时候精确的会有效</li>
+<li>指定的动作不存在，Struts将会尝试讲这个URI与任何一个包含通配符*的动作名进行匹配</li>
+<li>被通配符匹配到的URI字符串可以用｛1｝,{2}来引用</li>
+<li>{0}匹配整个URI</li>
+<li>在Struts找到的带有通配符的匹配不止一个，则按照先后顺序进行匹配</li>
+<li>*可以匹配0个或者多个字符，但是不包括/字符，如果想把/字符包含在内，就需要使用**，如果想要对某个字符进行转义，则需要使用 \</li>
+</ul>
+<p><strong>例子</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"UserAction-*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"&#123;1&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-success"</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-failed"</span>&gt;</span>/failed.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_Delete"</span> <span class="attr">class</span>=<span class="string">"site,maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_delete"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面的类型可以通过通配符映射转换为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"*_*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.&#123;1&#125;Action"</span> <span class="attr">method</span>=<span class="string">"&#123;2&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span>&gt;</span>/&#123;1&#125;.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="动态方法调用方式"><a href="#动态方法调用方式" class="headerlink" title="动态方法调用方式"></a>动态方法调用方式</h3><ul>
+<li>首先需要打开动态方法调用：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.enable.DynamicMethodInvocation"</span> <span class="attr">value</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>完成对Action的配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.Test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>默认执行的就是execute方法，当在请求参数后面加上!后面跟上方法名就可以</p>
+<h2 id="Action类"><a href="#Action类" class="headerlink" title="Action类"></a>Action类</h2><p>能够处理Struts2的请求的类，通过在struts2配置文件映射的方式来完成请求与相应action之间的关系</p>
+<ul>
+<li>同一个Action可以有多个响应方法</li>
+<li>Action类不同于Servlet，Servlet在内存中标只有一份拷贝，而Action一次请求创建一次</li>
+</ul>
+<h2 id="Action-类处理Web资源"><a href="#Action-类处理Web资源" class="headerlink" title="Action 类处理Web资源"></a>Action 类处理Web资源</h2><p>Web资源也就是：HttpServletRequest，HttpSession，ServletContext等等</p>
+<h3 id="与Servlet-API解耦的方式"><a href="#与Servlet-API解耦的方式" class="headerlink" title="与Servlet API解耦的方式"></a>与Servlet API解耦的方式</h3><p>所谓解耦就是不直接依赖，Struts2提供了以下方式来处理Web资源，解耦方式的缺点是：</p>
+<ul>
+<li>一套新的，Struts2指定的操作方式</li>
+<li>功能不够齐全，不如原生方式强大</li>
+</ul>
+<p>下面是两种解耦的方式：</p>
+<p><strong>使用 Action Context方法</strong></p>
+<p><code>ActionContext</code>对象是在请求经过过滤器的时候生成的，每一个<code>ActionContext</code>通过<code>ThreadLocal</code>容器里面获得的，其中提供了对应的方法来获取。而这一切都是在<code>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</code> 过滤器中完成转换并且装入的。</p>
+<ul>
+<li>获取传入的request参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActionContext ac = ActionContext.getContext();</span><br><span class="line">HttpParameters hps = ac.getParameters();</span><br></pre></td></tr></table></figure>
+<p>其中<code>HttpParameters</code>是实现了<code>Map&lt;String,Parameter&gt;</code>，所以用Map的方式访问，将具体的参数值封装到<code>Parameter</code>这一对象中。通过<code>Parameters.getValues</code>来获取<code>String[]</code>属性的值。</p>
+<ul>
+<li>获取并设置HttpServletContext域对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt;contextMap =ac.getApplication();</span><br><span class="line">contextMap.put(<span class="string">"UserCount"</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取并设置HttpServletSession 域对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt;sessionMap = ac.getSession();</span><br><span class="line">sessionMap.put(<span class="string">"UserName"</span>, <span class="string">"Maoxin"</span>);</span><br></pre></td></tr></table></figure>
+<p>Session有一个关闭Session的问题，要操作这个域对象失效就需要提供这个方法，由于其主体还是个Map的功能，所以推断getSession返回的是一个重新实现的Map，里面包含使得Session失效的方法，运行时进行调试，可以看出其本身返回的是<code>SessionMap</code>,查看对应的源代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SessionMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">invalidate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (session == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">synchronized</span> (session.getId().intern()) &#123;</span><br><span class="line">            session.invalidate();</span><br><span class="line">            session = <span class="keyword">null</span>;</span><br><span class="line">            entries = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>设置request域属性的值</p>
+<p>需要注意的是<code>ActionContext</code>没有直接提供对应的方法，而之上的所有域对象本身也都是从<code>ActionContext</code>的构造方法内部的构造函数中传入的context对象得到的，而这个对象是<code>OgnlMap</code>类型，里面还有很多对象，因此，如果试图想要获取request域对象的值的话，可以通过：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt; requestMap = (Map&lt;String, Object&gt;) ac.get(<span class="string">"request"</span>);</span><br><span class="line">requestMap.put(<span class="string">"requestDispatcher"</span>, <span class="string">"转发的数据"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>实现对应的Aware接口</strong></p>
+<p>相对来说比较麻烦：</p>
+<ul>
+<li>首先要实现具体的接口，比如想对Application对象做操作，就要实现ApplicationAware对象接口</li>
+<li>其次要在类中设置要注入对象的引用（依赖注入）</li>
+<li>设置引用的getter和setter方法</li>
+</ul>
+<p><strong>如何选用</strong></p>
+<ul>
+<li>若Action对象包含多个Action方法，多个Action方法使用域对象的Map或者Parameters，则建议使用Aware接口的方式</li>
+</ul>
+<h3 id="与Servlet-API-耦合的方式"><a href="#与Servlet-API-耦合的方式" class="headerlink" title="与Servlet API 耦合的方式"></a>与Servlet API 耦合的方式</h3><p><strong>使用ServletActionContext</strong></p>
+<ul>
+<li><p>获取Request对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletActionContext.getRequest()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取HttpSession对象<code>getRequest().getSession()</code></p>
+</li>
+<li><p>获取ServletContext对象<code>getServletContext()</code></p>
+</li>
+</ul>
+<p><strong>实现ServletXxxAware的方式</strong></p>
+<p>道理同上</p>
+<h2 id="默认的Action类：ActionSupport"><a href="#默认的Action类：ActionSupport" class="headerlink" title="默认的Action类：ActionSupport"></a>默认的Action类：ActionSupport</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionSupport</span> <span class="keyword">implements</span> <span class="title">Action</span>, <span class="title">Validateable</span>, <span class="title">ValidationAware</span>, <span class="title">TextProvider</span>, <span class="title">LocaleProvider</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所谓默认的Action类，其实就是result标签不绑定具体class指向的具体的类，这个具体的类同样在默认继承的包<code>struts-default.xml</code>下被指明，具体如下:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">default-class-ref</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionSupport"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打开<code>ActionSupport</code>类查看定义首先实现了众多接口，第一个接口是<code>Action</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Action</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SUCCESS = <span class="string">"success"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String NONE = <span class="string">"none"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ERROR = <span class="string">"error"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String INPUT = <span class="string">"input"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOGIN = <span class="string">"login"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Validateable 需要手动实现验证</li>
+<li>ValidateAware</li>
+<li>TextProvider</li>
+<li>LocaleProvider</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/05/ClassLoader总结/">
+                
+                    ClassLoader总结
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-05
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>在学习过程中，一次又一次的遇到类加载器的问题，一次又一次的重新去看，感觉有必要对ClassLoader的知识做一个详细的总结，以便于之后能熟练运用ClassLoader。</p>
+<h3 id="ClassLoader是什么"><a href="#ClassLoader是什么" class="headerlink" title="ClassLoader是什么"></a>ClassLoader是什么</h3><p>类加载器，<code>.class</code>文件描述的具体信息在加载到JVM之后才能被运行和使用，加载这些文件到虚拟机的过程就是类加载的过程。JAVA本身相较于其他语言的灵活性与Java本身可以在运行期动态加载息息相关。</p>
+<h3 id="类的生命周期"><a href="#类的生命周期" class="headerlink" title="类的生命周期"></a>类的生命周期</h3><ul>
+<li>类加载过程<ul>
+<li>加载（Loading）</li>
+<li>验证（Verification）</li>
+<li>准备（Preparation）</li>
+<li>解析（Resolution）</li>
+<li>初始化（Initialization）</li>
+</ul>
+</li>
+<li>类使用过程<ul>
+<li>使用（Using）</li>
+<li>卸载（unloading）</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong></p>
+<p>类的解析阶段的顺序可能不按照上面自上而下的顺序，在某些情况下是在类的初始化之后开始</p>
+<h3 id="类加载器的作用"><a href="#类加载器的作用" class="headerlink" title="类加载器的作用"></a>类加载器的作用</h3><ul>
+<li>完成类加载过程中实线类加载的动作</li>
+<li>类加载器和一个类本身一同确定一个类的唯一性<ul>
+<li>判断<code>Class</code>类对象是否相等，主要包括：</li>
+<li><code>Class</code>类对象的<code>equals()</code>方法</li>
+<li>对象与Class类之间的<code>instanceof</code>关键字或者是<code>isInstance()</code>方法</li>
+<li><code>Class</code>对象的<code>isAssignableForm()</code>方法（PS：Assignable 可分配的）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//深入理解Java虚拟机代码清单7-7</span></span><br><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoaderTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ClassLoader myLoader  = <span class="keyword">new</span> ClassLoader() &#123;</span><br><span class="line">	        <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Class&lt;?&gt;loadClass(String name) <span class="keyword">throws</span> ClassNotFoundException&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    String fileName = name.substring(name.lastIndexOf(<span class="string">"."</span>)+<span class="number">1</span>)</span><br><span class="line">                        +<span class="string">".class"</span>;</span><br><span class="line">                    InputStream is = getClass().getResourceAsStream(fileName);</span><br><span class="line">                    <span class="keyword">if</span>(is==<span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">super</span>.loadClass(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">byte</span>[]b = <span class="keyword">new</span> <span class="keyword">byte</span>[is.available()];</span><br><span class="line">                    is.read(b);</span><br><span class="line">                    <span class="keyword">return</span> defineClass(name,b,<span class="number">0</span>,b.length);</span><br><span class="line">                &#125;<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        Object obj = myLoader.loadClass(<span class="string">"demo.ClassLoaderTest"</span>).newInstance();</span><br><span class="line">        System.out.println(obj.getClass());</span><br><span class="line">        System.out.println(obj <span class="keyword">instanceof</span> demo.ClassLoaderTest);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*运行结果：</span></span><br><span class="line"><span class="comment">*class demo.ClassLoaderTest</span></span><br><span class="line"><span class="comment">*false</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面代码注意的点是其重写的loadClass方法不满足双亲委派模型，所以能够出现不同的不同加载器加载的同名Class</li>
+</ul>
+<h3 id="Java的ClassLoader-分类"><a href="#Java的ClassLoader-分类" class="headerlink" title="Java的ClassLoader 分类"></a>Java的ClassLoader 分类</h3><ul>
+<li><p>从Java虚拟机的角度而言，只存在两种ClassLoader</p>
+<ul>
+<li>启动类加载器（BootStrap ClassLoader）<ul>
+<li>使用C++实现，是Java虚拟机的一部分</li>
+<li>在Java程序中获取不到，会返回为null</li>
+</ul>
+</li>
+<li>其他的类加载器<ul>
+<li>独立于Java虚拟机之外</li>
+<li>继承子抽象类<code>java.lang.ClassLoader</code></li>
+<li>用Java语言描述</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>从开发人员角度</p>
+<ul>
+<li><p>启动类加载器（BootStrap ClassLoader）</p>
+<ul>
+<li>负责加载<code>%JAVA_HOME%\lib</code>目录中的，或者被<code>-Xbootclasspath</code>指定的路径</li>
+<li>可以通过<code>System.getProperty(&quot;sun.boot.class.path&quot;)</code>查看路径</li>
+</ul>
+</li>
+<li><p>扩展类加载器（Extension ClassLoader）</p>
+<ul>
+<li>由<code>sun.misc.Launcher$ExtClassLoader</code>实现</li>
+<li>负责加载<code>%JAVA_HOME%\lib\ext</code>目录的类库</li>
+<li><p>可以通过<code>System.getProperty(&quot;java.ext.dirs&quot;)</code>查看</p>
+</li>
+<li><p>可以通过参数制定路径</p>
+</li>
+</ul>
+</li>
+<li><p>应用程序类加载器（Application ClassLoader）</p>
+<ul>
+<li>由<code>sun.misc.Launcher$AppClassLoader</code>实现</li>
+<li>负责加载用户路径上制定的类库</li>
+<li>可以通过<code>System.getProperty(&quot;java.class.path&quot;)</code>查看</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查看具体的路径</span></span><br><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String paths = System.getProperty(<span class="string">"java.class.path"</span>);</span><br><span class="line">		<span class="keyword">if</span>(paths!=<span class="keyword">null</span>) &#123;</span><br><span class="line">			StringTokenizer st = <span class="keyword">new</span> StringTokenizer(paths, File.pathSeparator);</span><br><span class="line">			<span class="keyword">int</span> count = st.countTokens();</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;count;i++)</span><br><span class="line">				System.out.println(st.nextToken());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h3><p>双亲委派模型并不难，用文字解释就是：</p>
+<blockquote>
+<p>如果一个类加载器其收到类加载请求，首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器完成，每个层次的类加载器都是如此，因此所有的加载请求都应该传送到顶层的启动类加载器中，只有当父加载器返回自己无法完成这个加载请求的时候，子类才加载。–《深入理解Java虚拟机》</p>
+</blockquote>
+<p>上面的解释很标准，但是需要注意不是一拿到一个类加载请求就去加载，而是先在缓存中查看是否已经加载过了。</p>
+<p>上述这些操作，在<code>ClassLoader</code>的<code>loadClass()</code>方法中定义，查看源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</span><br><span class="line">            <span class="comment">// 首先，检测是否已经加载</span></span><br><span class="line">            Class&lt;?&gt; c = findLoadedClass(name);</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="comment">//父加载器不为空则调用父加载器的loadClass</span></span><br><span class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">//父加载器为空则调用Bootstrap Classloader</span></span><br><span class="line">                        c = findBootstrapClassOrNull(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></span><br><span class="line">                    <span class="comment">// from the non-null parent class loader</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// If still not found, then invoke findClass in order</span></span><br><span class="line">                    <span class="comment">// to find the class.</span></span><br><span class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</span><br><span class="line">                    <span class="comment">//父加载器没有找到，则调用findclass</span></span><br><span class="line">                    c = findClass(name);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></span><br><span class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">                <span class="comment">//调用resolveClass()</span></span><br><span class="line">                resolveClass(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="为什么使用双亲委派？"><a href="#为什么使用双亲委派？" class="headerlink" title="为什么使用双亲委派？"></a>为什么使用双亲委派？</h3><ul>
+<li>上面谈到，对JVM而言只有两种类加载器，一个是BootStrap ClassLoader，一个是Java自定义的，首先之所以分成两个正是满足Java语言在运行是时动态加载的需求。</li>
+<li>如果不使用双亲委派机制，重要的基础类被恶意修改再加载到JVM引起混淆引发安全问题</li>
+</ul>
+<h3 id="违反双亲委派模型"><a href="#违反双亲委派模型" class="headerlink" title="违反双亲委派模型"></a>违反双亲委派模型</h3><p>首先需要明白，双亲委派模型的缺陷：（感谢知识星球（码农翻身）球友的解释）</p>
+<p>补充知识：<strong>类加载器的命名空间</strong> </p>
+<p>子能看见父，父却不能看见子，这就是双亲委派的弊端，<strong>当前类引用了其他类，当前类的类加载器就负责就在加载那些引用类</strong></p>
+<ul>
+<li>例如JDBC的DriverManager，这个类是由根加载器加载的，它里面需要调用厂商的实现类（mysql），但是mysql的jar包不在rt.jar 所在的目录里，一般都是放在项目的lib文件夹里面，根据JVM的加载规则根就没办法去加载mysql的驱动，压根就看不见实现类</li>
+<li>在Thread类有个成员叫做classLoader，在<code>sun.misc.Launcher</code>类中设置该成员，其中Ext和AppClassLoader都是在这个类初始化的：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Launcher</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Launcher launcher = <span class="keyword">new</span> Launcher();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String bootClassPath =</span><br><span class="line">        System.getProperty(<span class="string">"sun.boot.class.path"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Launcher <span class="title">getLauncher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> launcher;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ClassLoader loader;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Launcher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Create the extension class loader</span></span><br><span class="line">        ClassLoader extcl;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            extcl = ExtClassLoader.getExtClassLoader();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> InternalError(</span><br><span class="line">                <span class="string">"Could not create extension class loader"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Now create the class loader to use to launch the application</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            loader = AppClassLoader.getAppClassLoader(extcl);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> InternalError(</span><br><span class="line">                <span class="string">"Could not create application class loader"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置AppClassLoader为线程上下文类加载器</span></span><br><span class="line">        Thread.currentThread().setContextClassLoader(loader);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Returns the class loader used to launch the main application.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ClassLoader <span class="title">getClassLoader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> loader;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * The class loader used for loading installed extensions.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ExtClassLoader</span> <span class="keyword">extends</span> <span class="title">URLClassLoader</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The class loader used for loading from java.class.path.</span></span><br><span class="line"><span class="comment">     * runs in a restricted security context.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AppClassLoader</span> <span class="keyword">extends</span> <span class="title">URLClassLoader</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><ul>
+<li><code>loadClass(String className,boolean isInitialized)</code>的第二个参数设置为false可以提高类加载的性能</li>
+</ul>
+<h3 id="类加载器的应用"><a href="#类加载器的应用" class="headerlink" title="类加载器的应用"></a>类加载器的应用</h3><p>注意事项：</p>
+<p>  如果想维持双亲委派模型，我们就不应该去覆盖<code>loadClass()</code>方法,如果仅仅是想写自己的加载逻辑，应该覆盖<code>findClass()</code>完成记载逻辑，这样就可以保证双亲委派,到最后调用<code>defineClass()</code>完成相关的操作。</p>
+<ul>
+<li>双亲委派模型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoaderA</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ClassLoaderA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">		<span class="comment">//自己的findClass逻辑，如果自己的发生异常就交给默认的findClass去处理</span></span><br><span class="line">		<span class="comment">//try &#123;</span></span><br><span class="line">			</span><br><span class="line">		<span class="comment">//	return defineClass(b, off, len);</span></span><br><span class="line">		<span class="comment">//&#125;catch(..) &#123;</span></span><br><span class="line">			</span><br><span class="line">		<span class="comment">//&#125;</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.findClass(name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>违反双亲委派模型</p>
+<p> 见第一个代码片段</p>
+</li>
+<li><p>加载一个指定包下的所有类</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ClassHalper,代码源于《架构探险-从零开始写JavaWeb框架》</span></span><br><span class="line"><span class="comment">//类原型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassUtil</span> </span>&#123;</span><br><span class="line">	<span class="comment">//ClassUtil需要的类加载器</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ClassLoader <span class="title">getClassLoader</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//利用该函数加载package下面的Class文件</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Class&lt;?&gt; loadClass(String className,<span class="keyword">boolean</span> isInitailized)&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取Package下所有的Class文件并加载到Set中去</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Set&lt;Class&lt;?&gt;&gt; getClassSet(String packageName)&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体实现</span></span><br><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileFilter;</span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassUtil</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ClassLoader <span class="title">getClassLoader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Thread.currentThread().getContextClassLoader();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//使用Class.forName的形式来加载类</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Class&lt;?&gt; loadClass(String className,<span class="keyword">boolean</span> isInitailized)&#123;</span><br><span class="line">		Class&lt;?&gt; cls;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			cls = Class.forName(className,isInitailized,getClassLoader());</span><br><span class="line">		&#125;<span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> cls;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Set&lt;Class&lt;?&gt;&gt; getClassSet(String packageName)&#123;</span><br><span class="line">		Set&lt;Class&lt;?&gt;&gt; classSet = <span class="keyword">new</span> HashSet&lt;Class&lt;?&gt;&gt;();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Enumeration&lt;URL&gt; urls = getClassLoader().getResources(packageName.replace(<span class="string">'.'</span>, <span class="string">'/'</span>));</span><br><span class="line">			<span class="keyword">while</span>(urls.hasMoreElements()) &#123;</span><br><span class="line">				URL url = urls.nextElement();</span><br><span class="line">				<span class="keyword">if</span>(url!=<span class="keyword">null</span>) &#123;</span><br><span class="line">					String protocal = url.getProtocol();</span><br><span class="line">					<span class="comment">//如果协议名称是file的时候就将%20转义为空格</span></span><br><span class="line">					<span class="keyword">if</span>(protocal.equals(<span class="string">"file"</span>))&#123;</span><br><span class="line">						String packagePath = url.getPath().replaceAll(<span class="string">"%20"</span>,<span class="string">""</span>);</span><br><span class="line">						<span class="comment">//调用真正执行递归添加类的方法</span></span><br><span class="line">						addClass(classSet,packagePath,packageName);</span><br><span class="line">					<span class="comment">//如果协议名称是jar的时候就用jar特有的方式读取</span></span><br><span class="line">					&#125;<span class="keyword">else</span> <span class="keyword">if</span>(protocal.equals(<span class="string">"jar"</span>)) &#123;</span><br><span class="line">						<span class="comment">//...</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"get class set failure"</span>);</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> classSet;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//执行根据包下路径</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addClass</span><span class="params">(Set&lt;Class&lt;?&gt;&gt; classSet,String packagePath,String packageName)</span> </span>&#123;</span><br><span class="line">		File[] files = <span class="keyword">new</span> File(packagePath).listFiles(<span class="keyword">new</span> FileFilter() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File file)</span> </span>&#123;</span><br><span class="line">				<span class="comment">//如果是目录，或者是以class为末尾的文件就返回true</span></span><br><span class="line">				<span class="keyword">return</span> (file.isFile()&amp;&amp;file.getName().endsWith(<span class="string">".class"</span>)||file.isDirectory());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">for</span>(File file:files) &#123;</span><br><span class="line">			<span class="comment">//如果是一个文件，就直接做处理将XXX.class的名字解析出来,组合成全类名之后加载</span></span><br><span class="line">			String fileName = file.getName();</span><br><span class="line">			<span class="keyword">if</span>(file.isFile()) &#123;</span><br><span class="line">				String className = fileName.substring(<span class="number">0</span>, fileName.lastIndexOf(<span class="string">"."</span>));</span><br><span class="line">				doAddClass(classSet,className);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">//如果是一个目录就进一步组合成进一步目录</span></span><br><span class="line">				String subPackagePath = fileName;</span><br><span class="line">				subPackagePath = packagePath+<span class="string">"/"</span>+subPackagePath;</span><br><span class="line">				<span class="comment">//这个时候的全类名就深入了一步</span></span><br><span class="line">				String subPackageName = packageName+<span class="string">"."</span>+fileName;</span><br><span class="line">				<span class="comment">//递归的进行添加</span></span><br><span class="line">				addClass(classSet,subPackagePath,subPackageName);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//添加到具体的Set中去</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doAddClass</span><span class="params">(Set&lt;Class&lt;?&gt;&gt; classSet,String className)</span> </span>&#123;</span><br><span class="line">		Class&lt;?&gt; cls = loadClass(className,<span class="keyword">false</span>);</span><br><span class="line">		classSet.add(cls);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>类文件的加密与解密</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>对ClassLoader的学习暂时到这里，后续会不断的补充。</p>
+<blockquote>
+<p>参考文章</p>
+<p><a href="https://blog.csdn.net/briblue/article/details/54973413" target="_blank" rel="noopener">https://blog.csdn.net/briblue/article/details/54973413</a> 超详细java中的ClassLoader详解</p>
+<p><a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42499839" target="_blank" rel="noopener">https://blog.csdn.net/zhangzeyuaaa/article/details/42499839</a>  全盘负责和双亲委托</p>
+<p>《码农翻身》 刘欣  电子工业出版社 </p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/ClassLoader/"><i class="fa fa-tag fa-fw"></i>&nbsp;ClassLoader</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/01/js-1/">
+                
+                    蛋疼的JavaScript(一)：作用域与闭包
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-01
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>在使用JavaScript的时候各种奇葩的结果真的让人头大，于是系统的学习一下JavaScript的一些知识。深入了解下JavaScript。（注：以下均为浅尝则止）</p>
+<h2 id="JavaScript-的坑"><a href="#JavaScript-的坑" class="headerlink" title="JavaScript 的坑"></a>JavaScript 的坑</h2><p>创建变量的时候，我们一般用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>JS引擎在看到上述代码的时候会做两步操作</p>
+<ul>
+<li>创建符号a对应的内存空间（解释阶段）</li>
+<li>将基本类型2放置到a对应的内存空间当中（执行阶段）</li>
+</ul>
+<p>也就是说var 带有声明变量的作用，如果有以下代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>JS解释器先发现了符号a，试图去找a的内存地址在哪，没有找到，它不会返回给程序员什么错误，而是自作主张在顶层作用域内创建了a的符号，再执行a=2的操作，其他语言不是这样的，不了解这个过程使用JS就是噩梦的开始。。(处理不好就会导致符号的泄漏)</p>
+<p>注意到上面的a都是被赋值的对象。如果a作为右值呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>这个时候JS引擎就不能自作主张的生成全局变量a，因为a的值不确定，这个时候它查找a符号没有找到，就乖乖的告诉你<code>a is not defined</code> </p>
+<p>这是作为左值和右值的区别，我们应该将左和右概念更泛化一下。</p>
+<ul>
+<li>左值就是符号被赋值的过程</li>
+<li>右值就是符号内容取得的过程</li>
+</ul>
+<p>那么很快就能反应过来函数调用的函数参数的传入是一个符号作为右值传入的过程，这就够了。</p>
+<p>换个角度讲，作为左值符号未声明的时候自动创建也可以叫一个特性，如果我们指定其在哪个作用域中查找符号，这样就可以动态的添加属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A=&#123;</span><br><span class="line">    name:<span class="string">"Maoxin"</span></span><br><span class="line">&#125;;</span><br><span class="line">A.age = <span class="number">18</span>;</span><br><span class="line"><span class="built_in">console</span>.dir(A)</span><br></pre></td></tr></table></figure>
+<h3 id="符号作用域"><a href="#符号作用域" class="headerlink" title="符号作用域"></a>符号作用域</h3><p>前面就提到全局作用域，这相当于一个全局变量，而有其他语言经验的我们也知道局部变量。在重名情况下符号是就近原则，内部的能访问到外部的定义的变量，而这一切的原因其实就是压栈，函数调用的时候栈的提升，之前的变量在栈底，新的局部变量在栈提升的这部分中，所以子函数作用域能够访问到外部的作用域是合情合理的，这JavaScript也一样，但是唯一不一样的是对类似if分支，循环等等的处理。我们在使用类似C/C++/Java中，这么用是不可以的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> args,<span class="keyword">char</span> **argv)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,i);<span class="comment">//错！</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为循环这个东西内部创建的变量就像一个函数的作用域一样，但是JS不是这样的。在JS中允许如下代码是可以的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
+<p>原因在于循环变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是创建在这个块作用域之外的。。</p>
+<p>这样显然对于从其他语言迁移过来的很不好使，怎么创建一个就像之前语言的变量一样的东西呢？其实可以使用ES6引入的let</p>
+<h3 id="let-const-与-var"><a href="#let-const-与-var" class="headerlink" title="let const 与 var"></a>let const 与 var</h3><ul>
+<li>let 可以创建一个块作用域的变量</li>
+<li>const 也是块作用域的变量，不过就像其他语言的const一样，赋值之后不可修改</li>
+<li>var 。。略</li>
+</ul>
+<p>等下，let是ES6引入的，难道，之前用JS要时时刻刻被这个问题困扰？他们是怎么解决的。</p>
+<p>下面是一个实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(i+<span class="string">'&lt;br&gt;'</span>)</span><br><span class="line">    &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行这个实例，刚开始会和惊讶，怎么输出的都是6？</p>
+<p>只要知道setTimeout是异步的，不会立即执行</p>
+<p>，在结合上面的内容就清楚了原因。原因就是，for都执行完了之后i=6，那么我们怎么让他正常一些？问题的根源就在于其i的作用域，我们<strong>引用了外部的i</strong>，这个i的值已经是6了。JS和其他语言的不同之处就是在块作用域的表现不同。函数作用域还是可以的，于是我们可以尝试这么改进，每次传入的i值都将其拷贝一份放在一个更小的作用域中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> j = i;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(j+<span class="string">'&lt;br&gt;'</span>)</span><br><span class="line">        &#125;,i*<span class="number">1000</span>)</span><br><span class="line">    &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>猛地看挺奇怪的，但要是说明白了（函数）(参数)这种形式就是将一个参数传入即将执行的函数中去就会好明白一些，我们就是强行再加了一个函数作用域将这个i当前的值保护起来放置在j中。</p>
+<p>当然现在不用这么麻烦：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(i+<span class="string">'&lt;br&gt;'</span>)</span><br><span class="line">    &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们之前说了很多都是作用域从大到小，内部的能看到外部的。但是回顾上面的过程，我们发现一个很有趣的现象，尽管块内的函数已经执行完了，setTimeout函数却记得它内部需要引用外部的值。这表示那些看似执行完的块的某些值并没有随着执行完毕而被垃圾回收，这就是闭包。</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><blockquote>
+<p>当函数可以记住并访问所在词法作用域的时，就产生了闭包，及时函数是在当前词法作用域之外进行的。–《你不知道的JavaScript上》</p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
 
 
 
 
 
-  
+        </div>
+        <aside class='l_side'>
+            
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <script>setLoadingBarProgress(100);</script>
 </body>
-</html>

@@ -1,906 +1,1496 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <title>Archives: 2018/7 | 飞翔的傻瓜</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞翔的傻瓜">
-<meta property="og:url" content="http://www.maoxin.site/archives/2018/07/index.html">
-<meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞翔的傻瓜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.maoxin.site/archives/2018/07/"/>
-
-
-
-
-
-  <title>Archive | 飞翔的傻瓜</title>
-  
-
-
-
-
-
-
-
-
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-archive">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飞翔的傻瓜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">菜鸟的试飞之旅</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 36 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/29/Java验证码图片创建/" itemprop="url">
-              
-                <span itemprop="name">Java验证码图片创建</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-29T16:49:02+08:00"
-              content="2018-07-29" >
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/29/动态规划入门/" itemprop="url">
-              
-                <span itemprop="name">动态规划入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-29T08:40:17+08:00"
-              content="2018-07-29" >
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/28/Windows进程的创建过程/" itemprop="url">
-              
-                <span itemprop="name">Windows进程的创建过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-28T20:54:37+08:00"
-              content="2018-07-28" >
-          07-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Linux 学习（命令）/" itemprop="url">
-              
-                <span itemprop="name">Linux学习（命令）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:46:41+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Linux系统函数学习（更新中）/" itemprop="url">
-              
-                <span itemprop="name">Linux系统函数学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:45:37+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Java反射基础/" itemprop="url">
-              
-                <span itemprop="name">Java反射基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:44:59+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Servlet执行过程/" itemprop="url">
-              
-                <span itemprop="name">Servlet 执行过程笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:44:18+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Java注解学习/" itemprop="url">
-              
-                <span itemprop="name">Java注解学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:43:28+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/动态代理模式/" itemprop="url">
-              
-                <span itemprop="name">Java动态代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:42:51+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/观察者模式（Observer pattern）/" itemprop="url">
-              
-                <span itemprop="name">观察者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:41:59+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
-  </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/07/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FlyingFool</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">categories</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
-
-  
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
 	
+    <script>
+        window.subData= { title:'year : 2018.7'}
+    </script>
+
+
+<section class="post-list">
+    
+        <div class='post-wrapper'>
+            <article class="post revealno-title">
+                <section class="meta">
+                    <h2 class="title" style="color:#EF503A">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        还剩最后一步就成功了
+                    </h2>
+                    <p>
+                        请按照下面的指示进行操作：
+                    </p>
+                </section>
+                <iframe frameborder="no" width=100% height=600 src="https://xaoxuu.com/wiki/material-x/#/?id=主题配置"></iframe>
+            </article>
+        </div>
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/29/Java验证码图片创建/">
+                
+                    Java验证码图片创建
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-29
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>最近需要实现一个验证码生成工具类，之前完全没有接触过Java图形方面的知识，临时上网查阅资料，总结下自己学到的内容，到最后学习实现一个自己可以用的上的工具类,所有参阅的资料都在文末的引用部分。</p>
+<h3 id="java-awt下的Image类与BufferedImage"><a href="#java-awt下的Image类与BufferedImage" class="headerlink" title="java.awt下的Image类与BufferedImage"></a>java.awt下的Image类与BufferedImage</h3><ul>
+<li>java.awt.Image ：抽象类Image是表示图形图像的所有类的超类</li>
+<li>java.awt.image.BufferedImage 是Image的子类，描述具有可访问图像数据缓冲区的Image</li>
+</ul>
+<p>总得来说，Image通常用来获取图片，BufferedImage做图片修改操作如大小变换等 </p>
+<h3 id="Graphics-与Graphics2D"><a href="#Graphics-与Graphics2D" class="headerlink" title="Graphics 与Graphics2D"></a>Graphics 与Graphics2D</h3><p>Graphics类是所有的图像上下文类的抽象基类，这些图形上下文允许应用程序绘制在各种设备上实现的组件以及屏幕外的图像上。 </p>
+<p>图形对象封装了Java支持的基本呈现操作所需的状态信息。</p>
+<p>Graphics2D 类扩展 Graphics 类，以提供对几何形状、坐标转换、颜色管理和文本布局更为复杂的控制。它是用于在 Java(tm) 平台上呈现二维形状、文本和图像的基础类</p>
+<p><strong>获取Graphics对象</strong></p>
+<ul>
+<li>通过继承BufferedImage对象实例获得：BufferedImage.createGraphics()/getGraphics();</li>
+<li>继承Swing组建的paintComponent(Graphics g)方法</li>
+</ul>
+<p><strong>转型为Graphics2D 对象</strong></p>
+<p>Graphics2D可以通过<code>setRenderingHint(RenderingHints.key,RenderingHints.value)</code>方法是否设置图形反锯齿、文字反锯齿、设置图像的插入方法、绘制方法、是否支持抖动等属性。 </p>
+<p><strong>stroke 属性</strong></p>
+<p>stroke属性用于控制线条的宽度、笔形样式、线段连接方式或短划线图案。</p>
+<p>如果我们要设置stroke属性，则应当先创建Stroke引用的对象，但由于Stroke为接口类型，所以我们要创建对象，可以创建其已知实现类BasicStroke的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g2d.setStroke(<span class="keyword">new</span> BasicStroke(<span class="keyword">float</span> width,<span class="keyword">int</span> cap,<span class="keyword">int</span> join));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>width 笔画的宽度</li>
+<li>cap 端点的样式</li>
+<li>join是两线段交汇的连接方式</li>
+</ul>
+<p>（具体详细解释请查看文末引用原博主博客）</p>
+<p><strong>clip属性</strong></p>
+<p>clip属性用于实现剪裁效果。设置剪裁属性可调用如下方法确定剪裁区的Shape</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">setClip</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>paint属性</strong></p>
+<p>paint属性控制填充效果，通过调用setPaint()方法设置： 其函数传入对应的Paint对象</p>
+<p>注意：</p>
+<ul>
+<li>paint可以同时作用在边线和填充上，可以是单色，渐变和图案，任何paint都需要实现java.awt.Paint接口 </li>
+<li>因为Color类实现了java.awt.Paint接口，所有的Color对象都是Paint对象。 </li>
+</ul>
+<p>一些特殊的Paint类：</p>
+<ul>
+<li><p>GradientPaint类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">GradientPaint</span><span class="params">(<span class="keyword">float</span> x1, <span class="keyword">float</span> y1, Color color1,</span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> x2, <span class="keyword">float</span> y2, Color color2)</span></span></span><br></pre></td></tr></table></figure>
+<p>这个类用颜色渐变填充一个区域，构造函数指定定比例和颜色。图形引擎会从第一个点到第二个点之间线性变化两个颜色：从(x1,y1)到(x2,y2)颜色从c1渐变到c2。我们还可以指定颜色图案是否允许重复。 </p>
+</li>
+<li><p>TexturePaint类： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">TexturePaint</span><span class="params">(BufferedImage txtr, Rectangle2D anchor)</span></span></span><br></pre></td></tr></table></figure>
+<p>这个类平铺一个图像来填充图形，构造函数接收一个java.awt.image.BufferedImage和一个Rectangle2D，把图像影射到矩形里，然后平铺矩形。</p>
+<p>我们可以先创建GradientPaint类或TexturePaint类的对象，再调用Graphics2D的setPaint()方法设置填充效果。</p>
+</li>
+</ul>
+<p><strong>Font属性</strong></p>
+<p>所有的文本都使用能表现文字的样式图形渲染。当前的字体决定了字体的形状。使用继承自java.awt.Graphics的getFont()方法和setFont()方法来操纵字体。 </p>
+<p><strong>Transform属性</strong></p>
+<p>transform属性用来实现常用的图形平移、缩放和斜切等变换操作。我们可以调用setTransform()来设置transform属性：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">setTransform</span><span class="params">(AffineTransform Tx)</span></span></span><br></pre></td></tr></table></figure>
+<p>该方法需要一个AffineTransform对象的参数，所以首先创建AffineTransform对象，然后调用setTransform()方法设置transform属性。最后，用具有指定属性的Graphics2D对象绘制图形。</p>
+<p>创建AffineTransform对象的方法有：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旋转变换，旋转theta弧度</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AffineTransform <span class="title">getRotateInstance</span><span class="params">(<span class="keyword">double</span> theta)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 绕旋转中心(anchorx, anchory)旋转</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AffineTransform <span class="title">getRotateInstance</span><span class="params">(<span class="keyword">double</span> theta, <span class="keyword">double</span> anchorx,</span></span></span><br><span class="line"><span class="function"><span class="params">                                            <span class="keyword">double</span> anchory)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 缩放变换，x和y方向分别按sx,sy比例变换</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AffineTransform <span class="title">getScaleInstance</span><span class="params">(<span class="keyword">double</span> sx, <span class="keyword">double</span> sy)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 错切变换，shx和shy指定斜拉度</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AffineTransform <span class="title">getShearInstance</span><span class="params">(<span class="keyword">double</span> shx, <span class="keyword">double</span> shy)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 平移变换，tx和ty表示x和y方向平移距离</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AffineTransform <span class="title">getTranslateInstance</span><span class="params">(<span class="keyword">double</span> tx, <span class="keyword">double</span> ty)</span></span></span><br></pre></td></tr></table></figure>
+<p>当然，也可以先创建一个没有transform属性的AffineTransform对象，然后用以下方法指定图形平移、旋转、缩放变换属性： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将图形在x轴方向平移tx像素，y轴方向平移ty像素</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">translate</span><span class="params">(<span class="keyword">double</span> tx, <span class="keyword">double</span> ty)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 旋转theta弧度</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">double</span> theta)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 图形以点(anchorx, anchory)为轴点，旋转theta弧度</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">double</span> theta, <span class="keyword">double</span> anchorx, <span class="keyword">double</span> anchory)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// 图形在x轴方向缩放sx倍，纵向缩放sy倍</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scale</span><span class="params">(<span class="keyword">double</span> sx, <span class="keyword">double</span> sy)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>composit属性</strong></p>
+<p>composit属性设置图形重叠区域的效果。可通过调用setComposite()方法设置该属性： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">setComposite</span><span class="params">(Composite comp)</span></span></span><br></pre></td></tr></table></figure>
+<p>例如先用方法AlphaComposite.getInstance(int rule, float alpha)得到AlphaComposite对象，再通过setComposite()方法设置混合效果。AlphaComposite在图形和图像中实现混合和透明效果，Alpha值的范围为0.0f(完全透明)-1.0f(完全不透明)。 </p>
+<hr>
+<h3 id="使用Graphics2D绘图"><a href="#使用Graphics2D绘图" class="headerlink" title="使用Graphics2D绘图"></a>使用Graphics2D绘图</h3><p>Graphics2D类仍然保留Graphics类的绘图方法，同时增加了许多新方法。新方法将几何图形(线段、圆等)作为一个对象来绘制。在java.awt.geom包中声明的一系列类，分别用于创建各种身体图形对象。常用的主要有：</p>
+<ul>
+<li>Line2D - 线段类</li>
+<li>RoundRectangle2D - 圆角矩形类</li>
+<li>Ellipse2D - 椭圆类</li>
+<li>Arc2D - 圆弧类</li>
+<li>QuadCurve2D - 二次曲线类</li>
+<li>CubicCurve2D - 三次曲线类。</li>
+</ul>
+<p>要用Graphics2D类的新方法画一个图形。先在重画方法paintComponent()或paint()中，把参数对象g强制转换成Graphics2D对象；然后，用上述图形类提供的静态内部类构造方法Double()或Float()创建该图形的对象；最后，以图形对象为参数调用Graphics2D对象的draw()方法绘制这个图形。</p>
+<p>画一条线段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 画线 */</span></span><br><span class="line">Stroke s = <span class="keyword">new</span> BasicStroke(<span class="number">20</span>, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER);</span><br><span class="line">g2d.setStroke(s);       </span><br><span class="line">Line2D line = <span class="keyword">new</span> Line2D.Double(<span class="number">30</span>,<span class="number">50</span>,<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">g2d.draw(line);</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+<p>画一个圆角矩形：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 画圆角矩形 */</span></span><br><span class="line">g2d.setColor(Color.BLUE);</span><br><span class="line">RoundRectangle2D rect = <span class="keyword">new</span> RoundRectangle2D.Double(<span class="number">100</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">50</span>,</span><br><span class="line">            <span class="number">4</span>, <span class="number">4</span>);</span><br><span class="line">g2d.draw(rect);</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+<p>画一个旋转一定角度的矩形：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 画旋转一定角度的矩形 */</span></span><br><span class="line">Rectangle2D rect2 = <span class="keyword">new</span> Rectangle2D.Double(<span class="number">60</span>, <span class="number">160</span>, <span class="number">60</span>, <span class="number">90</span>);</span><br><span class="line">AffineTransform transform = <span class="keyword">new</span> AffineTransform();</span><br><span class="line">transform.rotate(<span class="number">45</span> * Math.PI / <span class="number">180</span>, <span class="number">90</span>, <span class="number">200</span>); <span class="comment">// 围绕(90,200)点旋转图形45度</span></span><br><span class="line">g2d.setTransform(transform);</span><br><span class="line">g2d.draw(rect2);</span><br></pre></td></tr></table></figure>
+<p><strong>消除锯齿</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span><br><span class="line">g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_DEFAULT);</span><br></pre></td></tr></table></figure></p>
+<p>注意：绘制完图像后记得用dispose()方法释放资源</p>
+<h3 id="验证码生成的实现"><a href="#验证码生成的实现" class="headerlink" title="验证码生成的实现"></a>验证码生成的实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证码原实现博主是CSDN的The...Exception的大佬，在这里做了简单的修改以及添加了大量的注释来巩固上面的知识。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics2D;</span><br><span class="line"><span class="keyword">import</span> java.awt.LinearGradientPaint;</span><br><span class="line"><span class="keyword">import</span> java.awt.Paint;</span><br><span class="line"><span class="keyword">import</span> java.awt.RenderingHints;</span><br><span class="line"><span class="keyword">import</span> java.awt.geom.AffineTransform;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VerifyCodeUtils</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">//使用到Algerian字体，系统里没有的话需要安装字体，字体只显示大写，去掉了1,0,i,o几个容易混淆的字符</span></span><br><span class="line">	<span class="comment">//这个也是默认的字符源</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String VERIFY_CODES = <span class="string">"23456789ABCDEFGHJKLMNPQRSTUVWXYZ"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Random random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 使用系统默认字符源生成验证码</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> verifySize	验证码长度</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateVerifyCode</span><span class="params">(<span class="keyword">int</span> verifySize)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> generateVerifyCode(verifySize, VERIFY_CODES);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 使用指定源生成验证码</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> verifySize	验证码长度</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> sources	验证码字符源</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateVerifyCode</span><span class="params">(<span class="keyword">int</span> verifySize, String sources)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(sources == <span class="keyword">null</span> || sources.length() == <span class="number">0</span>)&#123;</span><br><span class="line">			sources = VERIFY_CODES;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> codesLen = sources.length();</span><br><span class="line">		<span class="comment">//用当前时间作为随机生成种子在一定程度上达到了真随机</span></span><br><span class="line">		Random rand = <span class="keyword">new</span> Random(System.currentTimeMillis());</span><br><span class="line">		<span class="comment">//使用StringBuilder做到不断的附加随机字符</span></span><br><span class="line">		StringBuilder verifyCode = <span class="keyword">new</span> StringBuilder(verifySize);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; verifySize; i++)&#123;</span><br><span class="line">			verifyCode.append(sources.charAt(rand.nextInt(codesLen-<span class="number">1</span>)));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> verifyCode.toString();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 生成随机验证码文件,并返回验证码值</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> w</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> outputFile</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> verifySize</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">outputVerifyImage</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, File outputFile, <span class="keyword">int</span> verifySize)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		String verifyCode = generateVerifyCode(verifySize);</span><br><span class="line">		outputImage(w, h, outputFile, verifyCode);</span><br><span class="line">		<span class="keyword">return</span> verifyCode;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 输出随机验证码图片流,并返回验证码值</span></span><br><span class="line"><span class="comment">	 * 先生成具体的随机验证码，再去生成对应的图片</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> w</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> os</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> verifySize</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">outputVerifyImage</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, OutputStream os, <span class="keyword">int</span> verifySize)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		String verifyCode = generateVerifyCode(verifySize);</span><br><span class="line">		outputImage(w, h, os, verifyCode);</span><br><span class="line">		<span class="keyword">return</span> verifyCode;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 生成指定验证码图像文件</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> w</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> outputFile</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> code</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">//生成图片保存的位置,抛出异常通知上层</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">outputImage</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, File outputFile, String code)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="comment">//没有输出文件的情况下先退出</span></span><br><span class="line">		<span class="keyword">if</span>(outputFile == <span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//由于File中的路径直接使用mkDir生成的都是文件夹，因此需要先找到父文件夹先判断生成文件夹</span></span><br><span class="line">		File dir = outputFile.getParentFile();</span><br><span class="line">		<span class="keyword">if</span>(!dir.exists())&#123;</span><br><span class="line">			dir.mkdirs();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//再去生成具体的文件</span></span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			outputFile.createNewFile();</span><br><span class="line">			FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(outputFile);</span><br><span class="line">			outputImage(w, h, fos, code);</span><br><span class="line">			fos.close();</span><br><span class="line">		&#125; <span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">			<span class="keyword">throw</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 输出指定验证码图片流</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> w</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> os</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> code</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">outputImage</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, OutputStream os, String code)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> verifySize = code.length();</span><br><span class="line">		<span class="comment">//创建BufferedImage</span></span><br><span class="line">		BufferedImage image = <span class="keyword">new</span> BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);</span><br><span class="line">		Random rand = <span class="keyword">new</span> Random();</span><br><span class="line">		<span class="comment">//获取Graphics2D对象</span></span><br><span class="line">		Graphics2D g2 = image.createGraphics();</span><br><span class="line">		<span class="comment">//设置抗锯齿</span></span><br><span class="line">		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);</span><br><span class="line">		<span class="comment">//Colors数组</span></span><br><span class="line">		Color[] colors = <span class="keyword">new</span> Color[<span class="number">5</span>];</span><br><span class="line">		<span class="comment">//ColorSpaces数组</span></span><br><span class="line">		Color[] colorSpaces = <span class="keyword">new</span> Color[] &#123; Color.WHITE, Color.CYAN,</span><br><span class="line">				Color.GRAY, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE,</span><br><span class="line">				Color.PINK, Color.YELLOW &#125;;</span><br><span class="line">		<span class="keyword">float</span>[] fractions = <span class="keyword">new</span> <span class="keyword">float</span>[colors.length];</span><br><span class="line">		<span class="comment">//随机从ColorSpace找到五种颜色和五个</span></span><br><span class="line">		<span class="comment">//TODO </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; colors.length; i++)&#123;</span><br><span class="line">			colors[i] = colorSpaces[rand.nextInt(colorSpaces.length)];</span><br><span class="line">			fractions[i] = rand.nextFloat();</span><br><span class="line">		&#125;</span><br><span class="line">		Arrays.sort(fractions);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//绘制背景，之后只保留一部分，所以是绘制边框</span></span><br><span class="line">		g2.setColor(Color.GRAY);<span class="comment">// 设置边框色</span></span><br><span class="line">		g2.fillRect(<span class="number">0</span>, <span class="number">0</span>, w, h);</span><br><span class="line">		</span><br><span class="line">		Color c = getRandColor(<span class="number">200</span>, <span class="number">250</span>);</span><br><span class="line">		g2.setColor(c);<span class="comment">// 设置背景色</span></span><br><span class="line">		g2.fillRect(<span class="number">0</span>, <span class="number">2</span>, w, h-<span class="number">4</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//绘制干扰线</span></span><br><span class="line">		Random random = <span class="keyword">new</span> Random();</span><br><span class="line">		g2.setColor(getRandColor(<span class="number">160</span>, <span class="number">200</span>));<span class="comment">// 设置线条的颜色</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> x = random.nextInt(w - <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">int</span> y = random.nextInt(h - <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">int</span> xl = random.nextInt(<span class="number">6</span>) + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">int</span> yl = random.nextInt(<span class="number">12</span>) + <span class="number">1</span>;</span><br><span class="line">			g2.drawLine(x, y, x + xl + <span class="number">40</span>, y + yl + <span class="number">20</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 添加噪点</span></span><br><span class="line">		<span class="keyword">float</span> yawpRate = <span class="number">0.05f</span>;<span class="comment">// 噪声率</span></span><br><span class="line">		<span class="keyword">int</span> area = (<span class="keyword">int</span>) (yawpRate * w * h);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; area; i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> x = random.nextInt(w);</span><br><span class="line">			<span class="keyword">int</span> y = random.nextInt(h);</span><br><span class="line">			<span class="keyword">int</span> rgb = getRandomIntColor();</span><br><span class="line">			image.setRGB(x, y, rgb);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		shear(g2, w, h, c);<span class="comment">// 使图片扭曲</span></span><br><span class="line">		<span class="comment">//设置字体颜色</span></span><br><span class="line">		g2.setColor(getRandColor(<span class="number">100</span>, <span class="number">160</span>));</span><br><span class="line">		<span class="keyword">int</span> fontSize = h-<span class="number">4</span>;</span><br><span class="line">		Font font = <span class="keyword">new</span> Font(<span class="string">"Algerian"</span>, Font.ITALIC, fontSize);</span><br><span class="line">		g2.setFont(font);</span><br><span class="line">		<span class="keyword">char</span>[] chars = code.toCharArray();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; verifySize; i++)&#123;</span><br><span class="line">			AffineTransform affine = <span class="keyword">new</span> AffineTransform();</span><br><span class="line">			affine.setToRotation(Math.PI / <span class="number">4</span> * rand.nextDouble() * (rand.nextBoolean() ? <span class="number">1</span> : -<span class="number">1</span>), (w / verifySize) * i + fontSize/<span class="number">2</span>, h/<span class="number">2</span>);</span><br><span class="line">			g2.setTransform(affine);</span><br><span class="line">			g2.drawChars(chars, i, <span class="number">1</span>, ((w-<span class="number">10</span>) / verifySize) * i + <span class="number">5</span>, h/<span class="number">2</span> + fontSize/<span class="number">2</span> - <span class="number">10</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//清除</span></span><br><span class="line">		g2.dispose();</span><br><span class="line">		ImageIO.write(image, <span class="string">"jpg"</span>, os);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//生成一个随机的颜色，在bc-fc是其RGB分量的范围</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Color <span class="title">getRandColor</span><span class="params">(<span class="keyword">int</span> fc, <span class="keyword">int</span> bc)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//对输入参数进行过滤</span></span><br><span class="line">		<span class="keyword">if</span> (fc &gt; <span class="number">255</span>)</span><br><span class="line">			fc = <span class="number">255</span>;</span><br><span class="line">		<span class="keyword">if</span> (bc &gt; <span class="number">255</span>)</span><br><span class="line">			bc = <span class="number">255</span>;</span><br><span class="line">		<span class="keyword">int</span> r = fc + random.nextInt(bc - fc);</span><br><span class="line">		<span class="keyword">int</span> g = fc + random.nextInt(bc - fc);</span><br><span class="line">		<span class="keyword">int</span> b = fc + random.nextInt(bc - fc);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Color(r, g, b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//用int类型值去保存RGB三个分量，这里用到左移，之后用逻辑加进行处理</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getRandomIntColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] rgb = getRandomRgb();</span><br><span class="line">		<span class="keyword">int</span> color = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> c : rgb) &#123;</span><br><span class="line">			color = color &lt;&lt; <span class="number">8</span>;</span><br><span class="line">			color = color | c;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> color;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//生成随机颜色，RGB分量由数组保存</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] getRandomRgb() &#123;</span><br><span class="line">		<span class="keyword">int</span>[] rgb = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">			rgb[i] = random.nextInt(<span class="number">255</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> rgb;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shear</span><span class="params">(Graphics g, <span class="keyword">int</span> w1, <span class="keyword">int</span> h1, Color color)</span> </span>&#123;</span><br><span class="line">		shearX(g, w1, h1, color);</span><br><span class="line">		shearY(g, w1, h1, color);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shearX</span><span class="params">(Graphics g, <span class="keyword">int</span> w1, <span class="keyword">int</span> h1, Color color)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">int</span> period = random.nextInt(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">boolean</span> borderGap = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">int</span> frames = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> phase = random.nextInt(<span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; h1; i++) &#123;</span><br><span class="line">			<span class="keyword">double</span> d = (<span class="keyword">double</span>) (period &gt;&gt; <span class="number">1</span>)</span><br><span class="line">					* Math.sin((<span class="keyword">double</span>) i / (<span class="keyword">double</span>) period</span><br><span class="line">							+ (<span class="number">6.2831853071795862</span>D * (<span class="keyword">double</span>) phase)</span><br><span class="line">							/ (<span class="keyword">double</span>) frames);</span><br><span class="line">			g.copyArea(<span class="number">0</span>, i, w1, <span class="number">1</span>, (<span class="keyword">int</span>) d, <span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span> (borderGap) &#123;</span><br><span class="line">				g.setColor(color);</span><br><span class="line">				g.drawLine((<span class="keyword">int</span>) d, i, <span class="number">0</span>, i);</span><br><span class="line">				g.drawLine((<span class="keyword">int</span>) d + w1, i, w1, i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shearY</span><span class="params">(Graphics g, <span class="keyword">int</span> w1, <span class="keyword">int</span> h1, Color color)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">int</span> period = random.nextInt(<span class="number">40</span>) + <span class="number">10</span>; <span class="comment">// 50;</span></span><br><span class="line"> </span><br><span class="line">		<span class="keyword">boolean</span> borderGap = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">int</span> frames = <span class="number">20</span>;</span><br><span class="line">		<span class="keyword">int</span> phase = <span class="number">7</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; w1; i++) &#123;</span><br><span class="line">			<span class="keyword">double</span> d = (<span class="keyword">double</span>) (period &gt;&gt; <span class="number">1</span>)</span><br><span class="line">					* Math.sin((<span class="keyword">double</span>) i / (<span class="keyword">double</span>) period</span><br><span class="line">							+ (<span class="number">6.2831853071795862</span>D * (<span class="keyword">double</span>) phase)</span><br><span class="line">							/ (<span class="keyword">double</span>) frames);</span><br><span class="line">			g.copyArea(i, <span class="number">0</span>, <span class="number">1</span>, h1, <span class="number">0</span>, (<span class="keyword">int</span>) d);</span><br><span class="line">			<span class="keyword">if</span> (borderGap) &#123;</span><br><span class="line">				g.setColor(color);</span><br><span class="line">				g.drawLine(i, (<span class="keyword">int</span>) d, i, <span class="number">0</span>);</span><br><span class="line">				g.drawLine(i, (<span class="keyword">int</span>) d + h1, i, h1);</span><br><span class="line">			&#125;</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		File dir = <span class="keyword">new</span> File(<span class="string">"verifies"</span>);</span><br><span class="line">		<span class="keyword">int</span> w = <span class="number">200</span>, h = <span class="number">80</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++)&#123;</span><br><span class="line">			String verifyCode = generateVerifyCode(<span class="number">4</span>);</span><br><span class="line">			File file = <span class="keyword">new</span> File(dir, verifyCode + <span class="string">".jpg"</span>);</span><br><span class="line">			outputImage(w, h, file, verifyCode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考资料：</p>
+<p><a href="https://bbs.csdn.net/topics/250022320" target="_blank" rel="noopener">https://bbs.csdn.net/topics/250022320</a> </p>
+<p>BufferedImage与Buffer的区别</p>
+<p><a href="https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html</a></p>
+<p>Graphics文档</p>
+<p><a href="https://blog.csdn.net/zlxtk/article/details/53995049" target="_blank" rel="noopener">https://blog.csdn.net/zlxtk/article/details/53995049</a></p>
+<p>Java Graphics初探</p>
+<p><a href="https://blog.csdn.net/zhliro/article/details/45645569" target="_blank" rel="noopener">https://blog.csdn.net/zhliro/article/details/45645569</a></p>
+<p>Java Graphics2D类的绘图方法</p>
+<p><a href="https://blog.csdn.net/ruixue0117/article/details/22829557" target="_blank" rel="noopener">https://blog.csdn.net/ruixue0117/article/details/22829557</a></p>
+<p>Java生成验证码</p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/29/动态规划入门/">
+                
+                    动态规划入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-29
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/算法/">算法</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><p><strong>参考邓俊辉老师《数据结构》的MOOC</strong></p>
+<p><strong>理解问题</strong></p>
+<p>两个序列的子序列指的是，由序列中的若干字符，按照原来的相对次序组成的。其中有几个注意事项</p>
+<ul>
+<li>可能同时有多个最长公共子序列，同时有多个意味着在不影响最长的前提下，在某个部分可能由不同的匹配结果，而几个 不同的匹配结果却不能合并，顺序是交叉的。用邓俊辉老师的例子是这样的：<ul>
+<li>educational</li>
+<li>advantage</li>
+<li>前面匹配da没问题，倒着看匹配a没问题，中间可以匹配t也可以匹配n，不能同时匹配因为其出现次序不同</li>
+</ul>
+</li>
+<li>可能有歧义，某一个字符同时出现两次<ul>
+<li>didactical</li>
+<li>advantage</li>
+<li>data</li>
+</ul>
+</li>
+</ul>
+<p><strong>减而治之的思想得到递归程序</strong></p>
+<ul>
+<li>最简单最一般的情况就是其中有一个序列已经被减到空了，那么就不可能对应的序列了</li>
+<li>在减小规模的过程中<ul>
+<li>最后两个相等，就直接得到这个公共字符</li>
+<li>最后两个不等<ul>
+<li>分情况递归查找</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="comment">//最长公共子序列的递归算法</span></span><br><span class="line">	<span class="comment">//递归算法整体采用减而治之的思想</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">LCS</span><span class="params">(String str1,String str2,<span class="keyword">int</span> index1,<span class="keyword">int</span> index2)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//递归基，当其中有一个串已经完成的时候结束</span></span><br><span class="line">		<span class="keyword">if</span>(index1==-<span class="number">1</span>||index2==-<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//第一种情况，当末尾字符匹配的时候</span></span><br><span class="line">		<span class="keyword">if</span>(str1.charAt(index1)==str2.charAt(index2)) &#123;</span><br><span class="line">			<span class="keyword">return</span> LCS(str1,str2,index1-<span class="number">1</span>,index2-<span class="number">1</span>)+String.valueOf(str1.charAt(index1));</span><br><span class="line">			<span class="comment">//当不匹配的时候分成两种情况讨论，(分而治之)取其中最长的</span></span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			String a = LCS(str1,str2,index1-<span class="number">1</span>,index2);</span><br><span class="line">			String b = LCS(str1,str2,index1,index2-<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">return</span> a.length()&gt;=b.length()?a:b;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">LCS</span><span class="params">(String str1,String str2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> LCS(str1,str2,str1.length()-<span class="number">1</span>,str2.length()-<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(LCS(<span class="string">"program"</span>, <span class="string">"algorithm"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>递归存在的问题</strong></p>
+<p>减而治之已经带有大量重复计算的过程了，但是它又来了一个分而治之。。</p>
+<p><strong>改进的策略</strong></p>
+<p>类比斐波那契数列，斐波那契数列只用减而治之，改为迭代算法一方面可以对每一个计算结果进行保存，另一方面其计算结果依赖于前两项，对这两项从前到后的迭代也可以解决。LCS问题稍有不同的是，它有了分而治之，假设其所有的子问题都可以用M[A,B]A,B分别为子序列的长度。这些子问题构成的是一个二维的视图，求解M[A,B]在不能直接缩小问题规模的情况下（所谓直接缩小就是最后一个比对字符相等的情况下）就会比较M[A-1,B]和M[A,B-1]这两个问题的解谁大。</p>
+<p>既然所有的子问题都可以用M[A,B]表示，设A的长度为m，B的长度为N，那么解决这些子问题远远比通过递归解决效率高得多。时间复杂度也是0(m*n)</p>
+<p>这个表示解的二维数组的生成过程就是一个问题从最简单到复杂的过程。最简单的问题就是递归基表示的，其中有个序列为空了。之后就从左到右，从上到下扩展问题的规模。在下面的实现算法只表示LCS的字符的个数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">LCS</span><span class="params">(String str1,String str2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[][] solve = <span class="keyword">new</span> <span class="keyword">int</span>[str1.length()+<span class="number">1</span>][str2.length()+<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str1.length();i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;str2.length();j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str1.charAt(i)==str2.charAt(j))</span><br><span class="line">					solve[i+<span class="number">1</span>][j+<span class="number">1</span>]=solve[i][j]+<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">int</span> a = solve[i][j+<span class="number">1</span>];</span><br><span class="line">					<span class="keyword">int</span> b = solve[i+<span class="number">1</span>][j];</span><br><span class="line">					solve[i+<span class="number">1</span>][j+<span class="number">1</span>]=a&gt;b?a:b;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> solve[str1.length()][str2.length()];</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>在牛客网中查询相应的习题，对代码在其规定的环境中略作修改即可通过。</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/算法/"><i class="fa fa-tag fa-fw"></i>&nbsp;算法</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/28/Windows进程的创建过程/">
+                
+                    Windows进程的创建过程
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-28
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。</p>
+<h3 id="Windows进程创建过程"><a href="#Windows进程创建过程" class="headerlink" title="Windows进程创建过程"></a>Windows进程创建过程</h3><p>内存中的程序是其本身文件的映射。Windows的PE文件格式和Linux的ELF文件格式都是源于COFF文件格式，该格式是分段划分的，以满足对动态链接的要求以及对每个段数据的管理与保护，在32位操作系统下，windows 的PE文件格式会映射到一个2GB（低地址，高2G是操作系统占用的）大小的虚拟地址空间，这些地址空间由PE文件映射而来，同时加载许多动态库文件。对虚拟内存地址空间大致是如下的分布：</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>32位windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空指针赋值区域</td>
+<td>0x00000000-0x0000FFFF</td>
+</tr>
+<tr>
+<td>用户模式区</td>
+<td>0x00010000-0x7FFEFFFF</td>
+</tr>
+<tr>
+<td>64KB禁入区</td>
+<td>0x7FFF000-0x7FFFFFFF</td>
+</tr>
+<tr>
+<td>内核</td>
+<td>0x80000000-0xFFFFFFFF</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>下面是进程具体的创建过程：</p>
+<ul>
+<li>映射EXE文件</li>
+<li>创建内核对象EPROCESS</li>
+<li>映射系统DLL(ntdll.dll)</li>
+<li>创建线程内核对象ETHREAD</li>
+<li>系统启动线程<ul>
+<li>映射DLL（ntdll.LdrlnitializeThunk）</li>
+<li>线程开始执行</li>
+</ul>
+</li>
+</ul>
+<p>从大的方面来讲，分为两步，创建进程，创建线程</p>
+<p>这两方面也都有共同点</p>
+<ul>
+<li>都对应着内核对象，分别是EPROCESS和ETHREAD，这些都是由操作系统管理，在OS的高2G当中</li>
+<li>都需要映射dll，只不过进程是映射ntdll，线程启动时映射的是PE文件需要的dll，是递归加入的</li>
+</ul>
+<p>不同点在于</p>
+<ul>
+<li>线程需要操作系统启动。</li>
+</ul>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><ul>
+<li>进程都是由其他的进程创建的！第一个进程是由OS启动创建的。</li>
+</ul>
+<h3 id="CreateProcess"><a href="#CreateProcess" class="headerlink" title="CreateProcess"></a>CreateProcess</h3><p>在这里暂时不贴具体的API参数，而是先去大致学习明白它需要什么。</p>
+<ul>
+<li><p>子进程的概念</p>
+<ul>
+<li>由于进程都是由父进程创建（除了第一个创建的进程），所以引出子进程的概念</li>
+</ul>
+</li>
+<li><p>创建子进程类似运行一个程序，类比命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir files/</span><br></pre></td></tr></table></figure>
+<p>一个是这个程序路径和名字（得到程序在哪里，文件名对具体的文件索引是有一个映射的,文件名是对具体文件位置的抽象表示）</p>
+<p>第二个是命令行参数，执行前的附加参数</p>
+<p>第三个比较隐含，就是父进程的部分信息，这个“部分信息”包含以下内容：</p>
+<ul>
+<li>父进程的环境变量 -&gt;是否继承？</li>
+<li>父进程信息 STARTUPINFO结构体（创建进程的时候由父进程填充），子进程通过GetStartupInfo来获取</li>
+</ul>
+</li>
+<li><p>其次，我们应该去指明，创建这个进程的方式是什么？如何去创建。主要包含以下内容</p>
+</li>
+<li><p>最后，我们应该返回创建的进程和线程的标识信息，方便之后的程序步骤进行处理</p>
+<ul>
+<li>进程句柄，进程ID</li>
+<li>线程句柄，线程ID</li>
+</ul>
+</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+                    <a href="/tags/Windows/"><i class="fa fa-tag fa-fw"></i>&nbsp;Windows</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux 学习（命令）/">
+                
+                    Linux学习（命令）
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux常用命令的学习，不间断更新，逐渐让它完整</p>
+<h2 id="Shell-操作"><a href="#Shell-操作" class="headerlink" title="Shell 操作"></a>Shell 操作</h2><ul>
+<li>history<ul>
+<li>显示之前输入过的命令</li>
+<li>Ctrl+P 一直向上遍历（从下向上）  Previous</li>
+<li>Ctrl+N 向下遍历 （也可以向上向下）Next</li>
+</ul>
+</li>
+<li>光标控制<ul>
+<li>Ctrl + B （Back Forward）</li>
+<li>Ctrl + F（Forward）</li>
+<li>Ctrl +D （Delete）删除光标盖住的（之后的）一个字符</li>
+<li>Ctrl + U 删除光标前面的字符串</li>
+<li>Ctrl + K 删除光标后面的字符串</li>
+</ul>
+</li>
+<li>Tab 自动补全</li>
+</ul>
+<h2 id="文件目录结构"><a href="#文件目录结构" class="headerlink" title="文件目录结构"></a>文件目录结构</h2><ul>
+<li>/<ul>
+<li>/bin ：二进制文件,包含命令等等可执行程序（其中绿色的代表可执行程序，浅蓝色是软链接（快捷方式），红色是，要想显示颜色实际上执行的指令是ls –color=auto ）</li>
+<li>/dev: device 在Linux下一切皆文件，里面包含了CPU，显卡，内存，显示器等设备的抽象</li>
+<li>/lib：Linux运行的时候需要加载的一些动态库</li>
+<li>/mnt: 手动挂载目录</li>
+<li>/media: 自动挂载目录</li>
+<li>/root ：Linux超级用户的家目录</li>
+<li>/usr: unix system resource Unix系统资源目录<ul>
+<li>/include 头文件</li>
+<li>/game 游戏</li>
+<li>/local 用户安装的应用程序目录</li>
+</ul>
+</li>
+<li>/etc 配置文件<ul>
+<li>/passed 存储的不是密码，是用户的信息</li>
+<li>/group 存储用户组信息</li>
+</ul>
+</li>
+<li>/opt: 安装第三方应用程序</li>
+<li>/home 用户的家目录（宿主目录）</li>
+<li>/tmp:   存放临时文件 重启清空</li>
+</ul>
+</li>
+</ul>
+<h2 id="命令学习（基本操作）"><a href="#命令学习（基本操作）" class="headerlink" title="命令学习（基本操作）"></a>命令学习（基本操作）</h2><h3 id="tree-gt-查看目录"><a href="#tree-gt-查看目录" class="headerlink" title="tree -&gt;(查看目录)"></a>tree -&gt;(查看目录)</h3><ul>
+<li>查看一个目录的内容</li>
+<li>tree 查看当前目录</li>
+<li>tree dir 查看指定目录</li>
+</ul>
+<h3 id="ls-gt-（查看文件和目录）"><a href="#ls-gt-（查看文件和目录）" class="headerlink" title="ls  -&gt;（查看文件和目录）"></a>ls  -&gt;（查看文件和目录）</h3><ul>
+<li>查看文件和目录</li>
+</ul>
+<p><strong>参数</strong></p>
+<ul>
+<li>-a   显示所有文件和目录，包括隐藏文件（以.开头的）</li>
+<li>-l    列出详细信息<ul>
+<li>-rwxrw-r– 1 kevin kevin 321145 11月 23 23:08 hello.txt</li>
+<li>第一个字符：文件的类型<ul>
+<li>7种</li>
+<li>普通文件：-<ul>
+<li>.txt 压缩包 可执行程序</li>
+</ul>
+</li>
+<li>目录：d</li>
+<li>符号链接：I</li>
+<li>管道:p</li>
+<li>套接字：s</li>
+<li>字符设备：c<ul>
+<li>键盘，鼠标</li>
+</ul>
+</li>
+<li>块设备：b<ul>
+<li>U盘，硬盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>之后就是文件所有者，文件所有组，其他人的权限</li>
+<li>再之后的1是硬连接计数</li>
+<li>在后来的用户名是文件所有者</li>
+<li>再后来的名字是文件所属组的文字</li>
+<li>后面的文字是文件的大小<ul>
+<li>如果是目录，看到的大小永远是4K （ls -lh）是目录本身的大小</li>
+</ul>
+</li>
+<li>日期</li>
+<li>文件名</li>
+</ul>
+</li>
+<li>-f 格式化，如果是目录就加/</li>
+</ul>
+<h3 id="alias-gt-（查看命令别名）"><a href="#alias-gt-（查看命令别名）" class="headerlink" title="alias -&gt;（查看命令别名）"></a>alias -&gt;（查看命令别名）</h3><p>常用的命令比如</p>
+<p>ls =’ls –color=auto’</p>
+<p>ll =’ls -alF’</p>
+<h3 id="pwd-gt-（查看当前目录）"><a href="#pwd-gt-（查看当前目录）" class="headerlink" title="pwd -&gt;（查看当前目录）"></a>pwd -&gt;（查看当前目录）</h3><p>Print Work Dictionary</p>
+<h3 id="cd-gt-（切换目录）"><a href="#cd-gt-（切换目录）" class="headerlink" title="cd -&gt;（切换目录）"></a>cd -&gt;（切换目录）</h3><ul>
+<li>cd ~ 切换到家目录</li>
+<li>cd 退出目录</li>
+<li>cd - 最后两个相邻的，目录特别长的时候适用</li>
+</ul>
+<h3 id="mkdir-gt-创建目录"><a href="#mkdir-gt-创建目录" class="headerlink" title="mkdir -&gt;(创建目录)"></a>mkdir -&gt;(创建目录)</h3><ul>
+<li>mkdir 文件名 ：直接创建路径</li>
+<li>mkdir 路径/文件名 创建子目录</li>
+<li>mkdir 路径/文件名 -p  可以一次性创建多级目录</li>
+</ul>
+<h3 id="touch-gt-（创建文件）"><a href="#touch-gt-（创建文件）" class="headerlink" title="touch -&gt;（创建文件）"></a>touch -&gt;（创建文件）</h3><ul>
+<li>touch 文件名 如果文件不存在，创建新文件，如果存在，则会更新时间而不做任何操作</li>
+</ul>
+<h3 id="rmdir-gt-（删除空目录）"><a href="#rmdir-gt-（删除空目录）" class="headerlink" title="rmdir -&gt;（删除空目录）"></a>rmdir -&gt;（删除空目录）</h3><p>注意只能删除空目录，功能比较弱</p>
+<h3 id="rm-gt-删除命令"><a href="#rm-gt-删除命令" class="headerlink" title="rm -&gt;(删除命令)"></a>rm -&gt;(删除命令)</h3><ul>
+<li>删除目录<ul>
+<li>直接删除也会提示’无法删除，是一个目录’</li>
+<li>树形结构需要递归删除，因此需要加上参数-r</li>
+</ul>
+</li>
+<li>删除文件<ul>
+<li>rm 文件名 -i</li>
+</ul>
+</li>
+<li><p>删除的时候给提示 -I</p>
+</li>
+<li><p>注意问题</p>
+<ul>
+<li>删除之后，很难恢复</li>
+</ul>
+</li>
+</ul>
+<h3 id="cp-gt-（拷贝）"><a href="#cp-gt-（拷贝）" class="headerlink" title="cp -&gt;（拷贝）"></a>cp -&gt;（拷贝）</h3><ul>
+<li>cp 要拷贝的文件  拷贝目的  如果拷贝目的不存在则会创建这个文件并拷贝</li>
+<li>cp file1 file2（存在）则会覆盖文件的内容</li>
+<li>cp file dir（存在）<ul>
+<li>拷贝file到dir<ul>
+<li>cp dir dir1（存在）</li>
+<li>将dir拷贝到dir1，直接使用会提示略过，拷贝时候需要递归的拷贝，所以应该加-r</li>
+<li>cp dir dir1（不存在）</li>
+<li>将dir里面的内容copy到新创建的目录中，注意不包括源dir名字</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mv-gt-改名或者移动文件"><a href="#mv-gt-改名或者移动文件" class="headerlink" title="mv -&gt;(改名或者移动文件)"></a>mv -&gt;(改名或者移动文件)</h3><ul>
+<li>改名<ul>
+<li>mv file（存在）file1（不存在）</li>
+<li>mv dir（存在）dir1（不存在）</li>
+</ul>
+</li>
+<li>移动<ul>
+<li>mv file（文件） dir（存在） 将file移动到目录中去</li>
+<li>mv dir1（存在）dir2(存在) 将dir1移动到dir2中</li>
+<li>mv file（存在）file2 覅了文件会覆盖file2文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="cat-gt-（将内容打印到终端）"><a href="#cat-gt-（将内容打印到终端）" class="headerlink" title="cat -&gt;（将内容打印到终端）"></a>cat -&gt;（将内容打印到终端）</h3><p>文件特别多，大于终端显示上限，只能显示一部分</p>
+<h3 id="more-gt-（查看更多）"><a href="#more-gt-（查看更多）" class="headerlink" title="more-&gt;（查看更多）"></a>more-&gt;（查看更多）</h3><ul>
+<li>回车向下</li>
+<li>空格翻页</li>
+<li>不能回去</li>
+<li>按下q退出</li>
+</ul>
+<h3 id="less-gt-（可以向上）"><a href="#less-gt-（可以向上）" class="headerlink" title="less-&gt;（可以向上）"></a>less-&gt;（可以向上）</h3><p>与more相同，但是可以向上翻页，可以用page up键也可以用Ctrl +P，向下Ctrl+N</p>
+<h3 id="head-gt-（显示前？行）"><a href="#head-gt-（显示前？行）" class="headerlink" title="head -&gt;（显示前？行）"></a>head -&gt;（显示前？行）</h3><p>可以通过加入参数来设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -5 stdio.h</span><br><span class="line"><span class="meta">#</span><span class="bash"> 默认是10行</span></span><br></pre></td></tr></table></figure>
+<h3 id="tail-gt-显示后？行"><a href="#tail-gt-显示后？行" class="headerlink" title="tail -&gt;(显示后？行)"></a>tail -&gt;(显示后？行)</h3><p>同上</p>
+<h3 id="ln-gt-（创建快捷方式）"><a href="#ln-gt-（创建快捷方式）" class="headerlink" title="ln -&gt;（创建快捷方式）"></a>ln -&gt;（创建快捷方式）</h3><ul>
+<li>软链接 –快捷方式<ul>
+<li>ln -s </li>
+<li>它的大小对应的是其字节数</li>
+<li>当移动之后或许会发生快捷方式失效的，这是因为是相对路径</li>
+<li>在创建的时候使用绝对路径就可以防止移动之后的快捷方式失效</li>
+<li>目录也可以创建软链接</li>
+</ul>
+</li>
+<li>硬连接 <ul>
+<li>ln 文件名</li>
+<li>相对路径或者绝对路径没有关系</li>
+<li>认识inode结点<ul>
+<li>磁盘上的数据块是由索引节点号inode来表示</li>
+<li>OS并不对文件名感兴趣，每个文件是由其inode决定的</li>
+<li>因此inode不占用磁盘空间</li>
+<li>创建一个文件，硬链接计数为1</li>
+<li>给文件创建了硬连接，链接+1，删除一个-1</li>
+<li>如果inode为0，那么标识为废弃，再写入新文件的时候会覆盖，如果非0会进行保护</li>
+</ul>
+</li>
+<li>使用场景<ul>
+<li>磁盘上有一个文件</li>
+<li>需要再其他多个目录管理这个文件，并且能够实时同步</li>
+<li>硬连接是直接对应inode号，软链接是对应文件路径</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</a></p>
+<p>理解 Linux 的硬链接与软链接</p>
+</blockquote>
+<h2 id="命令学习（用户权限，用户和用户组）"><a href="#命令学习（用户权限，用户和用户组）" class="headerlink" title="命令学习（用户权限，用户和用户组）"></a>命令学习（用户权限，用户和用户组）</h2><h3 id="chmod-gt-（修改文件或者目录的权限）"><a href="#chmod-gt-（修改文件或者目录的权限）" class="headerlink" title="chmod-&gt;（修改文件或者目录的权限）"></a>chmod-&gt;（修改文件或者目录的权限）</h3><ul>
+<li><p>文字设定法</p>
+<ul>
+<li>chmod who[+|-|=]mode 文件名<ul>
+<li>Who：<ul>
+<li>u -User 文件所有者</li>
+<li>g-group 文件所属组</li>
+<li>o-other 其他人</li>
+<li>a -all 所有人</li>
+</ul>
+</li>
+<li>+|-|=</li>
+<li>mode<ul>
+<li>r:读</li>
+<li>w:写</li>
+<li>x:执行</li>
+<li>-：没有任何权限</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有者添加读权限，同组用户减去执行权限</span></span><br><span class="line">chmod u+r,g-x file.c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数字设定法</p>
+<ul>
+<li>chmod [+|-|=] mode 文件名<ul>
+<li>mode：<ul>
+<li>r: 100-&gt; 4</li>
+<li>w:010-&gt;2</li>
+<li>x:001-&gt;1</li>
+<li>-:0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="chown-gt-修改文件所有者或者所属组"><a href="#chown-gt-修改文件所有者或者所属组" class="headerlink" title="chown-&gt;(修改文件所有者或者所属组)"></a>chown-&gt;(修改文件所有者或者所属组)</h3><ul>
+<li>chown 新的所有者 文件名</li>
+<li>chown 新的所有者：新的组 文件名</li>
+<li>如何查看用户和组？<ul>
+<li>/etc/passwd 用户</li>
+<li>/etc/group 组</li>
+</ul>
+</li>
+<li>也可以修改组</li>
+</ul>
+<h3 id="chgrp-gt-（修改文件所有组）"><a href="#chgrp-gt-（修改文件所有组）" class="headerlink" title="chgrp-&gt;（修改文件所有组）"></a>chgrp-&gt;（修改文件所有组）</h3><p>只能修改对应的组</p>
+<ul>
+<li>chgrp 新的组 文件名</li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><ul>
+<li>一个目录必须有可执行权限才能打开，否则就无法打开</li>
+</ul>
+<h3 id="文件的查找和检索"><a href="#文件的查找和检索" class="headerlink" title="文件的查找和检索"></a>文件的查找和检索</h3><h3 id="find-gt-根据文件属性查找"><a href="#find-gt-根据文件属性查找" class="headerlink" title="find-&gt;(根据文件属性查找)"></a>find-&gt;(根据文件属性查找)</h3><ul>
+<li>文件名<ul>
+<li>find 查找的目录 -name “查找的文件名”</li>
+</ul>
+</li>
+<li>文件类型<ul>
+<li>find 查找到目录 -type 文件类型<ul>
+<li>Linux 下的七种文件类型<ul>
+<li>普通文件（-），目录（d），磁盘链接（l），管道（p pipeline），套接字（s），字符设备（c），块设备（b）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件大小</p>
+<ul>
+<li>find 查找的目录 -size +10k      （查看大于10k的文件）</li>
+<li>+:大于</li>
+<li>-：小于</li>
+<li>等于：直接写</li>
+<li>单位：<ul>
+<li>k - 小写</li>
+<li>M-大写</li>
+</ul>
+</li>
+<li>大于10k小于100k：find . -size +10k -size -100k</li>
+</ul>
+</li>
+<li><p>按照日期</p>
+<ul>
+<li>创建日期： -ctime -n/+n<ul>
+<li>-n:n天以内</li>
+<li>+n：n天以外</li>
+</ul>
+</li>
+<li>修改日期：-mtime</li>
+<li>访问日期：-atime</li>
+</ul>
+</li>
+<li>深度<ul>
+<li>-maxdepth n(层数)搜索n层已下的目录</li>
+<li>-mindepth n(层数)表示搜索n层以上的目录</li>
+<li>-name 制定名字</li>
+<li>find itcast/ -maxdepth 3 -name programer</li>
+</ul>
+</li>
+<li>高级查找<ul>
+<li>例，查找制定目录，并列出该目录中文件的详细信息<ul>
+<li>find ./ -type d -exec ls -l {} \;</li>
+<li>find ./ -type d -ok ls -l {} \;<ul>
+<li>OK比较安全</li>
+</ul>
+</li>
+<li>find ./-type d | xargs ls -l<ul>
+<li>管道一端是Read端，一端是Write端</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="grep-gt-根据文件内容查找"><a href="#grep-gt-根据文件内容查找" class="headerlink" title="grep -&gt;(根据文件内容查找)"></a>grep -&gt;(根据文件内容查找)</h3><ul>
+<li>搜索目录有子目录的时候需要加上-r</li>
+<li>grep -r “查找的内容” 搜索的路径</li>
+<li>搜索家目录中带有helloword字符串的文件</li>
+<li>grep -r “helloworld” ~</li>
+<li>显示在第几行 </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">"stdio.h"</span> ~ -n</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="压缩包管理"><a href="#压缩包管理" class="headerlink" title="压缩包管理"></a>压缩包管理</h3><ul>
+<li><p>Linux下常见的压缩格式</p>
+<ul>
+<li>.gz –gzip<ul>
+<li>压缩：gzip 文件1，文件2… -k(保留源文件)</li>
+<li>解压缩：gunzip *.gz</li>
+<li>不能压缩目录</li>
+</ul>
+</li>
+<li>.bz2 -bzip</li>
+</ul>
+</li>
+<li><p>常用压缩命令：</p>
+<ul>
+<li><p>tar -打包</p>
+<ul>
+<li><p>参数：</p>
+<ul>
+<li>c-创建压缩文件</li>
+<li>x-释放压缩文件</li>
+<li>v-打印提示信息</li>
+<li>f-制定压缩包的名字</li>
+<li>z-使用gzip压缩文件-&gt;xxx.tar.gz</li>
+<li>j -使用bzip2的方式压缩文件-&gt;xxx.tar.bz2</li>
+</ul>
+</li>
+<li><p>压缩</p>
+<ul>
+<li>tar 参数 压缩包名字 原材料。。。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf test.tar.gz file1...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压缩</p>
+<ul>
+<li>tar 参数 要解压包的名字</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf test.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>rar</p>
+<ul>
+<li>rar需要安装</li>
+<li>压缩<ul>
+<li>rar a 压缩包名（不需要指定后缀） 压缩的内容</li>
+<li>注意压缩的时候是不压缩子目录的</li>
+<li>所以就需要再后面加上-r</li>
+</ul>
+</li>
+<li>解压缩<ul>
+<li>rar x 压缩包名 解压的目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>zip/unzip</p>
+<ul>
+<li>压缩：<ul>
+<li>zip 参数  压缩包名 原材料</li>
+<li>如果有目录就是-r</li>
+</ul>
+</li>
+<li>解压缩<ul>
+<li>unzip 压缩包的名字 -d 解压目录</li>
+<li>-O 制定编码 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件的安装与卸载（Ubnutu"><a href="#软件的安装与卸载（Ubnutu" class="headerlink" title="软件的安装与卸载（Ubnutu)"></a>软件的安装与卸载（Ubnutu)</h3><h3 id="apt-get在线安装"><a href="#apt-get在线安装" class="headerlink" title="apt-get在线安装"></a>apt-get在线安装</h3><ul>
+<li>16.04版本之上就可以直接apt就可以</li>
+<li>安装<ul>
+<li>sudo apt-get install tree</li>
+</ul>
+</li>
+<li>卸载<ul>
+<li>sudo apt-get remove tree</li>
+</ul>
+</li>
+<li>软件列表的更新<ul>
+<li>sudo apt-get update</li>
+<li>注意只是更新列表，列表是所有可安装程序的URL</li>
+</ul>
+</li>
+<li>清空缓存<ul>
+<li>sudo apt-get clean</li>
+<li>对应的目录在var/cache/apt/archives</li>
+<li>存储的是deb包</li>
+</ul>
+</li>
+</ul>
+<h3 id="deb软件包安装方式"><a href="#deb软件包安装方式" class="headerlink" title="deb软件包安装方式"></a>deb软件包安装方式</h3><ul>
+<li>安装<ul>
+<li>sudo dpkg -i  xxx.deb</li>
+<li>sudp dpkg -r 软件名</li>
+</ul>
+</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux系统函数学习（更新中）/">
+                
+                    Linux系统函数学习
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux系统函数的学习，不间断更新，直到完整</p>
+<h3 id="从fopen看文件FILE结构体"><a href="#从fopen看文件FILE结构体" class="headerlink" title="从fopen看文件FILE结构体"></a>从fopen看文件FILE结构体</h3><p>​    在使用fopen打开文件返回的是FILE结构体，之前并不了解其内部，只是大致会用而已，在这里首先剖析FILE结构体。</p>
+<p>FILE结构体的内容很多，主要分为以下部分</p>
+<p>FILE</p>
+<ul>
+<li><p>文件描述符（整形值）FD</p>
+<ul>
+<li>文件描述符内部有inode信息，再通过inode找到具体的文件</li>
+</ul>
+</li>
+<li><p>文件读写指针位置  FP_POS</p>
+<ul>
+<li><p>首先读写指针是一个指针，因此在切换读写文件的时候需要fseek来移动文件指针</p>
+</li>
+<li><p>对于文件读写是对应的二进制读取，文本文件读取信息的资料补充</p>
+<blockquote>
+<p>知乎：fopen 为什么要区分文本模式和二进制模式？</p>
+<p><a href="https://www.zhihu.com/question/24662572" target="_blank" rel="noopener">https://www.zhihu.com/question/24662572</a></p>
+<p>牵扯到了BOM，下面为总结：</p>
+<p>BOM（byte-order mark）它用来标识该字节流的字节序，是高位在前还是低位在前。从Unicode3.2开始，BOM只能位于流的开头，只能用于标识字节序。</p>
+<p>UTF-8: 若为UTF-8有BOM格式，则文件开头为 EF BB BF； 若为UTF-8无BOM格式，则不能依据上述规则；此时需要依据UTF-8编码格式来判断</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>I/O缓冲区（内存地址）BUFFER<br><img src="https://upload-images.jianshu.io/upload_images/8852615-0539b579f780a484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot_20180720193704.png"></p>
+<ul>
+<li>C标准函数都有Buffer</li>
+<li>I/O缓存区域，根据存储器层次结构，硬盘会比内存慢100万倍，因此要增设缓存，默认是8K，同样需要注意的是IO的形式除了默认的，还有以下形式：<ul>
+<li>直接IO<ul>
+<li>内存映射文件的形式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>读写过程：</p>
+<ul>
+<li>例如Printf(“Hello World”);</li>
+<li>调用write函数将文件描述符传入（系统API write(fd,”hello”,5)）完成将”hello”用户空间到内核空间的传递</li>
+<li>系统调用sys_write 使用设备驱动，通过设备驱动函数写入到驱动操作硬件</li>
+<li>显示器显示</li>
+</ul>
+<h3 id="虚拟地址空间"><a href="#虚拟地址空间" class="headerlink" title="虚拟地址空间"></a>虚拟地址空间</h3><p>32位操作系统当一个可执行文件允许起来成为一个进程的时候操作系统会为其分配一个4G的地址空间，虚拟内存是分段的，而其根据局部性原理也不是一次性加载的，而是分页的</p>
+<p>下面是对虚拟地址空间做一个详细的总结，虚拟地址空间的引出和计算机的发展历程是离不开的的。</p>
+<p>在早期的计算机中，程序是直接运行在物理内存上的，程序直接访问的是物理地址，这种模式的限制在于，只要程序要求的内存空间不要超过超过物理内存的大小，就不会有问题，但是为了提高CPU的使用效率，我们更期望的是同时运行多个程序，现在关键的问题在于，能运行的程序受限于物理内存的大小以及运行程序本身的大小。所以一个需要关键解决的问题就是如何将有限的物理内存分配给多个程序使用，也就是内存分配问题，但除了内存分配问题，传统的方式还存在许多问题。</p>
+<ul>
+<li>地址空间不隔离导致程序的安全性不足，一个程序的崩溃会影响到其他程序，恶意程序可以轻松修改其他程序的数据，总而言之，缺乏安全稳定性</li>
+<li>内存地址分配随机就让程序内部的重定位工作（运行地址不确定）变得异常麻烦</li>
+<li>内存使用效率低下</li>
+<li><p>内存切换过程（将完整程序换入到硬盘或者将完整换出）效率十分低下</p>
+<p>如果引入一个中间层，在外部忽视内存地址的差异，在内部执行一个转换到真实地址的过程，就可以轻松解决第一第二点，这就是虚拟内存。虚拟内存使得应用程序不需要考虑自己加载到什么地方。相互之间也起到了隔离的作用，程序与程序之间安全性得到了一定的保障。但是第三个第四个仍然没有解决。内存毕竟是有限的。为了能让在内存的程序尽可能的多，当然是程序占用内存越小越好，但是程序变小不可能的。但这个思路得以运用，将程序加载到内存的粒度缩小，采用分页模式就有效的解决的这个问题。</p>
+<p>在以上的描述中，并没有深入研究CPU如何做到将虚拟内存映射到实际内存的过程，也没有研究页是如何被操作系统管理，缺页的时候怎么办等等，这个在之后学习。</p>
+</li>
+</ul>
+<p>程序都是按照一定格式存储的，由操作系统统一加载。在内存中映射为4GB的虚拟内存空间（32位）这样的文件格式是分段的，很好的解决了一些资源共享的问题，比如动态库的共享，也为每一个应用程序提供了一个统一的视图，完成功能，下面是Linux的ELF文件在内存的映射</p>
+<ul>
+<li>内核区：内存管理，进程管理，设备驱动管理，VFS虚拟文件系统（4G-3G linux）</li>
+<li>环境变量 env</li>
+<li>命令行参数  <ul>
+<li>int main(int argc,char* argv[])中的参数</li>
+</ul>
+</li>
+<li>栈空间（小）向下增长</li>
+<li>共享库</li>
+<li>堆空间（大）向上增长</li>
+<li>.bass（未初始化的全局变量）全局变量=0</li>
+<li>.data（已初始化全局变量）</li>
+<li>.text（代码段 二进制机器指令）</li>
+<li>受保护的地址（0-4K）其中0是收保护的地址，这也就是NULL的作用</li>
+</ul>
+<h3 id="文件描述符表"><a href="#文件描述符表" class="headerlink" title="文件描述符表"></a>文件描述符表</h3><p>内核进程管理里面由一个叫做PCB(进程控制块)每个进程都在其PCB中保存着一份文件描述符表，而文件描述符作为这个表的索引可以让我们快速的查到每个表项对应的打开文件的指针，文件描述符表最多可以存储1024个文件描述符</p>
+<p><strong>用户不能直接访问具体的文件描述符，就只能通过文件描述符表的下标由内核函数访问。</strong></p>
+<p>文件描述符前3个分别是STDIN_FILENO 标准输入 STDOUT_FILENO 标准输出 STDERR_FILENO 标准错误默认是打开状态，根据该文件描述符可以读写当前终端，每打开一个新文件，则占用一个文件描述符，而且是空闲的最小的一个文件描述符</p>
+<p>文件描述符内含有inode信息，具体的介绍查看:</p>
+<blockquote>
+<p><a href="http://www.docin.com/p-941544538.html" target="_blank" rel="noopener">http://www.docin.com/p-941544538.html</a></p>
+<p>豆丁网-inode,文件描述符</p>
+</blockquote>
+<p>Linux的open函数返回的int类型就是文件描述符表对新创建文件的下标，也就是文件描述符</p>
+<p>而系统函数read传入文件描述符，就可以清楚的知道要操作哪一个文件。</p>
+<h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><p>系统函数在man帮助文档的第二章</p>
+<h3 id="Open函数"><a href="#Open函数" class="headerlink" title="Open函数"></a>Open函数</h3><p>查看文档</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 2 open</span><br></pre></td></tr></table></figure>
+<p>头文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/types.h&gt; //宏定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>open函数看起来是函数重载的原因是使用了变长参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathnamae,<span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="comment">//第三个参数是在第二个参数有效的情况下才有意义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathname,<span class="keyword">int</span> flags,<span class="keyword">mode_t</span> mode)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>返回值：文件描述符，失败返回-1</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>flags<ul>
+<li>必选项目 O_RDONLY,O_WRONLY,O_RDWR</li>
+<li>可选项目<ul>
+<li>创建文件：O_CREATE<ul>
+<li>创建文件时检测文件是否存在：O_EXCL</li>
+<li>如果文件存在，返回-1</li>
+<li>必须与O_CREAT一起使用</li>
+</ul>
+</li>
+<li>追加文件：O_APPEND:文件指针移动到末尾</li>
+<li>文件截断：O_TRUNC ：做文件清空的情况</li>
+<li>设置非阻塞：O_NONBLOCK</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mode 八进制文件权限<ul>
+<li>注意设置的权限不等于最终的权限值</li>
+<li>（mode&amp;~umask）</li>
+<li>umask是0002</li>
+</ul>
+</li>
+</ul>
+<h3 id="close函数"><a href="#close函数" class="headerlink" title="close函数"></a>close函数</h3><p>关闭文件描述符</p>
+<h3 id="read函数"><a href="#read函数" class="headerlink" title="read函数"></a>read函数</h3><h3 id="write函数"><a href="#write函数" class="headerlink" title="write函数"></a>write函数</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Java反射基础/">
+                
+                    Java反射基础
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Java反射机制的学习</p>
+<h2 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h2><blockquote>
+<p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。 –百度百科</p>
+</blockquote>
+<h2 id="Class类-反射的根源"><a href="#Class类-反射的根源" class="headerlink" title="Class类 - 反射的根源"></a>Class类 - 反射的根源</h2><h3 id="Class类描述"><a href="#Class类描述" class="headerlink" title="Class类描述"></a>Class类描述</h3><p>Class类是对应类文件的描述，可以说是class字节码的抽象，这种描述包含：类名、构造函数以及成员函数、属性，它是对应对象的模板，用它可以去实例化类类对象。</p>
+<h3 id="得到Class类的三种方法"><a href="#得到Class类的三种方法" class="headerlink" title="得到Class类的三种方法"></a>得到Class类的三种方法</h3><ul>
+<li>Object中有getClass方法。</li>
+<li>一个具体的类.class</li>
+<li>通过Class类中的静态方法forName。<h3 id="使用Class来实例化对象"><a href="#使用Class来实例化对象" class="headerlink" title="使用Class来实例化对象"></a>使用Class来实例化对象</h3></li>
+<li>使用newInstance来实例化，该对象调用的是无参数的构造方法，如果没有默认的构造方法就会报错！因此在使用反射框架的时候注意尽量保留默认构造方法。</li>
+<li><p>使用getConstructors用有参的方式来进行实例化<br>该方法返回所有的构造方法。返回的是一个Constructor对象的数组,Constructor对象包含函数名信息，参数个数等等：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ref</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Class&lt;Dog&gt; dogClass = Dog.class;</span><br><span class="line">        Constructor[] constructors = dogClass.getConstructors();</span><br><span class="line">        <span class="keyword">for</span>(Constructor constructor:constructors)&#123;</span><br><span class="line">            System.out.println(constructor.getName());<span class="comment">//名字</span></span><br><span class="line">            System.out.println(constructor.getParameterCount());<span class="comment">//参数个数</span></span><br><span class="line">            Class[] classes = constructor.getParameterTypes();<span class="comment">//参数类型</span></span><br><span class="line">            <span class="keyword">for</span>(Class _class:classes)&#123;</span><br><span class="line">                System.out.println(_class);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以使用getConstructor来获取制定的构造器。</p>
+</li>
+<li>获取构造器中可以使用newInstance来进行初始化。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dog dog = (Dog)constructor.newInstance(<span class="number">1</span>,<span class="string">"Hello"</span>);</span><br><span class="line">System.out.println(dog);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><p> 通过getFiled属性来得到属性，返回Filed[]对象，注意这样得到的只能是共有的属性。如果是想得到全部的属性值需要使用getDeclaredFileds方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Dog类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name=<span class="string">"NULL"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.id+<span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ref</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Field[] fields = Dog.class.getFields();</span><br><span class="line">        Field[] fields1 = Dog.class.getDeclaredFields();</span><br><span class="line">        System.out.println(fields.length);</span><br><span class="line">        System.out.println(fields1.length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>得到Field对象之后可以得到相应的属性与方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       Field[] fields = Dog.class.getFields();</span><br><span class="line">       Field[] fields1 = Dog.class.getDeclaredFields();</span><br><span class="line">       <span class="keyword">for</span>(Field field:fields1)&#123;</span><br><span class="line">           System.out.println(field.getName());<span class="comment">//得到名字</span></span><br><span class="line">           System.out.println(field.getDeclaringClass());<span class="comment">//得到类</span></span><br><span class="line">           System.out.println(field.getModifiers());<span class="comment">//得到修饰符，返回是int</span></span><br><span class="line">           System.out.println(Modifier.toString(field.getModifiers()));<span class="comment">//通过Modifier的静态方法转换</span></span><br><span class="line">          <span class="comment">// System.out.println(field.);</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取包的信息"><a href="#获取包的信息" class="headerlink" title="获取包的信息"></a>获取包的信息</h3><p>得到包需要使用到Class类中的getPackage的方法，返回一个Package对象可以通过Package对象的方法得到其中的具体信息<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;Dog&gt; dogClass = Dog.class;</span><br><span class="line">Package pack = dogClass.getPackage();</span><br><span class="line">System.out.println(pack.getName());</span><br></pre></td></tr></table></figure></p>
+<h3 id="获得方法"><a href="#获得方法" class="headerlink" title="获得方法"></a>获得方法</h3><p>对应Method对象，通过getMethods方法可以得到所有的公共的方法，包括继承的公有方法，如果想要获取私有方法，就通过getDeclaredMethods方法，但是直接执行是不行的，由于是private的限制，但是这个总是有办法去解决的，就是对Method执行setAccessible函数来设置为true（暴力执行）。方法的到之后我们需要执行，执行函数是invoke方法的作用，执行函数是依赖与具体对象的，除了传入对象当然还有具体的参数。上面都是得到方法的数组，得到具体的方法就把后面的s去掉即可。<br>下面是一个简单的Demo<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(message);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sayByebye</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"ByeBye:"</span>+message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ref</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IllegalAccessException, InstantiationException, InvocationTargetException </span>&#123;</span><br><span class="line">        Class&lt;Test&gt; test = Test.class;</span><br><span class="line">        Test obj =(Test) test.newInstance();</span><br><span class="line">        Method[] methods = test.getDeclaredMethods();</span><br><span class="line">        <span class="keyword">for</span>(Method method:methods)&#123;</span><br><span class="line">            method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            method.invoke(obj,<span class="string">"HelloWorld!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>### </p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/反射/"><i class="fa fa-tag fa-fw"></i>&nbsp;反射</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Servlet执行过程/">
+                
+                    Servlet 执行过程笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>首先必须明确，Servlet是JavaEE一个规范，包括JDBC，都是提供了一个规范，而Servlet的具体实现以及运行过程是Tomcat来具体进行的。Servlet本身就是一个接口。HttpServlet只是它的一个具体的实现。</p>
+<h2 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h2><p>Web容器说白了就是Web服务器，Tomcat在收到客户端发来的请求之后，创建HttpServletRequest，HttpServletResponse等，它得到请求信息封装起来，交给Servlet去处理。</p>
+<h2 id="Servlet容器"><a href="#Servlet容器" class="headerlink" title="Servlet容器"></a>Servlet容器</h2><p>在Tomcat启动之后也会初始化一个Servlet容器，其会检索web.xml或者是注解来生成ServletConfig对象，ServletConfig本身也是接口，其定义了获取在web.xml或者注解中指明的参数。其接口的具体方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Servlet 接口则指明了Servlet生命期的几个关键的函数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span><span class="keyword">throws</span> ServletExection</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span><span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来，Tomcat规定了如何调用整个Servlet过程，这就是具体的算法。</p>
+<ul>
+<li>init 方法在Servlet生命周期中的初始化阶段被调用</li>
+<li>servlet初始化后，有了新的请求调用service方法，进行处理，如HttpServlet 进行doGet和doPost方法的判断。</li>
+<li>当销毁servlet对象的时候，调用distory方法释放被占用的资源 </li>
+</ul>
+<p>ServletConfig和Servlet封装了这个过程中容易变化的部分。再定义一个抽象类将算法封装起来，这就是所谓的模板方法模式，封装算法的抽象类是GenericServlet，我们查看GenericServlet的具体内容。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>,</span></span><br><span class="line"><span class="class">        <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    <span class="comment">//这里组合了一个ServletConfig对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> ServletConfig config;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GenericServlet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameter(name);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameterNames();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getServletContext();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.config = config;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="comment">// NOOP by default</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + msg);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String message, Throwable t)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + message, t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config.getServletName();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个封装算法的抽象类描述的是什么？<br>首先它实现了 Servlet, ServletConfig,Serializable，自然封装了Servlet和ServletConfig所描述的算法，这里实现ServletConfig的实现比较有意思，它是组合了一个ServletConfig对象，然后间接调用这个对象的方法来实现具体ServletConfig接口指明的方法。</p>
+<h2 id="整个调用过程"><a href="#整个调用过程" class="headerlink" title="整个调用过程"></a>整个调用过程</h2><ul>
+<li>Web服务器接受到HTTP请求</li>
+<li>web容器生成对象，将请求转发给Servlet容器</li>
+<li>如果容器中不存在对应的Servlet，那么Servlet容器就会去检索，加载，调用init方法，如果有直接进行下一步。</li>
+<li>容器调用Servlet的service方法来处理HTTP请求</li>
+<li>Web服务器返回信息给客户</li>
+</ul>
+<h2 id="其他注意点"><a href="#其他注意点" class="headerlink" title="其他注意点"></a>其他注意点</h2><p>loadonstartup指明是否在Servlet容器启动的时候就进行初始化，其值代表一个优先级顺序。</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java-Servlet/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java Servlet</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Java注解学习/">
+                
+                    Java注解学习
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Java注解的学习</p>
+<h2 id="什么是注解"><a href="#什么是注解" class="headerlink" title="什么是注解"></a>什么是注解</h2><p>Java注解提供了关于代码的一些信息，但并不直接作用于它所注解的代码内容，在使用注解之前，程序源数据只是通过java注释和javadoc，但是注解提供的功能要远远超过这些。注解不仅包含了元数据，它还可以作用于程序运行过程中、注解解释器可以通过注解决定程序的执行顺序。</p>
+<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><p>自定义注解的语法稍微特殊，现在将创建一般的注解的形式以代码的形式给出<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnoutation&#123;</span><br><span class="line">    <span class="comment">//设定所有的数据成员都需要后面加上括号</span></span><br><span class="line">    <span class="comment">//设定变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//设定变量由默认值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 18</span>;</span><br><span class="line">    <span class="comment">//设定数组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span>[] grades();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在一个类中去使用该注解的格式为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MyAnnotation</span>(name = <span class="string">"Maoxin"</span>,age = <span class="number">19</span>,grades = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Retention-和-RetentionPolicy"><a href="#Retention-和-RetentionPolicy" class="headerlink" title="@Retention 和 RetentionPolicy"></a>@Retention 和 RetentionPolicy</h3><p>Annotation要想决定其作用范围，则通过@Retention指定，而Retention制定的范围由RetentiontPolicy（枚举）决定，RetentionPolicy指定三种范围：</p>
+<table>
+<thead>
+<tr>
+<th>范围</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public static final RetentionPolicy SOURCE</td>
+<td>在Java源程序中存在</td>
+</tr>
+<tr>
+<td>Public static final RetentionPolicy CLASS</td>
+<td>在Java生成的类文件中存在</td>
+</tr>
+<tr>
+<td>Public static final RetentionPolicy SOURCE</td>
+<td>在Java运行的时候存在</td>
+</tr>
+</tbody>
+</table>
+<p>示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(value = RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="document"><a href="#document" class="headerlink" title="@document"></a>@document</h3><p> 指明拥有这个注解的元素可以被javadoc此类的工具文档化。</p>
+<h3 id="target"><a href="#target" class="headerlink" title="@target"></a>@target</h3><p>target注解表示注解的使用范围，如果不定义的话表示可以在任何位置上去使用</p>
+<table>
+<thead>
+<tr>
+<th>范围</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public static final ElementType TYPE</td>
+<td>只能在类或者接口或者枚举上去使用</td>
+</tr>
+<tr>
+<td>public static final ElementType FIELD</td>
+<td>在成员变量中使用</td>
+</tr>
+<tr>
+<td>public static final ElementType METHOD</td>
+<td>在方法中使用</td>
+</tr>
+<tr>
+<td>public static final ElementType PARAMETER</td>
+<td>在参数上使用</td>
+</tr>
+<tr>
+<td>public static final ElementType CONSTRUCTOR</td>
+<td>在构造方法上去使用</td>
+</tr>
+<tr>
+<td>public static final ElementType LOCAL_VARIABLE</td>
+<td>在局部变量上使用</td>
+</tr>
+<tr>
+<td>public static final ElementType ANNOTATION_TYPE</td>
+<td>只能在Annotation中使用</td>
+</tr>
+<tr>
+<td>public static final ElementType PACKAGE</td>
+<td>只能在包中使用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inherited注解"><a href="#inherited注解" class="headerlink" title="@inherited注解"></a>@inherited注解</h3><p>表示注解能否继承下去</p>
+<h2 id="反射与注解"><a href="#反射与注解" class="headerlink" title="反射与注解"></a>反射与注解</h2><p>在反射API中包含与注解相关的类与API，其中与注解有关的类是java.lang.reflect.AccessibleObject,相关的方法为：</p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public boolean isAnnotationPresent(Class&lt;? extends Annotation&gt;)</td>
+<td>判断是否为制定的Annotation</td>
+</tr>
+<tr>
+<td>public Annotation[] getAnnotations()</td>
+<td>得到全部的Annotation</td>
+</tr>
+</tbody>
+</table>
+<p>例子：</p>
+<p>用指定的元信息去初始化类对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target</span>(value = ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(value = RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    <span class="comment">//设定变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//设定变量，有默认值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 18</span>;</span><br><span class="line">    <span class="comment">//设定数组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span>[] grades();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IllegalAccessException, InstantiationException </span>&#123;</span><br><span class="line">        <span class="comment">//得到具体的注解实例</span></span><br><span class="line">        MyAnnotation cls = Demo.class.getAnnotation(MyAnnotation.class);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>判断方法上有无注解，有的话获取并处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设存在Test对象其中的setName方法被注解被MyAnnotation修饰</span></span><br><span class="line">Class&lt;?&gt;cls = Class.forName(<span class="string">"Test"</span>)；</span><br><span class="line">Method method = cls.getMethod(<span class="string">"setName"</span>);</span><br><span class="line"><span class="keyword">if</span>(met.isAnnotationPresent(MyAnnotation.class))&#123;</span><br><span class="line">    MyAnnotation my = (MyAnnotation) met.getAnnotation(MyAnnotation.class);</span><br><span class="line">    <span class="comment">//执行一些具体的操作，例如赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h3><ul>
+<li>找到Class对象，找到目标注解，返回一个注解对象</li>
+<li>对注解对象做一个操作</li>
+</ul>
+<h2 id="系统内建注解"><a href="#系统内建注解" class="headerlink" title="系统内建注解"></a>系统内建注解</h2><h3 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="comment">//只对方法有效，信息只保留到编译期</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Override &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(value=&#123;CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE&#125;)</span><br><span class="line"><span class="comment">//生成文档信息，信息一直保留到运行期间，目标是全部</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Deprecated &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="@SuppressWarnings"></a>@SuppressWarnings</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SuppressWarnings &#123;</span><br><span class="line">    String[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Servlet3-0的注解"><a href="#Servlet3-0的注解" class="headerlink" title="Servlet3.0的注解"></a>Servlet3.0的注解</h2><h3 id="WebServlet"><a href="#WebServlet" class="headerlink" title="WebServlet"></a>WebServlet</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> WebServlet &#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">    String[] urlPatterns() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">loadOnStartup</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line">    <span class="comment">//WebInitParam也是注解</span></span><br><span class="line">    WebInitParam[] initParams() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">asyncSupported</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">false</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">smallIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    <span class="function">String <span class="title">largeIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    <span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    <span class="function">String <span class="title">displayName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/注解/"><i class="fa fa-tag fa-fw"></i>&nbsp;注解</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/动态代理模式/">
+                
+                    Java动态代理
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="什么是动态代理？"><a href="#什么是动态代理？" class="headerlink" title="什么是动态代理？"></a>什么是动态代理？</h2><p>所谓动态代理买就是通过代理类让接口和实现类之间不直接发生联系，可以在运行期（Runtime）实现动态的关联，实现使用反射机制。</p>
+<h3 id="回顾代理模式"><a href="#回顾代理模式" class="headerlink" title="回顾代理模式"></a>回顾代理模式</h3><p>代理模式(Proxy)：为其他对象提供一种代理以控制对这个对象的访问。代理模式说白了就是“真实”对象的代表，这样在访问对象的时候就引入了一定的间接性，这种间接性可以附加功能，在执行前或执行后增加类似检查，控制等功能。</p>
+<h3 id="动态代理的优势"><a href="#动态代理的优势" class="headerlink" title="动态代理的优势"></a>动态代理的优势</h3><p>对比静态代理，静态代理模式一般代理类和具体实现类是一一对应的，这样如果需要使用代理的话需要创建的代理类就会变得繁多，而动态代理可以根据需要在运行时生成一个代理对象，一个类通过动态生成解决多个问题。</p>
+<p>下面先概述一个静态代理的实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//学生总会要考试的</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的学生</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteStudent</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteStudent</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学号为"</span>+id+<span class="string">"的"</span>+name+<span class="string">"正在考试。。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//代考中心</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExamProxy</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    Student student;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ExamProxy</span><span class="params">(Student student)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.student = student;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        student.doExam();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">staticProxy</span> </span>&#123;</span><br><span class="line">    <span class="comment">//代考人员进行考试</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> ConcreteStudent(<span class="number">201611</span>,<span class="string">"王二小"</span>);</span><br><span class="line">        Student proxy = <span class="keyword">new</span> ExamProxy(student);</span><br><span class="line">        proxy.doExam();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="动态代理的过程"><a href="#动态代理的过程" class="headerlink" title="动态代理的过程"></a>动态代理的过程</h2><p>动态代理在实现的时候并不去考虑去代理谁，而是在运行时制定代理哪一个对象，下面先描述在Java中构建动态代理的整个过程。</p>
+<ul>
+<li>事先得有代理对象的主题，也就是说要代理的对象的功能是什么</li>
+<li>创建动态代理类，实现InvocationHandler接口，这一点是与静态代理不同的一点，这一点动态代理类就实现的不是具体的主题，而是一个完全不相干的InvocationHandler接口（说明动态代理动态生产的类还不是在这一步接收接口信息的），该接口有一个需要实现的方法：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> Throwable</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接收代理的对象，方法，以及参数</p>
+<ul>
+<li>使用Proxy类的静态方法getInstance方法传入ClassLoader(),实现的接口类，以及InvokeHandler对象。之后指向相应的函数。<br>下面举例一个动态代理的应用场景：现在的代考中心变成了中介机构<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.maoxin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line"></span><br><span class="line"><span class="comment">//学生总会要考试的</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//白领要买房</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Worker</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的学生</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteStudent</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteStudent</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学号为"</span>+id+<span class="string">"的"</span>+name+<span class="string">"正在考试。。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的工作人员</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteWorker</span> <span class="keyword">implements</span> <span class="title">Worker</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteWorker</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(name+<span class="string">"成功购买了一套房！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//中介机构,承接各种例如代考和买房</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmallProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    Object obj = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SmallProxy</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.obj = obj;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(method.getName().equals(<span class="string">"doExam"</span>))&#123;</span><br><span class="line">            result = method.invoke(obj,args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(method.getName().equals(<span class="string">"buyHouse"</span>))&#123;</span><br><span class="line">            result = method.invoke(obj,args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">dynamicProxy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> ConcreteStudent(<span class="number">201611</span>,<span class="string">"小红帽"</span>);</span><br><span class="line">        Worker worker = <span class="keyword">new</span> ConcreteWorker(<span class="string">"小白"</span>);</span><br><span class="line">        InvocationHandler proxy1 = <span class="keyword">new</span> SmallProxy(student);</span><br><span class="line">        InvocationHandler proxy2 = <span class="keyword">new</span> SmallProxy(worker);</span><br><span class="line">        Student studentProxy = (Student) Proxy.newProxyInstance(student.getClass().getClassLoader(),</span><br><span class="line">                <span class="keyword">new</span> Class[]&#123;Student.class&#125;,proxy1);</span><br><span class="line">        Worker workerProxy = (Worker)Proxy.newProxyInstance(worker.getClass().getClassLoader(),</span><br><span class="line">                <span class="keyword">new</span> Class[]&#123;Worker.class&#125;,proxy2);</span><br><span class="line">        studentProxy.doExam();</span><br><span class="line">        workerProxy.buyHouse();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="为什么需要代理"><a href="#为什么需要代理" class="headerlink" title="为什么需要代理"></a>为什么需要代理</h2><p>在网上看到的一个很好的解答，这里引用一下：</p>
+<blockquote>
+<p>打个比喻，明星为什么需要经纪人来代理他呢？因为明星的专职是唱歌或演戏，如果把除此以外的其他事情比如演出费用谈判等等都揽在身上，他会累死。<br><strong>这就是体现一个思想：专业分工，用面向对象术语说：就是职责分明。</strong><br>所以，代理类一般是做些除原始类核心功能以外的其他功能，比如权限 事务等等都要专门的代理来实现。<br>当我们的代码每个类代表一个主要功能，而不是将所有功能混在一个类中，那么代码无疑清晰有条理的，易于维护，比如我要修改权限，就不必打开原始类代码，直接修改权限代理类就可以了。就很少发生修改一个BUG，带来一个新BUG的烦恼问题。<br><strong>No matter how slow you are writing clean code, you will always be slower if you make a mess 写干净的代码无论有多慢，总是快于把代码写得一团糟。</strong></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://wangjingxin.top/2016/11/16/proxy/" target="_blank" rel="noopener">https://wangjingxin.top/2016/11/16/proxy/</a><br>王镜鑫的个人博客<br><a href="http://www.jdon.com/43740" target="_blank" rel="noopener">http://www.jdon.com/43740</a><br>一个关于动态代理的提问</p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/设计模式-动态代理/"><i class="fa fa-tag fa-fw"></i>&nbsp;设计模式 动态代理</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/观察者模式（Observer pattern）/">
+                
+                    观察者模式
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们先预想一个这样的情景，有一个类负责监听随时随地都可能发生的事件，例如：天气的变化，用户在桌面上执行操作出发的事件。。有许多类对象需要接收这些信息并进行处理，而且这些类对象往往还不止一个，还需要动态的添加和替换，比如天气显示器，比如事件处理函数。我们需要将“通知”分发给多个对象。<br>假设负责监听的类一旦发现变化，便触发了changed函数，我们想要通知对象，最粗暴最干脆的做法就是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> info = getChanged();</span><br><span class="line">    classA.update(info);</span><br><span class="line">    classB.update(info);</span><br><span class="line">    classC.update(info);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码主要有以下问题：</p>
+<ul>
+<li>大量使用update方法，可以用一个接口来处理</li>
+<li>针对具体的实现编程，我们在添加或者删除对象的时候必须修改changed函数</li>
+<li>上面几个问题结合起来的问题就是，对象与对象之间的联系太紧密了！</li>
+</ul>
+<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个目标对象管理所有相依于它的观察者对象，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实时事件处理系统。</p>
+<h3 id="如何解决问题？"><a href="#如何解决问题？" class="headerlink" title="如何解决问题？"></a>如何解决问题？</h3><p>从最简单的着手，既然出现了大量的update方法，我们首先用一个接口封装起来，既然描述的是观察者，我们就起名Observer接口，里面有一个update方法。观察者的管理者是前面提到的起到监听作用的类，对观察者对象的管理主要有几个内容：1.添加观察者2.删除观察者3.通知。我们将这些方法抽象一下，作为一个Subject接口。<br>具体的细节还有，多个观察者对象如何管理，我们可以利用Java内置的数据结构。<br>就这样，两个本来关系紧密的类现在只暴露出了几个来让两者建立联系的方法。这就是所谓的松耦合。</p>
+<p>松耦合：两个对象之间松耦合指的是，他们仍然可以交互，但是不太清楚彼此的细节。</p>
+<h3 id="JDK中应用到观察者模式的场景"><a href="#JDK中应用到观察者模式的场景" class="headerlink" title="JDK中应用到观察者模式的场景"></a>JDK中应用到观察者模式的场景</h3><p>Swing中注册事件处理函数的时候我们首先创建的类要实现ActionListener接口，之后将该对象通过addActionListener注册到相对应的控件中去。</p>
+<p>Java内置了观察者模式的类和接口，内部数据结构是用Vector实现的。</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/设计模式-观察者模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;设计模式 观察者模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+    <br>
+    <div class="prev-next">
+        <div class="prev-next">
+            
+            <p class="current">
+                1 / 2
+            </p>
+            
+                <a class="next" rel="next" href="/archives/2018/07/page/2/">
+                    <section class="post next">
+                        &nbsp;下一页&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </section>
+                </a>
+            
+
+        </div>
+    </div>
 
 
 
 
 
-  
+        </div>
+        <aside class='l_side'>
+            
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <script>setLoadingBarProgress(100);</script>
 </body>
-</html>

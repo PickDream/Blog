@@ -1,691 +1,1392 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞翔的傻瓜">
-<meta property="og:url" content="http://www.maoxin.site/categories/操作系统/index.html">
-<meta property="og:site_name" content="飞翔的傻瓜">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞翔的傻瓜">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.maoxin.site/categories/操作系统/"/>
-
-
-
-
-
   <title>Category: 操作系统 | 飞翔的傻瓜</title>
-  
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-
-
-
-
-
-
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飞翔的傻瓜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">菜鸟的试飞之旅</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  
-  
-  
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>操作系统<small>Category</small>
-        </h1>
-      </div>
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/03/ucore-Lab1/" itemprop="url">
-              
-                <span itemprop="name">ucore Lab1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-03T22:46:42+08:00"
-              content="2018-10-03" >
-          10-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/25/Server-01/" itemprop="url">
-              
-                <span itemprop="name">JSON与AJAX和跨域通信</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-25T00:27:19+08:00"
-              content="2018-09-25" >
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/17/ProtectMod/" itemprop="url">
-              
-                <span itemprop="name">保护模式笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-17T10:01:16+08:00"
-              content="2018-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/28/Windows进程的创建过程/" itemprop="url">
-              
-                <span itemprop="name">Windows进程的创建过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-28T20:54:37+08:00"
-              content="2018-07-28" >
-          07-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Linux 学习（命令）/" itemprop="url">
-              
-                <span itemprop="name">Linux学习（命令）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:46:41+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/27/Linux系统函数学习（更新中）/" itemprop="url">
-              
-                <span itemprop="name">Linux系统函数学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-27T22:45:37+08:00"
-              content="2018-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-    </div>
-
-  </div>
-  
-  
-  
-
-  
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FlyingFool</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">categories</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FlyingFool</span>
-
-  
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
+    <script>
+        window.subData= { title:'category : 操作系统'}
+    </script>
 
 
+<section class="post-list">
+    
+        <div class='post-wrapper'>
+            <article class="post revealno-title">
+                <section class="meta">
+                    <h2 class="title" style="color:#EF503A">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        还剩最后一步就成功了
+                    </h2>
+                    <p>
+                        请按照下面的指示进行操作：
+                    </p>
+                </section>
+                <iframe frameborder="no" width=100% height=600 src="https://xaoxuu.com/wiki/material-x/#/?id=主题配置"></iframe>
+            </article>
+        </div>
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/10/03/ucore-Lab1/">
+                
+                    ucore Lab1
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-03
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
 
-  <span class="post-meta-divider">|</span>
 
+    </section>
 
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
+    <section class="article typo">
+        <h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1><h2 id="实验1-bootloader的启动"><a href="#实验1-bootloader的启动" class="headerlink" title="实验1: bootloader的启动"></a>实验1: bootloader的启动</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><p>要求：</p>
+<ol>
+<li>操作系统镜像文件ucore.img是如何一步一步生成的？(需要比较详细地解释Makefile中每一条相关命令和命令参数的含义，以及说明命令导致的结果)</li>
+<li>一个被认为是符合规范的硬盘主引导扇区的特征是什么？<br>实验过程:</li>
+<li><p>在构建过程中使用<code>make V=</code>来查看具体执行过程，具体执行过程如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下均为将各个文件编译为目标文件</span></span><br><span class="line">+ cc kern/init/init.c  //编译 init.c</span><br><span class="line">+ kern/libs/readline.c //编译 readline.c</span><br><span class="line">+ cc kern/libs/stdio.c //编译 stdio.c</span><br><span class="line">+ cc kern/debug/kdebug.c//编译 kdebug.c </span><br><span class="line">+ cc kern/debug/kmonitor.c //编译 kmonitor</span><br><span class="line">+ cc kern/debug/panic.c//编译 panic.c</span><br><span class="line">+ cc kern/driver/clock.c //编译 clock.c</span><br><span class="line">+ cc kern/driver/console.c //编译 console.c</span><br><span class="line">+ cc kern/driver/intr.c//编译 intr.c</span><br><span class="line">+ cc kern/driver/picirq.c //编译 picirq.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trap.c //编译 trap.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trapentry.S //编译 trapentry.S</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/vectors.S //编译 vector.S</span><br><span class="line">+ cc kern/mm/pmm.c//编译 pmm.c</span><br><span class="line">+ cc libs/printfmt.c // printgmt.c</span><br><span class="line">+ cc libs/string.c //编译 string.c</span><br><span class="line">+ ld bin/kernel//接下来用ld合并目标文件(object) 和 库文件(archive),生成kernel程序</span><br><span class="line">+ cc boot/bootasm.S //编译 bootasm.S</span><br><span class="line">+ cc boot/bootmain.c //编译 bootmain.c</span><br><span class="line">+ cc tools/sign.c //编译 sign.c</span><br><span class="line"><span class="comment"># 以上执行过程均附加了gcc参数如下,以第一行init.c为例</span></span><br><span class="line">gcc -Ikern/init/ -fno-builtin -Wall -ggdb -m32 -gstabs -nostdinc  -fno-stack-protector -Ilibs/ -Ikern/debug/ -Ikern/driver/ -Ikern/<span class="built_in">trap</span>/ -Ikern/mm/ -c kern/init/init.c -o obj/kern/init/init.o</span><br><span class="line"><span class="comment"># gcc -I 指明包含路径名称 -fno-builtin表明不使用内建函数 -Wall开启所有警告  -ggdb生成GDB调试信息 -gstabs此选项以stabs格式声称调试信息,但是不包括gdb调试信息，-m32生成32位机器的汇编代码 -nostdincgcc编译的时候不要在标准系统目录中找头文件 -fnostack-protector 不启用溢出检测机制 </span></span><br><span class="line">+ ld bin/bootblock //链接生成block文件</span><br><span class="line">//最后将bootloader放入虚拟硬盘ucore.img中去。</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=bin/ucore.img count=10000</span><br><span class="line">dd <span class="keyword">if</span>=bin/bootblock of=bin/ucore.img conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=bin/kernel of=bin/ucore.img seek=1 conv=notrunc</span><br><span class="line"><span class="comment"># 这里用到了dd命令，if是输入of是输出count是块大小，关于conv参数可以参考 https://www.cnblogs.com/dkblog/archive/2009/09/18/1980715.html  https://blog.csdn.net/u011616400/article/details/41575745 ,其作用睡觉哦不截断输出文件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？</p>
+</li>
+</ol>
+<p>查看tools/sign.c文件如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">    <span class="comment">//检查输入参数</span></span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: &lt;input filename&gt; &lt;output filename&gt;\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//stat函数传入文件名和结构体对象可以返回一个结构体信息，检测是否是吧</span></span><br><span class="line">    <span class="keyword">if</span> (stat(argv[<span class="number">1</span>], &amp;st) != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Error opening file '%s': %s\n"</span>, argv[<span class="number">1</span>], strerror(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输出长度</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"'%s' size: %lld bytes\n"</span>, argv[<span class="number">1</span>], (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">    <span class="comment">//检测是否超过510个字节</span></span><br><span class="line">    <span class="keyword">if</span> (st.st_size &gt; <span class="number">510</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"%lld &gt;&gt; 510!!\n"</span>, (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//建立缓冲区，将缓冲区置0</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">512</span>];</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    <span class="comment">//读取文件，填充缓冲区</span></span><br><span class="line">    FILE *ifp = fopen(argv[<span class="number">1</span>], <span class="string">"rb"</span>);</span><br><span class="line">    <span class="keyword">int</span> size = fread(buf, <span class="number">1</span>, st.st_size, ifp);</span><br><span class="line">    <span class="comment">//判断文件大小是否如文件信息所述</span></span><br><span class="line">    <span class="keyword">if</span> (size != st.st_size) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"read '%s' error, size is %d.\n"</span>, argv[<span class="number">1</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//关闭流</span></span><br><span class="line">    fclose(ifp);</span><br><span class="line">    <span class="comment">//写入标识</span></span><br><span class="line">    buf[<span class="number">510</span>] = <span class="number">0x55</span>;</span><br><span class="line">    buf[<span class="number">511</span>] = <span class="number">0xAA</span>;</span><br><span class="line">    <span class="comment">//打开新文件，写出</span></span><br><span class="line">    FILE *ofp = fopen(argv[<span class="number">2</span>], <span class="string">"wb+"</span>);</span><br><span class="line">    size = fwrite(buf, <span class="number">1</span>, <span class="number">512</span>, ofp);</span><br><span class="line">    <span class="comment">//再次检测大小是否符合要求</span></span><br><span class="line">    <span class="keyword">if</span> (size != <span class="number">512</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"write '%s' error, size is %d.\n"</span>, argv[<span class="number">2</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(ofp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"build 512 bytes boot sector: '%s' success!\n"</span>, argv[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h3><p>要求：<br>使用qemu执行并调试lab1中的软件。（要求在报告中简要写出练习过程）</p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">V=@</span><br><span class="line">BINDIR=bin</span><br><span class="line"><span class="section">lab1-mon: <span class="variable">$(UCOREIMG)</span></span></span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"<span class="variable">$(QEMU)</span> -S -s -d in_asm -D <span class="variable">$(BINDIR)</span>/q.log -monitor stdio -hda <span class="variable">$&lt;</span> -serial null"</span></span><br><span class="line"><span class="variable">$(V)</span>sleep 2</span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"gdb -q -x tools/lab1init"</span></span><br></pre></td></tr></table></figure>
+<p>第一行参数表</p>
+<ul>
+<li>-S 在启动时不启动 CPU， 需要在 monitor 中输入 ‘c’，才能让qemu继续模拟工作</li>
+<li>-s 等待gdb连接到端口1234</li>
+<li>-d 输出日志到 qemu</li>
+<li>-hda 指明使用file作为硬盘0镜像</li>
+<li>-serial dev 重定向虚拟串口到主机设备dev中</li>
+</ul>
+<p>第三行参数表</p>
+<ul>
+<li>-x 指明预设命令文件,预设文件如下<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file bin/kernel #加载符号信息 </span><br><span class="line">target remote :1234 #与qemu进行链接</span><br><span class="line">set architecture i8086 #设置处理器架构</span><br><span class="line">b *0x7c00 #在0x7c00设置断点</span><br><span class="line">continue #继续</span><br><span class="line">x /2i $pc #显示PC之后的两条指令</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用GDB命令完成以下工作:</p>
+<ol>
+<li>查看PC之后的10行命令<code>x/10i $pc</code></li>
+<li>查看具体位置的内存数据<code>x/</code></li>
+<li>查看GDTR寄存器的值</li>
+<li>断点<code>b *0x7c0a</code></li>
+<li>打印所有寄存器<code>info register</code>，也可以是<code>i r</code></li>
+<li>在开启保护模式后设置架构<code>set architecture i386</code></li>
+<li>单步源代码的下一行，不进入函数<code>next</code></li>
+<li>单步一条机器指令，不进入函数<code>nexti</code></li>
+<li>单步到下一个不同的源代码行,进入函数<code>step</code></li>
+<li>单步到一条机器指令，进入函数<code>stepi</code><h4 id="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"><a href="#从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行" class="headerlink" title="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"></a>从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行</h4>由于开机时处于实模式，开机的时候CS:IP=0xf000:fff0因此应该查看这里的指令</li>
+</ol>
+<p><img src="1.png" alt="输出"></p>
+<p>之后执行一系列BIOS操作最够将控制权转交给0x7c00的bootloader部分</p>
+<h3 id="练习3-分析bootloader进入保护模式的过程"><a href="#练习3-分析bootloader进入保护模式的过程" class="headerlink" title="练习3 分析bootloader进入保护模式的过程"></a>练习3 分析bootloader进入保护模式的过程</h3><h4 id="步骤-关键步骤前加"><a href="#步骤-关键步骤前加" class="headerlink" title="步骤(关键步骤前加*)"></a>步骤(关键步骤前加*)</h4><ol start="0">
+<li>准备基本的GDT表项以供使用进入保护模式之后使用</li>
+<li>初始化寄存器</li>
+<li>*检测并发送A20开启信号来开启A20</li>
+<li>*通过修改CR0寄存器的保护模式使能位进入保护模式</li>
+<li>*用保护模式的寻址机制跳转到初始化保护寄存器的代码段(protcseg)长跳转指令进入</li>
+<li>*初始化堆栈部分一便于C语言程序的调用堆栈区域是从0–start(0x7c00)<h4 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h4><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootasm.S" target="_blank" rel="noopener">代码注释</a><h3 id="练习4：分析bootloader加载ELF格式的OS的过程。"><a href="#练习4：分析bootloader加载ELF格式的OS的过程。" class="headerlink" title="练习4：分析bootloader加载ELF格式的OS的过程。"></a>练习4：分析bootloader加载ELF格式的OS的过程。</h3>bootloader在前面可以看到，分为两部分，一部分是汇编代码写的，主要完成进入保护模式并初始化寄存器，第二部分是C代码写的，主要完成加载ELF格式的内核文件到内存中，这里就涉及到原生的C并不能完成的任务，例如读取硬盘扇区，在这里使用的是GCC内联汇编来完成基本功能被C代码使用的。<h4 id="读取硬盘部分"><a href="#读取硬盘部分" class="headerlink" title="读取硬盘部分"></a>读取硬盘部分</h4>读取扇区(readsect)的操作可以分为如下几部分</li>
+<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
+<li>发出读取磁盘的命令   (向硬盘的IO端口输出读取信息)</li>
+<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
+<li>将磁盘扇区的数据读到指定的内存中去<blockquote>
+<p>0号磁盘的IO端口详细信息:<br>1F0H 0号硬盘数据寄存器<br>1F1H 0号硬盘错误寄存器(读时),0号硬盘Features寄存器(写时)<br>1F2H 0号硬盘数据扇区计数<br>1F3H 0号硬盘扇区数<br>1F4H 0号硬盘柱面(低字节)<br>1F5H 0号硬盘柱面(高字节)<br>1F6H 0号磁盘驱动器/磁头寄存器<br>1F7H 0号硬盘状态寄存器(读时)，0号硬盘命令寄存器(写时)</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootmain.c" target="_blank" rel="noopener">读取硬盘的详细阅读代码注释</a></p>
+<h4 id="装载ELF格式内核"><a href="#装载ELF格式内核" class="headerlink" title="装载ELF格式内核"></a>装载ELF格式内核</h4><p><img src="Elf-layout.svg" alt="ELF布局"><br>在这里需要简单的了解ELF文件布局如下</p>
+<p><img src="ELF.png" alt="ELF部分功能"></p>
+<p>使用<code>objdump -h</code>查看ELF文件信息，可以查看在相关节的信息<br><img src="objdump.png" alt="objdumo查看信息"></p>
+<ul>
+<li>链接地址(Virtual Memory Address)和加载地址(Load Memory Address):程序在链接的时候会确定链接地址，这个地址是逻辑上的，代码中绝对的跳转都按照此基准进行，而加载地址是事实加载的地址。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bootmain - bootloader的入口 */</span></span><br><span class="line"><span class="keyword">void</span></span><br><span class="line">bootmain(<span class="keyword">void</span>) &#123;</span><br><span class="line">    <span class="comment">// 将文件的前4KB读取内存</span></span><br><span class="line">    readseg((<span class="keyword">uintptr_t</span>)ELFHDR, SECTSIZE * <span class="number">8</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检测加载进内存的内核模块是否是ELF文件</span></span><br><span class="line">    <span class="keyword">if</span> (ELFHDR-&gt;e_magic != ELF_MAGIC) &#123;  </span><br><span class="line">        <span class="keyword">goto</span> bad;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">proghdr</span> *<span class="title">ph</span>, *<span class="title">eph</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过结构体的偏移找到程序头表的入口，并加载程序段(ignores ph flags)</span></span><br><span class="line">    ph = (struct proghdr *)((<span class="keyword">uintptr_t</span>)ELFHDR + ELFHDR-&gt;e_phoff);</span><br><span class="line">    <span class="comment">// 通过指针的偏移,找到程序头表结束的地址</span></span><br><span class="line">    eph = ph + ELFHDR-&gt;e_phnum;</span><br><span class="line">    <span class="comment">//开始对程序头表包含的具体的信息进行遍历处理</span></span><br><span class="line">    <span class="keyword">for</span> (; ph &lt; eph; ph ++) &#123;</span><br><span class="line">        <span class="comment">//用readreg这个函数将文件的每一个段都读到内存中由程序头表的相应位置</span></span><br><span class="line">        <span class="comment">//由于kernel 程序的链接地址太高，而实际内存没有那么大的情况下，实际地址就是&amp;0xFFFFFF的结果(Mark，这个还不是太懂)</span></span><br><span class="line">        readseg(ph-&gt;p_va &amp; <span class="number">0xFFFFFF</span>, ph-&gt;p_memsz, ph-&gt;p_offset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用elf文件格式指明的程序入口点地址，转交控制权</span></span><br><span class="line">    <span class="comment">// note: 不会返回</span></span><br><span class="line">    ((<span class="keyword">void</span> (*)(<span class="keyword">void</span>))(ELFHDR-&gt;e_entry &amp; <span class="number">0xFFFFFF</span>))();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*加载失败跳转到这里*/</span></span><br><span class="line">bad:</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8A00</span>);</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8E00</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 无限循环 */</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="实现函数调用堆栈跟踪函数-（需要编程）"><a href="#实现函数调用堆栈跟踪函数-（需要编程）" class="headerlink" title="实现函数调用堆栈跟踪函数 （需要编程）"></a>实现函数调用堆栈跟踪函数 （需要编程）</h4><p>一个函数调用的大致步骤分为以下阶段，由于调用约定多样，这里只总结大致步骤</p>
+<ol>
+<li>参数的传入，可以push参数，也可以传入具体的寄存器</li>
+<li><code>call</code> 将返回地址压入堆栈中，ESP-4(32位)，此时ESP指向的是保存返回值的地址</li>
+<li><code>push %ebp</code> 将上一个堆栈的栈底指针传入，ESP再次-4</li>
+<li><code>mov %esp,%ebp</code> 设置新的栈底</li>
+<li>提升栈空间，用于函数操作</li>
+<li>保护现场，具体是保存将要修改的寄存器</li>
+<li>其他初始化工作</li>
+<li>执行函数核心内容</li>
+<li>恢复现场</li>
+<li><code>pop %ebp</code> 恢复堆栈</li>
+<li><code>ret</code><br>依据上述过程易得：</li>
+</ol>
+<ul>
+<li>如果函数传入参数是通过在call之前压入参数来做到了，那么其参数地址是ebp+8+4*(n+1),n=1,2,3…</li>
+<li>函数的返回地址是ebp+4</li>
+<li>ebp指示的位置是上一个函数调用esp的位置，ebp内保存的内容是原来ebp的值</li>
+</ul>
 
         
 
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/25/Server-01/">
+                
+                    JSON与AJAX和跨域通信
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-25
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
 
 
+    </section>
 
-
-
+    <section class="article typo">
+        <h2 id="JSON表示值的类型"><a href="#JSON表示值的类型" class="headerlink" title="JSON表示值的类型"></a>JSON表示值的类型</h2><ul>
+<li><strong>不能</strong>表示<code>Undefined</code></li>
+<li><code>Null</code>,<code>Boolean</code>,<code>number</code>,<code>String</code></li>
+<li>对象</li>
+<li>数组<h2 id="JSON-规范"><a href="#JSON-规范" class="headerlink" title="JSON 规范"></a>JSON 规范</h2></li>
+<li>JSON是一种规范，是一种组织数据的格式</li>
+<li>JSON字符串不能用单引号</li>
+<li>JSON的属性必须是一个字符串表示<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wrong in json, but right in javascript</span></span><br><span class="line">&#123;</span><br><span class="line">    name:<span class="string">"Maoxin"</span>,</span><br><span class="line">    age:<span class="number">29</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//right in json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"Maoxin"</span>,</span><br><span class="line">    <span class="string">"age"</span>:<span class="number">29</span>    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="JSON-序列化"><a href="#JSON-序列化" class="headerlink" title="JSON 序列化"></a>JSON 序列化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//javascript object -&gt; JSON String</span></span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"C++ Learn"</span>,</span><br><span class="line">    authors:[</span><br><span class="line">        <span class="string">"Nicholas C. Zakas"</span></span><br><span class="line">    ],</span><br><span class="line">    year:<span class="number">2011</span>,</span><br><span class="line">    edition:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="comment">//get attributes which we need to stringify</span></span><br><span class="line"><span class="keyword">var</span> need = <span class="built_in">JSON</span>.stringfy(book,[<span class="string">"title"</span>,<span class="string">"edition"</span>])</span><br><span class="line"><span class="comment">//&#123;"title":"C++ Learn","edition":3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//execute function according to attribute</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(key)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"authors"</span>:</span><br><span class="line">            <span class="keyword">return</span> value.join(<span class="string">","</span>)</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"year"</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"edition"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//deliver the number of space to get a formated string</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="literal">null</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以在对象中添加<code>toJSON</code>的属性来控制格式化那些东西<h2 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"Javascript"</span>,</span><br><span class="line">    releaseDate: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2011</span>,<span class="number">11</span>,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="keyword">var</span> bookCopy = <span class="built_in">JSON</span>.parse(jsonText,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(key==<span class="string">"releaseDate"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(value);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h3 id="XMLHttpRequest-基本"><a href="#XMLHttpRequest-基本" class="headerlink" title="XMLHttpRequest 基本"></a>XMLHttpRequest 基本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">// 第三个参数是是否是异步的</span></span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//注意调用的时候，不会真正的指向请求，而是准备发送，用send发送</span></span><br><span class="line"><span class="comment">//如果是GET请求，将body设置为null即可</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="XMLHttpRequest-填充属性"><a href="#XMLHttpRequest-填充属性" class="headerlink" title="XMLHttpRequest - 填充属性"></a>XMLHttpRequest - 填充属性</h3><ul>
+<li>responseText<br>如果返回的是文本将返回结果挂载在这里</li>
+<li>responseXML 返回的是XML</li>
+<li>status 状态码&gt;=200时候代表能够正确返回，当status=304通知浏览器本地缓存还可以使用</li>
+<li>statusText</li>
+</ul>
+<p>以下为同步情况：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同步情况</span></span><br><span class="line"><span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以下为异步情况：采用注册事件的方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在open和send之前</span></span><br><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这里需要明确<code>readState</code>的变化过程</p>
+<ul>
+<li>0 未初始化</li>
+<li>1 启动</li>
+<li>2 发送</li>
+<li>3 接收</li>
+<li>4 完成<h3 id="abort-终止"><a href="#abort-终止" class="headerlink" title="abort 终止"></a>abort 终止</h3>使请求提前终止<h3 id="AJAX-XMLHttpRequest-Header"><a href="#AJAX-XMLHttpRequest-Header" class="headerlink" title="AJAX XMLHttpRequest Header"></a>AJAX XMLHttpRequest Header</h3></li>
+<li>Accept: 浏览器能处理的内容类型</li>
+<li>Accept-Charset：浏览器能显示的字符串</li>
+<li>Accept-Encoding: 浏览器能够处理的压缩编码</li>
+<li>Accept-Language:浏览器当前设置的语言</li>
+<li>Connection：浏览器与服务器之间的连接的类型</li>
+<li>Cookie:不解释</li>
+<li>Host:发出请求页面所在的域</li>
+<li>Referer:发送请求的页面URL，注意这个词是拼写错了，将错就错,referrer是正确的</li>
+<li>User-Agent：浏览器用户代理字符串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"MyHeader"</span>,<span class="string">"MyValue"</span>)</span><br><span class="line"><span class="comment">//Demo 模拟表单发送</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line">xhr.send(serialize(form));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">xhr.send(serialize(form));</span><br><span class="line"><span class="comment">//B</span></span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line">formData.append(<span class="string">"name"</span>,<span class="string">"Maoxin"</span>);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
+<h3 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h3><ul>
+<li><code>onload</code> 响应完成触发</li>
+<li><code>onprocess</code> 接受过程中触发的事件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> divStatus = <span class="built_in">document</span>.getElementById(<span class="string">"status"</span>);</span><br><span class="line">    <span class="keyword">if</span>(event.lengthComputable)&#123;</span><br><span class="line">        divStatus.innerHTML = <span class="string">"Received"</span> +event.position+<span class="string">"of"</span>+event.totalSize+<span class="string">"bytes"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="跨域通信"><a href="#跨域通信" class="headerlink" title="跨域通信"></a>跨域通信</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3>
+        
 
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Server杂项/"><i class="fa fa-tag fa-fw"></i>&nbsp;Server杂项</a>
+                
+            </div>
         
-      </div>
+    </section>
+</article>
+
+        </div>
     
-
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/17/ProtectMod/">
+                
+                    保护模式笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-17
+        </time>
+        
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
+<p>ds就是段寄存器，真正读写的地址是：ds.base + 0x123456</p>
+<p>其中段寄存器有8个</p>
+<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（Task Register）</p>
+<h3 id="段寄存器的结构"><a href="#段寄存器的结构" class="headerlink" title="段寄存器的结构"></a>段寄存器的结构</h3><p>32位的段寄存器一共96位，16位可见，80位不可见（12个字节）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SegMent</span>&#123;</span></span><br><span class="line">    WORD Selector;<span class="comment">//16位的Selector（2字节）[可见部分]</span></span><br><span class="line">    WORD Attribute;<span class="comment">//16位Attribute 属性，标识可读可写可执行（2字节）</span></span><br><span class="line">    DWORD Base;<span class="comment">//32位Base 偏移地址（4字节）</span></span><br><span class="line">    DWORD Limit;<span class="comment">//32位Limit 段允许的地址偏移（4字节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面是用结构体来描述段寄存器的内容。</p>
+<h3 id="段寄存器的读写"><a href="#段寄存器的读写" class="headerlink" title="段寄存器的读写"></a>段寄存器的读写</h3><p><strong>READ</strong></p>
+<p>段寄存器读取的时候只能读可见部分，16位，因此读的时候只能读16位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,ES</span><br></pre></td></tr></table></figure>
+<p><strong>WRITE</strong></p>
+<p>段寄存器写入的时候是要写96位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV DS,AX</span><br></pre></td></tr></table></figure>
+<p>那么一个问题浮出水面，段寄存器赋值的时候可以写入96位，但是传递给的是一个16位的寄存器，那么另外的80位从哪里得到呢？</p>
+<h3 id="GDT-表和-LDT表"><a href="#GDT-表和-LDT表" class="headerlink" title="GDT 表和 LDT表"></a>GDT 表和 LDT表</h3><p>GDT是全局描述符表，LDT是局部描述符表，要想填写完整段寄存器，需要拿着一个索引到GDT表或者LDT表去查找、这个索引就在传递的16位寄存器的数据当中。而这16位的数据对应到段寄存器的部分是段选择子。</p>
+<p><strong>段选择子</strong></p>
+<p><img src="ProtectMod/Selecter.png" alt="段选择子结构"></p>
+<p>段选择子分为三部分，一个是Index，一个是Table Indicator 还有一个是请求特权级别RPL</p>
+<ul>
+<li>Index <ul>
+<li>13位，起到索引的作用，从GDT表或者LDT表中查找数据</li>
+<li>索引查找的规则是将索引值乘以8再加上GDT或者LDT表的基地址，就是要加载的段描述符位置，也相当于2进制左移三位再加上基地址。</li>
+</ul>
+</li>
+<li>Table Indicator 表指示器<ul>
+<li>用来选择是从哪张表去选取</li>
+</ul>
+</li>
+<li>RPL 请求特权级别<ul>
+<li>其有两位，表示了0,1,2,3四种CPU特权访问级别</li>
+<li>其代表这</li>
+</ul>
+</li>
+</ul>
+<p><code>001B= 0000-0000-0001-1011</code></p>
+<h3 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h3><p>段描述符是64位的数据，占据了8个字节，下面是其结构：</p>
+<p><img src="ProtectMod/02.png" alt="段描述符"></p>
+<p>首先有个大致的印象，首先发现其Base属性和Limit被割裂到不同的部分，这主要是CPU寄存器升级为了向下兼容才形成的这样的情况。回顾段寄存器结构，</p>
+<ul>
+<li>Base一共32位，在段描述符描述完整</li>
+<li>Limit一共32位，而在段描述符中只描述16+4=20位</li>
+<li>其他部分充当段属性，应当是16位，在段描述符中描述完整，8位到第23位，23+1-8=16</li>
+</ul>
+<p>以上并不能构成整个80位的除去段选择子的剩下部分，这是我们的问题，留在下面解决。</p>
+<h3 id="P位和G位"><a href="#P位和G位" class="headerlink" title="P位和G位"></a>P位和G位</h3><p>P（Segment present） 位是表示段是否有效的位，当其=1代表有效，加载段描述首先要判断的就是P位是否标识该段描述符有效</p>
+<p>G （Granularity） n. 间隔 ，它代表的是Limit描述数值的单位，如果G=0，那么单位就是字节，Limit在段描述符保存的值一共12位，因此Limit此时的最大范围是：</p>
+<p><code>(0000 0000-000F FFFF)</code>如果G位位1，那么其是4KB，2^12，那么此时的范围是</p>
+<p><code>(0000 0FFF-FFFF FFF)</code></p>
+<h3 id="S位和Type域"><a href="#S位和Type域" class="headerlink" title="S位和Type域"></a>S位和Type域</h3><p>S (Descriptor type)位是一个描述段类型的位，当其=0的时候代表的是系统段描述符，当其=1的时候是代码段或者数据段的描述符，具体的信息由type域给出。</p>
+<p>当S=1，代指的是代码段或者数据段，其Type域的值为：</p>
+<p><img src="ProtectMod/03.png" alt="代码段或数据段的段描述符"></p>
+<p>简要描述下，第11位决定到底是代码段还是数据段，当位数据段的时候，第11位是0，此时</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>表示是否访问(Access)过 为1代表访问过</td>
+</tr>
+<tr>
+<td>W</td>
+<td>表示是否可写是，为1代表可写</td>
+</tr>
+<tr>
+<td>E</td>
+<td>为0向上拓展，为1向下拓展</td>
+</tr>
+</tbody>
+</table>
+<p>所谓向上扩展还是向下扩展针对的是Limit限制的是向下一定范围能访问还是除了向下一部分范围不能访问。</p>
+<p><img src="ProtectMod/04.png" alt="向上扩展和向下扩展"></p>
+<p>如何快速判断一个段描述符描述的是代码段和数据段？就要熟悉其二进制表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DPL 不是全0就是全1</span></span><br><span class="line"><span class="comment">/32----24/23------20/19-----16/15---12/11-8/7--0/</span></span><br><span class="line"><span class="comment">/--BASE--/G|DB|0|AVL/--Limit--/P|DPL|S/TYPE/BASE/</span></span><br><span class="line"><span class="comment">-------------------------------1 00  1----------/</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">只需要看倒数第三第四位就可以迅速判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>如果是代码段的话，要明确其含义是不同的：</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>是否访问过</td>
+</tr>
+<tr>
+<td>R</td>
+<td>是否可读</td>
+</tr>
+<tr>
+<td>C</td>
+<td>一致代码段还是非一致代码段=1表示一致，=0表示非一致</td>
+</tr>
+</tbody>
+</table>
+<p>至于一致和非一致代码段代表的是是否可以越权访问，具体的区别在下面学习。</p>
+<p>至于系统段描述符，先将其表格列举如下：</p>
+<p><img src="ProtectMod/05.png" alt="系统段描述符的type域"></p>
+<h3 id="D-B位"><a href="#D-B位" class="headerlink" title="D/B位"></a>D/B位</h3><p>D/B位代表的是(Default operation size)决定CPU的寻址方式,0代表的是16位寻址，该段也是16位段，1代表的是32位寻址，该段也是32位段，其寻址方式要对应。</p>
+<h3 id="段权限检查"><a href="#段权限检查" class="headerlink" title="段权限检查"></a>段权限检查</h3><p>段权限检查是相对比较难理解的一部分，段权限的检查发生在段寄存器的变化，确定段寄存器是否能加载一个段描述符。</p>
+<p>首先要知道的是CPU的保护模式之所以称之为保护是其有分级的制度，CPU一共4个不同的级别</p>
+<p><img src="ProtectMod/06.png" alt="CPU特权级别"></p>
+<p>CPU的特权级有四个，分别为0,1,2,3 windows 和 Linux操作系统都只使用了两个环，就是3环和0环，3环是应用程序的权限级别，而0环是系统内核的级别</p>
+<p>那么如何查看当前程序跑在哪一环呢？这就需要查看CPL（Current Privilege Level）当前特权级别。</p>
+<p><strong>CS和SS段的段选择子中的RPL就是CPL（CPU不同的特权级都有其特定的栈）</strong></p>
+<p><strong>DPL在段描述符中，描述的是访问该段需要的最低权限</strong></p>
+<p><strong>RPL描述的是我在能访问到DPL的前提下，我需要用怎样的权限去访问段</strong></p>
+<h3 id="数据段的段权限检查"><a href="#数据段的段权限检查" class="headerlink" title="数据段的段权限检查"></a>数据段的段权限检查</h3><p>CPL&lt;=DPL并且RPL&lt;=DPL</p>
+<p>需要注意的是,段描述符分为三大类，代码段和系统段的权限检查和数据段的方式</p>
+<h3 id="代码的跨段执行"><a href="#代码的跨段执行" class="headerlink" title="代码的跨段执行"></a>代码的跨段执行</h3><p>首先代码的跳转，本身就依赖于段内跳转<code>JMP</code>，段间跳转<code>JMP FAR</code>，段内调用<code>CALL</code>，段间调用<code>CALL FAR</code>，段内返回<code>RET</code>，段间返回<code>RETF</code>，中断<code>INT</code>,中断返回<code>IRETED</code>；</p>
+<p>代码的跨段执行，必然伴随着同时修改段寄存器以及EIP的值，同时修改CS和EIP的指令是：</p>
+<p><code>JMP FAR</code>,<code>CALL FAR</code>,<code>RETF</code>,<code>INT</code>,<code>IRETED</code>则是同时修改寄存器和EIP的值</p>
+<p><strong>代码的段间跳转</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMP 0x20:0x004183D7;操作数一共6个字节，前面两个段选择子，后面是偏移</span><br></pre></td></tr></table></figure>
+<p>执行步骤：</p>
+<ul>
+<li>段选择子的拆分<ul>
+<li><code>0x20</code>对应<code>0000 0000 0010 0000</code></li>
+<li>由于TI=0 所以查找GDT表</li>
+<li>Index=4 找到对应的段描述符需要将Index*8+GDT表的基地址</li>
+<li>判断段描述符的类型，四种情况是可以跳转的：<ul>
+<li>代码段</li>
+<li>调用门</li>
+<li>TSS任务段</li>
+<li>任务门</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权限检查，判断代码段的Type域内标明的是一致性代码段还是非一致性代码段<ul>
+<li>如果是非一致代码段，要求CPL==DPL,RPL&lt;=DPL</li>
+<li>如果是一致性质代码段,要求CPL&gt;=DPL,当前特权级级别可以比一致代码段要求的要低的，专门给低权限来用的，完成所谓的共享的功能。</li>
+</ul>
+</li>
+<li>加载段描述符<ul>
+<li>通过上面权限检查之后，CPU会讲段描述符加载到CS段寄存器</li>
+</ul>
+</li>
+<li>代码执行<ul>
+<li>CPU将<code>CS.BASE+OFFSET</code>的值写入到EIP然后执行对应的代码段，段间跳转执行完毕</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致代码段和非一致代码段"><a href="#一致代码段和非一致代码段" class="headerlink" title="一致代码段和非一致代码段"></a>一致代码段和非一致代码段</h3><ul>
+<li>对于一致代码段：也就是共享的段<ul>
+<li><strong>特权级高的程序不允许访问特权级低的数据，核心态不允许访问用户态的数据</strong></li>
+<li><strong>特权级低的程序可以访问到特权级高的数据，但是特权级不会改变：用户态还是用户态</strong></li>
+<li>C=0表示一致，C=1表示非一致</li>
+</ul>
+</li>
+<li>对于普通代码段：也就是非一致代码段<ul>
+<li>只允许同级访问</li>
+<li>绝对禁止不同级别的访问：核心态不是用户态</li>
+</ul>
+</li>
+<li>直接对代码段进行JMP或者CALL的操作，无论目标是一致代码段还是非一致代码段，CPL都不会发生改变，如果想要提升CPL的权限，只能通过调用门</li>
+</ul>
+<p><strong>简而言之，一致代码段高权限访问不了低权限的数据，低权限可以访问高权限的数据，但是RPL不会发生变化，非一致代码段很严格的1对1，只允许同级访问</strong></p>
+<h3 id="长调用"><a href="#长调用" class="headerlink" title="长调用"></a>长调用</h3><p>CALL FAR要比JMP FAR 复杂，因为JMP不影响堆栈，但是CALL会同时影响堆栈和EIP</p>
+<p><strong>情况一：跨段不提权</strong></p>
+<p>跨段不提权表示的是段要切换，而访问的代码段对应的段描述符所对应的DPL和当前的CPL是一样的，那么这个时候相比不同的，在段内的CALL指令不同的是其还需要在栈中保存一个原来代码段的段描述符CS</p>
+<p><img src="ProtectMod/07.png" alt="长调用跨段不提权"></p>
+<p>堆栈段先压入调用者CS，再压入返回地址。返回的时候注意使用RETF</p>
+<p><strong>情况二：跨段并提权</strong></p>
+<p>长调用跨段并提权，关键的变化在于提权，在切换CPU特权级别的时候注意，堆栈段也要发生变化，也就是说，要用新的堆栈（每一个特权级对应一个堆栈），现在总结一下，在</p>
+<p><code>CALL CS:EIP</code>这样的指令中，要在新的特权级的堆栈中保存以下内容：返回地址，原来的堆栈段描述符，原来的代码段描述符，调用者的ESP，这样就表现的原来的ESP毫无影响。</p>
+<p><img src="ProtectMod/08.png" alt="跨段并提权"></p>
+<p><strong>为什么说EIP是废弃的？</strong></p>
+<p>对于跨权限调用的时候是要提权的，而提权的时候需要通过一个门，门内信息有一个段选择子，指向真正要跳转的段，门内信息还有真正的偏移，因此，对于<code>CALL CS:EIP</code>来说，其CS有用，EIP没有用，是废弃的，大致过程如下：</p>
+<p>CALL CS:EIP  -&gt; 门描述符（偏移信息+段选择子）-&gt;高权限代码段描述符-&gt;段信息</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>跨段调用的时候，一旦有权限切换，就会切换堆栈</li>
+<li>CS的权限一旦改变，SS的权限也要随着改变，CS和SS的等级必须一样</li>
+<li><strong>JMP FAR只能跳转到同级非一致代码段，但是CALL FAR可以通过调用门提权，提升CPL的权限</strong></li>
+<li><strong>SS与ESP从哪儿来，参见TSS段</strong></li>
+</ul>
+<h3 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h3><p><strong>调用门执行流程</strong></p>
+<p>指令格式 <code>CALL CS:EIP(EIP是废弃的)</code></p>
+<p><strong>执行步骤</strong></p>
+<ol>
+<li>根据CS的值，查GDT表，找到对应的段描述符，这个描述符是调用门</li>
+<li>在调用门描述符中存储另一个代码段的段选择子</li>
+<li>选择子指向的段的BASE+选择子内部包含的偏移地址=真正要执行的地址</li>
+</ol>
+<p><img src="ProtectMod/09.png" alt="门描述符"></p>
+<p>首先调用门P=1，要想“敲门”DPL=11，第12位S=0，暂时不讨论门描述符的参数问题，Param Count = 0，而除了选择子，其也包含了32位的偏移。</p>
+<p><code>0000EC00-00080000</code> 8:1000</p>
+<p><strong>带有参数的调用门</strong></p>
+<p>注意，首先要使用有参数的调用门的时候参数必须要自己先压栈的（压入三环的堆栈）</p>
+<p>先来观察下老师给的实例代码观察下：</p>
+<p><img src="ProtectMod/10.png" alt="示例代码片段1"></p>
+<p><img src="ProtectMod/11.png" alt="示例代码片段1"></p>
+<p>可以看出在通过调用门提权之前，首先PUSH进三环堆栈3个参数，之后进行调用，在执行到裸函数的函数体内已经得到了提权，之后进行了两个相对陌生的指令：</p>
+<p><code>pushad</code>,<code>pushfd</code> 查询相关资料:</p>
+<blockquote>
+<p>pushad: 将所有的32位通用寄存器压入堆栈  pusha:将所有的16位通用寄存器压入堆栈 pushfd:然后将32位标志寄存器EFLAGS压入堆栈  pushf::将的16位标志寄存器EFLAGS压入堆栈 popad:将所有的32位通用寄存器取出堆栈  popa:将所有的16位通用寄存器取出堆栈 popfd:将32位标志寄存器EFLAGS取出堆栈  popf:将16位标志寄存器EFLAGS取出堆栈</p>
+</blockquote>
+<p><code>pushad</code> push进去的寄存器按照顺序为EDI,ESI,EBP,ESP,EBX,EDX,ECX,EAX</p>
+<p><code>pushfd</code> push进去的寄存器是32位标志寄存器</p>
+<p>执行玩<code>pushad</code>和<code>pushfd</code>之后的esp下降了4*9=36 -&gt;0x24 </p>
+<p><strong>调用门总结</strong></p>
+<ol>
+<li>当通过门，权限不变的时候，只会push两个值。CS，返回地址新的CS的值由调用门觉得</li>
+<li>当通过门，权限改变的时候，会PUSH四个值。SS，ESP.CS返回地址 新的CS的值由调用门决定。<strong>新的SS和ESP由TSS提供</strong></li>
+<li>通过门调用的时候，要执行哪行代码由调用门决定，但使用RETF返回的时候，由堆栈中压入的值决定，这就是说，进门的时候只能按照指定路线走，出门的时候可以翻墙（可以想去哪就去哪）</li>
+</ol>
+<h3 id="中断门与陷阱门"><a href="#中断门与陷阱门" class="headerlink" title="中断门与陷阱门"></a>中断门与陷阱门</h3><p>Windows没有使用调用门，但是使用了中断门，在windowsAPI当中使用中断门进入0环（现在新的CPU使用快速调用），中断的时候其实相当于在对于汇编就是0xCC(<code>int 3</code>)int 3就是用来执行中断门。中断门查询的表不是GDT表而是IDT表，是中断描述符，与GDT不同的是，IDT都是系统段描述符，并且第一个描述符不是都是0。</p>
+<p>同样，LDT的地址可以通过以下的windbg命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; r ldtr</span><br><span class="line">kd&gt; r ldtl</span><br></pre></td></tr></table></figure>
+<p>IDT表有三种描述符：</p>
+<ul>
+<li>中断门描述符</li>
+<li>任务门描述符</li>
+<li>陷阱门描述符</li>
+</ul>
+<p>其中中断门的结构如下：</p>
+<p><img src="ProtectMod/12.png" alt="中断门结构"></p>
+<p><strong>陷阱门</strong></p>
+<p>陷阱门基本上和中断门差不多，关键就在中断门通过修改标志寄存器的IF位来屏蔽中断，而陷阱门不屏蔽</p>
+<h3 id="任务段"><a href="#任务段" class="headerlink" title="任务段"></a>任务段</h3><p>在调用门，中断门与陷阱门中，一旦出现权限的切换，那么就会有堆栈的切换。而且，由于CS的CPL发生改变，也导致了SS也必须切换。切换的时候，会有新的ESP和SS(CS是由中断门或者调用门)这两个值从哪里来呢？这些都保存到TSS(Task Stage Segment)任务状态段中，<strong>TSS是在内存当中的。</strong></p>
+<p><img src="ProtectMod/13.bmp" alt="任务状态段TSS结构"></p>
+<p>里面保存了所有的通用寄存器以及标志寄存器ELF，以及CR3寄存器（在后面会接触到）以及不同的CPU权限等级对应的SS段选择子的值以及对应的ESP的值。</p>
+<p><strong>TSS注意事项</strong></p>
+<ul>
+<li>不要把TSS与“任务切换”联系在一起</li>
+<li>TSS的意义就在于可以同时换掉“一堆”寄存器</li>
+<li>TSS一共有104字节</li>
+</ul>
+<p><strong>CPU如何找到TSS</strong></p>
+<p><img src="ProtectMod/14.png" alt="Task Register"></p>
+<p><strong>TSS段描述符</strong></p>
+<p>当type的二进制是1001 = 9 的时候，是段描述符，没有加载到段寄存器当中</p>
+<p>当type的二进制是1011 = B 的时候，也是段描述符，表示加载到了段寄存器当中</p>
+<p><strong>TR寄存器的读写</strong></p>
+<ul>
+<li>当TSS段描述符加载到TR寄存器<ul>
+<li>指令：LTR</li>
+<li>说明：<ul>
+<li>用LTR指令去装载的话，仅仅是改变TR寄存器的值（96位），并不会改变TSS</li>
+<li>LTR指令只能在系统层调用（是特权指令）</li>
+<li>加载后TSS 段描述符的状态位会发生变化（Type从9变为b）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读TR寄存器<ul>
+<li>指令 STR</li>
+<li>说明：如果用STR去读的话，只读了TR的16位 也就是其选择子</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/保护模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;保护模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/28/Windows进程的创建过程/">
+                
+                    Windows进程的创建过程
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-28
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。</p>
+<h3 id="Windows进程创建过程"><a href="#Windows进程创建过程" class="headerlink" title="Windows进程创建过程"></a>Windows进程创建过程</h3><p>内存中的程序是其本身文件的映射。Windows的PE文件格式和Linux的ELF文件格式都是源于COFF文件格式，该格式是分段划分的，以满足对动态链接的要求以及对每个段数据的管理与保护，在32位操作系统下，windows 的PE文件格式会映射到一个2GB（低地址，高2G是操作系统占用的）大小的虚拟地址空间，这些地址空间由PE文件映射而来，同时加载许多动态库文件。对虚拟内存地址空间大致是如下的分布：</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>32位windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空指针赋值区域</td>
+<td>0x00000000-0x0000FFFF</td>
+</tr>
+<tr>
+<td>用户模式区</td>
+<td>0x00010000-0x7FFEFFFF</td>
+</tr>
+<tr>
+<td>64KB禁入区</td>
+<td>0x7FFF000-0x7FFFFFFF</td>
+</tr>
+<tr>
+<td>内核</td>
+<td>0x80000000-0xFFFFFFFF</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>下面是进程具体的创建过程：</p>
+<ul>
+<li>映射EXE文件</li>
+<li>创建内核对象EPROCESS</li>
+<li>映射系统DLL(ntdll.dll)</li>
+<li>创建线程内核对象ETHREAD</li>
+<li>系统启动线程<ul>
+<li>映射DLL（ntdll.LdrlnitializeThunk）</li>
+<li>线程开始执行</li>
+</ul>
+</li>
+</ul>
+<p>从大的方面来讲，分为两步，创建进程，创建线程</p>
+<p>这两方面也都有共同点</p>
+<ul>
+<li>都对应着内核对象，分别是EPROCESS和ETHREAD，这些都是由操作系统管理，在OS的高2G当中</li>
+<li>都需要映射dll，只不过进程是映射ntdll，线程启动时映射的是PE文件需要的dll，是递归加入的</li>
+</ul>
+<p>不同点在于</p>
+<ul>
+<li>线程需要操作系统启动。</li>
+</ul>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><ul>
+<li>进程都是由其他的进程创建的！第一个进程是由OS启动创建的。</li>
+</ul>
+<h3 id="CreateProcess"><a href="#CreateProcess" class="headerlink" title="CreateProcess"></a>CreateProcess</h3><p>在这里暂时不贴具体的API参数，而是先去大致学习明白它需要什么。</p>
+<ul>
+<li><p>子进程的概念</p>
+<ul>
+<li>由于进程都是由父进程创建（除了第一个创建的进程），所以引出子进程的概念</li>
+</ul>
+</li>
+<li><p>创建子进程类似运行一个程序，类比命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir files/</span><br></pre></td></tr></table></figure>
+<p>一个是这个程序路径和名字（得到程序在哪里，文件名对具体的文件索引是有一个映射的,文件名是对具体文件位置的抽象表示）</p>
+<p>第二个是命令行参数，执行前的附加参数</p>
+<p>第三个比较隐含，就是父进程的部分信息，这个“部分信息”包含以下内容：</p>
+<ul>
+<li>父进程的环境变量 -&gt;是否继承？</li>
+<li>父进程信息 STARTUPINFO结构体（创建进程的时候由父进程填充），子进程通过GetStartupInfo来获取</li>
+</ul>
+</li>
+<li><p>其次，我们应该去指明，创建这个进程的方式是什么？如何去创建。主要包含以下内容</p>
+</li>
+<li><p>最后，我们应该返回创建的进程和线程的标识信息，方便之后的程序步骤进行处理</p>
+<ul>
+<li>进程句柄，进程ID</li>
+<li>线程句柄，线程ID</li>
+</ul>
+</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+                    <a href="/tags/Windows/"><i class="fa fa-tag fa-fw"></i>&nbsp;Windows</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux 学习（命令）/">
+                
+                    Linux学习（命令）
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux常用命令的学习，不间断更新，逐渐让它完整</p>
+<h2 id="Shell-操作"><a href="#Shell-操作" class="headerlink" title="Shell 操作"></a>Shell 操作</h2><ul>
+<li>history<ul>
+<li>显示之前输入过的命令</li>
+<li>Ctrl+P 一直向上遍历（从下向上）  Previous</li>
+<li>Ctrl+N 向下遍历 （也可以向上向下）Next</li>
+</ul>
+</li>
+<li>光标控制<ul>
+<li>Ctrl + B （Back Forward）</li>
+<li>Ctrl + F（Forward）</li>
+<li>Ctrl +D （Delete）删除光标盖住的（之后的）一个字符</li>
+<li>Ctrl + U 删除光标前面的字符串</li>
+<li>Ctrl + K 删除光标后面的字符串</li>
+</ul>
+</li>
+<li>Tab 自动补全</li>
+</ul>
+<h2 id="文件目录结构"><a href="#文件目录结构" class="headerlink" title="文件目录结构"></a>文件目录结构</h2><ul>
+<li>/<ul>
+<li>/bin ：二进制文件,包含命令等等可执行程序（其中绿色的代表可执行程序，浅蓝色是软链接（快捷方式），红色是，要想显示颜色实际上执行的指令是ls –color=auto ）</li>
+<li>/dev: device 在Linux下一切皆文件，里面包含了CPU，显卡，内存，显示器等设备的抽象</li>
+<li>/lib：Linux运行的时候需要加载的一些动态库</li>
+<li>/mnt: 手动挂载目录</li>
+<li>/media: 自动挂载目录</li>
+<li>/root ：Linux超级用户的家目录</li>
+<li>/usr: unix system resource Unix系统资源目录<ul>
+<li>/include 头文件</li>
+<li>/game 游戏</li>
+<li>/local 用户安装的应用程序目录</li>
+</ul>
+</li>
+<li>/etc 配置文件<ul>
+<li>/passed 存储的不是密码，是用户的信息</li>
+<li>/group 存储用户组信息</li>
+</ul>
+</li>
+<li>/opt: 安装第三方应用程序</li>
+<li>/home 用户的家目录（宿主目录）</li>
+<li>/tmp:   存放临时文件 重启清空</li>
+</ul>
+</li>
+</ul>
+<h2 id="命令学习（基本操作）"><a href="#命令学习（基本操作）" class="headerlink" title="命令学习（基本操作）"></a>命令学习（基本操作）</h2><h3 id="tree-gt-查看目录"><a href="#tree-gt-查看目录" class="headerlink" title="tree -&gt;(查看目录)"></a>tree -&gt;(查看目录)</h3><ul>
+<li>查看一个目录的内容</li>
+<li>tree 查看当前目录</li>
+<li>tree dir 查看指定目录</li>
+</ul>
+<h3 id="ls-gt-（查看文件和目录）"><a href="#ls-gt-（查看文件和目录）" class="headerlink" title="ls  -&gt;（查看文件和目录）"></a>ls  -&gt;（查看文件和目录）</h3><ul>
+<li>查看文件和目录</li>
+</ul>
+<p><strong>参数</strong></p>
+<ul>
+<li>-a   显示所有文件和目录，包括隐藏文件（以.开头的）</li>
+<li>-l    列出详细信息<ul>
+<li>-rwxrw-r– 1 kevin kevin 321145 11月 23 23:08 hello.txt</li>
+<li>第一个字符：文件的类型<ul>
+<li>7种</li>
+<li>普通文件：-<ul>
+<li>.txt 压缩包 可执行程序</li>
+</ul>
+</li>
+<li>目录：d</li>
+<li>符号链接：I</li>
+<li>管道:p</li>
+<li>套接字：s</li>
+<li>字符设备：c<ul>
+<li>键盘，鼠标</li>
+</ul>
+</li>
+<li>块设备：b<ul>
+<li>U盘，硬盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>之后就是文件所有者，文件所有组，其他人的权限</li>
+<li>再之后的1是硬连接计数</li>
+<li>在后来的用户名是文件所有者</li>
+<li>再后来的名字是文件所属组的文字</li>
+<li>后面的文字是文件的大小<ul>
+<li>如果是目录，看到的大小永远是4K （ls -lh）是目录本身的大小</li>
+</ul>
+</li>
+<li>日期</li>
+<li>文件名</li>
+</ul>
+</li>
+<li>-f 格式化，如果是目录就加/</li>
+</ul>
+<h3 id="alias-gt-（查看命令别名）"><a href="#alias-gt-（查看命令别名）" class="headerlink" title="alias -&gt;（查看命令别名）"></a>alias -&gt;（查看命令别名）</h3><p>常用的命令比如</p>
+<p>ls =’ls –color=auto’</p>
+<p>ll =’ls -alF’</p>
+<h3 id="pwd-gt-（查看当前目录）"><a href="#pwd-gt-（查看当前目录）" class="headerlink" title="pwd -&gt;（查看当前目录）"></a>pwd -&gt;（查看当前目录）</h3><p>Print Work Dictionary</p>
+<h3 id="cd-gt-（切换目录）"><a href="#cd-gt-（切换目录）" class="headerlink" title="cd -&gt;（切换目录）"></a>cd -&gt;（切换目录）</h3><ul>
+<li>cd ~ 切换到家目录</li>
+<li>cd 退出目录</li>
+<li>cd - 最后两个相邻的，目录特别长的时候适用</li>
+</ul>
+<h3 id="mkdir-gt-创建目录"><a href="#mkdir-gt-创建目录" class="headerlink" title="mkdir -&gt;(创建目录)"></a>mkdir -&gt;(创建目录)</h3><ul>
+<li>mkdir 文件名 ：直接创建路径</li>
+<li>mkdir 路径/文件名 创建子目录</li>
+<li>mkdir 路径/文件名 -p  可以一次性创建多级目录</li>
+</ul>
+<h3 id="touch-gt-（创建文件）"><a href="#touch-gt-（创建文件）" class="headerlink" title="touch -&gt;（创建文件）"></a>touch -&gt;（创建文件）</h3><ul>
+<li>touch 文件名 如果文件不存在，创建新文件，如果存在，则会更新时间而不做任何操作</li>
+</ul>
+<h3 id="rmdir-gt-（删除空目录）"><a href="#rmdir-gt-（删除空目录）" class="headerlink" title="rmdir -&gt;（删除空目录）"></a>rmdir -&gt;（删除空目录）</h3><p>注意只能删除空目录，功能比较弱</p>
+<h3 id="rm-gt-删除命令"><a href="#rm-gt-删除命令" class="headerlink" title="rm -&gt;(删除命令)"></a>rm -&gt;(删除命令)</h3><ul>
+<li>删除目录<ul>
+<li>直接删除也会提示’无法删除，是一个目录’</li>
+<li>树形结构需要递归删除，因此需要加上参数-r</li>
+</ul>
+</li>
+<li>删除文件<ul>
+<li>rm 文件名 -i</li>
+</ul>
+</li>
+<li><p>删除的时候给提示 -I</p>
+</li>
+<li><p>注意问题</p>
+<ul>
+<li>删除之后，很难恢复</li>
+</ul>
+</li>
+</ul>
+<h3 id="cp-gt-（拷贝）"><a href="#cp-gt-（拷贝）" class="headerlink" title="cp -&gt;（拷贝）"></a>cp -&gt;（拷贝）</h3><ul>
+<li>cp 要拷贝的文件  拷贝目的  如果拷贝目的不存在则会创建这个文件并拷贝</li>
+<li>cp file1 file2（存在）则会覆盖文件的内容</li>
+<li>cp file dir（存在）<ul>
+<li>拷贝file到dir<ul>
+<li>cp dir dir1（存在）</li>
+<li>将dir拷贝到dir1，直接使用会提示略过，拷贝时候需要递归的拷贝，所以应该加-r</li>
+<li>cp dir dir1（不存在）</li>
+<li>将dir里面的内容copy到新创建的目录中，注意不包括源dir名字</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mv-gt-改名或者移动文件"><a href="#mv-gt-改名或者移动文件" class="headerlink" title="mv -&gt;(改名或者移动文件)"></a>mv -&gt;(改名或者移动文件)</h3><ul>
+<li>改名<ul>
+<li>mv file（存在）file1（不存在）</li>
+<li>mv dir（存在）dir1（不存在）</li>
+</ul>
+</li>
+<li>移动<ul>
+<li>mv file（文件） dir（存在） 将file移动到目录中去</li>
+<li>mv dir1（存在）dir2(存在) 将dir1移动到dir2中</li>
+<li>mv file（存在）file2 覅了文件会覆盖file2文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="cat-gt-（将内容打印到终端）"><a href="#cat-gt-（将内容打印到终端）" class="headerlink" title="cat -&gt;（将内容打印到终端）"></a>cat -&gt;（将内容打印到终端）</h3><p>文件特别多，大于终端显示上限，只能显示一部分</p>
+<h3 id="more-gt-（查看更多）"><a href="#more-gt-（查看更多）" class="headerlink" title="more-&gt;（查看更多）"></a>more-&gt;（查看更多）</h3><ul>
+<li>回车向下</li>
+<li>空格翻页</li>
+<li>不能回去</li>
+<li>按下q退出</li>
+</ul>
+<h3 id="less-gt-（可以向上）"><a href="#less-gt-（可以向上）" class="headerlink" title="less-&gt;（可以向上）"></a>less-&gt;（可以向上）</h3><p>与more相同，但是可以向上翻页，可以用page up键也可以用Ctrl +P，向下Ctrl+N</p>
+<h3 id="head-gt-（显示前？行）"><a href="#head-gt-（显示前？行）" class="headerlink" title="head -&gt;（显示前？行）"></a>head -&gt;（显示前？行）</h3><p>可以通过加入参数来设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -5 stdio.h</span><br><span class="line"><span class="meta">#</span><span class="bash"> 默认是10行</span></span><br></pre></td></tr></table></figure>
+<h3 id="tail-gt-显示后？行"><a href="#tail-gt-显示后？行" class="headerlink" title="tail -&gt;(显示后？行)"></a>tail -&gt;(显示后？行)</h3><p>同上</p>
+<h3 id="ln-gt-（创建快捷方式）"><a href="#ln-gt-（创建快捷方式）" class="headerlink" title="ln -&gt;（创建快捷方式）"></a>ln -&gt;（创建快捷方式）</h3><ul>
+<li>软链接 –快捷方式<ul>
+<li>ln -s </li>
+<li>它的大小对应的是其字节数</li>
+<li>当移动之后或许会发生快捷方式失效的，这是因为是相对路径</li>
+<li>在创建的时候使用绝对路径就可以防止移动之后的快捷方式失效</li>
+<li>目录也可以创建软链接</li>
+</ul>
+</li>
+<li>硬连接 <ul>
+<li>ln 文件名</li>
+<li>相对路径或者绝对路径没有关系</li>
+<li>认识inode结点<ul>
+<li>磁盘上的数据块是由索引节点号inode来表示</li>
+<li>OS并不对文件名感兴趣，每个文件是由其inode决定的</li>
+<li>因此inode不占用磁盘空间</li>
+<li>创建一个文件，硬链接计数为1</li>
+<li>给文件创建了硬连接，链接+1，删除一个-1</li>
+<li>如果inode为0，那么标识为废弃，再写入新文件的时候会覆盖，如果非0会进行保护</li>
+</ul>
+</li>
+<li>使用场景<ul>
+<li>磁盘上有一个文件</li>
+<li>需要再其他多个目录管理这个文件，并且能够实时同步</li>
+<li>硬连接是直接对应inode号，软链接是对应文件路径</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料：</p>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</a></p>
+<p>理解 Linux 的硬链接与软链接</p>
+</blockquote>
+<h2 id="命令学习（用户权限，用户和用户组）"><a href="#命令学习（用户权限，用户和用户组）" class="headerlink" title="命令学习（用户权限，用户和用户组）"></a>命令学习（用户权限，用户和用户组）</h2><h3 id="chmod-gt-（修改文件或者目录的权限）"><a href="#chmod-gt-（修改文件或者目录的权限）" class="headerlink" title="chmod-&gt;（修改文件或者目录的权限）"></a>chmod-&gt;（修改文件或者目录的权限）</h3><ul>
+<li><p>文字设定法</p>
+<ul>
+<li>chmod who[+|-|=]mode 文件名<ul>
+<li>Who：<ul>
+<li>u -User 文件所有者</li>
+<li>g-group 文件所属组</li>
+<li>o-other 其他人</li>
+<li>a -all 所有人</li>
+</ul>
+</li>
+<li>+|-|=</li>
+<li>mode<ul>
+<li>r:读</li>
+<li>w:写</li>
+<li>x:执行</li>
+<li>-：没有任何权限</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有者添加读权限，同组用户减去执行权限</span></span><br><span class="line">chmod u+r,g-x file.c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数字设定法</p>
+<ul>
+<li>chmod [+|-|=] mode 文件名<ul>
+<li>mode：<ul>
+<li>r: 100-&gt; 4</li>
+<li>w:010-&gt;2</li>
+<li>x:001-&gt;1</li>
+<li>-:0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="chown-gt-修改文件所有者或者所属组"><a href="#chown-gt-修改文件所有者或者所属组" class="headerlink" title="chown-&gt;(修改文件所有者或者所属组)"></a>chown-&gt;(修改文件所有者或者所属组)</h3><ul>
+<li>chown 新的所有者 文件名</li>
+<li>chown 新的所有者：新的组 文件名</li>
+<li>如何查看用户和组？<ul>
+<li>/etc/passwd 用户</li>
+<li>/etc/group 组</li>
+</ul>
+</li>
+<li>也可以修改组</li>
+</ul>
+<h3 id="chgrp-gt-（修改文件所有组）"><a href="#chgrp-gt-（修改文件所有组）" class="headerlink" title="chgrp-&gt;（修改文件所有组）"></a>chgrp-&gt;（修改文件所有组）</h3><p>只能修改对应的组</p>
+<ul>
+<li>chgrp 新的组 文件名</li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><ul>
+<li>一个目录必须有可执行权限才能打开，否则就无法打开</li>
+</ul>
+<h3 id="文件的查找和检索"><a href="#文件的查找和检索" class="headerlink" title="文件的查找和检索"></a>文件的查找和检索</h3><h3 id="find-gt-根据文件属性查找"><a href="#find-gt-根据文件属性查找" class="headerlink" title="find-&gt;(根据文件属性查找)"></a>find-&gt;(根据文件属性查找)</h3><ul>
+<li>文件名<ul>
+<li>find 查找的目录 -name “查找的文件名”</li>
+</ul>
+</li>
+<li>文件类型<ul>
+<li>find 查找到目录 -type 文件类型<ul>
+<li>Linux 下的七种文件类型<ul>
+<li>普通文件（-），目录（d），磁盘链接（l），管道（p pipeline），套接字（s），字符设备（c），块设备（b）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件大小</p>
+<ul>
+<li>find 查找的目录 -size +10k      （查看大于10k的文件）</li>
+<li>+:大于</li>
+<li>-：小于</li>
+<li>等于：直接写</li>
+<li>单位：<ul>
+<li>k - 小写</li>
+<li>M-大写</li>
+</ul>
+</li>
+<li>大于10k小于100k：find . -size +10k -size -100k</li>
+</ul>
+</li>
+<li><p>按照日期</p>
+<ul>
+<li>创建日期： -ctime -n/+n<ul>
+<li>-n:n天以内</li>
+<li>+n：n天以外</li>
+</ul>
+</li>
+<li>修改日期：-mtime</li>
+<li>访问日期：-atime</li>
+</ul>
+</li>
+<li>深度<ul>
+<li>-maxdepth n(层数)搜索n层已下的目录</li>
+<li>-mindepth n(层数)表示搜索n层以上的目录</li>
+<li>-name 制定名字</li>
+<li>find itcast/ -maxdepth 3 -name programer</li>
+</ul>
+</li>
+<li>高级查找<ul>
+<li>例，查找制定目录，并列出该目录中文件的详细信息<ul>
+<li>find ./ -type d -exec ls -l {} \;</li>
+<li>find ./ -type d -ok ls -l {} \;<ul>
+<li>OK比较安全</li>
+</ul>
+</li>
+<li>find ./-type d | xargs ls -l<ul>
+<li>管道一端是Read端，一端是Write端</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="grep-gt-根据文件内容查找"><a href="#grep-gt-根据文件内容查找" class="headerlink" title="grep -&gt;(根据文件内容查找)"></a>grep -&gt;(根据文件内容查找)</h3><ul>
+<li>搜索目录有子目录的时候需要加上-r</li>
+<li>grep -r “查找的内容” 搜索的路径</li>
+<li>搜索家目录中带有helloword字符串的文件</li>
+<li>grep -r “helloworld” ~</li>
+<li>显示在第几行 </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">"stdio.h"</span> ~ -n</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="压缩包管理"><a href="#压缩包管理" class="headerlink" title="压缩包管理"></a>压缩包管理</h3><ul>
+<li><p>Linux下常见的压缩格式</p>
+<ul>
+<li>.gz –gzip<ul>
+<li>压缩：gzip 文件1，文件2… -k(保留源文件)</li>
+<li>解压缩：gunzip *.gz</li>
+<li>不能压缩目录</li>
+</ul>
+</li>
+<li>.bz2 -bzip</li>
+</ul>
+</li>
+<li><p>常用压缩命令：</p>
+<ul>
+<li><p>tar -打包</p>
+<ul>
+<li><p>参数：</p>
+<ul>
+<li>c-创建压缩文件</li>
+<li>x-释放压缩文件</li>
+<li>v-打印提示信息</li>
+<li>f-制定压缩包的名字</li>
+<li>z-使用gzip压缩文件-&gt;xxx.tar.gz</li>
+<li>j -使用bzip2的方式压缩文件-&gt;xxx.tar.bz2</li>
+</ul>
+</li>
+<li><p>压缩</p>
+<ul>
+<li>tar 参数 压缩包名字 原材料。。。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf test.tar.gz file1...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压缩</p>
+<ul>
+<li>tar 参数 要解压包的名字</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf test.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>rar</p>
+<ul>
+<li>rar需要安装</li>
+<li>压缩<ul>
+<li>rar a 压缩包名（不需要指定后缀） 压缩的内容</li>
+<li>注意压缩的时候是不压缩子目录的</li>
+<li>所以就需要再后面加上-r</li>
+</ul>
+</li>
+<li>解压缩<ul>
+<li>rar x 压缩包名 解压的目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>zip/unzip</p>
+<ul>
+<li>压缩：<ul>
+<li>zip 参数  压缩包名 原材料</li>
+<li>如果有目录就是-r</li>
+</ul>
+</li>
+<li>解压缩<ul>
+<li>unzip 压缩包的名字 -d 解压目录</li>
+<li>-O 制定编码 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件的安装与卸载（Ubnutu"><a href="#软件的安装与卸载（Ubnutu" class="headerlink" title="软件的安装与卸载（Ubnutu)"></a>软件的安装与卸载（Ubnutu)</h3><h3 id="apt-get在线安装"><a href="#apt-get在线安装" class="headerlink" title="apt-get在线安装"></a>apt-get在线安装</h3><ul>
+<li>16.04版本之上就可以直接apt就可以</li>
+<li>安装<ul>
+<li>sudo apt-get install tree</li>
+</ul>
+</li>
+<li>卸载<ul>
+<li>sudo apt-get remove tree</li>
+</ul>
+</li>
+<li>软件列表的更新<ul>
+<li>sudo apt-get update</li>
+<li>注意只是更新列表，列表是所有可安装程序的URL</li>
+</ul>
+</li>
+<li>清空缓存<ul>
+<li>sudo apt-get clean</li>
+<li>对应的目录在var/cache/apt/archives</li>
+<li>存储的是deb包</li>
+</ul>
+</li>
+</ul>
+<h3 id="deb软件包安装方式"><a href="#deb软件包安装方式" class="headerlink" title="deb软件包安装方式"></a>deb软件包安装方式</h3><ul>
+<li>安装<ul>
+<li>sudo dpkg -i  xxx.deb</li>
+<li>sudp dpkg -r 软件名</li>
+</ul>
+</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/Linux系统函数学习（更新中）/">
+                
+                    Linux系统函数学习
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>Linux系统函数的学习，不间断更新，直到完整</p>
+<h3 id="从fopen看文件FILE结构体"><a href="#从fopen看文件FILE结构体" class="headerlink" title="从fopen看文件FILE结构体"></a>从fopen看文件FILE结构体</h3><p>​    在使用fopen打开文件返回的是FILE结构体，之前并不了解其内部，只是大致会用而已，在这里首先剖析FILE结构体。</p>
+<p>FILE结构体的内容很多，主要分为以下部分</p>
+<p>FILE</p>
+<ul>
+<li><p>文件描述符（整形值）FD</p>
+<ul>
+<li>文件描述符内部有inode信息，再通过inode找到具体的文件</li>
+</ul>
+</li>
+<li><p>文件读写指针位置  FP_POS</p>
+<ul>
+<li><p>首先读写指针是一个指针，因此在切换读写文件的时候需要fseek来移动文件指针</p>
+</li>
+<li><p>对于文件读写是对应的二进制读取，文本文件读取信息的资料补充</p>
+<blockquote>
+<p>知乎：fopen 为什么要区分文本模式和二进制模式？</p>
+<p><a href="https://www.zhihu.com/question/24662572" target="_blank" rel="noopener">https://www.zhihu.com/question/24662572</a></p>
+<p>牵扯到了BOM，下面为总结：</p>
+<p>BOM（byte-order mark）它用来标识该字节流的字节序，是高位在前还是低位在前。从Unicode3.2开始，BOM只能位于流的开头，只能用于标识字节序。</p>
+<p>UTF-8: 若为UTF-8有BOM格式，则文件开头为 EF BB BF； 若为UTF-8无BOM格式，则不能依据上述规则；此时需要依据UTF-8编码格式来判断</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>I/O缓冲区（内存地址）BUFFER<br><img src="https://upload-images.jianshu.io/upload_images/8852615-0539b579f780a484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot_20180720193704.png"></p>
+<ul>
+<li>C标准函数都有Buffer</li>
+<li>I/O缓存区域，根据存储器层次结构，硬盘会比内存慢100万倍，因此要增设缓存，默认是8K，同样需要注意的是IO的形式除了默认的，还有以下形式：<ul>
+<li>直接IO<ul>
+<li>内存映射文件的形式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>读写过程：</p>
+<ul>
+<li>例如Printf(“Hello World”);</li>
+<li>调用write函数将文件描述符传入（系统API write(fd,”hello”,5)）完成将”hello”用户空间到内核空间的传递</li>
+<li>系统调用sys_write 使用设备驱动，通过设备驱动函数写入到驱动操作硬件</li>
+<li>显示器显示</li>
+</ul>
+<h3 id="虚拟地址空间"><a href="#虚拟地址空间" class="headerlink" title="虚拟地址空间"></a>虚拟地址空间</h3><p>32位操作系统当一个可执行文件允许起来成为一个进程的时候操作系统会为其分配一个4G的地址空间，虚拟内存是分段的，而其根据局部性原理也不是一次性加载的，而是分页的</p>
+<p>下面是对虚拟地址空间做一个详细的总结，虚拟地址空间的引出和计算机的发展历程是离不开的的。</p>
+<p>在早期的计算机中，程序是直接运行在物理内存上的，程序直接访问的是物理地址，这种模式的限制在于，只要程序要求的内存空间不要超过超过物理内存的大小，就不会有问题，但是为了提高CPU的使用效率，我们更期望的是同时运行多个程序，现在关键的问题在于，能运行的程序受限于物理内存的大小以及运行程序本身的大小。所以一个需要关键解决的问题就是如何将有限的物理内存分配给多个程序使用，也就是内存分配问题，但除了内存分配问题，传统的方式还存在许多问题。</p>
+<ul>
+<li>地址空间不隔离导致程序的安全性不足，一个程序的崩溃会影响到其他程序，恶意程序可以轻松修改其他程序的数据，总而言之，缺乏安全稳定性</li>
+<li>内存地址分配随机就让程序内部的重定位工作（运行地址不确定）变得异常麻烦</li>
+<li>内存使用效率低下</li>
+<li><p>内存切换过程（将完整程序换入到硬盘或者将完整换出）效率十分低下</p>
+<p>如果引入一个中间层，在外部忽视内存地址的差异，在内部执行一个转换到真实地址的过程，就可以轻松解决第一第二点，这就是虚拟内存。虚拟内存使得应用程序不需要考虑自己加载到什么地方。相互之间也起到了隔离的作用，程序与程序之间安全性得到了一定的保障。但是第三个第四个仍然没有解决。内存毕竟是有限的。为了能让在内存的程序尽可能的多，当然是程序占用内存越小越好，但是程序变小不可能的。但这个思路得以运用，将程序加载到内存的粒度缩小，采用分页模式就有效的解决的这个问题。</p>
+<p>在以上的描述中，并没有深入研究CPU如何做到将虚拟内存映射到实际内存的过程，也没有研究页是如何被操作系统管理，缺页的时候怎么办等等，这个在之后学习。</p>
+</li>
+</ul>
+<p>程序都是按照一定格式存储的，由操作系统统一加载。在内存中映射为4GB的虚拟内存空间（32位）这样的文件格式是分段的，很好的解决了一些资源共享的问题，比如动态库的共享，也为每一个应用程序提供了一个统一的视图，完成功能，下面是Linux的ELF文件在内存的映射</p>
+<ul>
+<li>内核区：内存管理，进程管理，设备驱动管理，VFS虚拟文件系统（4G-3G linux）</li>
+<li>环境变量 env</li>
+<li>命令行参数  <ul>
+<li>int main(int argc,char* argv[])中的参数</li>
+</ul>
+</li>
+<li>栈空间（小）向下增长</li>
+<li>共享库</li>
+<li>堆空间（大）向上增长</li>
+<li>.bass（未初始化的全局变量）全局变量=0</li>
+<li>.data（已初始化全局变量）</li>
+<li>.text（代码段 二进制机器指令）</li>
+<li>受保护的地址（0-4K）其中0是收保护的地址，这也就是NULL的作用</li>
+</ul>
+<h3 id="文件描述符表"><a href="#文件描述符表" class="headerlink" title="文件描述符表"></a>文件描述符表</h3><p>内核进程管理里面由一个叫做PCB(进程控制块)每个进程都在其PCB中保存着一份文件描述符表，而文件描述符作为这个表的索引可以让我们快速的查到每个表项对应的打开文件的指针，文件描述符表最多可以存储1024个文件描述符</p>
+<p><strong>用户不能直接访问具体的文件描述符，就只能通过文件描述符表的下标由内核函数访问。</strong></p>
+<p>文件描述符前3个分别是STDIN_FILENO 标准输入 STDOUT_FILENO 标准输出 STDERR_FILENO 标准错误默认是打开状态，根据该文件描述符可以读写当前终端，每打开一个新文件，则占用一个文件描述符，而且是空闲的最小的一个文件描述符</p>
+<p>文件描述符内含有inode信息，具体的介绍查看:</p>
+<blockquote>
+<p><a href="http://www.docin.com/p-941544538.html" target="_blank" rel="noopener">http://www.docin.com/p-941544538.html</a></p>
+<p>豆丁网-inode,文件描述符</p>
+</blockquote>
+<p>Linux的open函数返回的int类型就是文件描述符表对新创建文件的下标，也就是文件描述符</p>
+<p>而系统函数read传入文件描述符，就可以清楚的知道要操作哪一个文件。</p>
+<h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><p>系统函数在man帮助文档的第二章</p>
+<h3 id="Open函数"><a href="#Open函数" class="headerlink" title="Open函数"></a>Open函数</h3><p>查看文档</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 2 open</span><br></pre></td></tr></table></figure>
+<p>头文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/types.h&gt; //宏定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>open函数看起来是函数重载的原因是使用了变长参数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathnamae,<span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="comment">//第三个参数是在第二个参数有效的情况下才有意义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathname,<span class="keyword">int</span> flags,<span class="keyword">mode_t</span> mode)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>返回值：文件描述符，失败返回-1</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>flags<ul>
+<li>必选项目 O_RDONLY,O_WRONLY,O_RDWR</li>
+<li>可选项目<ul>
+<li>创建文件：O_CREATE<ul>
+<li>创建文件时检测文件是否存在：O_EXCL</li>
+<li>如果文件存在，返回-1</li>
+<li>必须与O_CREAT一起使用</li>
+</ul>
+</li>
+<li>追加文件：O_APPEND:文件指针移动到末尾</li>
+<li>文件截断：O_TRUNC ：做文件清空的情况</li>
+<li>设置非阻塞：O_NONBLOCK</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mode 八进制文件权限<ul>
+<li>注意设置的权限不等于最终的权限值</li>
+<li>（mode&amp;~umask）</li>
+<li>umask是0002</li>
+</ul>
+</li>
+</ul>
+<h3 id="close函数"><a href="#close函数" class="headerlink" title="close函数"></a>close函数</h3><p>关闭文件描述符</p>
+<h3 id="read函数"><a href="#read函数" class="headerlink" title="read函数"></a>read函数</h3><h3 id="write函数"><a href="#write函数" class="headerlink" title="write函数"></a>write函数</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+
+        </div>
+        <aside class='l_side'>
+            
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+    <script>setLoadingBarProgress(100);</script>
 </body>
-</html>
