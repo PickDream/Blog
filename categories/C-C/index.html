@@ -154,25 +154,11 @@
     </section>
 
     <section class="article typo">
-        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：</p>
-<ul>
-<li>sizeof不是一个函数，是一个宏</li>
-<li>对于非数组的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#defne _sizeof(T) ( (size_t)((T*)0 + 1))</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>首先将对应类型转换为指针地址，通过指针加一地址自动移动位置之后确定位置</p>
-<ul>
-<li>数组类型的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> array_sizeof(T)   ( (size_t)(&amp;T+1)  - (size_t)(&amp;T)  )</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>假设传入的是一个<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>求地址操作会返回一个类型为<code>int[10]*</code>的指针，那么它一次移动的位数就是一个<code>int[10]</code>的长度</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>其都是通过指针移位的步长来解决的</li>
-<li>对具体类型，用具体类型的指针</li>
-<li>对于数组，用指向数组的指针</li>
-</ol>
-
+        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：<br>
+        
+            <div class="readmore">
+                <a href="/2018/09/14/C-1/" class="flat-box">READ MORE</a>
+            </div>
         
 
         

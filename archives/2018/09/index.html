@@ -155,7 +155,8 @@
     </section>
 
     <section class="article typo">
-        <h2 id="历史与概念"><a href="#历史与概念" class="headerlink" title="历史与概念"></a>历史与概念</h2><h3 id="Evergreen-Browsers"><a href="#Evergreen-Browsers" class="headerlink" title="Evergreen Browsers"></a>Evergreen Browsers</h3><p>长期浏览器，支持最新标准</p>
+        <a id="more"></a>
+<h2 id="历史与概念"><a href="#历史与概念" class="headerlink" title="历史与概念"></a>历史与概念</h2><h3 id="Evergreen-Browsers"><a href="#Evergreen-Browsers" class="headerlink" title="Evergreen Browsers"></a>Evergreen Browsers</h3><p>长期浏览器，支持最新标准</p>
 <ul>
 <li>Microsoft Edge</li>
 <li>Firefox</li>
@@ -250,7 +251,8 @@
     </section>
 
     <section class="article typo">
-        <h2 id="定义对象属性"><a href="#定义对象属性" class="headerlink" title="定义对象属性"></a>定义对象属性</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.a = <span class="number">1</span>;</span><br><span class="line">person[<span class="string">"a"</span>]=<span class="number">1</span>;</span><br><span class="line">person = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<h2 id="定义对象属性"><a href="#定义对象属性" class="headerlink" title="定义对象属性"></a>定义对象属性</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.a = <span class="number">1</span>;</span><br><span class="line">person[<span class="string">"a"</span>]=<span class="number">1</span>;</span><br><span class="line">person = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="高级方法"><a href="#高级方法" class="headerlink" title="高级方法"></a>高级方法</h3><p>需要明确一下几个概念：</p>
 <ul>
 <li><p>数据属性:</p>
@@ -424,7 +426,8 @@
     </section>
 
     <section class="article typo">
-        <h2 id="配置式构造对象"><a href="#配置式构造对象" class="headerlink" title="配置式构造对象"></a>配置式构造对象</h2><p>常用的传入参数在不能满足成员是动态的时候的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">name,age,school</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age,</span><br><span class="line">        school:school</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <a id="more"></a>
+<h2 id="配置式构造对象"><a href="#配置式构造对象" class="headerlink" title="配置式构造对象"></a>配置式构造对象</h2><p>常用的传入参数在不能满足成员是动态的时候的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">name,age,school</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age,</span><br><span class="line">        school:school</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以使用配置式的来满足动态需求<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">configure</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> configure</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="列表的简单操作"><a href="#列表的简单操作" class="headerlink" title="列表的简单操作"></a>列表的简单操作</h2><h3 id="栈方法和队列方法"><a href="#栈方法和队列方法" class="headerlink" title="栈方法和队列方法"></a>栈方法和队列方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.push(<span class="number">4</span>);      <span class="comment">//4加入末尾</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">0</span>)    <span class="comment">//0加入队首</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.pop()         <span class="comment">//4从尾部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//0从队首弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">7</span>)    <span class="comment">//7加入在首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">8</span>)    <span class="comment">//8加入到首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//从首部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br></pre></td></tr></table></figure>
 <p>注意JavaScript不是说队列或者栈方法将整体看作一个队列，而是说通过以上方法来实现栈和队列的操作。</p>
@@ -493,7 +496,8 @@
     </section>
 
     <section class="article typo">
-        <h3 id="JavaScript中的-的语意"><a href="#JavaScript中的-的语意" class="headerlink" title="JavaScript中的()的语意"></a>JavaScript中的<code>()</code>的语意</h3><ol>
+        <a id="more"></a>
+<h3 id="JavaScript中的-的语意"><a href="#JavaScript中的-的语意" class="headerlink" title="JavaScript中的()的语意"></a>JavaScript中的<code>()</code>的语意</h3><ol>
 <li>作为函数调用运算符</li>
 <li>函数参数占位符号</li>
 <li>强制运算符，返回结果</li>
@@ -550,7 +554,8 @@
     </section>
 
     <section class="article typo">
-        <h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
+        <a id="more"></a>
+<h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
 <li>type探测的类型是基本的数据类型，对于对象，他分不清是哪种object（除了function）,也就是说它深入不到构造方法级别的类型检测，这也是与instanceof的区别</li>
 <li><img src="1.png" alt="类型检测"></li>
 <li>在控制台下有个好处可以很具体的看到返回的类型都是string的</li>
@@ -619,15 +624,11 @@
     </section>
 
     <section class="article typo">
-        <h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2><p><img src="1.png" alt="HTML的语义化元素"></p>
-<h2 id="HTML的最佳实践"><a href="#HTML的最佳实践" class="headerlink" title="HTML的最佳实践"></a>HTML的最佳实践</h2><ul>
-<li>选择标记元素要有代表性，不要老是<code>&lt;div&gt;&lt;/div&gt;</code></li>
-<li>不要忘记文档类型申明</li>
-<li>不要忘记字符编码申明，在<code>&lt;head&gt;</code>元素中应该有<code>&lt;meta charset=&#39;UTF=8&#39;&gt;</code></li>
-<li>不要使用HTML5不再支持的标记，如<code>&lt;center&gt;</code>,<code>&lt;font&gt;</code>,<code>&lt;basefont&gt;</code>,<code>&lt;big&gt;</code></li>
-<li>不要使用HTML5不再支持的Tag属性 如<code>table</code>、<code>img</code>等标记的<code>align</code>和<code>border</code>属性，能用CSS就用CSS</li>
-</ul>
-
+        <h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2>
+        
+            <div class="readmore">
+                <a href="/2018/09/18/HTML5-1/" class="flat-box">READ MORE</a>
+            </div>
         
 
         
@@ -729,25 +730,11 @@
     </section>
 
     <section class="article typo">
-        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：</p>
-<ul>
-<li>sizeof不是一个函数，是一个宏</li>
-<li>对于非数组的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#defne _sizeof(T) ( (size_t)((T*)0 + 1))</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>首先将对应类型转换为指针地址，通过指针加一地址自动移动位置之后确定位置</p>
-<ul>
-<li>数组类型的实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> array_sizeof(T)   ( (size_t)(&amp;T+1)  - (size_t)(&amp;T)  )</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>假设传入的是一个<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<p>求地址操作会返回一个类型为<code>int[10]*</code>的指针，那么它一次移动的位数就是一个<code>int[10]</code>的长度</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>其都是通过指针移位的步长来解决的</li>
-<li>对具体类型，用具体类型的指针</li>
-<li>对于数组，用指向数组的指针</li>
-</ol>
-
+        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：<br>
+        
+            <div class="readmore">
+                <a href="/2018/09/14/C-1/" class="flat-box">READ MORE</a>
+            </div>
         
 
         

@@ -154,90 +154,11 @@
     </section>
 
     <section class="article typo">
-        <h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1><h2 id="实验1-bootloader的启动"><a href="#实验1-bootloader的启动" class="headerlink" title="实验1: bootloader的启动"></a>实验1: bootloader的启动</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><p>要求：</p>
-<ol>
-<li>操作系统镜像文件ucore.img是如何一步一步生成的？(需要比较详细地解释Makefile中每一条相关命令和命令参数的含义，以及说明命令导致的结果)</li>
-<li>一个被认为是符合规范的硬盘主引导扇区的特征是什么？<br>实验过程:</li>
-<li><p>在构建过程中使用<code>make V=</code>来查看具体执行过程，具体执行过程如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下均为将各个文件编译为目标文件</span></span><br><span class="line">+ cc kern/init/init.c  //编译 init.c</span><br><span class="line">+ kern/libs/readline.c //编译 readline.c</span><br><span class="line">+ cc kern/libs/stdio.c //编译 stdio.c</span><br><span class="line">+ cc kern/debug/kdebug.c//编译 kdebug.c </span><br><span class="line">+ cc kern/debug/kmonitor.c //编译 kmonitor</span><br><span class="line">+ cc kern/debug/panic.c//编译 panic.c</span><br><span class="line">+ cc kern/driver/clock.c //编译 clock.c</span><br><span class="line">+ cc kern/driver/console.c //编译 console.c</span><br><span class="line">+ cc kern/driver/intr.c//编译 intr.c</span><br><span class="line">+ cc kern/driver/picirq.c //编译 picirq.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trap.c //编译 trap.c</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/trapentry.S //编译 trapentry.S</span><br><span class="line">+ cc kern/<span class="built_in">trap</span>/vectors.S //编译 vector.S</span><br><span class="line">+ cc kern/mm/pmm.c//编译 pmm.c</span><br><span class="line">+ cc libs/printfmt.c // printgmt.c</span><br><span class="line">+ cc libs/string.c //编译 string.c</span><br><span class="line">+ ld bin/kernel//接下来用ld合并目标文件(object) 和 库文件(archive),生成kernel程序</span><br><span class="line">+ cc boot/bootasm.S //编译 bootasm.S</span><br><span class="line">+ cc boot/bootmain.c //编译 bootmain.c</span><br><span class="line">+ cc tools/sign.c //编译 sign.c</span><br><span class="line"><span class="comment"># 以上执行过程均附加了gcc参数如下,以第一行init.c为例</span></span><br><span class="line">gcc -Ikern/init/ -fno-builtin -Wall -ggdb -m32 -gstabs -nostdinc  -fno-stack-protector -Ilibs/ -Ikern/debug/ -Ikern/driver/ -Ikern/<span class="built_in">trap</span>/ -Ikern/mm/ -c kern/init/init.c -o obj/kern/init/init.o</span><br><span class="line"><span class="comment"># gcc -I 指明包含路径名称 -fno-builtin表明不使用内建函数 -Wall开启所有警告  -ggdb生成GDB调试信息 -gstabs此选项以stabs格式声称调试信息,但是不包括gdb调试信息，-m32生成32位机器的汇编代码 -nostdincgcc编译的时候不要在标准系统目录中找头文件 -fnostack-protector 不启用溢出检测机制 </span></span><br><span class="line">+ ld bin/bootblock //链接生成block文件</span><br><span class="line">//最后将bootloader放入虚拟硬盘ucore.img中去。</span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=bin/ucore.img count=10000</span><br><span class="line">dd <span class="keyword">if</span>=bin/bootblock of=bin/ucore.img conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=bin/kernel of=bin/ucore.img seek=1 conv=notrunc</span><br><span class="line"><span class="comment"># 这里用到了dd命令，if是输入of是输出count是块大小，关于conv参数可以参考 https://www.cnblogs.com/dkblog/archive/2009/09/18/1980715.html  https://blog.csdn.net/u011616400/article/details/41575745 ,其作用睡觉哦不截断输出文件</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？</p>
-</li>
-</ol>
-<p>查看tools/sign.c文件如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">    <span class="comment">//检查输入参数</span></span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: &lt;input filename&gt; &lt;output filename&gt;\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//stat函数传入文件名和结构体对象可以返回一个结构体信息，检测是否是吧</span></span><br><span class="line">    <span class="keyword">if</span> (stat(argv[<span class="number">1</span>], &amp;st) != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Error opening file '%s': %s\n"</span>, argv[<span class="number">1</span>], strerror(errno));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输出长度</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"'%s' size: %lld bytes\n"</span>, argv[<span class="number">1</span>], (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">    <span class="comment">//检测是否超过510个字节</span></span><br><span class="line">    <span class="keyword">if</span> (st.st_size &gt; <span class="number">510</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"%lld &gt;&gt; 510!!\n"</span>, (<span class="keyword">long</span> <span class="keyword">long</span>)st.st_size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//建立缓冲区，将缓冲区置0</span></span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">512</span>];</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    <span class="comment">//读取文件，填充缓冲区</span></span><br><span class="line">    FILE *ifp = fopen(argv[<span class="number">1</span>], <span class="string">"rb"</span>);</span><br><span class="line">    <span class="keyword">int</span> size = fread(buf, <span class="number">1</span>, st.st_size, ifp);</span><br><span class="line">    <span class="comment">//判断文件大小是否如文件信息所述</span></span><br><span class="line">    <span class="keyword">if</span> (size != st.st_size) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"read '%s' error, size is %d.\n"</span>, argv[<span class="number">1</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//关闭流</span></span><br><span class="line">    fclose(ifp);</span><br><span class="line">    <span class="comment">//写入标识</span></span><br><span class="line">    buf[<span class="number">510</span>] = <span class="number">0x55</span>;</span><br><span class="line">    buf[<span class="number">511</span>] = <span class="number">0xAA</span>;</span><br><span class="line">    <span class="comment">//打开新文件，写出</span></span><br><span class="line">    FILE *ofp = fopen(argv[<span class="number">2</span>], <span class="string">"wb+"</span>);</span><br><span class="line">    size = fwrite(buf, <span class="number">1</span>, <span class="number">512</span>, ofp);</span><br><span class="line">    <span class="comment">//再次检测大小是否符合要求</span></span><br><span class="line">    <span class="keyword">if</span> (size != <span class="number">512</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"write '%s' error, size is %d.\n"</span>, argv[<span class="number">2</span>], size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(ofp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"build 512 bytes boot sector: '%s' success!\n"</span>, argv[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h3><p>要求：<br>使用qemu执行并调试lab1中的软件。（要求在报告中简要写出练习过程）</p>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">V=@</span><br><span class="line">BINDIR=bin</span><br><span class="line"><span class="section">lab1-mon: <span class="variable">$(UCOREIMG)</span></span></span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"<span class="variable">$(QEMU)</span> -S -s -d in_asm -D <span class="variable">$(BINDIR)</span>/q.log -monitor stdio -hda <span class="variable">$&lt;</span> -serial null"</span></span><br><span class="line"><span class="variable">$(V)</span>sleep 2</span><br><span class="line"><span class="variable">$(V)</span><span class="variable">$(TERMINAL)</span> -e <span class="string">"gdb -q -x tools/lab1init"</span></span><br></pre></td></tr></table></figure>
-<p>第一行参数表</p>
-<ul>
-<li>-S 在启动时不启动 CPU， 需要在 monitor 中输入 ‘c’，才能让qemu继续模拟工作</li>
-<li>-s 等待gdb连接到端口1234</li>
-<li>-d 输出日志到 qemu</li>
-<li>-hda 指明使用file作为硬盘0镜像</li>
-<li>-serial dev 重定向虚拟串口到主机设备dev中</li>
-</ul>
-<p>第三行参数表</p>
-<ul>
-<li>-x 指明预设命令文件,预设文件如下<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file bin/kernel #加载符号信息 </span><br><span class="line">target remote :1234 #与qemu进行链接</span><br><span class="line">set architecture i8086 #设置处理器架构</span><br><span class="line">b *0x7c00 #在0x7c00设置断点</span><br><span class="line">continue #继续</span><br><span class="line">x /2i $pc #显示PC之后的两条指令</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>使用GDB命令完成以下工作:</p>
-<ol>
-<li>查看PC之后的10行命令<code>x/10i $pc</code></li>
-<li>查看具体位置的内存数据<code>x/</code></li>
-<li>查看GDTR寄存器的值</li>
-<li>断点<code>b *0x7c0a</code></li>
-<li>打印所有寄存器<code>info register</code>，也可以是<code>i r</code></li>
-<li>在开启保护模式后设置架构<code>set architecture i386</code></li>
-<li>单步源代码的下一行，不进入函数<code>next</code></li>
-<li>单步一条机器指令，不进入函数<code>nexti</code></li>
-<li>单步到下一个不同的源代码行,进入函数<code>step</code></li>
-<li>单步到一条机器指令，进入函数<code>stepi</code><h4 id="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"><a href="#从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行" class="headerlink" title="从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行"></a>从CPU加电执行的第一条指令开始，单步跟踪BIOS的执行</h4>由于开机时处于实模式，开机的时候CS:IP=0xf000:fff0因此应该查看这里的指令</li>
-</ol>
-<p><img src="1.png" alt="输出"></p>
-<p>之后执行一系列BIOS操作最够将控制权转交给0x7c00的bootloader部分</p>
-<h3 id="练习3-分析bootloader进入保护模式的过程"><a href="#练习3-分析bootloader进入保护模式的过程" class="headerlink" title="练习3 分析bootloader进入保护模式的过程"></a>练习3 分析bootloader进入保护模式的过程</h3><h4 id="步骤-关键步骤前加"><a href="#步骤-关键步骤前加" class="headerlink" title="步骤(关键步骤前加*)"></a>步骤(关键步骤前加*)</h4><ol start="0">
-<li>准备基本的GDT表项以供使用进入保护模式之后使用</li>
-<li>初始化寄存器</li>
-<li>*检测并发送A20开启信号来开启A20</li>
-<li>*通过修改CR0寄存器的保护模式使能位进入保护模式</li>
-<li>*用保护模式的寻址机制跳转到初始化保护寄存器的代码段(protcseg)长跳转指令进入</li>
-<li>*初始化堆栈部分一便于C语言程序的调用堆栈区域是从0–start(0x7c00)<h4 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h4><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootasm.S" target="_blank" rel="noopener">代码注释</a><h3 id="练习4：分析bootloader加载ELF格式的OS的过程。"><a href="#练习4：分析bootloader加载ELF格式的OS的过程。" class="headerlink" title="练习4：分析bootloader加载ELF格式的OS的过程。"></a>练习4：分析bootloader加载ELF格式的OS的过程。</h3>bootloader在前面可以看到，分为两部分，一部分是汇编代码写的，主要完成进入保护模式并初始化寄存器，第二部分是C代码写的，主要完成加载ELF格式的内核文件到内存中，这里就涉及到原生的C并不能完成的任务，例如读取硬盘扇区，在这里使用的是GCC内联汇编来完成基本功能被C代码使用的。<h4 id="读取硬盘部分"><a href="#读取硬盘部分" class="headerlink" title="读取硬盘部分"></a>读取硬盘部分</h4>读取扇区(readsect)的操作可以分为如下几部分</li>
-<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
-<li>发出读取磁盘的命令   (向硬盘的IO端口输出读取信息)</li>
-<li>等待磁盘准备好       (<code>whitdisk(void)</code>)</li>
-<li>将磁盘扇区的数据读到指定的内存中去<blockquote>
-<p>0号磁盘的IO端口详细信息:<br>1F0H 0号硬盘数据寄存器<br>1F1H 0号硬盘错误寄存器(读时),0号硬盘Features寄存器(写时)<br>1F2H 0号硬盘数据扇区计数<br>1F3H 0号硬盘扇区数<br>1F4H 0号硬盘柱面(低字节)<br>1F5H 0号硬盘柱面(高字节)<br>1F6H 0号磁盘驱动器/磁头寄存器<br>1F7H 0号硬盘状态寄存器(读时)，0号硬盘命令寄存器(写时)</p>
-</blockquote>
-</li>
-</ol>
-<p><a href="https://github.com/PickDream/OSPratice/blob/master/uCore/sourcecode/boot/bootmain.c" target="_blank" rel="noopener">读取硬盘的详细阅读代码注释</a></p>
-<h4 id="装载ELF格式内核"><a href="#装载ELF格式内核" class="headerlink" title="装载ELF格式内核"></a>装载ELF格式内核</h4><p><img src="Elf-layout.svg" alt="ELF布局"><br>在这里需要简单的了解ELF文件布局如下</p>
-<p><img src="ELF.png" alt="ELF部分功能"></p>
-<p>使用<code>objdump -h</code>查看ELF文件信息，可以查看在相关节的信息<br><img src="objdump.png" alt="objdumo查看信息"></p>
-<ul>
-<li>链接地址(Virtual Memory Address)和加载地址(Load Memory Address):程序在链接的时候会确定链接地址，这个地址是逻辑上的，代码中绝对的跳转都按照此基准进行，而加载地址是事实加载的地址。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bootmain - bootloader的入口 */</span></span><br><span class="line"><span class="keyword">void</span></span><br><span class="line">bootmain(<span class="keyword">void</span>) &#123;</span><br><span class="line">    <span class="comment">// 将文件的前4KB读取内存</span></span><br><span class="line">    readseg((<span class="keyword">uintptr_t</span>)ELFHDR, SECTSIZE * <span class="number">8</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检测加载进内存的内核模块是否是ELF文件</span></span><br><span class="line">    <span class="keyword">if</span> (ELFHDR-&gt;e_magic != ELF_MAGIC) &#123;  </span><br><span class="line">        <span class="keyword">goto</span> bad;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">proghdr</span> *<span class="title">ph</span>, *<span class="title">eph</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过结构体的偏移找到程序头表的入口，并加载程序段(ignores ph flags)</span></span><br><span class="line">    ph = (struct proghdr *)((<span class="keyword">uintptr_t</span>)ELFHDR + ELFHDR-&gt;e_phoff);</span><br><span class="line">    <span class="comment">// 通过指针的偏移,找到程序头表结束的地址</span></span><br><span class="line">    eph = ph + ELFHDR-&gt;e_phnum;</span><br><span class="line">    <span class="comment">//开始对程序头表包含的具体的信息进行遍历处理</span></span><br><span class="line">    <span class="keyword">for</span> (; ph &lt; eph; ph ++) &#123;</span><br><span class="line">        <span class="comment">//用readreg这个函数将文件的每一个段都读到内存中由程序头表的相应位置</span></span><br><span class="line">        <span class="comment">//由于kernel 程序的链接地址太高，而实际内存没有那么大的情况下，实际地址就是&amp;0xFFFFFF的结果(Mark，这个还不是太懂)</span></span><br><span class="line">        readseg(ph-&gt;p_va &amp; <span class="number">0xFFFFFF</span>, ph-&gt;p_memsz, ph-&gt;p_offset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用elf文件格式指明的程序入口点地址，转交控制权</span></span><br><span class="line">    <span class="comment">// note: 不会返回</span></span><br><span class="line">    ((<span class="keyword">void</span> (*)(<span class="keyword">void</span>))(ELFHDR-&gt;e_entry &amp; <span class="number">0xFFFFFF</span>))();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*加载失败跳转到这里*/</span></span><br><span class="line">bad:</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8A00</span>);</span><br><span class="line">    outw(<span class="number">0x8A00</span>, <span class="number">0x8E00</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 无限循环 */</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="实现函数调用堆栈跟踪函数-（需要编程）"><a href="#实现函数调用堆栈跟踪函数-（需要编程）" class="headerlink" title="实现函数调用堆栈跟踪函数 （需要编程）"></a>实现函数调用堆栈跟踪函数 （需要编程）</h4><p>一个函数调用的大致步骤分为以下阶段，由于调用约定多样，这里只总结大致步骤</p>
-<ol>
-<li>参数的传入，可以push参数，也可以传入具体的寄存器</li>
-<li><code>call</code> 将返回地址压入堆栈中，ESP-4(32位)，此时ESP指向的是保存返回值的地址</li>
-<li><code>push %ebp</code> 将上一个堆栈的栈底指针传入，ESP再次-4</li>
-<li><code>mov %esp,%ebp</code> 设置新的栈底</li>
-<li>提升栈空间，用于函数操作</li>
-<li>保护现场，具体是保存将要修改的寄存器</li>
-<li>其他初始化工作</li>
-<li>执行函数核心内容</li>
-<li>恢复现场</li>
-<li><code>pop %ebp</code> 恢复堆栈</li>
-<li><code>ret</code><br>依据上述过程易得：</li>
-</ol>
-<ul>
-<li>如果函数传入参数是通过在call之前压入参数来做到了，那么其参数地址是ebp+8+4*(n+1),n=1,2,3…</li>
-<li>函数的返回地址是ebp+4</li>
-<li>ebp指示的位置是上一个函数调用esp的位置，ebp内保存的内容是原来ebp的值</li>
-</ul>
-
+        <h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1>
+        
+            <div class="readmore">
+                <a href="/2018/10/03/ucore-Lab1/" class="flat-box">READ MORE</a>
+            </div>
         
 
         
@@ -657,89 +578,11 @@
     </section>
 
     <section class="article typo">
-        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。</p>
-<h3 id="Windows进程创建过程"><a href="#Windows进程创建过程" class="headerlink" title="Windows进程创建过程"></a>Windows进程创建过程</h3><p>内存中的程序是其本身文件的映射。Windows的PE文件格式和Linux的ELF文件格式都是源于COFF文件格式，该格式是分段划分的，以满足对动态链接的要求以及对每个段数据的管理与保护，在32位操作系统下，windows 的PE文件格式会映射到一个2GB（低地址，高2G是操作系统占用的）大小的虚拟地址空间，这些地址空间由PE文件映射而来，同时加载许多动态库文件。对虚拟内存地址空间大致是如下的分布：</p>
-<table>
-<thead>
-<tr>
-<th>分区</th>
-<th>32位windows</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空指针赋值区域</td>
-<td>0x00000000-0x0000FFFF</td>
-</tr>
-<tr>
-<td>用户模式区</td>
-<td>0x00010000-0x7FFEFFFF</td>
-</tr>
-<tr>
-<td>64KB禁入区</td>
-<td>0x7FFF000-0x7FFFFFFF</td>
-</tr>
-<tr>
-<td>内核</td>
-<td>0x80000000-0xFFFFFFFF</td>
-</tr>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>下面是进程具体的创建过程：</p>
-<ul>
-<li>映射EXE文件</li>
-<li>创建内核对象EPROCESS</li>
-<li>映射系统DLL(ntdll.dll)</li>
-<li>创建线程内核对象ETHREAD</li>
-<li>系统启动线程<ul>
-<li>映射DLL（ntdll.LdrlnitializeThunk）</li>
-<li>线程开始执行</li>
-</ul>
-</li>
-</ul>
-<p>从大的方面来讲，分为两步，创建进程，创建线程</p>
-<p>这两方面也都有共同点</p>
-<ul>
-<li>都对应着内核对象，分别是EPROCESS和ETHREAD，这些都是由操作系统管理，在OS的高2G当中</li>
-<li>都需要映射dll，只不过进程是映射ntdll，线程启动时映射的是PE文件需要的dll，是递归加入的</li>
-</ul>
-<p>不同点在于</p>
-<ul>
-<li>线程需要操作系统启动。</li>
-</ul>
-<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><ul>
-<li>进程都是由其他的进程创建的！第一个进程是由OS启动创建的。</li>
-</ul>
-<h3 id="CreateProcess"><a href="#CreateProcess" class="headerlink" title="CreateProcess"></a>CreateProcess</h3><p>在这里暂时不贴具体的API参数，而是先去大致学习明白它需要什么。</p>
-<ul>
-<li><p>子进程的概念</p>
-<ul>
-<li>由于进程都是由父进程创建（除了第一个创建的进程），所以引出子进程的概念</li>
-</ul>
-</li>
-<li><p>创建子进程类似运行一个程序，类比命令行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir files/</span><br></pre></td></tr></table></figure>
-<p>一个是这个程序路径和名字（得到程序在哪里，文件名对具体的文件索引是有一个映射的,文件名是对具体文件位置的抽象表示）</p>
-<p>第二个是命令行参数，执行前的附加参数</p>
-<p>第三个比较隐含，就是父进程的部分信息，这个“部分信息”包含以下内容：</p>
-<ul>
-<li>父进程的环境变量 -&gt;是否继承？</li>
-<li>父进程信息 STARTUPINFO结构体（创建进程的时候由父进程填充），子进程通过GetStartupInfo来获取</li>
-</ul>
-</li>
-<li><p>其次，我们应该去指明，创建这个进程的方式是什么？如何去创建。主要包含以下内容</p>
-</li>
-<li><p>最后，我们应该返回创建的进程和线程的标识信息，方便之后的程序步骤进行处理</p>
-<ul>
-<li>进程句柄，进程ID</li>
-<li>线程句柄，线程ID</li>
-</ul>
-</li>
-</ul>
-
+        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。<br>
+        
+            <div class="readmore">
+                <a href="/2018/07/28/Windows进程的创建过程/" class="flat-box">READ MORE</a>
+            </div>
         
 
         

@@ -145,7 +145,8 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>从《码农翻身》，作者：刘欣   一书中了解JDBC的设计思想：</p>
+            <p>更有利于了解JDBC建立链接过程的API<br><a id="more"></a></p>
+<h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>从《码农翻身》，作者：刘欣   一书中了解JDBC的设计思想：</p>
 <ul>
 <li>首先，为了统一各大数据库不同数据库的具体实现，应该加一个抽象层，统一出一个一致的访问方式，利用接口规范方法，各大数据库厂商实现接口，这个问题可以解决。但是也引入了一个新的问题，这个问题就是在代码中要使用接口首先得声明具体实现，这就出现了违背了面向接口编程，是面向实现编程。</li>
 </ul>
