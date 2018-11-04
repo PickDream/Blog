@@ -7,7 +7,7 @@
       <link href="/2018/11/04/HTTP-01/"/>
       <url>/2018/11/04/HTTP-01/</url>
       
-        <content type="html"><![CDATA[<p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br><a id="more"></a></p><h2 id="为什么需要三次握手？"><a href="#为什么需要三次握手？" class="headerlink" title="为什么需要三次握手？"></a>为什么需要三次握手？</h2><ol><li>Client发出请求，传递到服务器（此时客户端不知道Server能否联通）</li><li>Server得到了请求，向Client发出一个确认，此时服务器不知道Server的数据能否被收到</li><li>客户端收到请求之后，知道Client和Server通信没问题，问题是Server不知道自己的信送到了没？所有Client再次发送一个确认包。</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br><a id="more"></a></p><h2 id="为什么需要三次握手？"><a href="#为什么需要三次握手？" class="headerlink" title="为什么需要三次握手？"></a>为什么需要三次握手？</h2><ol><li>Client发出请求，传递到服务器（此时客户端不知道Server能否联通）</li><li>Server得到了请求，向Client发出一个确认，此时服务器不知道Client能否收到数据</li><li>客户端收到请求之后，知道Client和Server通信没问题，问题是Server不知道自己的信送到了没？所以Client再次发送一个确认包。</li></ol>]]></content>
       
       
       <categories>
