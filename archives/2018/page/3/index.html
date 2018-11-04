@@ -136,6 +136,86 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/08/29/从Java泛型谈起/">
+                
+                    从Java泛型谈起
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="泛型的好处"><a href="#泛型的好处" class="headerlink" title="泛型的好处"></a>泛型的好处</h2><p>在泛型出现之前，要想实现一个类型通用的实现必须要使用Object，而Object本身就是所有对象的父类，这就难免会由于类型检查的缺乏而影响程序本身。这些规范完全依赖于程序员的自律。这个时候如果既能保留C++泛型能创建通用代码的特性，又能对类型做到一定的检查就好了，而Java泛型应运而生，需要注意的是，Java语言是本身能够实现通用代码的编写的，而现在只需要对类型做一些限制，这和C++的泛型的思想有很大的不同，这就导致了Java的泛型采用了类型擦除的思路。</p>
+<h2 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h2><p>与C++语言每次根据传入类型生成代码的“膨胀”法不同，Java使用了类型擦除机制来实现泛型，本质上还是Object，只不过就是增加了编译器检查，正因为如此，可以总结如下两个特性：</p>
+<ul>
+<li>所写的泛型代码在最后都被擦除成Object</li>
+<li>泛型可以不写强制转换的原因是编译的时候编译器加了自动的转型</li>
+</ul>
+<h2 id="精确的泛型"><a href="#精确的泛型" class="headerlink" title="精确的泛型"></a>精确的泛型</h2><h3 id="泛型类与泛型方法"><a href="#泛型类与泛型方法" class="headerlink" title="泛型类与泛型方法"></a>泛型类与泛型方法</h3><p>总之就是一个<code>&lt;T&gt;</code>里面填写具体的泛型参数的表示,在类上申明就是泛型类，在方法上申明就是泛型方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛型类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractDao</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//泛型方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tools</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">copyOf</span><span class="params">(T ori)</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当一个类被实例化参数话之后，T全部变成了具体的类型</p>
+<h3 id="再加点限制-super-amp-extends"><a href="#再加点限制-super-amp-extends" class="headerlink" title="再加点限制: super &amp; extends"></a>再加点限制: super &amp; extends</h3><p>泛型类或者泛型方法中的泛型逻辑需要利用一些特殊的类，例如需要某接口实现的方法等等，这个时候需要对这样一个具体的类进行限制，这种限制分为两种，上界和下界</p>
+<ul>
+<li><p>extends</p>
+<ul>
+<li><p>例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Comparable&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(T[] array)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extends指定了上界，传入的元素会检查是否是Comparable的子类</p>
+</li>
+</ul>
+</li>
+<li><p>super</p>
+<ul>
+<li>super指定上界。</li>
+</ul>
+</li>
+</ul>
+<h2 id="精确泛型满足不了的场景"><a href="#精确泛型满足不了的场景" class="headerlink" title="精确泛型满足不了的场景"></a>精确泛型满足不了的场景</h2><p>这写情况发生再泛型参数赋值的情景。</p>
+<p>我们上面讨论的都是精确的泛型，“精确的泛型”是我根据自己理解来描述的，它满足不了不需要精确泛型的应用场景：下面用码农翻身公众号的例子来说明：</p>
+<h3 id="当泛型遇到了继承的场景"><a href="#当泛型遇到了继承的场景" class="headerlink" title="当泛型遇到了继承的场景"></a>当泛型遇到了继承的场景</h3><p><img src="从Java泛型谈起/1.png" alt="类图"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(ArrayList&lt;Fruit&gt; list)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(Fruit e:list)&#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ArrayList&lt;Apple&gt; list = <span class="keyword">new</span> ArrayList&lt;Apple&gt;();</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line">list.add(<span class="keyword">new</span> Apple());</span><br><span class="line"></span><br><span class="line">print(list)<span class="comment">//编译错误</span></span><br></pre></td></tr></table></figure>
+<p>为什么会出现这个问题，说到底就是传入的参数类型不符，我们想要去做到一个不精确的匹配，为了达到这个目的，Java引入了通配符<code>?</code> </p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>Java引入的通配符来满足不精确匹配的场景，刚才由于<code>List&lt;Fruit&gt;</code>和<code>List&lt;Apple&gt;</code>是两个完全不同的类型，因此编译失败，两个不同的类型是不能直接赋值的，虽然<strong>里面的成分</strong>有继承关系。为了解决这个问题，引入了通配符，通配符就表示这个泛型实例的类型是未知的，那么，完成下面的赋值操作就是再正常不过的了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">List&lt;?&gt; list = <span class="keyword">new</span> ArrayList&lt;Double&gt;();</span><br></pre></td></tr></table></figure>
+<h3 id="的使用"><a href="#的使用" class="headerlink" title="? 的使用"></a>? 的使用</h3><p>简单的说，？的使用场景</p>
+<h3 id="extends-amp-super"><a href="#extends-amp-super" class="headerlink" title="extends &amp; super"></a>extends &amp; super</h3><blockquote>
+<p><a href="https://segmentfault.com/a/1190000008423240#articleHeader0" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008423240#articleHeader0</a></p>
+</blockquote>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><blockquote>
+<p><a href="https://www.cnblogs.com/shadowdoor/p/6817346.html" target="_blank" rel="noopener">https://www.cnblogs.com/shadowdoor/p/6817346.html</a></p>
+<p><a href="http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">http://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html</a></p>
+<p><a href="https://blog.csdn.net/u010884123/article/details/78189395" target="_blank" rel="noopener">https://blog.csdn.net/u010884123/article/details/78189395</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/08/17/ProtectMod/">
                 
                     保护模式笔记
@@ -1441,55 +1521,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
-                
                     <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
                 
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/Java反射基础/">
-                
-                    Java反射基础
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Java反射机制的学习</p>
-<h2 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h2><blockquote>
-<p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。 –百度百科<br>
-        
-            <div class="readmore">
-                <a href="/2018/07/27/Java反射基础/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
-                
-                    <a href="/tags/反射/"><i class="fa fa-tag fa-fw"></i>&nbsp;反射</a>
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
                 
             </div>
         
@@ -1577,7 +1611,7 @@
                 
                     <li><a class="flat-box" href="/categories/算法/"><div class='name'>算法</div><div class='badge'>3</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/计算机网络/"><div class='name'>计算机网络</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/计算机网络/"><div class='name'>计算机网络</div><div class='badge'>2</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/设计模式/"><div class='name'>设计模式</div><div class='badge'>4</div></a></li>
                 
@@ -1592,7 +1626,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 14px; color: #999">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 

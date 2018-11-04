@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>CORS跨域问题的认识与解决</title>
+      <link href="/2018/11/04/HTTP-02/"/>
+      <url>/2018/11/04/HTTP-02/</url>
+      
+        <content type="html"><![CDATA[<p>之前曾经见过跨域问题的解决方式，一个是CORS，一个是JSONP，但是就是处于知其然，不知其所以然的阶段，因此在这里借助网上资料和Node.js来分析和解决如上问题<br><a id="more"></a></p><h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>除去一些常用标签的<code>src</code>，<code>image</code>以及<code>link</code>等属性是可以进行跨域的，一般的其他请求尤其是<code>json</code>请求是不能进行跨域的，否则会出现问题，按照如下方式初始化<code>node.js</code>代码，进行跨域测试：</p><ul><li>Server.js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"get request form"</span>,request.url)</span><br><span class="line">    response.end(<span class="string">"HelloWorld"</span>)</span><br><span class="line">&#125;).listen(<span class="number">8888</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Server listening on 8887"</span>)</span><br></pre></td></tr></table></figure><ul><li>Server2.js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,responce</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Server2 request form"</span>,request.url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> html = fs.readFileSync(<span class="string">'test.html'</span>,<span class="string">"utf-8"</span>)</span><br><span class="line">    responce.writeHead(<span class="number">200</span>,&#123;</span><br><span class="line">        <span class="string">'Content-Type'</span>:<span class="string">'text/html'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    responce.end(html)</span><br><span class="line">&#125;).listen(<span class="number">8889</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Server 2 Listening..."</span>)</span><br></pre></td></tr></table></figure><p>在Server2.js中无论请求如何都会返回一个html页面，该页面主要包含如下请求代码</p><ul><li>html中的js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>,<span class="string">'http://127.0.0.1:8888/'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure><p>向服务器2进行Http请求控制台信息如图所示</p><p><img src="1.png" alt="错误信息"></p><p>可见，其提示<code>No Access-Control-Allow-Origin</code> ,表示没有Access-Control-Allow-Origin头部信息，无法访问资源</p><p>我们修改服务器添加头信息为<code>Access-Control-Allow-Origin:*</code>在Server1中添加如下代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response.writeHead(<span class="number">200</span>,&#123;</span><br><span class="line">       <span class="string">'Access-Control-Allow-Origin'</span>:<span class="string">'*'</span></span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure><p>之后就不会报错了，打开控制台的NetWork栏，可以查看到”HelloWorld”字符串</p><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>由于浏览器允许如文章开始描述的在标签内部访问，所以就可以实现跨域，这也是JSONP的原理，而只要服务器返回的信息满足json这样可以被js原生支持，客户端就会很容易的去处理，在这里我们模拟一种JSONP的方式返回信息</p><p>修改Server1的代码为：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.end(<span class="string">'&#123;"result":2018&#125;'</span>)</span><br></pre></td></tr></table></figure><p>查看浏览器NetWork，发现返回成功</p><p><img src="2.png" alt="成功"></p><h2 id="CORS跨域的限制"><a href="#CORS跨域的限制" class="headerlink" title="CORS跨域的限制"></a>CORS跨域的限制</h2><p>不是只要设置了<code>Access-Control-Allow-Origin</code>头部就可以随意跨域了</p><ul><li>允许方法<ul><li>GET</li><li>HEAD</li><li>POST</li></ul></li><li>允许的Content-Type<ul><li>text/plain</li><li>multipart/form-data</li><li>application/x-www-form-urlencoded</li></ul></li><li>请求头。。</li></ul><h3 id="预请求"><a href="#预请求" class="headerlink" title="预请求"></a>预请求</h3><p>之上描述了CORS种种限制，如果想要使用自定义头或者其他Method，浏览器采用了预请求的方式，先发送一个Method=OPTION的请求，根据返回的头信息来判断请求是否合法，而服务器返回如下字段来判断<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Access-Control-Allow-Origin'</span>:<span class="string">'*'</span>,</span><br><span class="line"><span class="string">'Access-Control-Allow-Headers'</span>:<span class="string">'X-Test-Cors'</span>,</span><br><span class="line"><span class="string">'Access-Control-Allow-Method'</span>:<span class="string">'POST,PUT,DElete'</span>,</span><br><span class="line"><span class="string">'Access-Control-Max-Age'</span>:<span class="string">'1000'</span><span class="comment">//代表1000s之内不用发送预请求</span></span><br></pre></td></tr></table></figure></p><h2 id="练习代码地址"><a href="#练习代码地址" class="headerlink" title="练习代码地址"></a>练习代码地址</h2><blockquote><p><a href="https://gitee.com/lumaoxin/DemoHouse/tree/master/CORS" target="_blank" rel="noopener">https://gitee.com/lumaoxin/DemoHouse/tree/master/CORS</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP协议 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>HTTP协议的三次握手</title>
       <link href="/2018/11/04/HTTP-01/"/>
       <url>/2018/11/04/HTTP-01/</url>
@@ -643,9 +666,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
