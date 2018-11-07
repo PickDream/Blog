@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title>Spring HelloWorld</title>
+      <link href="/2018/11/07/Spring-01/"/>
+      <url>/2018/11/07/Spring-01/</url>
+      
+        <content type="html"><![CDATA[<p>自学Spring第一天，主要目的是使用Spring中的Beans完成依赖注入或者叫做控制反转，之后对所学的内容做一个总结。</p><a id="more"></a><h2 id="安装Spring与HelloWorld"><a href="#安装Spring与HelloWorld" class="headerlink" title="安装Spring与HelloWorld"></a>安装Spring与HelloWorld</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Spring 项目本身托管到Github上，官方首页有通往Github的链接，但是这里提供更为方便的方式去获取Spring相关的jar包<a href="https://repo.spring.io/webapp/#/home" target="_blank" rel="noopener">https://repo.spring.io/webapp/#/home</a></p><h3 id="将jar包添加到目录"><a href="#将jar包添加到目录" class="headerlink" title="将jar包添加到目录"></a>将jar包添加到目录</h3><p><img src="1.png" alt="需要的jar包"></p><p>其中<code>commons-logging.jar</code>需要另外下载</p><h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><h3 id="建立一个简单的Bean"><a href="#建立一个简单的Bean" class="headerlink" title="建立一个简单的Bean"></a>建立一个简单的Bean</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello:"</span>+name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="配置Spring-Bean容器配置文件"><a href="#配置Spring-Bean容器配置文件" class="headerlink" title="配置Spring Bean容器配置文件"></a>配置Spring Bean容器配置文件</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"helloWorld"</span> <span class="attr">class</span>=<span class="string">"HelloWorld"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"Spring"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure><p>需要注意的是IDEA添加的方式是<code>src上右键</code>-&gt;<code>XMLConfigurationFile</code>-&gt;<code>SpringConfig</code></p><h3 id="实现IOC"><a href="#实现IOC" class="headerlink" title="实现IOC"></a>实现IOC</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//交给Spring完成，依赖于Spring的Beans容器</span></span><br><span class="line">        ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"appclicationContext.xml"</span>);</span><br><span class="line"></span><br><span class="line">        HelloWorld helloWorld = (HelloWorld) ctx.getBean(<span class="string">"helloWorld"</span>);</span><br><span class="line"></span><br><span class="line">        helloWorld.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="对于依赖处理方式的演变"><a href="#对于依赖处理方式的演变" class="headerlink" title="对于依赖处理方式的演变"></a>对于依赖处理方式的演变</h2><h3 id="分类接口与实现"><a href="#分类接口与实现" class="headerlink" title="分类接口与实现"></a>分类接口与实现</h3><p><img src="2.png" alt="阶段1"></p><p>这种方式虽用面向对象的处理方式，抽象出接口，并有其不同的实现类，但是导致依赖于其接口的业务类太过复杂,图中Report Service需要与三个组件打交道</p><h3 id="工厂模式的引入"><a href="#工厂模式的引入" class="headerlink" title="工厂模式的引入"></a>工厂模式的引入</h3><p><img src="3.png" alt="阶段2"></p><p>引入工厂模式，加入了中间层，由工厂去管理依赖，而Report直接依赖与工厂，这样大大简化了阶段一Report Service的职责，由工厂保证是否是单例等等，依赖变少，组织结构变得更加清晰</p><h3 id="IOC方式的引入"><a href="#IOC方式的引入" class="headerlink" title="IOC方式的引入"></a>IOC方式的引入</h3><p><img src="4.png" alt="阶段3"></p><p>由之前需要什么找工厂去“生产”到需要什么让管理器去注入，容器管理对象的完整声明周期。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring框架学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Linux-02</title>
+      <link href="/2018/11/06/Linux-02/"/>
+      <url>/2018/11/06/Linux-02/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>CORS跨域问题的认识与解决</title>
       <link href="/2018/11/04/HTTP-02/"/>
       <url>/2018/11/04/HTTP-02/</url>

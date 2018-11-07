@@ -132,6 +132,80 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/11/07/Spring-01/">
+                
+                    Spring HelloWorld
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-07
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>自学Spring第一天，主要目的是使用Spring中的Beans完成依赖注入或者叫做控制反转，之后对所学的内容做一个总结。</p>
+        
+            <div class="readmore">
+                <a href="/2018/11/07/Spring-01/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/06/Linux-02/">
+                
+                    Linux-02
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-06
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        
+        
+
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/11/04/HTTP-02/">
                 
                     CORS跨域问题的认识与解决
@@ -520,181 +594,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/26/js-6/">
-                
-                    面向对象的JavaScript
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-26
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <a id="more"></a>
-<h2 id="定义对象属性"><a href="#定义对象属性" class="headerlink" title="定义对象属性"></a>定义对象属性</h2><h3 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person.a = <span class="number">1</span>;</span><br><span class="line">person[<span class="string">"a"</span>]=<span class="number">1</span>;</span><br><span class="line">person = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="高级方法"><a href="#高级方法" class="headerlink" title="高级方法"></a>高级方法</h3><p>需要明确一下几个概念：</p>
-<ul>
-<li><p>数据属性:</p>
-<ul>
-<li>Configurable:表示能否通过delete属性而重新定义属性</li>
-<li>enumerable:表示能否通过foreach循环来获得属性</li>
-<li>writable:表名属性是否可以修改</li>
-<li>value: 定义初始值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    value:<span class="string">"Nicholas"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.info(person.name);</span><br><span class="line">person.name = <span class="string">"Greg"</span>;</span><br><span class="line"><span class="built_in">console</span>.info(person.name);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>访问器属性:</p>
-<ul>
-<li>访问器属性相比于数据属性没有writable和value，新增了get和set属性,一般对私有属性进行get/set方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    _year:<span class="number">2004</span>,</span><br><span class="line">    edition:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(book,<span class="string">"year"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._year;</span><br><span class="line">    &#125;</span><br><span class="line">    set:<span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(newValue&gt;<span class="number">2004</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>._year = newValue;</span><br><span class="line">            <span class="keyword">this</span>.edition+=newValue - <span class="number">2004</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">book.year = <span class="number">2005</span>;</span><br><span class="line">alert(book.edition);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>创建私有的访问器属性之后设置具体的值经过get/set方法为数据的访问增加了一个中间层，在中间层内部增加类似监听器的东西可以实现“观察者模式”,例如MVVM框架所能做到的对对象属性的修改能及时反馈到对应的界面上。</p>
-<h3 id="创建对象-工厂模式"><a href="#创建对象-工厂模式" class="headerlink" title="创建对象-工厂模式"></a>创建对象-工厂模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.age = age;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="创建对象-构造函数"><a href="#创建对象-构造函数" class="headerlink" title="创建对象-构造函数"></a>创建对象-构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>,<span class="number">29</span>,<span class="string">"Software Engineer"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>new 构造函数的执行步骤<ul>
-<li>在内存中创建一个对象</li>
-<li>将作用域指向这个对象</li>
-<li>执行构造函数的代码</li>
-<li>将该对象的引用返回<h2 id="创建对象-原型模式"><a href="#创建对象-原型模式" class="headerlink" title="创建对象-原型模式"></a>创建对象-原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">29</span>;</span><br><span class="line">Person.prototype.sayhello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName();<span class="comment">//"Nicholas"</span></span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person2.sayName();<span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>首先prototype是一个指针，指向这个对象</p>
-<h3 id="hasOwnProperty-NaN"><a href="#hasOwnProperty-NaN" class="headerlink" title="hasOwnProperty()"></a>hasOwnProperty()</h3><p>检测来自实例的属性，而不是来自原型</p>
-<h3 id="delete-Person1-name"><a href="#delete-Person1-name" class="headerlink" title="delete Person1.name"></a>delete Person1.name</h3><p>删除实例属性</p>
-<h3 id="in-关键字"><a href="#in-关键字" class="headerlink" title="in 关键字"></a>in 关键字</h3><p>判断原型和实例中是否有</p>
-<h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><p>遍历时无差别对待原型属性和实例属性</p>
-<h3 id="认识构造函数和原型的问题"><a href="#认识构造函数和原型的问题" class="headerlink" title="认识构造函数和原型的问题"></a>认识构造函数和原型的问题</h3><ul>
-<li>首先，构造函数每次执行相当于创建一个全新的对象，每一个实例都有自己的属性和方法，这样在效率上消耗太高</li>
-<li>原型的缺点在于如果修改了一个属性值，其他所有属性值都变了。<h3 id="创建对象-组合"><a href="#创建对象-组合" class="headerlink" title="创建对象-组合"></a>创建对象-组合</h3>将属性值放到实例属性中，将方法写到原型中去。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.friends = [<span class="string">"shelby"</span>,<span class="string">"Court"</span>];</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,</span><br><span class="line">    sayName:function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义SuperType的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义Supertype的原型方法</span></span><br><span class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.proprety;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义子类的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//指明继承关系</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//添加子类方法</span></span><br><span class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subProperty;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//重写父类方法</span></span><br><span class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义子类的原型方法</span></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.info(instance2.colors);<span class="comment">//[ 'red', 'blue', 'green', 'black' ]</span></span><br></pre></td></tr></table></figure>
-<p>发现一个问题，通过原型链继承的数据对象是在原型中的，这个会最大的问题就是数据成员的共享，当然在特定的条件下可以利用该特点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//继承独立的数据成员的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//将构造函数的数据成员强制绑定到本地</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.info(instance2.colors)</span><br></pre></td></tr></table></figure></p>
-<h2 id="两种方法的折中，组合继承"><a href="#两种方法的折中，组合继承" class="headerlink" title="两种方法的折中，组合继承"></a>两种方法的折中，组合继承</h2><ul>
-<li>将想要继承的独立的数据成员使用构造函数继承方式</li>
-<li>将函数成员或者共享的数据成员使用原型链继承<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//设置继承父类的数据成员作为自己的独立的</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以说下面的三行代码都是完善继承关系的步骤</span></span><br><span class="line"><span class="comment">//指明prototype是从supertype()，使得subType具有了继承的层次,但是这里父类中有冗余的字段,优化步骤写在[2]中</span></span><br><span class="line"><span class="comment">//[1]</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//[2]上面代码的优化版本，通过定义空方法来</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">F.prototype = SuperType.prototype;</span><br><span class="line">SubType.prototype = <span class="keyword">new</span> F();</span><br><span class="line"><span class="comment">//添加SuperType的构造函数为Subtype</span></span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"><span class="comment">//再添加函数成员到原型中</span></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType(<span class="string">"Nicholas"</span>,<span class="number">29</span>);</span><br><span class="line">instance1.color.push(<span class="string">"black"</span>)</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)</span><br><span class="line">instance1.sayName();</span><br><span class="line">instance1.sayAge();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType(<span class="string">"Greg"</span>,<span class="number">27</span>);</span><br><span class="line"><span class="built_in">console</span>.info(instance1.colors)</span><br><span class="line">instance1.sayName();</span><br><span class="line">instance1.sayAge();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="JavaScript语言的二义性"><a href="#JavaScript语言的二义性" class="headerlink" title="JavaScript语言的二义性"></a>JavaScript语言的二义性</h2><p>动态的语言许多看似简单的东西有丰富的用法，这个需要注意，这也往往是其坑所在</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/25/Server-01/">
-                
-                    JSON与AJAX和跨域通信
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-25
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/操作系统/">操作系统</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="JSON表示值的类型"><a href="#JSON表示值的类型" class="headerlink" title="JSON表示值的类型"></a>JSON表示值的类型</h2><ul>
-<li><strong>不能</strong>表示<code>Undefined</code></li>
-<li><code>Null</code>,<code>Boolean</code>,<code>number</code>,<code>String</code></li>
-<li>对象</li>
-<li>数组<h2 id="JSON-规范"><a href="#JSON-规范" class="headerlink" title="JSON 规范"></a>JSON 规范</h2></li>
-<li>JSON是一种规范，是一种组织数据的格式</li>
-<li>JSON字符串不能用单引号</li>
-<li>JSON的属性必须是一个字符串表示<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wrong in json, but right in javascript</span></span><br><span class="line">&#123;</span><br><span class="line">    name:<span class="string">"Maoxin"</span>,</span><br><span class="line">    age:<span class="number">29</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//right in json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"Maoxin"</span>,</span><br><span class="line">    <span class="string">"age"</span>:<span class="number">29</span>    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="JSON-序列化"><a href="#JSON-序列化" class="headerlink" title="JSON 序列化"></a>JSON 序列化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//javascript object -&gt; JSON String</span></span><br><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"C++ Learn"</span>,</span><br><span class="line">    authors:[</span><br><span class="line">        <span class="string">"Nicholas C. Zakas"</span></span><br><span class="line">    ],</span><br><span class="line">    year:<span class="number">2011</span>,</span><br><span class="line">    edition:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="comment">//get attributes which we need to stringify</span></span><br><span class="line"><span class="keyword">var</span> need = <span class="built_in">JSON</span>.stringfy(book,[<span class="string">"title"</span>,<span class="string">"edition"</span>])</span><br><span class="line"><span class="comment">//&#123;"title":"C++ Learn","edition":3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//execute function according to attribute</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(key)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"authors"</span>:</span><br><span class="line">            <span class="keyword">return</span> value.join(<span class="string">","</span>)</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"year"</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"edition"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//deliver the number of space to get a formated string</span></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book,<span class="literal">null</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以在对象中添加<code>toJSON</code>的属性来控制格式化那些东西<h2 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;</span><br><span class="line">    title:<span class="string">"Javascript"</span>,</span><br><span class="line">    releaseDate: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2011</span>,<span class="number">11</span>,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(book)</span><br><span class="line"><span class="keyword">var</span> bookCopy = <span class="built_in">JSON</span>.parse(jsonText,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(key==<span class="string">"releaseDate"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(value);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h3 id="XMLHttpRequest-基本"><a href="#XMLHttpRequest-基本" class="headerlink" title="XMLHttpRequest 基本"></a>XMLHttpRequest 基本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">// 第三个参数是是否是异步的</span></span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//注意调用的时候，不会真正的指向请求，而是准备发送，用send发送</span></span><br><span class="line"><span class="comment">//如果是GET请求，将body设置为null即可</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="XMLHttpRequest-填充属性"><a href="#XMLHttpRequest-填充属性" class="headerlink" title="XMLHttpRequest - 填充属性"></a>XMLHttpRequest - 填充属性</h3><ul>
-<li>responseText<br>如果返回的是文本将返回结果挂载在这里</li>
-<li>responseXML 返回的是XML</li>
-<li>status 状态码&gt;=200时候代表能够正确返回，当status=304通知浏览器本地缓存还可以使用</li>
-<li>statusText</li>
-</ul>
-<p>以下为同步情况：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同步情况</span></span><br><span class="line"><span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以下为异步情况：采用注册事件的方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在open和send之前</span></span><br><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((chr.status&gt;=<span class="number">200</span>&amp;&amp;chr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">    alert(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(<span class="string">"error info: "</span>+xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在这里需要明确<code>readState</code>的变化过程</p>
-<ul>
-<li>0 未初始化</li>
-<li>1 启动</li>
-<li>2 发送</li>
-<li>3 接收</li>
-<li>4 完成<h3 id="abort-终止"><a href="#abort-终止" class="headerlink" title="abort 终止"></a>abort 终止</h3>使请求提前终止<h3 id="AJAX-XMLHttpRequest-Header"><a href="#AJAX-XMLHttpRequest-Header" class="headerlink" title="AJAX XMLHttpRequest Header"></a>AJAX XMLHttpRequest Header</h3></li>
-<li>Accept: 浏览器能处理的内容类型</li>
-<li>Accept-Charset：浏览器能显示的字符串</li>
-<li>Accept-Encoding: 浏览器能够处理的压缩编码</li>
-<li>Accept-Language:浏览器当前设置的语言</li>
-<li>Connection：浏览器与服务器之间的连接的类型</li>
-<li>Cookie:不解释</li>
-<li>Host:发出请求页面所在的域</li>
-<li>Referer:发送请求的页面URL，注意这个词是拼写错了，将错就错,referrer是正确的</li>
-<li>User-Agent：浏览器用户代理字符串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">"MyHeader"</span>,<span class="string">"MyValue"</span>)</span><br><span class="line"><span class="comment">//Demo 模拟表单发送</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line">xhr.send(serialize(form));</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">xhr.send(serialize(form));</span><br><span class="line"><span class="comment">//B</span></span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">"user-info"</span>);</span><br><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(form);</span><br><span class="line">formData.append(<span class="string">"name"</span>,<span class="string">"Maoxin"</span>);</span><br><span class="line">xhr.send(formData);</span><br></pre></td></tr></table></figure>
-<h3 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h3><ul>
-<li><code>onload</code> 响应完成触发</li>
-<li><code>onprocess</code> 接受过程中触发的事件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> divStatus = <span class="built_in">document</span>.getElementById(<span class="string">"status"</span>);</span><br><span class="line">    <span class="keyword">if</span>(event.lengthComputable)&#123;</span><br><span class="line">        divStatus.innerHTML = <span class="string">"Received"</span> +event.position+<span class="string">"of"</span>+event.totalSize+<span class="string">"bytes"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="跨域通信"><a href="#跨域通信" class="headerlink" title="跨域通信"></a>跨域通信</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Server杂项/"><i class="fa fa-tag fa-fw"></i>&nbsp;Server杂项</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -756,7 +655,7 @@
                 
                     <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>9</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>10</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
@@ -781,7 +680,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 14px; color: #999">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 

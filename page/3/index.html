@@ -132,6 +132,90 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/09/10/js2/">
+                
+                    蛋疼的JavaScript(二)this
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-10
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="烦人的this"><a href="#烦人的this" class="headerlink" title="烦人的this"></a>烦人的this</h3><p>JavaScript的表现与之前学的任何传统的语言都不一样，这个就很烦人，这几天把这个坑扫除了<br>
+        
+            <div class="readmore">
+                <a href="/2018/09/10/js2/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/29/JDBC设计思想/">
+                
+                    JDBC设计思想
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-29
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>更有利于了解JDBC建立链接过程的API<br>
+        
+            <div class="readmore">
+                <a href="/2018/08/29/JDBC设计思想/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/jdbc/"><i class="fa fa-tag fa-fw"></i>&nbsp;jdbc</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/08/29/从Java泛型谈起/">
                 
                     从Java泛型谈起
@@ -903,631 +987,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/Linux 学习（命令）/">
-                
-                    Linux学习（命令）
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/操作系统/">操作系统</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Linux常用命令的学习，不间断更新，逐渐让它完整</p>
-<h2 id="Shell-操作"><a href="#Shell-操作" class="headerlink" title="Shell 操作"></a>Shell 操作</h2><ul>
-<li>history<ul>
-<li>显示之前输入过的命令</li>
-<li>Ctrl+P 一直向上遍历（从下向上）  Previous</li>
-<li>Ctrl+N 向下遍历 （也可以向上向下）Next</li>
-</ul>
-</li>
-<li>光标控制<ul>
-<li>Ctrl + B （Back Forward）</li>
-<li>Ctrl + F（Forward）</li>
-<li>Ctrl +D （Delete）删除光标盖住的（之后的）一个字符</li>
-<li>Ctrl + U 删除光标前面的字符串</li>
-<li>Ctrl + K 删除光标后面的字符串</li>
-</ul>
-</li>
-<li>Tab 自动补全</li>
-</ul>
-<h2 id="文件目录结构"><a href="#文件目录结构" class="headerlink" title="文件目录结构"></a>文件目录结构</h2><ul>
-<li>/<ul>
-<li>/bin ：二进制文件,包含命令等等可执行程序（其中绿色的代表可执行程序，浅蓝色是软链接（快捷方式），红色是，要想显示颜色实际上执行的指令是ls –color=auto ）</li>
-<li>/dev: device 在Linux下一切皆文件，里面包含了CPU，显卡，内存，显示器等设备的抽象</li>
-<li>/lib：Linux运行的时候需要加载的一些动态库</li>
-<li>/mnt: 手动挂载目录</li>
-<li>/media: 自动挂载目录</li>
-<li>/root ：Linux超级用户的家目录</li>
-<li>/usr: unix system resource Unix系统资源目录<ul>
-<li>/include 头文件</li>
-<li>/game 游戏</li>
-<li>/local 用户安装的应用程序目录</li>
-</ul>
-</li>
-<li>/etc 配置文件<ul>
-<li>/passed 存储的不是密码，是用户的信息</li>
-<li>/group 存储用户组信息</li>
-</ul>
-</li>
-<li>/opt: 安装第三方应用程序</li>
-<li>/home 用户的家目录（宿主目录）</li>
-<li>/tmp:   存放临时文件 重启清空</li>
-</ul>
-</li>
-</ul>
-<h2 id="命令学习（基本操作）"><a href="#命令学习（基本操作）" class="headerlink" title="命令学习（基本操作）"></a>命令学习（基本操作）</h2><h3 id="tree-gt-查看目录"><a href="#tree-gt-查看目录" class="headerlink" title="tree -&gt;(查看目录)"></a>tree -&gt;(查看目录)</h3><ul>
-<li>查看一个目录的内容</li>
-<li>tree 查看当前目录</li>
-<li>tree dir 查看指定目录</li>
-</ul>
-<h3 id="ls-gt-（查看文件和目录）"><a href="#ls-gt-（查看文件和目录）" class="headerlink" title="ls  -&gt;（查看文件和目录）"></a>ls  -&gt;（查看文件和目录）</h3><ul>
-<li>查看文件和目录</li>
-</ul>
-<p><strong>参数</strong></p>
-<ul>
-<li>-a   显示所有文件和目录，包括隐藏文件（以.开头的）</li>
-<li>-l    列出详细信息<ul>
-<li>-rwxrw-r– 1 kevin kevin 321145 11月 23 23:08 hello.txt</li>
-<li>第一个字符：文件的类型<ul>
-<li>7种</li>
-<li>普通文件：-<ul>
-<li>.txt 压缩包 可执行程序</li>
-</ul>
-</li>
-<li>目录：d</li>
-<li>符号链接：I</li>
-<li>管道:p</li>
-<li>套接字：s</li>
-<li>字符设备：c<ul>
-<li>键盘，鼠标</li>
-</ul>
-</li>
-<li>块设备：b<ul>
-<li>U盘，硬盘</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>之后就是文件所有者，文件所有组，其他人的权限</li>
-<li>再之后的1是硬连接计数</li>
-<li>在后来的用户名是文件所有者</li>
-<li>再后来的名字是文件所属组的文字</li>
-<li>后面的文字是文件的大小<ul>
-<li>如果是目录，看到的大小永远是4K （ls -lh）是目录本身的大小</li>
-</ul>
-</li>
-<li>日期</li>
-<li>文件名</li>
-</ul>
-</li>
-<li>-f 格式化，如果是目录就加/</li>
-</ul>
-<h3 id="alias-gt-（查看命令别名）"><a href="#alias-gt-（查看命令别名）" class="headerlink" title="alias -&gt;（查看命令别名）"></a>alias -&gt;（查看命令别名）</h3><p>常用的命令比如</p>
-<p>ls =’ls –color=auto’</p>
-<p>ll =’ls -alF’</p>
-<h3 id="pwd-gt-（查看当前目录）"><a href="#pwd-gt-（查看当前目录）" class="headerlink" title="pwd -&gt;（查看当前目录）"></a>pwd -&gt;（查看当前目录）</h3><p>Print Work Dictionary</p>
-<h3 id="cd-gt-（切换目录）"><a href="#cd-gt-（切换目录）" class="headerlink" title="cd -&gt;（切换目录）"></a>cd -&gt;（切换目录）</h3><ul>
-<li>cd ~ 切换到家目录</li>
-<li>cd 退出目录</li>
-<li>cd - 最后两个相邻的，目录特别长的时候适用</li>
-</ul>
-<h3 id="mkdir-gt-创建目录"><a href="#mkdir-gt-创建目录" class="headerlink" title="mkdir -&gt;(创建目录)"></a>mkdir -&gt;(创建目录)</h3><ul>
-<li>mkdir 文件名 ：直接创建路径</li>
-<li>mkdir 路径/文件名 创建子目录</li>
-<li>mkdir 路径/文件名 -p  可以一次性创建多级目录</li>
-</ul>
-<h3 id="touch-gt-（创建文件）"><a href="#touch-gt-（创建文件）" class="headerlink" title="touch -&gt;（创建文件）"></a>touch -&gt;（创建文件）</h3><ul>
-<li>touch 文件名 如果文件不存在，创建新文件，如果存在，则会更新时间而不做任何操作</li>
-</ul>
-<h3 id="rmdir-gt-（删除空目录）"><a href="#rmdir-gt-（删除空目录）" class="headerlink" title="rmdir -&gt;（删除空目录）"></a>rmdir -&gt;（删除空目录）</h3><p>注意只能删除空目录，功能比较弱</p>
-<h3 id="rm-gt-删除命令"><a href="#rm-gt-删除命令" class="headerlink" title="rm -&gt;(删除命令)"></a>rm -&gt;(删除命令)</h3><ul>
-<li>删除目录<ul>
-<li>直接删除也会提示’无法删除，是一个目录’</li>
-<li>树形结构需要递归删除，因此需要加上参数-r</li>
-</ul>
-</li>
-<li>删除文件<ul>
-<li>rm 文件名 -i</li>
-</ul>
-</li>
-<li><p>删除的时候给提示 -I</p>
-</li>
-<li><p>注意问题</p>
-<ul>
-<li>删除之后，很难恢复</li>
-</ul>
-</li>
-</ul>
-<h3 id="cp-gt-（拷贝）"><a href="#cp-gt-（拷贝）" class="headerlink" title="cp -&gt;（拷贝）"></a>cp -&gt;（拷贝）</h3><ul>
-<li>cp 要拷贝的文件  拷贝目的  如果拷贝目的不存在则会创建这个文件并拷贝</li>
-<li>cp file1 file2（存在）则会覆盖文件的内容</li>
-<li>cp file dir（存在）<ul>
-<li>拷贝file到dir<ul>
-<li>cp dir dir1（存在）</li>
-<li>将dir拷贝到dir1，直接使用会提示略过，拷贝时候需要递归的拷贝，所以应该加-r</li>
-<li>cp dir dir1（不存在）</li>
-<li>将dir里面的内容copy到新创建的目录中，注意不包括源dir名字</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="mv-gt-改名或者移动文件"><a href="#mv-gt-改名或者移动文件" class="headerlink" title="mv -&gt;(改名或者移动文件)"></a>mv -&gt;(改名或者移动文件)</h3><ul>
-<li>改名<ul>
-<li>mv file（存在）file1（不存在）</li>
-<li>mv dir（存在）dir1（不存在）</li>
-</ul>
-</li>
-<li>移动<ul>
-<li>mv file（文件） dir（存在） 将file移动到目录中去</li>
-<li>mv dir1（存在）dir2(存在) 将dir1移动到dir2中</li>
-<li>mv file（存在）file2 覅了文件会覆盖file2文件</li>
-</ul>
-</li>
-</ul>
-<h3 id="cat-gt-（将内容打印到终端）"><a href="#cat-gt-（将内容打印到终端）" class="headerlink" title="cat -&gt;（将内容打印到终端）"></a>cat -&gt;（将内容打印到终端）</h3><p>文件特别多，大于终端显示上限，只能显示一部分</p>
-<h3 id="more-gt-（查看更多）"><a href="#more-gt-（查看更多）" class="headerlink" title="more-&gt;（查看更多）"></a>more-&gt;（查看更多）</h3><ul>
-<li>回车向下</li>
-<li>空格翻页</li>
-<li>不能回去</li>
-<li>按下q退出</li>
-</ul>
-<h3 id="less-gt-（可以向上）"><a href="#less-gt-（可以向上）" class="headerlink" title="less-&gt;（可以向上）"></a>less-&gt;（可以向上）</h3><p>与more相同，但是可以向上翻页，可以用page up键也可以用Ctrl +P，向下Ctrl+N</p>
-<h3 id="head-gt-（显示前？行）"><a href="#head-gt-（显示前？行）" class="headerlink" title="head -&gt;（显示前？行）"></a>head -&gt;（显示前？行）</h3><p>可以通过加入参数来设置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -5 stdio.h</span><br><span class="line"><span class="meta">#</span><span class="bash"> 默认是10行</span></span><br></pre></td></tr></table></figure>
-<h3 id="tail-gt-显示后？行"><a href="#tail-gt-显示后？行" class="headerlink" title="tail -&gt;(显示后？行)"></a>tail -&gt;(显示后？行)</h3><p>同上</p>
-<h3 id="ln-gt-（创建快捷方式）"><a href="#ln-gt-（创建快捷方式）" class="headerlink" title="ln -&gt;（创建快捷方式）"></a>ln -&gt;（创建快捷方式）</h3><ul>
-<li>软链接 –快捷方式<ul>
-<li>ln -s </li>
-<li>它的大小对应的是其字节数</li>
-<li>当移动之后或许会发生快捷方式失效的，这是因为是相对路径</li>
-<li>在创建的时候使用绝对路径就可以防止移动之后的快捷方式失效</li>
-<li>目录也可以创建软链接</li>
-</ul>
-</li>
-<li>硬连接 <ul>
-<li>ln 文件名</li>
-<li>相对路径或者绝对路径没有关系</li>
-<li>认识inode结点<ul>
-<li>磁盘上的数据块是由索引节点号inode来表示</li>
-<li>OS并不对文件名感兴趣，每个文件是由其inode决定的</li>
-<li>因此inode不占用磁盘空间</li>
-<li>创建一个文件，硬链接计数为1</li>
-<li>给文件创建了硬连接，链接+1，删除一个-1</li>
-<li>如果inode为0，那么标识为废弃，再写入新文件的时候会覆盖，如果非0会进行保护</li>
-</ul>
-</li>
-<li>使用场景<ul>
-<li>磁盘上有一个文件</li>
-<li>需要再其他多个目录管理这个文件，并且能够实时同步</li>
-<li>硬连接是直接对应inode号，软链接是对应文件路径</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>参考资料：</p>
-<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</a></p>
-<p>理解 Linux 的硬链接与软链接</p>
-</blockquote>
-<h2 id="命令学习（用户权限，用户和用户组）"><a href="#命令学习（用户权限，用户和用户组）" class="headerlink" title="命令学习（用户权限，用户和用户组）"></a>命令学习（用户权限，用户和用户组）</h2><h3 id="chmod-gt-（修改文件或者目录的权限）"><a href="#chmod-gt-（修改文件或者目录的权限）" class="headerlink" title="chmod-&gt;（修改文件或者目录的权限）"></a>chmod-&gt;（修改文件或者目录的权限）</h3><ul>
-<li><p>文字设定法</p>
-<ul>
-<li>chmod who[+|-|=]mode 文件名<ul>
-<li>Who：<ul>
-<li>u -User 文件所有者</li>
-<li>g-group 文件所属组</li>
-<li>o-other 其他人</li>
-<li>a -all 所有人</li>
-</ul>
-</li>
-<li>+|-|=</li>
-<li>mode<ul>
-<li>r:读</li>
-<li>w:写</li>
-<li>x:执行</li>
-<li>-：没有任何权限</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有者添加读权限，同组用户减去执行权限</span></span><br><span class="line">chmod u+r,g-x file.c</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数字设定法</p>
-<ul>
-<li>chmod [+|-|=] mode 文件名<ul>
-<li>mode：<ul>
-<li>r: 100-&gt; 4</li>
-<li>w:010-&gt;2</li>
-<li>x:001-&gt;1</li>
-<li>-:0</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="chown-gt-修改文件所有者或者所属组"><a href="#chown-gt-修改文件所有者或者所属组" class="headerlink" title="chown-&gt;(修改文件所有者或者所属组)"></a>chown-&gt;(修改文件所有者或者所属组)</h3><ul>
-<li>chown 新的所有者 文件名</li>
-<li>chown 新的所有者：新的组 文件名</li>
-<li>如何查看用户和组？<ul>
-<li>/etc/passwd 用户</li>
-<li>/etc/group 组</li>
-</ul>
-</li>
-<li>也可以修改组</li>
-</ul>
-<h3 id="chgrp-gt-（修改文件所有组）"><a href="#chgrp-gt-（修改文件所有组）" class="headerlink" title="chgrp-&gt;（修改文件所有组）"></a>chgrp-&gt;（修改文件所有组）</h3><p>只能修改对应的组</p>
-<ul>
-<li>chgrp 新的组 文件名</li>
-</ul>
-<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><ul>
-<li>一个目录必须有可执行权限才能打开，否则就无法打开</li>
-</ul>
-<h3 id="文件的查找和检索"><a href="#文件的查找和检索" class="headerlink" title="文件的查找和检索"></a>文件的查找和检索</h3><h3 id="find-gt-根据文件属性查找"><a href="#find-gt-根据文件属性查找" class="headerlink" title="find-&gt;(根据文件属性查找)"></a>find-&gt;(根据文件属性查找)</h3><ul>
-<li>文件名<ul>
-<li>find 查找的目录 -name “查找的文件名”</li>
-</ul>
-</li>
-<li>文件类型<ul>
-<li>find 查找到目录 -type 文件类型<ul>
-<li>Linux 下的七种文件类型<ul>
-<li>普通文件（-），目录（d），磁盘链接（l），管道（p pipeline），套接字（s），字符设备（c），块设备（b）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>文件大小</p>
-<ul>
-<li>find 查找的目录 -size +10k      （查看大于10k的文件）</li>
-<li>+:大于</li>
-<li>-：小于</li>
-<li>等于：直接写</li>
-<li>单位：<ul>
-<li>k - 小写</li>
-<li>M-大写</li>
-</ul>
-</li>
-<li>大于10k小于100k：find . -size +10k -size -100k</li>
-</ul>
-</li>
-<li><p>按照日期</p>
-<ul>
-<li>创建日期： -ctime -n/+n<ul>
-<li>-n:n天以内</li>
-<li>+n：n天以外</li>
-</ul>
-</li>
-<li>修改日期：-mtime</li>
-<li>访问日期：-atime</li>
-</ul>
-</li>
-<li>深度<ul>
-<li>-maxdepth n(层数)搜索n层已下的目录</li>
-<li>-mindepth n(层数)表示搜索n层以上的目录</li>
-<li>-name 制定名字</li>
-<li>find itcast/ -maxdepth 3 -name programer</li>
-</ul>
-</li>
-<li>高级查找<ul>
-<li>例，查找制定目录，并列出该目录中文件的详细信息<ul>
-<li>find ./ -type d -exec ls -l {} \;</li>
-<li>find ./ -type d -ok ls -l {} \;<ul>
-<li>OK比较安全</li>
-</ul>
-</li>
-<li>find ./-type d | xargs ls -l<ul>
-<li>管道一端是Read端，一端是Write端</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="grep-gt-根据文件内容查找"><a href="#grep-gt-根据文件内容查找" class="headerlink" title="grep -&gt;(根据文件内容查找)"></a>grep -&gt;(根据文件内容查找)</h3><ul>
-<li>搜索目录有子目录的时候需要加上-r</li>
-<li>grep -r “查找的内容” 搜索的路径</li>
-<li>搜索家目录中带有helloword字符串的文件</li>
-<li>grep -r “helloworld” ~</li>
-<li>显示在第几行 </li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">"stdio.h"</span> ~ -n</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="压缩包管理"><a href="#压缩包管理" class="headerlink" title="压缩包管理"></a>压缩包管理</h3><ul>
-<li><p>Linux下常见的压缩格式</p>
-<ul>
-<li>.gz –gzip<ul>
-<li>压缩：gzip 文件1，文件2… -k(保留源文件)</li>
-<li>解压缩：gunzip *.gz</li>
-<li>不能压缩目录</li>
-</ul>
-</li>
-<li>.bz2 -bzip</li>
-</ul>
-</li>
-<li><p>常用压缩命令：</p>
-<ul>
-<li><p>tar -打包</p>
-<ul>
-<li><p>参数：</p>
-<ul>
-<li>c-创建压缩文件</li>
-<li>x-释放压缩文件</li>
-<li>v-打印提示信息</li>
-<li>f-制定压缩包的名字</li>
-<li>z-使用gzip压缩文件-&gt;xxx.tar.gz</li>
-<li>j -使用bzip2的方式压缩文件-&gt;xxx.tar.bz2</li>
-</ul>
-</li>
-<li><p>压缩</p>
-<ul>
-<li>tar 参数 压缩包名字 原材料。。。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf test.tar.gz file1...</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压缩</p>
-<ul>
-<li>tar 参数 要解压包的名字</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf test.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>rar</p>
-<ul>
-<li>rar需要安装</li>
-<li>压缩<ul>
-<li>rar a 压缩包名（不需要指定后缀） 压缩的内容</li>
-<li>注意压缩的时候是不压缩子目录的</li>
-<li>所以就需要再后面加上-r</li>
-</ul>
-</li>
-<li>解压缩<ul>
-<li>rar x 压缩包名 解压的目录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>zip/unzip</p>
-<ul>
-<li>压缩：<ul>
-<li>zip 参数  压缩包名 原材料</li>
-<li>如果有目录就是-r</li>
-</ul>
-</li>
-<li>解压缩<ul>
-<li>unzip 压缩包的名字 -d 解压目录</li>
-<li>-O 制定编码 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="软件的安装与卸载（Ubnutu"><a href="#软件的安装与卸载（Ubnutu" class="headerlink" title="软件的安装与卸载（Ubnutu)"></a>软件的安装与卸载（Ubnutu)</h3><h3 id="apt-get在线安装"><a href="#apt-get在线安装" class="headerlink" title="apt-get在线安装"></a>apt-get在线安装</h3><ul>
-<li>16.04版本之上就可以直接apt就可以</li>
-<li>安装<ul>
-<li>sudo apt-get install tree</li>
-</ul>
-</li>
-<li>卸载<ul>
-<li>sudo apt-get remove tree</li>
-</ul>
-</li>
-<li>软件列表的更新<ul>
-<li>sudo apt-get update</li>
-<li>注意只是更新列表，列表是所有可安装程序的URL</li>
-</ul>
-</li>
-<li>清空缓存<ul>
-<li>sudo apt-get clean</li>
-<li>对应的目录在var/cache/apt/archives</li>
-<li>存储的是deb包</li>
-</ul>
-</li>
-</ul>
-<h3 id="deb软件包安装方式"><a href="#deb软件包安装方式" class="headerlink" title="deb软件包安装方式"></a>deb软件包安装方式</h3><ul>
-<li>安装<ul>
-<li>sudo dpkg -i  xxx.deb</li>
-<li>sudp dpkg -r 软件名</li>
-</ul>
-</li>
-</ul>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/Linux系统函数学习（更新中）/">
-                
-                    Linux系统函数学习
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/操作系统/">操作系统</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Linux系统函数的学习，不间断更新，直到完整</p>
-<h3 id="从fopen看文件FILE结构体"><a href="#从fopen看文件FILE结构体" class="headerlink" title="从fopen看文件FILE结构体"></a>从fopen看文件FILE结构体</h3><p>​    在使用fopen打开文件返回的是FILE结构体，之前并不了解其内部，只是大致会用而已，在这里首先剖析FILE结构体。</p>
-<p>FILE结构体的内容很多，主要分为以下部分</p>
-<p>FILE</p>
-<ul>
-<li><p>文件描述符（整形值）FD</p>
-<ul>
-<li>文件描述符内部有inode信息，再通过inode找到具体的文件</li>
-</ul>
-</li>
-<li><p>文件读写指针位置  FP_POS</p>
-<ul>
-<li><p>首先读写指针是一个指针，因此在切换读写文件的时候需要fseek来移动文件指针</p>
-</li>
-<li><p>对于文件读写是对应的二进制读取，文本文件读取信息的资料补充</p>
-<blockquote>
-<p>知乎：fopen 为什么要区分文本模式和二进制模式？</p>
-<p><a href="https://www.zhihu.com/question/24662572" target="_blank" rel="noopener">https://www.zhihu.com/question/24662572</a></p>
-<p>牵扯到了BOM，下面为总结：</p>
-<p>BOM（byte-order mark）它用来标识该字节流的字节序，是高位在前还是低位在前。从Unicode3.2开始，BOM只能位于流的开头，只能用于标识字节序。</p>
-<p>UTF-8: 若为UTF-8有BOM格式，则文件开头为 EF BB BF； 若为UTF-8无BOM格式，则不能依据上述规则；此时需要依据UTF-8编码格式来判断</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>I/O缓冲区（内存地址）BUFFER<br><img src="https://upload-images.jianshu.io/upload_images/8852615-0539b579f780a484.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot_20180720193704.png"></p>
-<ul>
-<li>C标准函数都有Buffer</li>
-<li>I/O缓存区域，根据存储器层次结构，硬盘会比内存慢100万倍，因此要增设缓存，默认是8K，同样需要注意的是IO的形式除了默认的，还有以下形式：<ul>
-<li>直接IO<ul>
-<li>内存映射文件的形式</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>读写过程：</p>
-<ul>
-<li>例如Printf(“Hello World”);</li>
-<li>调用write函数将文件描述符传入（系统API write(fd,”hello”,5)）完成将”hello”用户空间到内核空间的传递</li>
-<li>系统调用sys_write 使用设备驱动，通过设备驱动函数写入到驱动操作硬件</li>
-<li>显示器显示</li>
-</ul>
-<h3 id="虚拟地址空间"><a href="#虚拟地址空间" class="headerlink" title="虚拟地址空间"></a>虚拟地址空间</h3><p>32位操作系统当一个可执行文件允许起来成为一个进程的时候操作系统会为其分配一个4G的地址空间，虚拟内存是分段的，而其根据局部性原理也不是一次性加载的，而是分页的</p>
-<p>下面是对虚拟地址空间做一个详细的总结，虚拟地址空间的引出和计算机的发展历程是离不开的的。</p>
-<p>在早期的计算机中，程序是直接运行在物理内存上的，程序直接访问的是物理地址，这种模式的限制在于，只要程序要求的内存空间不要超过超过物理内存的大小，就不会有问题，但是为了提高CPU的使用效率，我们更期望的是同时运行多个程序，现在关键的问题在于，能运行的程序受限于物理内存的大小以及运行程序本身的大小。所以一个需要关键解决的问题就是如何将有限的物理内存分配给多个程序使用，也就是内存分配问题，但除了内存分配问题，传统的方式还存在许多问题。</p>
-<ul>
-<li>地址空间不隔离导致程序的安全性不足，一个程序的崩溃会影响到其他程序，恶意程序可以轻松修改其他程序的数据，总而言之，缺乏安全稳定性</li>
-<li>内存地址分配随机就让程序内部的重定位工作（运行地址不确定）变得异常麻烦</li>
-<li>内存使用效率低下</li>
-<li><p>内存切换过程（将完整程序换入到硬盘或者将完整换出）效率十分低下</p>
-<p>如果引入一个中间层，在外部忽视内存地址的差异，在内部执行一个转换到真实地址的过程，就可以轻松解决第一第二点，这就是虚拟内存。虚拟内存使得应用程序不需要考虑自己加载到什么地方。相互之间也起到了隔离的作用，程序与程序之间安全性得到了一定的保障。但是第三个第四个仍然没有解决。内存毕竟是有限的。为了能让在内存的程序尽可能的多，当然是程序占用内存越小越好，但是程序变小不可能的。但这个思路得以运用，将程序加载到内存的粒度缩小，采用分页模式就有效的解决的这个问题。</p>
-<p>在以上的描述中，并没有深入研究CPU如何做到将虚拟内存映射到实际内存的过程，也没有研究页是如何被操作系统管理，缺页的时候怎么办等等，这个在之后学习。</p>
-</li>
-</ul>
-<p>程序都是按照一定格式存储的，由操作系统统一加载。在内存中映射为4GB的虚拟内存空间（32位）这样的文件格式是分段的，很好的解决了一些资源共享的问题，比如动态库的共享，也为每一个应用程序提供了一个统一的视图，完成功能，下面是Linux的ELF文件在内存的映射</p>
-<ul>
-<li>内核区：内存管理，进程管理，设备驱动管理，VFS虚拟文件系统（4G-3G linux）</li>
-<li>环境变量 env</li>
-<li>命令行参数  <ul>
-<li>int main(int argc,char* argv[])中的参数</li>
-</ul>
-</li>
-<li>栈空间（小）向下增长</li>
-<li>共享库</li>
-<li>堆空间（大）向上增长</li>
-<li>.bass（未初始化的全局变量）全局变量=0</li>
-<li>.data（已初始化全局变量）</li>
-<li>.text（代码段 二进制机器指令）</li>
-<li>受保护的地址（0-4K）其中0是收保护的地址，这也就是NULL的作用</li>
-</ul>
-<h3 id="文件描述符表"><a href="#文件描述符表" class="headerlink" title="文件描述符表"></a>文件描述符表</h3><p>内核进程管理里面由一个叫做PCB(进程控制块)每个进程都在其PCB中保存着一份文件描述符表，而文件描述符作为这个表的索引可以让我们快速的查到每个表项对应的打开文件的指针，文件描述符表最多可以存储1024个文件描述符</p>
-<p><strong>用户不能直接访问具体的文件描述符，就只能通过文件描述符表的下标由内核函数访问。</strong></p>
-<p>文件描述符前3个分别是STDIN_FILENO 标准输入 STDOUT_FILENO 标准输出 STDERR_FILENO 标准错误默认是打开状态，根据该文件描述符可以读写当前终端，每打开一个新文件，则占用一个文件描述符，而且是空闲的最小的一个文件描述符</p>
-<p>文件描述符内含有inode信息，具体的介绍查看:</p>
-<blockquote>
-<p><a href="http://www.docin.com/p-941544538.html" target="_blank" rel="noopener">http://www.docin.com/p-941544538.html</a></p>
-<p>豆丁网-inode,文件描述符</p>
-</blockquote>
-<p>Linux的open函数返回的int类型就是文件描述符表对新创建文件的下标，也就是文件描述符</p>
-<p>而系统函数read传入文件描述符，就可以清楚的知道要操作哪一个文件。</p>
-<h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><p>系统函数在man帮助文档的第二章</p>
-<h3 id="Open函数"><a href="#Open函数" class="headerlink" title="Open函数"></a>Open函数</h3><p>查看文档</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 2 open</span><br></pre></td></tr></table></figure>
-<p>头文件</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/types.h&gt; //宏定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>open函数看起来是函数重载的原因是使用了变长参数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathnamae,<span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="comment">//第三个参数是在第二个参数有效的情况下才有意义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pathname,<span class="keyword">int</span> flags,<span class="keyword">mode_t</span> mode)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>返回值：文件描述符，失败返回-1</p>
-<p><strong>参数</strong></p>
-<ul>
-<li>flags<ul>
-<li>必选项目 O_RDONLY,O_WRONLY,O_RDWR</li>
-<li>可选项目<ul>
-<li>创建文件：O_CREATE<ul>
-<li>创建文件时检测文件是否存在：O_EXCL</li>
-<li>如果文件存在，返回-1</li>
-<li>必须与O_CREAT一起使用</li>
-</ul>
-</li>
-<li>追加文件：O_APPEND:文件指针移动到末尾</li>
-<li>文件截断：O_TRUNC ：做文件清空的情况</li>
-<li>设置非阻塞：O_NONBLOCK</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>mode 八进制文件权限<ul>
-<li>注意设置的权限不等于最终的权限值</li>
-<li>（mode&amp;~umask）</li>
-<li>umask是0002</li>
-</ul>
-</li>
-</ul>
-<h3 id="close函数"><a href="#close函数" class="headerlink" title="close函数"></a>close函数</h3><p>关闭文件描述符</p>
-<h3 id="read函数"><a href="#read函数" class="headerlink" title="read函数"></a>read函数</h3><h3 id="write函数"><a href="#write函数" class="headerlink" title="write函数"></a>write函数</h3>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
-                
-                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -1595,7 +1054,7 @@
                 
                     <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>9</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>10</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
@@ -1620,7 +1079,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 14px; color: #999">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 
