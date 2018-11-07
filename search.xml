@@ -26,17 +26,6 @@
     </entry>
     
     <entry>
-      <title>Linux-02</title>
-      <link href="/2018/11/06/Linux-02/"/>
-      <url>/2018/11/06/Linux-02/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
       <title>CORS跨域问题的认识与解决</title>
       <link href="/2018/11/04/HTTP-02/"/>
       <url>/2018/11/04/HTTP-02/</url>
@@ -700,9 +689,9 @@
       
         <tags>
             
-            <tag> 操作系统 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 操作系统 </tag>
             
         </tags>
       
