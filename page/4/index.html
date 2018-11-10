@@ -132,6 +132,50 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/07/28/Windows进程的创建过程/">
+                
+                    Windows进程的创建过程
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-28
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h3><p>进程是空间上的概念，程序在内存中的一个抽象，包含程序的数据代码等等具体的内容。而线程是一个时间上的概念，我们在创建一个进程的时候一般同时创建一个线程，所以很容易在进程和线程的含义上区分不清楚。<br>
+        
+            <div class="readmore">
+                <a href="/2018/07/28/Windows进程的创建过程/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+                    <a href="/tags/Windows/"><i class="fa fa-tag fa-fw"></i>&nbsp;Windows</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/07/27/Linux 学习（命令）/">
                 
                     Linux学习（命令）
@@ -1114,59 +1158,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/递归过程的复杂度计算/">
-                
-                    递归过程的复杂度计算
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/算法/">算法</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="引入：一个简单的例子"><a href="#引入：一个简单的例子" class="headerlink" title="引入：一个简单的例子"></a>引入：一个简单的例子</h2><h3 id="求数组内最大值的递归算法"><a href="#求数组内最大值的递归算法" class="headerlink" title="求数组内最大值的递归算法"></a>求数组内最大值的递归算法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">GetMax</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrays==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(R-L&lt;=<span class="number">1</span>) <span class="keyword">return</span> Math.max(arrays[L],arrays[R]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = L+((R-L)&gt;&gt;<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Math.max(GetMax(arrays,L,mid),GetMax(arrays,mid+<span class="number">1</span>,R));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] testArray = &#123;<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        System.out.println(GetMax(testArray,<span class="number">0</span>,testArray.length-<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Master-公式"><a href="#Master-公式" class="headerlink" title="Master 公式"></a>Master 公式</h3><p>在满足：T(N)=aT(n/b)+O(n^d) 的时间复杂度的递归行为统一可以使用Master公式来求，在用分治的思想去解决问题的时候，我们将问题分成的规模是n/b，而处理这个问题的规模所需要的次数是a，处理的过程是 O(n^d) </p>
-<ul>
-<li>以二分法查找我们一次将问题规模分为了两个部分，于是b就是2，而我们将我们关注的那一部分再进行分解。不需要处理另一部分，于是a就是1，之后我们对数据的处理是一个常数时间的，因此d就是0</li>
-<li>如上进行一个最大值的查找过程使用了递归，将问题分成了两个规模，b=2，每次都进行处理a=2，处理的操作是常数时间，因此d = 0</li>
-</ul>
-<p>如果满足以上的通式就可以使用Master公式来求解：</p>
-<ul>
-<li>如果log(b,a)&gt;d -&gt;复杂度为O(N^log(b,a))</li>
-<li>如果log(b,a)=d-&gt;复杂度为O(N^d*logN)</li>
-<li>如果log(b,a)<d->复杂度为O(N^d)</d-></li>
-</ul>
-<p>那么上面两个问题的时间复杂度就可以快速计算</p>
-<p>二分法查找是满足第二个条件，因此就是O(logN)<br>递归求最大值的程序满足第一个条件，因此结果就是O(N)</p>
-<p>对于归并排序，首先将问题分成了两个规模，每个规模都要处理，其次处理规模是利用外排的方式进行处理，时间复杂度为O(n)，这样根据Master公式计算出来的结果是O(N*logN)</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/算法-递归/"><i class="fa fa-tag fa-fw"></i>&nbsp;算法 递归</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -1181,8 +1172,14 @@
                 </a>
             
             <p class="current">
-                4 / 4
+                4 / 5
             </p>
+            
+                <a class="next" rel="next" href="/page/5/">
+                    <section class="post next">
+                        &nbsp;下一页&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </section>
+                </a>
             
 
         </div>
@@ -1234,6 +1231,8 @@
                 
                     <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
                 
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>1</div></a></li>
+                
                     <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/算法/"><div class='name'>算法</div><div class='badge'>3</div></a></li>
@@ -1253,7 +1252,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 17.33px; color: #828282">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 19px; color: #777">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 21.5px; color: #666">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 

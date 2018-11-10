@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: HTTP协议 | 飞翔的傻瓜</title>
+  <title>Archives: 2018 | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -124,8 +124,9 @@
     <div class='container clearfix'>
         <div class='l_main'>
             
+	
     <script>
-        window.subData= { title:'tag : HTTP协议'}
+        window.subData= { title:'year : 2018'}
     </script>
 
 
@@ -136,78 +137,47 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2018/11/04/HTTP-02/">
+            <a href="/2018/07/27/递归过程的复杂度计算/">
                 
-                    CORS跨域问题的认识与解决
+                    递归过程的复杂度计算
                 
             </a>
         </h2>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
+        <a href="/categories/算法/">算法</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <p>之前曾经见过跨域问题的解决方式，一个是CORS，一个是JSONP，但是就是处于知其然，不知其所以然的阶段，因此在这里借助网上资料和Node.js来分析和解决如上问题<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-02/" class="flat-box">READ MORE</a>
-            </div>
+        <h2 id="引入：一个简单的例子"><a href="#引入：一个简单的例子" class="headerlink" title="引入：一个简单的例子"></a>引入：一个简单的例子</h2><h3 id="求数组内最大值的递归算法"><a href="#求数组内最大值的递归算法" class="headerlink" title="求数组内最大值的递归算法"></a>求数组内最大值的递归算法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">GetMax</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrays==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(R-L&lt;=<span class="number">1</span>) <span class="keyword">return</span> Math.max(arrays[L],arrays[R]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = L+((R-L)&gt;&gt;<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Math.max(GetMax(arrays,L,mid),GetMax(arrays,mid+<span class="number">1</span>,R));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] testArray = &#123;<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        System.out.println(GetMax(testArray,<span class="number">0</span>,testArray.length-<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Master-公式"><a href="#Master-公式" class="headerlink" title="Master 公式"></a>Master 公式</h3><p>在满足：T(N)=aT(n/b)+O(n^d) 的时间复杂度的递归行为统一可以使用Master公式来求，在用分治的思想去解决问题的时候，我们将问题分成的规模是n/b，而处理这个问题的规模所需要的次数是a，处理的过程是 O(n^d) </p>
+<ul>
+<li>以二分法查找我们一次将问题规模分为了两个部分，于是b就是2，而我们将我们关注的那一部分再进行分解。不需要处理另一部分，于是a就是1，之后我们对数据的处理是一个常数时间的，因此d就是0</li>
+<li>如上进行一个最大值的查找过程使用了递归，将问题分成了两个规模，b=2，每次都进行处理a=2，处理的操作是常数时间，因此d = 0</li>
+</ul>
+<p>如果满足以上的通式就可以使用Master公式来求解：</p>
+<ul>
+<li>如果log(b,a)&gt;d -&gt;复杂度为O(N^log(b,a))</li>
+<li>如果log(b,a)=d-&gt;复杂度为O(N^d*logN)</li>
+<li>如果log(b,a)<d->复杂度为O(N^d)</d-></li>
+</ul>
+<p>那么上面两个问题的时间复杂度就可以快速计算</p>
+<p>二分法查找是满足第二个条件，因此就是O(logN)<br>递归求最大值的程序满足第一个条件，因此结果就是O(N)</p>
+<p>对于归并排序，首先将问题分成了两个规模，每个规模都要处理，其次处理规模是利用外排的方式进行处理，时间复杂度为O(n)，这样根据Master公式计算出来的结果是O(N*logN)</p>
+
         
 
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/04/HTTP-01/">
-                
-                    HTTP协议的三次握手
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-01/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
+                    <a href="/tags/算法-递归/"><i class="fa fa-tag fa-fw"></i>&nbsp;算法 递归</a>
                 
             </div>
         
@@ -217,6 +187,27 @@
         </div>
     
 </section>
+
+
+    <br>
+    <div class="prev-next">
+        <div class="prev-next">
+            
+                <a class="prev" rel="prev" href="/archives/2018/page/4/">
+                    <section class="post prev" >
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+                    </section>
+                </a>
+            
+            <p class="current">
+                5 / 5
+            </p>
+            
+
+        </div>
+    </div>
+
+
 
 
 
