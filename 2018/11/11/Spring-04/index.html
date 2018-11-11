@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: HTTP协议 | 飞翔的傻瓜</title>
+  <title>Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -123,101 +123,145 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-Spring-04" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-    <script>
-        window.subData= { title:'tag : HTTP协议'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/04/HTTP-02/">
-                
-                    CORS跨域问题的认识与解决
-                
-            </a>
-        </h2>
+                Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean
+            
+        </h1>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-11&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
+        <a href="/categories/Java/">Java</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <p>之前曾经见过跨域问题的解决方式，一个是CORS，一个是JSONP，但是就是处于知其然，不知其所以然的阶段，因此在这里借助网上资料和Node.js来分析和解决如上问题<br>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>今天主要关注以下内容：</p>
+<ul>
+<li>如何给更好的给Bean的属性赋值，甚至将简单的赋值逻辑加入-&gt;SPEL</li>
+<li>如何更细粒度的管理对象在IOC容器中的生命周期-&gt;初始化+销毁方法+初始化方法前后进行处理</li>
+<li>通过工厂方法对Bean进行配置-&gt;静态工厂+实例工厂+FactoryBean方式</li>
+</ul>
+<h2 id="SPEL"><a href="#SPEL" class="headerlink" title="SPEL"></a>SPEL</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Spring 表达式语言（简称SpEL）：是一个支持运行时查询和操作对象图的强大的表达式语言。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3>
+        </div>
+
         
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-02/" class="flat-box">READ MORE</a>
+            <div class="article-tags tags">
+                
+                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Spring框架学习</a>
+                
             </div>
         
 
         
-            <div class="full-width auto-padding tags">
+            <div class="prev-next">
                 
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/10/hibernate-01/" rel="prev" title="hibernate起步">
+                                    
+                                        hibernate起步
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Hibernate框架
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
+
     </section>
+
 </article>
 
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/04/HTTP-01/">
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
                 
-                    HTTP协议的三次握手
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://www.maoxin.site/2018/11/10/hibernate-01/">hibernate起步</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/10/Spring-03/">Spring-Bean的自动装配&amp;关系&amp;作用域&amp;导入外部属性文件</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/08/Spring-02/">Spring-属性注入</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/07/Spring-01/">Spring HelloWorld</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/04/HTTP-02/">CORS跨域问题的认识与解决</a></li>
+            
+        </ul>
     </div>
 
 
-    </section>
+            
 
-    <section class="article typo">
-        <p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-01/" class="flat-box">READ MORE</a>
-            </div>
-        
+            
 
-        
-            <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
+
                 
-            </div>
-        
-    </section>
-</article>
 
-        </div>
-    
-</section>
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。<br>
+                          与主题相关的内容及评论测试请到 <a href="https://xaoxuu.com/wiki/material-x/">https://xaoxuu.com/wiki/material-x/</a> 留言，
+                          
+                          留言时填写邮箱可以在被回复时收到邮件提醒，也可以显示Gravatar头像，网址填写个人主页或者博客的作用是别人点击你的昵称会跳转到你的博客，为你增加访问量。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
 
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -330,6 +374,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SPEL"><span class="toc-text">SPEL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能"><span class="toc-text">功能</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -423,6 +474,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "pgBuSBODle0hjwgalrOvPfU4-gzGzoHsz",
+                appKey: "3yMl5NERDDSPcl1nAu2kp2v1",
+                placeholder: "快来评论吧~",
+                pageSize:'5',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>

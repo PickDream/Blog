@@ -132,6 +132,86 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/10/06/js-08/">
+                
+                    ES6异步编程
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-06
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/10/03/ucore-Lab1/">
+                
+                    ucore Lab1
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-03
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="操作系统实验报告"><a href="#操作系统实验报告" class="headerlink" title="操作系统实验报告"></a>操作系统实验报告</h1>
+        
+            <div class="readmore">
+                <a href="/2018/10/03/ucore-Lab1/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/09/27/js-07/">
                 
                     ECMAScript 6
@@ -703,120 +783,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/14/C-1/">
-                
-                    C中sizeof的实现
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-14
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/C-C/">C/C++</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="C语言中Sizeof的实现"><a href="#C语言中Sizeof的实现" class="headerlink" title="C语言中Sizeof的实现"></a>C语言中Sizeof的实现</h2><p>今天群里面提了一个问题，sizeof这个功能是怎么实现的，自己一时半会儿也没有思路，上网找了找实现，发现非常的巧妙，总结如下：<br>
-        
-            <div class="readmore">
-                <a href="/2018/09/14/C-1/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/C/"><i class="fa fa-tag fa-fw"></i>&nbsp;C</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/12/Type类型/">
-                
-                    Type类型
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-12
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="从泛型到Type类型接口"><a href="#从泛型到Type类型接口" class="headerlink" title="从泛型到Type类型接口"></a>从泛型到Type类型接口</h2><p>众所周知，Java的泛型都是通过类型擦除来完成的，也就是说当Javac编译之后，所以的泛型参数都被打回原型，而之所以使用类型擦除实现泛型的原因主要是为了向下兼容。那么这样会有如下的问题：</p>
-<ul>
-<li>Java不能描述通过参数化之后的泛型类型，里面怎么参数化的一概不知</li>
-</ul>
-<p>但是在有些场景我们需要对传入的具体的参数化类型进行检测处理，之前的类型系统都依赖与<code>Class</code>本身描述信息，现在Java需要能够描述泛型的参数化过程，通过参数化泛型产生的新类型无非不过是基本的<code>Class</code>类型的组合,Java最后引入了Type接口以及一些子类来统一引入泛型之后的类型系统。</p>
-<h2 id="Type是怎样统一Java的类型系统的"><a href="#Type是怎样统一Java的类型系统的" class="headerlink" title="Type是怎样统一Java的类型系统的"></a>Type是怎样统一Java的类型系统的</h2><p><strong>以下为个人的理解</strong></p>
-<p>在泛型之前，Java类型除了原生类型都可以使用Class来描述，在泛型之后，新增了许多“新”的类型：</p>
-<ol>
-<li>参数化泛型类的类型，如<code>Collection&lt;T&gt;</code></li>
-<li>参数化泛型类型构成的数组类型，如<code>Animal&lt;T&gt;[]</code></li>
-<li>泛型参数构成的类型（泛型方法），如<code>&lt;E&gt;void method(E e){}</code>中的<code>E e</code>又或者是<code>ArrayList&lt;E&gt;</code>中的<code>E</code></li>
-<li>通配符表达的类型，如<code>void printColl(ArrayList&lt;? extends Number&gt;al)</code>中的<code>? extends Number</code><br>上面四种类型和Class为了统一都实现了<code>Type</code>接口<h2 id="Type类型的关系"><a href="#Type类型的关系" class="headerlink" title="Type类型的关系"></a>Type类型的关系</h2><h3 id="Parameterizedtype"><a href="#Parameterizedtype" class="headerlink" title="Parameterizedtype"></a>Parameterizedtype</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang.reflect;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.MalformedParameterizedTypeException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ParameterizedType</span> <span class="keyword">extends</span> <span class="title">Type</span> </span>&#123;</span><br><span class="line">   Type[] getActualTypeArguments();</span><br><span class="line">   <span class="function">Type <span class="title">getRawType</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function">Type <span class="title">getOwnerType</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>由于对于参数化泛型类对象中的泛型是可以嵌套的，所以需要注意返回的是除去一个嵌套之后的Type子类型。</p>
-<ol>
-<li>对于ArrayList&lt;ArrayList<integer>&gt; al,执行该方法去掉&lt;&gt;返回的是ArrayList<integer>所以还是参数化类型。如果再执行一次返回的就是Class类型</integer></integer></li>
-<li>对于传入的不是具体如ArrayList<e>返回的就是TypeVariable</e></li>
-<li>对于<code>ArrayList&lt;? extends Number&gt;</code>返回的是<code>? extends Number</code> 是WildcardType</li>
-<li>对于<code>ArrayList&lt;E[]&gt;</code>返回<code>E[]</code>是GenericArrayType</li>
-</ol>
-<ul>
-<li>getRawType()<br>简单的说就是得到&lt;&gt;前的原始类型</li>
-<li>getOwnerType();得到类型的所有者类型，例如Map.Entry就是Map的所有者类型</li>
-<li>getActualTypeArguments()<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来自https://segmentfault.com/q/1010000000655631</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Method method = <span class="keyword">new</span> GenericDemo().getClass().getMethod(<span class="string">"applyMethod"</span>,Map.Entry.class);</span><br><span class="line">    Type[] types = method.getGenericParameterTypes();</span><br><span class="line">    ParameterizedType pType = (ParameterizedType)types[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回所有者类型，打印结果是interface java.util.Map</span></span><br><span class="line">    System.out.println(pType.getOwnerType());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,U&gt; <span class="function"><span class="keyword">void</span> <span class="title">applyMethod</span><span class="params">(Map.Entry&lt;T,U&gt; mapEntry)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="认识具体的Type类型以及相关方法"><a href="#认识具体的Type类型以及相关方法" class="headerlink" title="认识具体的Type类型以及相关方法"></a>认识具体的Type类型以及相关方法</h2><p>### </p>
-<h2 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<p> <a href="https://blog.csdn.net/gdutxiaoxu/article/details/68926515" target="_blank" rel="noopener">java Type详解</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://blog.csdn.net/z69183787/article/details/54314169" target="_blank" rel="noopener">Java类型中ParameterizedType，GenericArrayType，TypeVariabl，WildcardType详解</a></p>
-</blockquote>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -884,13 +850,13 @@
                 
                     <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>11</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>12</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>2</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
                 
@@ -911,7 +877,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 19px; color: #777">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 21.5px; color: #666">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Hibernate框架/" style="font-size: 14px; color: #999">Hibernate框架</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 
