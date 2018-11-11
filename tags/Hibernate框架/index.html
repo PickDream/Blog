@@ -156,88 +156,10 @@
 
     <section class="article typo">
         <p>之前也多多少少接触过Hibernate框架，只限于简单的使用，没有深入的去理解学习，这次从头开始，踏踏实实完成Hibernate的系统学习，起步部分主要完成如何配置环境，大致操作流程，一些注意点。</p>
-<h2 id="导入jar"><a href="#导入jar" class="headerlink" title="导入jar"></a>导入jar</h2><ul>
-<li>从官方网站下载对应的jar包，导入压缩文件中<code>lib/required</code>的全部jar包</li>
-<li>导入数据库驱动</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>总而言之，Hibernate的配置和MyBatis这样的持久层框架的使用可以说是很相似，首先有一个主的配置文件，完成框架属性的配置、数据库驱动的指定、连接池的配置等等。其次，在主的配置文件中也得引入对实体类与数据表的映射文件，是XML格式的。在之下的内容主要是借助与idea这样的IDE工具完成最基本项目的搭建。</p>
-<h3 id="idea中生成主配置文件"><a href="#idea中生成主配置文件" class="headerlink" title="idea中生成主配置文件"></a>idea中生成主配置文件</h3><ol>
-<li>导包完成之后，在ide中项目文件夹中右键-&gt;<code>add  Frameworks Support</code>-&gt; 选中<code>Hibernate</code> </li>
-<li>应用之后打开<code>project structure</code>后转到<code>Modules</code>找到<code>Hibernate</code>点击加号添加主配置文件，成功之后在<code>src</code>下就创建了<code>hibernate.cfg.xml</code></li>
-</ol>
-<h3 id="配置主配置文件"><a href="#配置主配置文件" class="headerlink" title="配置主配置文件"></a>配置主配置文件</h3><ul>
-<li>配置数据库信息</li>
-<li>配置hibernate 信息</li>
-<li>关联的映射信息</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hibernate-configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">session-factory</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置链接数据库的基本信息--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.driver_class"</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.url"</span>&gt;</span>jdbc:mysql://localhost:3306/Hibernate<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.username"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.password"</span>&gt;</span>???<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置hibernate的基本信息--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--hibernate所使用的数据库方言--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dialect"</span>&gt;</span>org.hibernate.dialect.MySQL55Dialect<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--执行时候是否在控制台打印SQL--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"show_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--是否对SQL进行格式化--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"format_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定自动生成数据表的策略--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"hbm2ddl.auto"</span>&gt;</span>update<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--指明自动关联的.hbm.xml文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapping</span> <span class="attr">resource</span>=<span class="string">"entity/NewsEntity.hbm.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">session-factory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>之上配置了一些例如是否在控制台打印SQL的象，格式化SQL等等，需要关注的配置是hbm2ddl.auto：</p>
-<p>该配置名的含义是Hibernate Mapping to Data Define Language(Hibernate 映射转数据定义语言)，其能够帮助我们完成从映射文件到生成数据库实体的过程，取值为</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>create</td>
-<td>每次运行都会生成表</td>
-</tr>
-<tr>
-<td>create-drop</td>
-<td>除了创建SessionFactory创建生成表之外，关闭的时候删除</td>
-</tr>
-<tr>
-<td>update</td>
-<td>最常用，表结构不同将会输出</td>
-</tr>
-<tr>
-<td>validate</td>
-<td>初始化发现表结构的列不存在会抛出异常</td>
-</tr>
-</tbody>
-</table>
-<h3 id="逆向生成实体对象以及配置文件"><a href="#逆向生成实体对象以及配置文件" class="headerlink" title="逆向生成实体对象以及配置文件"></a>逆向生成实体对象以及配置文件</h3><p>打开 <code>Persistence</code>-&gt;右键-&gt;<code>Generate Persistence Mapping</code>-&gt;<code>By Database Schema</code></p>
-<p><img src="1.png" alt="实例"></p>
-<p>接下来就照提示操作了。</p>
-<p>生成的Bean(只包含字段)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsEntity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> Date date;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>生成的关系映射</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"entity.NewsEntity"</span> <span class="attr">table</span>=<span class="string">"news"</span> <span class="attr">schema</span>=<span class="string">"hibernate"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"Id"</span> <span class="attr">sql-type</span>=<span class="string">"int(11)"</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--指明主键的生成方式，native:使用数据库本地的方式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">sql-type</span>=<span class="string">"varchar(255)"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">sql-type</span>=<span class="string">"varchar(255)"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"date"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"date"</span> <span class="attr">sql-type</span>=<span class="string">"date"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>总得来事其中描述了以下关键信息</p>
-<ol>
-<li>数据库列名与字段名的关系</li>
-<li>数据库字段的数据库类型（为了与Java类型进行自动转换）</li>
-<li>字段其他属性</li>
-</ol>
-<h2 id="Hibernate-写入数据库流程"><a href="#Hibernate-写入数据库流程" class="headerlink" title="Hibernate 写入数据库流程"></a>Hibernate 写入数据库流程</h2><ol>
-<li>创建<code>SessionFactory</code>对象(读取配置文件)</li>
-<li>创建Session对象</li>
-<li>开启事务</li>
-<li>执行操作</li>
-<li>提交事务</li>
-<li>关闭Session</li>
-<li>关闭<code>SessionFactory</code></li>
-</ol>
-<p>其中关键点是创建<code>SessionFactory</code>,官方文档给出的创建方式(Hibernate5.0)，之后是对文档内容的翻译。自己翻译的，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	<span class="comment">// 一个SessionFactory 在一个应用中启动一次</span></span><br><span class="line">	<span class="keyword">final</span> StandardServiceRegistry registry = <span class="keyword">new</span> StandardServiceRegistryBuilder()</span><br><span class="line">			.configure() <span class="comment">//依据hibernate.cfg.xml来配置</span></span><br><span class="line">			.build();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		sessionFactory = <span class="keyword">new</span> MetadataSources(registry).buildMetadata().buildSessionFactory();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="comment">// registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory</span></span><br><span class="line">		<span class="comment">// so destroy it manually.</span></span><br><span class="line">		StandardServiceRegistryBuilder.destroy( registry );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这个<code>SetUp</code>方法首先构建了一个<code>org.hibernate.boot.registry.StandardServiceRegistry</code></li>
-</ul>
-<p>实例将配置信息合并到一组工作服务中以供<code>SessionFactory</code>去使用。</p>
-<ul>
-<li><p>使用<code>StandardServiceRegistry</code>我们创建的<code>org.hibernate.boot.MetadataSources</code>是我们告诉Hibernate关于我们领域模型的起点，由于我们是通过<code>hibernate.cfg.xml</code>去配置的，所以这里没有什么特别的需要关注</p>
-</li>
-<li><p><code>org.hibernate.boot.Metadata</code>代表着一个完整的，部分验证过的领域模型视图，而<code>SessionFactory</code>也正是基于此的</p>
-</li>
-<li>在启动过程的最后一步是去构建一个<code>SessionFactory</code>,这个<code>SessionFactory</code>是一个线程安全的对象只实例化一次而服务整个应用</li>
-<li>这个<code>SessionFactory</code>表现的像是一个<code>org.hibernate.Session</code>对象的工厂</li>
-</ul>
-<p>在得到了Session之后，我们就可以进行简单的增删查改了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打开Session</span></span><br><span class="line">Session session = sessionFactory.openSession();</span><br><span class="line"><span class="comment">//开启事务</span></span><br><span class="line">session.beginTransaction();</span><br><span class="line"><span class="comment">//保存对象实体</span></span><br><span class="line">session.save( <span class="keyword">new</span> Event( <span class="string">"Our very first event!"</span>, <span class="keyword">new</span> Date() ) );</span><br><span class="line">session.save( <span class="keyword">new</span> Event( <span class="string">"A follow up event"</span>, <span class="keyword">new</span> Date() ) );</span><br><span class="line"><span class="comment">//提交事务</span></span><br><span class="line">session.getTransaction().commit();、</span><br><span class="line"><span class="comment">//关闭Session</span></span><br><span class="line">session.close();</span><br></pre></td></tr></table></figure>
-
+        
+            <div class="readmore">
+                <a href="/2018/11/10/hibernate-01/" class="flat-box">READ MORE</a>
+            </div>
         
 
         

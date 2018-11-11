@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: java | 飞翔的傻瓜</title>
+  <title>Category: Java | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -125,7 +125,7 @@
         <div class='l_main'>
             
     <script>
-        window.subData= { title:'category : java'}
+        window.subData= { title:'category : Java'}
     </script>
 
 
@@ -136,155 +136,34 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2018/11/10/hibernate-01/">
+            <a href="/2018/11/11/Spring-04/">
                 
-                    hibernate起步
+                    Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean
                 
             </a>
         </h2>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-10
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-11
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/java/">java</a>
+        <a href="/categories/Java/">Java</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <p>之前也多多少少接触过Hibernate框架，只限于简单的使用，没有深入的去理解学习，这次从头开始，踏踏实实完成Hibernate的系统学习，起步部分主要完成如何配置环境，大致操作流程，一些注意点。</p>
-<h2 id="导入jar"><a href="#导入jar" class="headerlink" title="导入jar"></a>导入jar</h2><ul>
-<li>从官方网站下载对应的jar包，导入压缩文件中<code>lib/required</code>的全部jar包</li>
-<li>导入数据库驱动</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>总而言之，Hibernate的配置和MyBatis这样的持久层框架的使用可以说是很相似，首先有一个主的配置文件，完成框架属性的配置、数据库驱动的指定、连接池的配置等等。其次，在主的配置文件中也得引入对实体类与数据表的映射文件，是XML格式的。在之下的内容主要是借助与idea这样的IDE工具完成最基本项目的搭建。</p>
-<h3 id="idea中生成主配置文件"><a href="#idea中生成主配置文件" class="headerlink" title="idea中生成主配置文件"></a>idea中生成主配置文件</h3><ol>
-<li>导包完成之后，在ide中项目文件夹中右键-&gt;<code>add  Frameworks Support</code>-&gt; 选中<code>Hibernate</code> </li>
-<li>应用之后打开<code>project structure</code>后转到<code>Modules</code>找到<code>Hibernate</code>点击加号添加主配置文件，成功之后在<code>src</code>下就创建了<code>hibernate.cfg.xml</code></li>
-</ol>
-<h3 id="配置主配置文件"><a href="#配置主配置文件" class="headerlink" title="配置主配置文件"></a>配置主配置文件</h3><ul>
-<li>配置数据库信息</li>
-<li>配置hibernate 信息</li>
-<li>关联的映射信息</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hibernate-configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">session-factory</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置链接数据库的基本信息--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.driver_class"</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.url"</span>&gt;</span>jdbc:mysql://localhost:3306/Hibernate<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.username"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.password"</span>&gt;</span>???<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置hibernate的基本信息--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--hibernate所使用的数据库方言--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dialect"</span>&gt;</span>org.hibernate.dialect.MySQL55Dialect<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--执行时候是否在控制台打印SQL--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"show_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--是否对SQL进行格式化--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"format_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定自动生成数据表的策略--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"hbm2ddl.auto"</span>&gt;</span>update<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--指明自动关联的.hbm.xml文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapping</span> <span class="attr">resource</span>=<span class="string">"entity/NewsEntity.hbm.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">session-factory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>之上配置了一些例如是否在控制台打印SQL的象，格式化SQL等等，需要关注的配置是hbm2ddl.auto：</p>
-<p>该配置名的含义是Hibernate Mapping to Data Define Language(Hibernate 映射转数据定义语言)，其能够帮助我们完成从映射文件到生成数据库实体的过程，取值为</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>create</td>
-<td>每次运行都会生成表</td>
-</tr>
-<tr>
-<td>create-drop</td>
-<td>除了创建SessionFactory创建生成表之外，关闭的时候删除</td>
-</tr>
-<tr>
-<td>update</td>
-<td>最常用，表结构不同将会输出</td>
-</tr>
-<tr>
-<td>validate</td>
-<td>初始化发现表结构的列不存在会抛出异常</td>
-</tr>
-</tbody>
-</table>
-<h3 id="逆向生成实体对象以及配置文件"><a href="#逆向生成实体对象以及配置文件" class="headerlink" title="逆向生成实体对象以及配置文件"></a>逆向生成实体对象以及配置文件</h3><p>打开 <code>Persistence</code>-&gt;右键-&gt;<code>Generate Persistence Mapping</code>-&gt;<code>By Database Schema</code></p>
-<p><img src="1.png" alt="实例"></p>
-<p>接下来就照提示操作了。</p>
-<p>生成的Bean(只包含字段)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsEntity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> Date date;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>生成的关系映射</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"entity.NewsEntity"</span> <span class="attr">table</span>=<span class="string">"news"</span> <span class="attr">schema</span>=<span class="string">"hibernate"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"Id"</span> <span class="attr">sql-type</span>=<span class="string">"int(11)"</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--指明主键的生成方式，native:使用数据库本地的方式--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">sql-type</span>=<span class="string">"varchar(255)"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">sql-type</span>=<span class="string">"varchar(255)"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"date"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"date"</span> <span class="attr">sql-type</span>=<span class="string">"date"</span> <span class="attr">not-null</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>总得来事其中描述了以下关键信息</p>
-<ol>
-<li>数据库列名与字段名的关系</li>
-<li>数据库字段的数据库类型（为了与Java类型进行自动转换）</li>
-<li>字段其他属性</li>
-</ol>
-<h2 id="Hibernate-写入数据库流程"><a href="#Hibernate-写入数据库流程" class="headerlink" title="Hibernate 写入数据库流程"></a>Hibernate 写入数据库流程</h2><ol>
-<li>创建<code>SessionFactory</code>对象(读取配置文件)</li>
-<li>创建Session对象</li>
-<li>开启事务</li>
-<li>执行操作</li>
-<li>提交事务</li>
-<li>关闭Session</li>
-<li>关闭<code>SessionFactory</code></li>
-</ol>
-<p>其中关键点是创建<code>SessionFactory</code>,官方文档给出的创建方式(Hibernate5.0)，之后是对文档内容的翻译。自己翻译的，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	<span class="comment">// 一个SessionFactory 在一个应用中启动一次</span></span><br><span class="line">	<span class="keyword">final</span> StandardServiceRegistry registry = <span class="keyword">new</span> StandardServiceRegistryBuilder()</span><br><span class="line">			.configure() <span class="comment">//依据hibernate.cfg.xml来配置</span></span><br><span class="line">			.build();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		sessionFactory = <span class="keyword">new</span> MetadataSources(registry).buildMetadata().buildSessionFactory();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="comment">// registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory</span></span><br><span class="line">		<span class="comment">// so destroy it manually.</span></span><br><span class="line">		StandardServiceRegistryBuilder.destroy( registry );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>今天主要关注以下内容：</p>
 <ul>
-<li>这个<code>SetUp</code>方法首先构建了一个<code>org.hibernate.boot.registry.StandardServiceRegistry</code></li>
-</ul>
-<p>实例将配置信息合并到一组工作服务中以供<code>SessionFactory</code>去使用。</p>
-<ul>
-<li><p>使用<code>StandardServiceRegistry</code>我们创建的<code>org.hibernate.boot.MetadataSources</code>是我们告诉Hibernate关于我们领域模型的起点，由于我们是通过<code>hibernate.cfg.xml</code>去配置的，所以这里没有什么特别的需要关注</p>
-</li>
-<li><p><code>org.hibernate.boot.Metadata</code>代表着一个完整的，部分验证过的领域模型视图，而<code>SessionFactory</code>也正是基于此的</p>
-</li>
-<li>在启动过程的最后一步是去构建一个<code>SessionFactory</code>,这个<code>SessionFactory</code>是一个线程安全的对象只实例化一次而服务整个应用</li>
-<li>这个<code>SessionFactory</code>表现的像是一个<code>org.hibernate.Session</code>对象的工厂</li>
-</ul>
-<p>在得到了Session之后，我们就可以进行简单的增删查改了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打开Session</span></span><br><span class="line">Session session = sessionFactory.openSession();</span><br><span class="line"><span class="comment">//开启事务</span></span><br><span class="line">session.beginTransaction();</span><br><span class="line"><span class="comment">//保存对象实体</span></span><br><span class="line">session.save( <span class="keyword">new</span> Event( <span class="string">"Our very first event!"</span>, <span class="keyword">new</span> Date() ) );</span><br><span class="line">session.save( <span class="keyword">new</span> Event( <span class="string">"A follow up event"</span>, <span class="keyword">new</span> Date() ) );</span><br><span class="line"><span class="comment">//提交事务</span></span><br><span class="line">session.getTransaction().commit();、</span><br><span class="line"><span class="comment">//关闭Session</span></span><br><span class="line">session.close();</span><br></pre></td></tr></table></figure>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Hibernate框架/"><i class="fa fa-tag fa-fw"></i>&nbsp;Hibernate框架</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/10/Spring-03/">
-                
-                    Spring-Bean的自动装配&amp;关系&amp;作用域&amp;导入外部属性文件
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-10
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/java/">java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>第三天的内容主要继续了解配置beans的方方面面，包括以下内容：</p>
-<ul>
-<li>自动装配(Auto Wire)</li>
-<li>Bean之间的关系(继承&amp;依赖)</li>
-<li>Bean的作用域(scope=singleton|prototype)</li>
-<li>使用外部属性文件</li>
+<li>如何给更好的给Bean的属性赋值，甚至将简单的赋值逻辑加入-&gt;SPEL</li>
+<li>如何更细粒度的管理对象在IOC容器中的生命周期-&gt;初始化+销毁方法+初始化方法前后进行处理</li>
+<li>通过工厂方法对Bean进行配置-&gt;静态工厂+实例工厂+FactoryBean方式</li>
 </ul>
         
             <div class="readmore">
-                <a href="/2018/11/10/Spring-03/" class="flat-box">READ MORE</a>
+                <a href="/2018/11/11/Spring-04/" class="flat-box">READ MORE</a>
             </div>
         
 
@@ -300,218 +179,308 @@
 
         </div>
     
-</section>
-
-
-
-        </div>
-        <aside class='l_side'>
-            
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/08/Spring-02/">
+                
+                    Spring-属性注入
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-08
+        </time>
+        
     
-        
-    <section class='m_widget author'>
-        
-            <div class='header'>
-                <img class='avatar' src='http://www.yangshuai.net/wp-content/uploads/2012/01/812.jpg' />
-            </div>
-        
-        
-            <div class='content'>
-                
-                    <h2>飞翔的傻瓜</h2>
-                
-                
-                    <div>
-                        <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
-                        一分辛苦一分才
-                    </div>
-                
-            </div>
-        
-        
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
     </section>
 
+    <section class="article typo">
+        <p>自学Spring框架第二天，今天主要是更加深入的学习了Spring Bean的配置方式（XML形式的）使用方式以及一些注意的点。简而言之就是如何配置一个Bean，属性如何去注入？引用类型如何去注入？集合属性如何去注入，以及Properties属性如何去注入等等。需要注意的是之下的实例代码为了简化使用了 <code>lombok</code>开源工具。</p>
+        
+            <div class="readmore">
+                <a href="/2018/11/08/Spring-02/" class="flat-box">READ MORE</a>
+            </div>
+        
 
-    
-    
-        <section class='m_widget categories'>
-    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
-    <div class='content'>
         
-            <ul class="entry">
+            <div class="full-width auto-padding tags">
                 
-                    <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
+                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>12</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>2</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/算法/"><div class='name'>算法</div><div class='badge'>3</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/计算机网络/"><div class='name'>计算机网络</div><div class='badge'>2</div></a></li>
-                
-                    <li><a class="flat-box" href="/categories/设计模式/"><div class='name'>设计模式</div><div class='badge'>4</div></a></li>
-                
-            </ul>
+            </div>
         
-    </div>
-</section>
+    </section>
+</article>
 
-    
-    
-        
-    <section class='m_widget tagcloud'>
-        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
-        <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Hibernate框架/" style="font-size: 14px; color: #999">Hibernate框架</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/07/Spring-01/">
+                
+                    Spring HelloWorld
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-07
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
     </section>
 
-
-    
-    
-        <section class='m_widget music'>
-    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
-    <div class='content'>
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=2494951909&auto=0&height=450"></iframe>
-    </div>
-</section>
-
-    
-    
-        <section class='m_widget links'>
-    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
-    <div class='content'>
-        <ul class="entry" id="links">
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.codergzw.com">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;GuoZW的博客
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://codermiya.com/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;Miyang的博客
-                    </div>
-                </a></li>
-            
-            
-
-        </ul>
-
-    </div>
-</section>
-
-    
-    
+    <section class="article typo">
+        <p>自学Spring第一天，主要目的是使用Spring中的Beans完成依赖注入或者叫做控制反转，之后对所学的内容做一个总结。</p>
+        
+            <div class="readmore">
+                <a href="/2018/11/07/Spring-01/" class="flat-box">READ MORE</a>
+            </div>
         
 
-    
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
+                
+            </div>
+        
+    </section>
+</article>
 
-
-        </aside>
-        <script>setLoadingBarProgress(60);</script>
-    </div>
-    </div>
-    <footer id="footer" class="clearfix">
-    
-        <div class="social-wrapper">
-          
-              
-                  <a href="mailto:lumaoxin@aliyun.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-                  <a href="https://github.com/pickdream" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-          
-              
-          
-              
-          
-              
-                  <a href="atom" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
         </div>
     
-    <br>
-    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
-    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
-		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/10/13/NIO-02/">
+                
+                    NIO-Selector
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-13
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
     </div>
-</footer>
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
-    <script>setLoadingBarProgress(80);</script>
-    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
-<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
-<!-- 访问统计 -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </section>
+
+    <section class="article typo">
+        <p>此博客是对知乎海纳文章的理解与总结</p>
+<h2 id="引入多路复用的原因"><a href="#引入多路复用的原因" class="headerlink" title="引入多路复用的原因"></a>引入多路复用的原因</h2><ol>
+<li>服务器与客户端通信时，原来的场景需要大量的服务线程，连接时间很短，数据量发送很小，大量的服务线程使得竞争加剧，大量的开销会严重影响OS的效率</li>
+<li>IO多路复用，可以解决线程切换的问题，可以同在很少的线程中管理多路IO</li>
+<li>不是说IO多路复用效率一定高，要看具体场景，如果是两个对等机器之间建立了TCP连接，并且通过TCP连接来发送一个大文件，有大量的数据传输。在这种场景中，阻塞式的写法简单高效。</li>
+<li>另外加深理解，需要明白一台服务器能创建的线程数是十分有限的，在Java中创建线程，一个线程默认就会预留1M的空间，那么1G的内存也不过只能支持1000个线程创建而已。<h2 id="Linux中的Poll"><a href="#Linux中的Poll" class="headerlink" title="Linux中的Poll"></a>Linux中的Poll</h2><h3 id="什么是poll"><a href="#什么是poll" class="headerlink" title="什么是poll?"></a>什么是poll?</h3>poll系统调用让操作系统管理多个链接，监视其发生的事件，并</li>
+</ol>
+<blockquote>
+<p>参考资料: <a href="https://zhuanlan.zhihu.com/p/27419141" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27419141</a> 海纳<br>问题与实现: select poll epoll <a href="https://blog.csdn.net/davidsguo008/article/details/73556811" target="_blank" rel="noopener">https://blog.csdn.net/davidsguo008/article/details/73556811</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/10/13/NIO-01/">
+                
+                    NIO-Buffer
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-13
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
 
 
-<script src="/js/jquery.fitvids.js"></script>
+    </section>
 
-    <script>
-        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-        var ALGOLIA_API_KEY = "";
-        var ALGOLIA_APP_ID = "";
-        var ALGOLIA_INDEX_NAME = "";
-        var AZURE_SERVICE_NAME = "";
-        var AZURE_INDEX_NAME = "";
-        var AZURE_QUERY_KEY = "";
-        var BAIDU_API_ID = "";
-        var SEARCH_SERVICE = "hexo" || "hexo";
-        var ROOT = "/"||"/";
-        if(!ROOT.endsWith('/'))ROOT += '/';
-    </script>
+    <section class="article typo">
+        <h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p>Buffer实现了一个缓存区读写区域，通过四个”指针”的灵活运用，完成在缓冲区内部的读写变换<br>
+        
+            <div class="readmore">
+                <a href="/2018/10/13/NIO-01/" class="flat-box">READ MORE</a>
+            </div>
+        
 
-<script src="/js/search.js"></script>
-<script src="/js/app.js"></script>
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/NIO/"><i class="fa fa-tag fa-fw"></i>&nbsp;NIO</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/12/Type类型/">
+                
+                    Type类型
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-12
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
 
 
+    </section>
 
-    <script>setLoadingBarProgress(100);</script>
-</body>
-&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_Delete"</span> <span class="attr">class</span>=<span class="string">"site,maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_delete"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <section class="article typo">
+        <h2 id="从泛型到Type类型接口"><a href="#从泛型到Type类型接口" class="headerlink" title="从泛型到Type类型接口"></a>从泛型到Type类型接口</h2><p>众所周知，Java的泛型都是通过类型擦除来完成的，也就是说当Javac编译之后，所以的泛型参数都被打回原型，而之所以使用类型擦除实现泛型的原因主要是为了向下兼容。那么这样会有如下的问题：</p>
+<ul>
+<li>Java不能描述通过参数化之后的泛型类型，里面怎么参数化的一概不知</li>
+</ul>
+<p>但是在有些场景我们需要对传入的具体的参数化类型进行检测处理，之前的类型系统都依赖与<code>Class</code>本身描述信息，现在Java需要能够描述泛型的参数化过程，通过参数化泛型产生的新类型无非不过是基本的<code>Class</code>类型的组合,Java最后引入了Type接口以及一些子类来统一引入泛型之后的类型系统。</p>
+<h2 id="Type是怎样统一Java的类型系统的"><a href="#Type是怎样统一Java的类型系统的" class="headerlink" title="Type是怎样统一Java的类型系统的"></a>Type是怎样统一Java的类型系统的</h2><p><strong>以下为个人的理解</strong></p>
+<p>在泛型之前，Java类型除了原生类型都可以使用Class来描述，在泛型之后，新增了许多“新”的类型：</p>
+<ol>
+<li>参数化泛型类的类型，如<code>Collection&lt;T&gt;</code></li>
+<li>参数化泛型类型构成的数组类型，如<code>Animal&lt;T&gt;[]</code></li>
+<li>泛型参数构成的类型（泛型方法），如<code>&lt;E&gt;void method(E e){}</code>中的<code>E e</code>又或者是<code>ArrayList&lt;E&gt;</code>中的<code>E</code></li>
+<li>通配符表达的类型，如<code>void printColl(ArrayList&lt;? extends Number&gt;al)</code>中的<code>? extends Number</code><br>上面四种类型和Class为了统一都实现了<code>Type</code>接口<h2 id="Type类型的关系"><a href="#Type类型的关系" class="headerlink" title="Type类型的关系"></a>Type类型的关系</h2><h3 id="Parameterizedtype"><a href="#Parameterizedtype" class="headerlink" title="Parameterizedtype"></a>Parameterizedtype</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang.reflect;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.MalformedParameterizedTypeException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ParameterizedType</span> <span class="keyword">extends</span> <span class="title">Type</span> </span>&#123;</span><br><span class="line">   Type[] getActualTypeArguments();</span><br><span class="line">   <span class="function">Type <span class="title">getRawType</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function">Type <span class="title">getOwnerType</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>由于对于参数化泛型类对象中的泛型是可以嵌套的，所以需要注意返回的是除去一个嵌套之后的Type子类型。</p>
+<ol>
+<li>对于ArrayList&lt;ArrayList<integer>&gt; al,执行该方法去掉&lt;&gt;返回的是ArrayList<integer>所以还是参数化类型。如果再执行一次返回的就是Class类型</integer></integer></li>
+<li>对于传入的不是具体如ArrayList<e>返回的就是TypeVariable</e></li>
+<li>对于<code>ArrayList&lt;? extends Number&gt;</code>返回的是<code>? extends Number</code> 是WildcardType</li>
+<li>对于<code>ArrayList&lt;E[]&gt;</code>返回<code>E[]</code>是GenericArrayType</li>
+</ol>
+<ul>
+<li>getRawType()<br>简单的说就是得到&lt;&gt;前的原始类型</li>
+<li>getOwnerType();得到类型的所有者类型，例如Map.Entry就是Map的所有者类型</li>
+<li>getActualTypeArguments()<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来自https://segmentfault.com/q/1010000000655631</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Method method = <span class="keyword">new</span> GenericDemo().getClass().getMethod(<span class="string">"applyMethod"</span>,Map.Entry.class);</span><br><span class="line">    Type[] types = method.getGenericParameterTypes();</span><br><span class="line">    ParameterizedType pType = (ParameterizedType)types[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回所有者类型，打印结果是interface java.util.Map</span></span><br><span class="line">    System.out.println(pType.getOwnerType());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T,U&gt; <span class="function"><span class="keyword">void</span> <span class="title">applyMethod</span><span class="params">(Map.Entry&lt;T,U&gt; mapEntry)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="认识具体的Type类型以及相关方法"><a href="#认识具体的Type类型以及相关方法" class="headerlink" title="认识具体的Type类型以及相关方法"></a>认识具体的Type类型以及相关方法</h2><p>### </p>
+<h2 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p> <a href="https://blog.csdn.net/gdutxiaoxu/article/details/68926515" target="_blank" rel="noopener">java Type详解</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.csdn.net/z69183787/article/details/54314169" target="_blank" rel="noopener">Java类型中ParameterizedType，GenericArrayType，TypeVariabl，WildcardType详解</a></p>
+</blockquote>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/16/struts2-1/">
+                
+                    struts2杂记（一）入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-16
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="Struts2-配置文件"><a href="#Struts2-配置文件" class="headerlink" title="Struts2 配置文件"></a>Struts2 配置文件</h2><h3 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h3><p>一些默认配置在导入的<code>struts2-core.jar</code>下有<code>org.apache.struts2</code>包下的default.properties文件，里面包含了一些配置，这些配置包含编码，请求扩展名，想要相应的修改就通过在struts.xml设置常量的方式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.name.extension"</span> <span class="attr">value</span>=<span class="string">"action,do,html"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="result子结点"><a href="#result子结点" class="headerlink" title="result子结点"></a>result子结点</h3><p>result子节点通过name与具体的execute方法返回值比对来完成控制器的功能，其中有隐含的type属性代表响应的类型，该默认值在<code>struts-default</code>中被指明：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--struts-default.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"struts-default"</span> <span class="attr">abstract</span>=<span class="string">"true"</span> <span class="attr">strict-method-invocation</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result-types</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"chain"</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionChainResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"dispatcher"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletDispatcherResult"</span> <span class="attr">default</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"freemarker"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.freemarker.FreemarkerResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"httpheader"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.HttpHeaderResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirect"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirectAction"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletActionRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"stream"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.StreamResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"velocity"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.VelocityResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"xslt"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.xslt.XSLTResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"plainText"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PlainTextResult"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"postback"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PostbackResult"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">result-types</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--省略其他的内容--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>下面对其中常用的几项做一个总结：</p>
+<ul>
+<li>dispatcher(默认):转发</li>
+<li>redirect:重定向</li>
+<li>redirectAction:重定向到一个Action</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">type</span>=<span class="string">"redirectAction"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"actionName"</span>&gt;</span>TestAction<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"namespace"</span>&gt;</span>/maoxin<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其指向的包定义为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"testPackage"</span> <span class="attr">namespace</span>=<span class="string">"/maoxin"</span> <span class="attr">extends</span>=<span class="string">"struts-defult"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"testAction"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.TestAction"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当眼重定向到Action也可以不用这个type</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"index"</span> <span class="attr">type</span>=<span class="string">"redirect"</span>&gt;</span>/maoxin/testAction.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>chain:转发到一个Action</p>
+<p>与之上同理，但是需要注意<strong>不能通过dispacter的方式转发到一个Action</strong></p>
+</li>
+</ul>
+<h3 id="通配符映射"><a href="#通配符映射" class="headerlink" title="通配符映射"></a>通配符映射</h3><p>通配符映射是一种方便的写result标签的方式。</p>
+<p><strong>通配符映射规则</strong></p>
+<ul>
+<li>精确的将会覆盖不精确的，就是说明确指定的和通配符方式冲突的时候精确的会有效</li>
+<li>指定的动作不存在，Struts将会尝试讲这个URI与任何一个包含通配符*的动作名进行匹配</li>
+<li>被通配符匹配到的URI字符串可以用｛1｝,{2}来引用</li>
+<li>{0}匹配整个URI</li>
+<li>在Struts找到的带有通配符的匹配不止一个，则按照先后顺序进行匹配</li>
+<li>*可以匹配0个或者多个字符，但是不包括/字符，如果想把/字符包含在内，就需要使用**，如果想要对某个字符进行转义，则需要使用 \</li>
+</ul>
+<p><strong>例子</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"UserAction-*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"&#123;1&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-success"</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-failed"</span>&gt;</span>/failed.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_Delete"</span> <span class="attr">class</span>=<span class="string">"site,maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_delete"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上面的类型可以通过通配符映射转换为：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"*_*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.&#123;1&#125;Action"</span> <span class="attr">method</span>=<span class="string">"&#123;2&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span>&gt;</span>/&#123;1&#125;.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="动态方法调用方式"><a href="#动态方法调用方式" class="headerlink" title="动态方法调用方式"></a>动态方法调用方式</h3><ul>
