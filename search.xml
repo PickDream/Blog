@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>Hibernate-02</title>
+      <link href="/2018/11/11/Hibernate-02/"/>
+      <url>/2018/11/11/Hibernate-02/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean</title>
       <link href="/2018/11/11/Spring-04/"/>
       <url>/2018/11/11/Spring-04/</url>
@@ -781,9 +792,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> Linux </tag>
             
         </tags>
       
