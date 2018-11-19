@@ -137,6 +137,497 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/08/17/ProtectMod/">
+                
+                    保护模式笔记
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-17
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/操作系统/">操作系统</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov dword ptr ds:[0x123456],eax</span><br></pre></td></tr></table></figure>
+<p>ds就是段寄存器，真正读写的地址是：ds.base + 0x123456</p>
+<p>其中段寄存器有8个</p>
+<p>ES（）CS（）SS（）DS（）FS（）GS（）LDTR（）TR（Task Register）</p>
+<h3 id="段寄存器的结构"><a href="#段寄存器的结构" class="headerlink" title="段寄存器的结构"></a>段寄存器的结构</h3><p>32位的段寄存器一共96位，16位可见，80位不可见（12个字节）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SegMent</span>&#123;</span></span><br><span class="line">    WORD Selector;<span class="comment">//16位的Selector（2字节）[可见部分]</span></span><br><span class="line">    WORD Attribute;<span class="comment">//16位Attribute 属性，标识可读可写可执行（2字节）</span></span><br><span class="line">    DWORD Base;<span class="comment">//32位Base 偏移地址（4字节）</span></span><br><span class="line">    DWORD Limit;<span class="comment">//32位Limit 段允许的地址偏移（4字节）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面是用结构体来描述段寄存器的内容。</p>
+<h3 id="段寄存器的读写"><a href="#段寄存器的读写" class="headerlink" title="段寄存器的读写"></a>段寄存器的读写</h3><p><strong>READ</strong></p>
+<p>段寄存器读取的时候只能读可见部分，16位，因此读的时候只能读16位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,ES</span><br></pre></td></tr></table></figure>
+<p><strong>WRITE</strong></p>
+<p>段寄存器写入的时候是要写96位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV DS,AX</span><br></pre></td></tr></table></figure>
+<p>那么一个问题浮出水面，段寄存器赋值的时候可以写入96位，但是传递给的是一个16位的寄存器，那么另外的80位从哪里得到呢？</p>
+<h3 id="GDT-表和-LDT表"><a href="#GDT-表和-LDT表" class="headerlink" title="GDT 表和 LDT表"></a>GDT 表和 LDT表</h3><p>GDT是全局描述符表，LDT是局部描述符表，要想填写完整段寄存器，需要拿着一个索引到GDT表或者LDT表去查找、这个索引就在传递的16位寄存器的数据当中。而这16位的数据对应到段寄存器的部分是段选择子。</p>
+<p><strong>段选择子</strong></p>
+<p><img src="ProtectMod/Selecter.png" alt="段选择子结构"></p>
+<p>段选择子分为三部分，一个是Index，一个是Table Indicator 还有一个是请求特权级别RPL</p>
+<ul>
+<li>Index <ul>
+<li>13位，起到索引的作用，从GDT表或者LDT表中查找数据</li>
+<li>索引查找的规则是将索引值乘以8再加上GDT或者LDT表的基地址，就是要加载的段描述符位置，也相当于2进制左移三位再加上基地址。</li>
+</ul>
+</li>
+<li>Table Indicator 表指示器<ul>
+<li>用来选择是从哪张表去选取</li>
+</ul>
+</li>
+<li>RPL 请求特权级别<ul>
+<li>其有两位，表示了0,1,2,3四种CPU特权访问级别</li>
+<li>其代表这</li>
+</ul>
+</li>
+</ul>
+<p><code>001B= 0000-0000-0001-1011</code></p>
+<h3 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h3><p>段描述符是64位的数据，占据了8个字节，下面是其结构：</p>
+<p><img src="ProtectMod/02.png" alt="段描述符"></p>
+<p>首先有个大致的印象，首先发现其Base属性和Limit被割裂到不同的部分，这主要是CPU寄存器升级为了向下兼容才形成的这样的情况。回顾段寄存器结构，</p>
+<ul>
+<li>Base一共32位，在段描述符描述完整</li>
+<li>Limit一共32位，而在段描述符中只描述16+4=20位</li>
+<li>其他部分充当段属性，应当是16位，在段描述符中描述完整，8位到第23位，23+1-8=16</li>
+</ul>
+<p>以上并不能构成整个80位的除去段选择子的剩下部分，这是我们的问题，留在下面解决。</p>
+<h3 id="P位和G位"><a href="#P位和G位" class="headerlink" title="P位和G位"></a>P位和G位</h3><p>P（Segment present） 位是表示段是否有效的位，当其=1代表有效，加载段描述首先要判断的就是P位是否标识该段描述符有效</p>
+<p>G （Granularity） n. 间隔 ，它代表的是Limit描述数值的单位，如果G=0，那么单位就是字节，Limit在段描述符保存的值一共12位，因此Limit此时的最大范围是：</p>
+<p><code>(0000 0000-000F FFFF)</code>如果G位位1，那么其是4KB，2^12，那么此时的范围是</p>
+<p><code>(0000 0FFF-FFFF FFF)</code></p>
+<h3 id="S位和Type域"><a href="#S位和Type域" class="headerlink" title="S位和Type域"></a>S位和Type域</h3><p>S (Descriptor type)位是一个描述段类型的位，当其=0的时候代表的是系统段描述符，当其=1的时候是代码段或者数据段的描述符，具体的信息由type域给出。</p>
+<p>当S=1，代指的是代码段或者数据段，其Type域的值为：</p>
+<p><img src="ProtectMod/03.png" alt="代码段或数据段的段描述符"></p>
+<p>简要描述下，第11位决定到底是代码段还是数据段，当位数据段的时候，第11位是0，此时</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>表示是否访问(Access)过 为1代表访问过</td>
+</tr>
+<tr>
+<td>W</td>
+<td>表示是否可写是，为1代表可写</td>
+</tr>
+<tr>
+<td>E</td>
+<td>为0向上拓展，为1向下拓展</td>
+</tr>
+</tbody>
+</table>
+<p>所谓向上扩展还是向下扩展针对的是Limit限制的是向下一定范围能访问还是除了向下一部分范围不能访问。</p>
+<p><img src="ProtectMod/04.png" alt="向上扩展和向下扩展"></p>
+<p>如何快速判断一个段描述符描述的是代码段和数据段？就要熟悉其二进制表示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DPL 不是全0就是全1</span></span><br><span class="line"><span class="comment">/32----24/23------20/19-----16/15---12/11-8/7--0/</span></span><br><span class="line"><span class="comment">/--BASE--/G|DB|0|AVL/--Limit--/P|DPL|S/TYPE/BASE/</span></span><br><span class="line"><span class="comment">-------------------------------1 00  1----------/</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">只需要看倒数第三第四位就可以迅速判断</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>如果是代码段的话，要明确其含义是不同的：</p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>是否访问过</td>
+</tr>
+<tr>
+<td>R</td>
+<td>是否可读</td>
+</tr>
+<tr>
+<td>C</td>
+<td>一致代码段还是非一致代码段=1表示一致，=0表示非一致</td>
+</tr>
+</tbody>
+</table>
+<p>至于一致和非一致代码段代表的是是否可以越权访问，具体的区别在下面学习。</p>
+<p>至于系统段描述符，先将其表格列举如下：</p>
+<p><img src="ProtectMod/05.png" alt="系统段描述符的type域"></p>
+<h3 id="D-B位"><a href="#D-B位" class="headerlink" title="D/B位"></a>D/B位</h3><p>D/B位代表的是(Default operation size)决定CPU的寻址方式,0代表的是16位寻址，该段也是16位段，1代表的是32位寻址，该段也是32位段，其寻址方式要对应。</p>
+<h3 id="段权限检查"><a href="#段权限检查" class="headerlink" title="段权限检查"></a>段权限检查</h3><p>段权限检查是相对比较难理解的一部分，段权限的检查发生在段寄存器的变化，确定段寄存器是否能加载一个段描述符。</p>
+<p>首先要知道的是CPU的保护模式之所以称之为保护是其有分级的制度，CPU一共4个不同的级别</p>
+<p><img src="ProtectMod/06.png" alt="CPU特权级别"></p>
+<p>CPU的特权级有四个，分别为0,1,2,3 windows 和 Linux操作系统都只使用了两个环，就是3环和0环，3环是应用程序的权限级别，而0环是系统内核的级别</p>
+<p>那么如何查看当前程序跑在哪一环呢？这就需要查看CPL（Current Privilege Level）当前特权级别。</p>
+<p><strong>CS和SS段的段选择子中的RPL就是CPL（CPU不同的特权级都有其特定的栈）</strong></p>
+<p><strong>DPL在段描述符中，描述的是访问该段需要的最低权限</strong></p>
+<p><strong>RPL描述的是我在能访问到DPL的前提下，我需要用怎样的权限去访问段</strong></p>
+<h3 id="数据段的段权限检查"><a href="#数据段的段权限检查" class="headerlink" title="数据段的段权限检查"></a>数据段的段权限检查</h3><p>CPL&lt;=DPL并且RPL&lt;=DPL</p>
+<p>需要注意的是,段描述符分为三大类，代码段和系统段的权限检查和数据段的方式</p>
+<h3 id="代码的跨段执行"><a href="#代码的跨段执行" class="headerlink" title="代码的跨段执行"></a>代码的跨段执行</h3><p>首先代码的跳转，本身就依赖于段内跳转<code>JMP</code>，段间跳转<code>JMP FAR</code>，段内调用<code>CALL</code>，段间调用<code>CALL FAR</code>，段内返回<code>RET</code>，段间返回<code>RETF</code>，中断<code>INT</code>,中断返回<code>IRETED</code>；</p>
+<p>代码的跨段执行，必然伴随着同时修改段寄存器以及EIP的值，同时修改CS和EIP的指令是：</p>
+<p><code>JMP FAR</code>,<code>CALL FAR</code>,<code>RETF</code>,<code>INT</code>,<code>IRETED</code>则是同时修改寄存器和EIP的值</p>
+<p><strong>代码的段间跳转</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMP 0x20:0x004183D7;操作数一共6个字节，前面两个段选择子，后面是偏移</span><br></pre></td></tr></table></figure>
+<p>执行步骤：</p>
+<ul>
+<li>段选择子的拆分<ul>
+<li><code>0x20</code>对应<code>0000 0000 0010 0000</code></li>
+<li>由于TI=0 所以查找GDT表</li>
+<li>Index=4 找到对应的段描述符需要将Index*8+GDT表的基地址</li>
+<li>判断段描述符的类型，四种情况是可以跳转的：<ul>
+<li>代码段</li>
+<li>调用门</li>
+<li>TSS任务段</li>
+<li>任务门</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权限检查，判断代码段的Type域内标明的是一致性代码段还是非一致性代码段<ul>
+<li>如果是非一致代码段，要求CPL==DPL,RPL&lt;=DPL</li>
+<li>如果是一致性质代码段,要求CPL&gt;=DPL,当前特权级级别可以比一致代码段要求的要低的，专门给低权限来用的，完成所谓的共享的功能。</li>
+</ul>
+</li>
+<li>加载段描述符<ul>
+<li>通过上面权限检查之后，CPU会讲段描述符加载到CS段寄存器</li>
+</ul>
+</li>
+<li>代码执行<ul>
+<li>CPU将<code>CS.BASE+OFFSET</code>的值写入到EIP然后执行对应的代码段，段间跳转执行完毕</li>
+</ul>
+</li>
+</ul>
+<h3 id="一致代码段和非一致代码段"><a href="#一致代码段和非一致代码段" class="headerlink" title="一致代码段和非一致代码段"></a>一致代码段和非一致代码段</h3><ul>
+<li>对于一致代码段：也就是共享的段<ul>
+<li><strong>特权级高的程序不允许访问特权级低的数据，核心态不允许访问用户态的数据</strong></li>
+<li><strong>特权级低的程序可以访问到特权级高的数据，但是特权级不会改变：用户态还是用户态</strong></li>
+<li>C=0表示一致，C=1表示非一致</li>
+</ul>
+</li>
+<li>对于普通代码段：也就是非一致代码段<ul>
+<li>只允许同级访问</li>
+<li>绝对禁止不同级别的访问：核心态不是用户态</li>
+</ul>
+</li>
+<li>直接对代码段进行JMP或者CALL的操作，无论目标是一致代码段还是非一致代码段，CPL都不会发生改变，如果想要提升CPL的权限，只能通过调用门</li>
+</ul>
+<p><strong>简而言之，一致代码段高权限访问不了低权限的数据，低权限可以访问高权限的数据，但是RPL不会发生变化，非一致代码段很严格的1对1，只允许同级访问</strong></p>
+<h3 id="长调用"><a href="#长调用" class="headerlink" title="长调用"></a>长调用</h3><p>CALL FAR要比JMP FAR 复杂，因为JMP不影响堆栈，但是CALL会同时影响堆栈和EIP</p>
+<p><strong>情况一：跨段不提权</strong></p>
+<p>跨段不提权表示的是段要切换，而访问的代码段对应的段描述符所对应的DPL和当前的CPL是一样的，那么这个时候相比不同的，在段内的CALL指令不同的是其还需要在栈中保存一个原来代码段的段描述符CS</p>
+<p><img src="ProtectMod/07.png" alt="长调用跨段不提权"></p>
+<p>堆栈段先压入调用者CS，再压入返回地址。返回的时候注意使用RETF</p>
+<p><strong>情况二：跨段并提权</strong></p>
+<p>长调用跨段并提权，关键的变化在于提权，在切换CPU特权级别的时候注意，堆栈段也要发生变化，也就是说，要用新的堆栈（每一个特权级对应一个堆栈），现在总结一下，在</p>
+<p><code>CALL CS:EIP</code>这样的指令中，要在新的特权级的堆栈中保存以下内容：返回地址，原来的堆栈段描述符，原来的代码段描述符，调用者的ESP，这样就表现的原来的ESP毫无影响。</p>
+<p><img src="ProtectMod/08.png" alt="跨段并提权"></p>
+<p><strong>为什么说EIP是废弃的？</strong></p>
+<p>对于跨权限调用的时候是要提权的，而提权的时候需要通过一个门，门内信息有一个段选择子，指向真正要跳转的段，门内信息还有真正的偏移，因此，对于<code>CALL CS:EIP</code>来说，其CS有用，EIP没有用，是废弃的，大致过程如下：</p>
+<p>CALL CS:EIP  -&gt; 门描述符（偏移信息+段选择子）-&gt;高权限代码段描述符-&gt;段信息</p>
+<p><strong>总结</strong></p>
+<ul>
+<li>跨段调用的时候，一旦有权限切换，就会切换堆栈</li>
+<li>CS的权限一旦改变，SS的权限也要随着改变，CS和SS的等级必须一样</li>
+<li><strong>JMP FAR只能跳转到同级非一致代码段，但是CALL FAR可以通过调用门提权，提升CPL的权限</strong></li>
+<li><strong>SS与ESP从哪儿来，参见TSS段</strong></li>
+</ul>
+<h3 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h3><p><strong>调用门执行流程</strong></p>
+<p>指令格式 <code>CALL CS:EIP(EIP是废弃的)</code></p>
+<p><strong>执行步骤</strong></p>
+<ol>
+<li>根据CS的值，查GDT表，找到对应的段描述符，这个描述符是调用门</li>
+<li>在调用门描述符中存储另一个代码段的段选择子</li>
+<li>选择子指向的段的BASE+选择子内部包含的偏移地址=真正要执行的地址</li>
+</ol>
+<p><img src="ProtectMod/09.png" alt="门描述符"></p>
+<p>首先调用门P=1，要想“敲门”DPL=11，第12位S=0，暂时不讨论门描述符的参数问题，Param Count = 0，而除了选择子，其也包含了32位的偏移。</p>
+<p><code>0000EC00-00080000</code> 8:1000</p>
+<p><strong>带有参数的调用门</strong></p>
+<p>注意，首先要使用有参数的调用门的时候参数必须要自己先压栈的（压入三环的堆栈）</p>
+<p>先来观察下老师给的实例代码观察下：</p>
+<p><img src="ProtectMod/10.png" alt="示例代码片段1"></p>
+<p><img src="ProtectMod/11.png" alt="示例代码片段1"></p>
+<p>可以看出在通过调用门提权之前，首先PUSH进三环堆栈3个参数，之后进行调用，在执行到裸函数的函数体内已经得到了提权，之后进行了两个相对陌生的指令：</p>
+<p><code>pushad</code>,<code>pushfd</code> 查询相关资料:</p>
+<blockquote>
+<p>pushad: 将所有的32位通用寄存器压入堆栈  pusha:将所有的16位通用寄存器压入堆栈 pushfd:然后将32位标志寄存器EFLAGS压入堆栈  pushf::将的16位标志寄存器EFLAGS压入堆栈 popad:将所有的32位通用寄存器取出堆栈  popa:将所有的16位通用寄存器取出堆栈 popfd:将32位标志寄存器EFLAGS取出堆栈  popf:将16位标志寄存器EFLAGS取出堆栈</p>
+</blockquote>
+<p><code>pushad</code> push进去的寄存器按照顺序为EDI,ESI,EBP,ESP,EBX,EDX,ECX,EAX</p>
+<p><code>pushfd</code> push进去的寄存器是32位标志寄存器</p>
+<p>执行玩<code>pushad</code>和<code>pushfd</code>之后的esp下降了4*9=36 -&gt;0x24 </p>
+<p><strong>调用门总结</strong></p>
+<ol>
+<li>当通过门，权限不变的时候，只会push两个值。CS，返回地址新的CS的值由调用门觉得</li>
+<li>当通过门，权限改变的时候，会PUSH四个值。SS，ESP.CS返回地址 新的CS的值由调用门决定。<strong>新的SS和ESP由TSS提供</strong></li>
+<li>通过门调用的时候，要执行哪行代码由调用门决定，但使用RETF返回的时候，由堆栈中压入的值决定，这就是说，进门的时候只能按照指定路线走，出门的时候可以翻墙（可以想去哪就去哪）</li>
+</ol>
+<h3 id="中断门与陷阱门"><a href="#中断门与陷阱门" class="headerlink" title="中断门与陷阱门"></a>中断门与陷阱门</h3><p>Windows没有使用调用门，但是使用了中断门，在windowsAPI当中使用中断门进入0环（现在新的CPU使用快速调用），中断的时候其实相当于在对于汇编就是0xCC(<code>int 3</code>)int 3就是用来执行中断门。中断门查询的表不是GDT表而是IDT表，是中断描述符，与GDT不同的是，IDT都是系统段描述符，并且第一个描述符不是都是0。</p>
+<p>同样，LDT的地址可以通过以下的windbg命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; r ldtr</span><br><span class="line">kd&gt; r ldtl</span><br></pre></td></tr></table></figure>
+<p>IDT表有三种描述符：</p>
+<ul>
+<li>中断门描述符</li>
+<li>任务门描述符</li>
+<li>陷阱门描述符</li>
+</ul>
+<p>其中中断门的结构如下：</p>
+<p><img src="ProtectMod/12.png" alt="中断门结构"></p>
+<p><strong>陷阱门</strong></p>
+<p>陷阱门基本上和中断门差不多，关键就在中断门通过修改标志寄存器的IF位来屏蔽中断，而陷阱门不屏蔽</p>
+<h3 id="任务段"><a href="#任务段" class="headerlink" title="任务段"></a>任务段</h3><p>在调用门，中断门与陷阱门中，一旦出现权限的切换，那么就会有堆栈的切换。而且，由于CS的CPL发生改变，也导致了SS也必须切换。切换的时候，会有新的ESP和SS(CS是由中断门或者调用门)这两个值从哪里来呢？这些都保存到TSS(Task Stage Segment)任务状态段中，<strong>TSS是在内存当中的。</strong></p>
+<p><img src="ProtectMod/13.bmp" alt="任务状态段TSS结构"></p>
+<p>里面保存了所有的通用寄存器以及标志寄存器ELF，以及CR3寄存器（在后面会接触到）以及不同的CPU权限等级对应的SS段选择子的值以及对应的ESP的值。</p>
+<p><strong>TSS注意事项</strong></p>
+<ul>
+<li>不要把TSS与“任务切换”联系在一起</li>
+<li>TSS的意义就在于可以同时换掉“一堆”寄存器</li>
+<li>TSS一共有104字节</li>
+</ul>
+<p><strong>CPU如何找到TSS</strong></p>
+<p><img src="ProtectMod/14.png" alt="Task Register"></p>
+<p><strong>TSS段描述符</strong></p>
+<p>当type的二进制是1001 = 9 的时候，是段描述符，没有加载到段寄存器当中</p>
+<p>当type的二进制是1011 = B 的时候，也是段描述符，表示加载到了段寄存器当中</p>
+<p><strong>TR寄存器的读写</strong></p>
+<ul>
+<li>当TSS段描述符加载到TR寄存器<ul>
+<li>指令：LTR</li>
+<li>说明：<ul>
+<li>用LTR指令去装载的话，仅仅是改变TR寄存器的值（96位），并不会改变TSS</li>
+<li>LTR指令只能在系统层调用（是特权指令）</li>
+<li>加载后TSS 段描述符的状态位会发生变化（Type从9变为b）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读TR寄存器<ul>
+<li>指令 STR</li>
+<li>说明：如果用STR去读的话，只读了TR的16位 也就是其选择子</li>
+</ul>
+</li>
+</ul>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/保护模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;保护模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/16/struts2-1/">
+                
+                    struts2杂记（一）入门
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-16
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="Struts2-配置文件"><a href="#Struts2-配置文件" class="headerlink" title="Struts2 配置文件"></a>Struts2 配置文件</h2><h3 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h3><p>一些默认配置在导入的<code>struts2-core.jar</code>下有<code>org.apache.struts2</code>包下的default.properties文件，里面包含了一些配置，这些配置包含编码，请求扩展名，想要相应的修改就通过在struts.xml设置常量的方式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.name.extension"</span> <span class="attr">value</span>=<span class="string">"action,do,html"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="result子结点"><a href="#result子结点" class="headerlink" title="result子结点"></a>result子结点</h3><p>result子节点通过name与具体的execute方法返回值比对来完成控制器的功能，其中有隐含的type属性代表响应的类型，该默认值在<code>struts-default</code>中被指明：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--struts-default.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"struts-default"</span> <span class="attr">abstract</span>=<span class="string">"true"</span> <span class="attr">strict-method-invocation</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result-types</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"chain"</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionChainResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"dispatcher"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletDispatcherResult"</span> <span class="attr">default</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"freemarker"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.freemarker.FreemarkerResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"httpheader"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.HttpHeaderResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirect"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"redirectAction"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.ServletActionRedirectResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"stream"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.StreamResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"velocity"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.VelocityResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"xslt"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.views.xslt.XSLTResult"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"plainText"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PlainTextResult"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result-type</span> <span class="attr">name</span>=<span class="string">"postback"</span> <span class="attr">class</span>=<span class="string">"org.apache.struts2.result.PostbackResult"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">result-types</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--省略其他的内容--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>下面对其中常用的几项做一个总结：</p>
+<ul>
+<li>dispatcher(默认):转发</li>
+<li>redirect:重定向</li>
+<li>redirectAction:重定向到一个Action</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">type</span>=<span class="string">"redirectAction"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"actionName"</span>&gt;</span>TestAction<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"namespace"</span>&gt;</span>/maoxin<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其指向的包定义为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"testPackage"</span> <span class="attr">namespace</span>=<span class="string">"/maoxin"</span> <span class="attr">extends</span>=<span class="string">"struts-defult"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"testAction"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.TestAction"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当眼重定向到Action也可以不用这个type</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"index"</span> <span class="attr">type</span>=<span class="string">"redirect"</span>&gt;</span>/maoxin/testAction.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>chain:转发到一个Action</p>
+<p>与之上同理，但是需要注意<strong>不能通过dispacter的方式转发到一个Action</strong></p>
+</li>
+</ul>
+<h3 id="通配符映射"><a href="#通配符映射" class="headerlink" title="通配符映射"></a>通配符映射</h3><p>通配符映射是一种方便的写result标签的方式。</p>
+<p><strong>通配符映射规则</strong></p>
+<ul>
+<li>精确的将会覆盖不精确的，就是说明确指定的和通配符方式冲突的时候精确的会有效</li>
+<li>指定的动作不存在，Struts将会尝试讲这个URI与任何一个包含通配符*的动作名进行匹配</li>
+<li>被通配符匹配到的URI字符串可以用｛1｝,{2}来引用</li>
+<li>{0}匹配整个URI</li>
+<li>在Struts找到的带有通配符的匹配不止一个，则按照先后顺序进行匹配</li>
+<li>*可以匹配0个或者多个字符，但是不包括/字符，如果想把/字符包含在内，就需要使用**，如果想要对某个字符进行转义，则需要使用 \</li>
+</ul>
+<p><strong>例子</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"UserAction-*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"&#123;1&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-success"</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"&#123;1&#125;-failed"</span>&gt;</span>/failed.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"User_Delete"</span> <span class="attr">class</span>=<span class="string">"site,maoxin.UserAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/User.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_add"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"Book_delete"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.BookAction"</span> <span class="attr">method</span>=<span class="string">"delete"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span>&gt;</span>/Book.action<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面的类型可以通过通配符映射转换为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">namespace</span>=<span class="string">"/test"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"*_*"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.&#123;1&#125;Action"</span> <span class="attr">method</span>=<span class="string">"&#123;2&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span>&gt;</span>/&#123;1&#125;.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="动态方法调用方式"><a href="#动态方法调用方式" class="headerlink" title="动态方法调用方式"></a>动态方法调用方式</h3><ul>
+<li>首先需要打开动态方法调用：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">constant</span> <span class="attr">name</span>=<span class="string">"struts.enable.DynamicMethodInvocation"</span> <span class="attr">value</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">constant</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>完成对Action的配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">class</span>=<span class="string">"site.maoxin.Test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">result</span>&gt;</span>/success.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>默认执行的就是execute方法，当在请求参数后面加上!后面跟上方法名就可以</p>
+<h2 id="Action类"><a href="#Action类" class="headerlink" title="Action类"></a>Action类</h2><p>能够处理Struts2的请求的类，通过在struts2配置文件映射的方式来完成请求与相应action之间的关系</p>
+<ul>
+<li>同一个Action可以有多个响应方法</li>
+<li>Action类不同于Servlet，Servlet在内存中标只有一份拷贝，而Action一次请求创建一次</li>
+</ul>
+<h2 id="Action-类处理Web资源"><a href="#Action-类处理Web资源" class="headerlink" title="Action 类处理Web资源"></a>Action 类处理Web资源</h2><p>Web资源也就是：HttpServletRequest，HttpSession，ServletContext等等</p>
+<h3 id="与Servlet-API解耦的方式"><a href="#与Servlet-API解耦的方式" class="headerlink" title="与Servlet API解耦的方式"></a>与Servlet API解耦的方式</h3><p>所谓解耦就是不直接依赖，Struts2提供了以下方式来处理Web资源，解耦方式的缺点是：</p>
+<ul>
+<li>一套新的，Struts2指定的操作方式</li>
+<li>功能不够齐全，不如原生方式强大</li>
+</ul>
+<p>下面是两种解耦的方式：</p>
+<p><strong>使用 Action Context方法</strong></p>
+<p><code>ActionContext</code>对象是在请求经过过滤器的时候生成的，每一个<code>ActionContext</code>通过<code>ThreadLocal</code>容器里面获得的，其中提供了对应的方法来获取。而这一切都是在<code>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</code> 过滤器中完成转换并且装入的。</p>
+<ul>
+<li>获取传入的request参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActionContext ac = ActionContext.getContext();</span><br><span class="line">HttpParameters hps = ac.getParameters();</span><br></pre></td></tr></table></figure>
+<p>其中<code>HttpParameters</code>是实现了<code>Map&lt;String,Parameter&gt;</code>，所以用Map的方式访问，将具体的参数值封装到<code>Parameter</code>这一对象中。通过<code>Parameters.getValues</code>来获取<code>String[]</code>属性的值。</p>
+<ul>
+<li>获取并设置HttpServletContext域对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt;contextMap =ac.getApplication();</span><br><span class="line">contextMap.put(<span class="string">"UserCount"</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取并设置HttpServletSession 域对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt;sessionMap = ac.getSession();</span><br><span class="line">sessionMap.put(<span class="string">"UserName"</span>, <span class="string">"Maoxin"</span>);</span><br></pre></td></tr></table></figure>
+<p>Session有一个关闭Session的问题，要操作这个域对象失效就需要提供这个方法，由于其主体还是个Map的功能，所以推断getSession返回的是一个重新实现的Map，里面包含使得Session失效的方法，运行时进行调试，可以看出其本身返回的是<code>SessionMap</code>,查看对应的源代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SessionMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">invalidate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (session == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">synchronized</span> (session.getId().intern()) &#123;</span><br><span class="line">            session.invalidate();</span><br><span class="line">            session = <span class="keyword">null</span>;</span><br><span class="line">            entries = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>设置request域属性的值</p>
+<p>需要注意的是<code>ActionContext</code>没有直接提供对应的方法，而之上的所有域对象本身也都是从<code>ActionContext</code>的构造方法内部的构造函数中传入的context对象得到的，而这个对象是<code>OgnlMap</code>类型，里面还有很多对象，因此，如果试图想要获取request域对象的值的话，可以通过：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt; requestMap = (Map&lt;String, Object&gt;) ac.get(<span class="string">"request"</span>);</span><br><span class="line">requestMap.put(<span class="string">"requestDispatcher"</span>, <span class="string">"转发的数据"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>实现对应的Aware接口</strong></p>
+<p>相对来说比较麻烦：</p>
+<ul>
+<li>首先要实现具体的接口，比如想对Application对象做操作，就要实现ApplicationAware对象接口</li>
+<li>其次要在类中设置要注入对象的引用（依赖注入）</li>
+<li>设置引用的getter和setter方法</li>
+</ul>
+<p><strong>如何选用</strong></p>
+<ul>
+<li>若Action对象包含多个Action方法，多个Action方法使用域对象的Map或者Parameters，则建议使用Aware接口的方式</li>
+</ul>
+<h3 id="与Servlet-API-耦合的方式"><a href="#与Servlet-API-耦合的方式" class="headerlink" title="与Servlet API 耦合的方式"></a>与Servlet API 耦合的方式</h3><p><strong>使用ServletActionContext</strong></p>
+<ul>
+<li><p>获取Request对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletActionContext.getRequest()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取HttpSession对象<code>getRequest().getSession()</code></p>
+</li>
+<li><p>获取ServletContext对象<code>getServletContext()</code></p>
+</li>
+</ul>
+<p><strong>实现ServletXxxAware的方式</strong></p>
+<p>道理同上</p>
+<h2 id="默认的Action类：ActionSupport"><a href="#默认的Action类：ActionSupport" class="headerlink" title="默认的Action类：ActionSupport"></a>默认的Action类：ActionSupport</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionSupport</span> <span class="keyword">implements</span> <span class="title">Action</span>, <span class="title">Validateable</span>, <span class="title">ValidationAware</span>, <span class="title">TextProvider</span>, <span class="title">LocaleProvider</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所谓默认的Action类，其实就是result标签不绑定具体class指向的具体的类，这个具体的类同样在默认继承的包<code>struts-default.xml</code>下被指明，具体如下:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">default-class-ref</span> <span class="attr">class</span>=<span class="string">"com.opensymphony.xwork2.ActionSupport"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打开<code>ActionSupport</code>类查看定义首先实现了众多接口，第一个接口是<code>Action</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Action</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SUCCESS = <span class="string">"success"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String NONE = <span class="string">"none"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ERROR = <span class="string">"error"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String INPUT = <span class="string">"input"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOGIN = <span class="string">"login"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Validateable 需要手动实现验证</li>
+<li>ValidateAware</li>
+<li>TextProvider</li>
+<li>LocaleProvider</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/08/05/ClassLoader总结/">
+                
+                    ClassLoader总结
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-05
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Java/">Java</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>在学习过程中，一次又一次的遇到类加载器的问题，一次又一次的重新去看，感觉有必要对ClassLoader的知识做一个详细的总结，以便于之后能熟练运用ClassLoader。<br>
+        
+            <div class="readmore">
+                <a href="/2018/08/05/ClassLoader总结/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
+                
+                    <a href="/tags/ClassLoader/"><i class="fa fa-tag fa-fw"></i>&nbsp;ClassLoader</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/08/01/js-1/">
                 
                     蛋疼的JavaScript(一)：作用域与闭包
@@ -1008,169 +1499,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/Servlet执行过程/">
-                
-                    Servlet 执行过程笔记
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>首先必须明确，Servlet是JavaEE一个规范，包括JDBC，都是提供了一个规范，而Servlet的具体实现以及运行过程是Tomcat来具体进行的。Servlet本身就是一个接口。HttpServlet只是它的一个具体的实现。</p>
-<h2 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h2><p>Web容器说白了就是Web服务器，Tomcat在收到客户端发来的请求之后，创建HttpServletRequest，HttpServletResponse等，它得到请求信息封装起来，交给Servlet去处理。</p>
-<h2 id="Servlet容器"><a href="#Servlet容器" class="headerlink" title="Servlet容器"></a>Servlet容器</h2><p>在Tomcat启动之后也会初始化一个Servlet容器，其会检索web.xml或者是注解来生成ServletConfig对象，ServletConfig本身也是接口，其定义了获取在web.xml或者注解中指明的参数。其接口的具体方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Servlet 接口则指明了Servlet生命期的几个关键的函数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span><span class="keyword">throws</span> ServletExection</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span><span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>接下来，Tomcat规定了如何调用整个Servlet过程，这就是具体的算法。</p>
-<ul>
-<li>init 方法在Servlet生命周期中的初始化阶段被调用</li>
-<li>servlet初始化后，有了新的请求调用service方法，进行处理，如HttpServlet 进行doGet和doPost方法的判断。</li>
-<li>当销毁servlet对象的时候，调用distory方法释放被占用的资源 </li>
-</ul>
-<p>ServletConfig和Servlet封装了这个过程中容易变化的部分。再定义一个抽象类将算法封装起来，这就是所谓的模板方法模式，封装算法的抽象类是GenericServlet，我们查看GenericServlet的具体内容。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>,</span></span><br><span class="line"><span class="class">        <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    <span class="comment">//这里组合了一个ServletConfig对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> ServletConfig config;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GenericServlet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameter(name);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameterNames();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getServletContext();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.config = config;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="comment">// NOOP by default</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + msg);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String message, Throwable t)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + message, t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config.getServletName();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个封装算法的抽象类描述的是什么？<br>首先它实现了 Servlet, ServletConfig,Serializable，自然封装了Servlet和ServletConfig所描述的算法，这里实现ServletConfig的实现比较有意思，它是组合了一个ServletConfig对象，然后间接调用这个对象的方法来实现具体ServletConfig接口指明的方法。</p>
-<h2 id="整个调用过程"><a href="#整个调用过程" class="headerlink" title="整个调用过程"></a>整个调用过程</h2><ul>
-<li>Web服务器接受到HTTP请求</li>
-<li>web容器生成对象，将请求转发给Servlet容器</li>
-<li>如果容器中不存在对应的Servlet，那么Servlet容器就会去检索，加载，调用init方法，如果有直接进行下一步。</li>
-<li>容器调用Servlet的service方法来处理HTTP请求</li>
-<li>Web服务器返回信息给客户</li>
-</ul>
-<h2 id="其他注意点"><a href="#其他注意点" class="headerlink" title="其他注意点"></a>其他注意点</h2><p>loadonstartup指明是否在Servlet容器启动的时候就进行初始化，其值代表一个优先级顺序。</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Java-Servlet/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java Servlet</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/Java注解学习/">
-                
-                    Java注解学习
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Java注解的学习<br>
-        
-            <div class="readmore">
-                <a href="/2018/07/27/Java注解学习/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
-                
-                    <a href="/tags/注解/"><i class="fa fa-tag fa-fw"></i>&nbsp;注解</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/07/27/动态代理模式/">
-                
-                    Java动态代理
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/设计模式/">设计模式</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="什么是动态代理？"><a href="#什么是动态代理？" class="headerlink" title="什么是动态代理？"></a>什么是动态代理？</h2><p>所谓动态代理买就是通过代理类让接口和实现类之间不直接发生联系，可以在运行期（Runtime）实现动态的关联，实现使用反射机制。</p>
-<h3 id="回顾代理模式"><a href="#回顾代理模式" class="headerlink" title="回顾代理模式"></a>回顾代理模式</h3><p>代理模式(Proxy)：为其他对象提供一种代理以控制对这个对象的访问。代理模式说白了就是“真实”对象的代表，这样在访问对象的时候就引入了一定的间接性，这种间接性可以附加功能，在执行前或执行后增加类似检查，控制等功能。</p>
-<h3 id="动态代理的优势"><a href="#动态代理的优势" class="headerlink" title="动态代理的优势"></a>动态代理的优势</h3><p>对比静态代理，静态代理模式一般代理类和具体实现类是一一对应的，这样如果需要使用代理的话需要创建的代理类就会变得繁多，而动态代理可以根据需要在运行时生成一个代理对象，一个类通过动态生成解决多个问题。</p>
-<p>下面先概述一个静态代理的实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//学生总会要考试的</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的学生</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteStudent</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteStudent</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学号为"</span>+id+<span class="string">"的"</span>+name+<span class="string">"正在考试。。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//代考中心</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExamProxy</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    Student student;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ExamProxy</span><span class="params">(Student student)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.student = student;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        student.doExam();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">staticProxy</span> </span>&#123;</span><br><span class="line">    <span class="comment">//代考人员进行考试</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> ConcreteStudent(<span class="number">201611</span>,<span class="string">"王二小"</span>);</span><br><span class="line">        Student proxy = <span class="keyword">new</span> ExamProxy(student);</span><br><span class="line">        proxy.doExam();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="动态代理的过程"><a href="#动态代理的过程" class="headerlink" title="动态代理的过程"></a>动态代理的过程</h2><p>动态代理在实现的时候并不去考虑去代理谁，而是在运行时制定代理哪一个对象，下面先描述在Java中构建动态代理的整个过程。</p>
-<ul>
-<li>事先得有代理对象的主题，也就是说要代理的对象的功能是什么</li>
-<li>创建动态代理类，实现InvocationHandler接口，这一点是与静态代理不同的一点，这一点动态代理类就实现的不是具体的主题，而是一个完全不相干的InvocationHandler接口（说明动态代理动态生产的类还不是在这一步接收接口信息的），该接口有一个需要实现的方法：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> Throwable</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>接收代理的对象，方法，以及参数</p>
-<ul>
-<li>使用Proxy类的静态方法getInstance方法传入ClassLoader(),实现的接口类，以及InvokeHandler对象。之后指向相应的函数。<br>下面举例一个动态代理的应用场景：现在的代考中心变成了中介机构<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.maoxin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line"></span><br><span class="line"><span class="comment">//学生总会要考试的</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//白领要买房</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Worker</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的学生</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteStudent</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteStudent</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doExam</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学号为"</span>+id+<span class="string">"的"</span>+name+<span class="string">"正在考试。。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体的工作人员</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteWorker</span> <span class="keyword">implements</span> <span class="title">Worker</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteWorker</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(name+<span class="string">"成功购买了一套房！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//中介机构,承接各种例如代考和买房</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmallProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    Object obj = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SmallProxy</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.obj = obj;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(method.getName().equals(<span class="string">"doExam"</span>))&#123;</span><br><span class="line">            result = method.invoke(obj,args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(method.getName().equals(<span class="string">"buyHouse"</span>))&#123;</span><br><span class="line">            result = method.invoke(obj,args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">dynamicProxy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> ConcreteStudent(<span class="number">201611</span>,<span class="string">"小红帽"</span>);</span><br><span class="line">        Worker worker = <span class="keyword">new</span> ConcreteWorker(<span class="string">"小白"</span>);</span><br><span class="line">        InvocationHandler proxy1 = <span class="keyword">new</span> SmallProxy(student);</span><br><span class="line">        InvocationHandler proxy2 = <span class="keyword">new</span> SmallProxy(worker);</span><br><span class="line">        Student studentProxy = (Student) Proxy.newProxyInstance(student.getClass().getClassLoader(),</span><br><span class="line">                <span class="keyword">new</span> Class[]&#123;Student.class&#125;,proxy1);</span><br><span class="line">        Worker workerProxy = (Worker)Proxy.newProxyInstance(worker.getClass().getClassLoader(),</span><br><span class="line">                <span class="keyword">new</span> Class[]&#123;Worker.class&#125;,proxy2);</span><br><span class="line">        studentProxy.doExam();</span><br><span class="line">        workerProxy.buyHouse();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="为什么需要代理"><a href="#为什么需要代理" class="headerlink" title="为什么需要代理"></a>为什么需要代理</h2><p>在网上看到的一个很好的解答，这里引用一下：</p>
-<blockquote>
-<p>打个比喻，明星为什么需要经纪人来代理他呢？因为明星的专职是唱歌或演戏，如果把除此以外的其他事情比如演出费用谈判等等都揽在身上，他会累死。<br><strong>这就是体现一个思想：专业分工，用面向对象术语说：就是职责分明。</strong><br>所以，代理类一般是做些除原始类核心功能以外的其他功能，比如权限 事务等等都要专门的代理来实现。<br>当我们的代码每个类代表一个主要功能，而不是将所有功能混在一个类中，那么代码无疑清晰有条理的，易于维护，比如我要修改权限，就不必打开原始类代码，直接修改权限代理类就可以了。就很少发生修改一个BUG，带来一个新BUG的烦恼问题。<br><strong>No matter how slow you are writing clean code, you will always be slower if you make a mess 写干净的代码无论有多慢，总是快于把代码写得一团糟。</strong></p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://wangjingxin.top/2016/11/16/proxy/" target="_blank" rel="noopener">https://wangjingxin.top/2016/11/16/proxy/</a><br>王镜鑫的个人博客<br><a href="http://www.jdon.com/43740" target="_blank" rel="noopener">http://www.jdon.com/43740</a><br>一个关于动态代理的提问</p>
-</blockquote>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/设计模式-动态代理/"><i class="fa fa-tag fa-fw"></i>&nbsp;设计模式 动态代理</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -1240,13 +1568,13 @@
                 
                     <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>12</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>13</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>2</div></a></li>
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>3</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
                 
@@ -1267,7 +1595,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 17.33px; color: #828282">HTTP协议</a> <a href="/tags/Hibernate框架/" style="font-size: 14px; color: #999">Hibernate框架</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20.67px; color: #6c6c6c">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 14px; color: #999">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 14px; color: #999">Hibernate框架</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 21.5px; color: #666">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 
