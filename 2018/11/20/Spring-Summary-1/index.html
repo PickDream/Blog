@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Servlet 执行过程笔记 | 飞翔的傻瓜</title>
+  <title>Spring总结-AOP | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -123,15 +123,15 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            <article id="post-Servlet执行过程" class="post white-box article-type-post" itemscope itemprop="blogPost">
+            <article id="post-Spring-Summary-1" class="post white-box article-type-post" itemscope itemprop="blogPost">
     <section class='meta'>
         <h1 class="title">
             
-                Servlet 执行过程笔记
+                Spring总结-AOP
             
         </h1>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27&nbsp;&nbsp;
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-20&nbsp;&nbsp;
             <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
@@ -146,33 +146,15 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <p>首先必须明确，Servlet是JavaEE一个规范，包括JDBC，都是提供了一个规范，而Servlet的具体实现以及运行过程是Tomcat来具体进行的。Servlet本身就是一个接口。HttpServlet只是它的一个具体的实现。</p>
-<h2 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h2><p>Web容器说白了就是Web服务器，Tomcat在收到客户端发来的请求之后，创建HttpServletRequest，HttpServletResponse等，它得到请求信息封装起来，交给Servlet去处理。</p>
-<h2 id="Servlet容器"><a href="#Servlet容器" class="headerlink" title="Servlet容器"></a>Servlet容器</h2><p>在Tomcat启动之后也会初始化一个Servlet容器，其会检索web.xml或者是注解来生成ServletConfig对象，ServletConfig本身也是接口，其定义了获取在web.xml或者注解中指明的参数。其接口的具体方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ServletConfig</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Servlet 接口则指明了Servlet生命期的几个关键的函数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Servlet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span><span class="keyword">throws</span> ServletExection</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span><span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>接下来，Tomcat规定了如何调用整个Servlet过程，这就是具体的算法。</p>
-<ul>
-<li>init 方法在Servlet生命周期中的初始化阶段被调用</li>
-<li>servlet初始化后，有了新的请求调用service方法，进行处理，如HttpServlet 进行doGet和doPost方法的判断。</li>
-<li>当销毁servlet对象的时候，调用distory方法释放被占用的资源 </li>
-</ul>
-<p>ServletConfig和Servlet封装了这个过程中容易变化的部分。再定义一个抽象类将算法封装起来，这就是所谓的模板方法模式，封装算法的抽象类是GenericServlet，我们查看GenericServlet的具体内容。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>,</span></span><br><span class="line"><span class="class">        <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    <span class="comment">//这里组合了一个ServletConfig对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> ServletConfig config;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GenericServlet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInitParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameter(name);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getInitParameterNames</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getInitParameterNames();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletConfig <span class="title">getServletConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletContext <span class="title">getServletContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getServletConfig().getServletContext();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.config = config;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="comment">// NOOP by default</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + msg);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String message, Throwable t)</span> </span>&#123;</span><br><span class="line">        getServletContext().log(getServletName() + <span class="string">": "</span> + message, t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException</span>;</span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getServletName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> config.getServletName();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个封装算法的抽象类描述的是什么？<br>首先它实现了 Servlet, ServletConfig,Serializable，自然封装了Servlet和ServletConfig所描述的算法，这里实现ServletConfig的实现比较有意思，它是组合了一个ServletConfig对象，然后间接调用这个对象的方法来实现具体ServletConfig接口指明的方法。</p>
-<h2 id="整个调用过程"><a href="#整个调用过程" class="headerlink" title="整个调用过程"></a>整个调用过程</h2><ul>
-<li>Web服务器接受到HTTP请求</li>
-<li>web容器生成对象，将请求转发给Servlet容器</li>
-<li>如果容器中不存在对应的Servlet，那么Servlet容器就会去检索，加载，调用init方法，如果有直接进行下一步。</li>
-<li>容器调用Servlet的service方法来处理HTTP请求</li>
-<li>Web服务器返回信息给客户</li>
-</ul>
-<h2 id="其他注意点"><a href="#其他注意点" class="headerlink" title="其他注意点"></a>其他注意点</h2><p>loadonstartup指明是否在Servlet容器启动的时候就进行初始化，其值代表一个优先级顺序。</p>
-
+            <p>AOP名词在Spring学习中已经听的不能再熟了，但是不能保证所有的概念都了然于胸，对于什么通知，增强，切面等概念含糊的不行，对于什么时候使用<code>advice</code>相关的标签，什么时候使用<code>aspect</code>相关的标签，他们有什么区别与联系？从这里起就开始总结，博文书写的过程就是加深理解的过程。</p>
+<a id="more"></a>
+<h2 id="增强"><a href="#增强" class="headerlink" title="增强"></a>增强</h2><h2 id="切面"><a href="#切面" class="headerlink" title="切面"></a>切面</h2>
         </div>
 
         
             <div class="article-tags tags">
                 
-                    <a href="/tags/Java-Servlet/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Java Servlet</a>
+                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Spring框架学习</a>
                 
             </div>
         
@@ -184,18 +166,16 @@
                         <span class="art-item-left">
                             <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
                             <h4>
-                                <a href="/2018/07/27/Java反射基础/" rel="prev" title="Java反射基础">
+                                <a href="/2018/11/21/Hibernate-03-1/" rel="prev" title="Hibernate-多对一关联">
                                   
-                                      Java反射基础
+                                      Hibernate-多对一关联
                                   
                                 </a>
                             </h4>
                             
                                 <h6 class="tags">
                                     
-                                        <i class="fa fa-tag fa-fw"></i>Java
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>反射
+                                        <i class="fa fa-tag fa-fw"></i>Hibernate框架
                                     
                                 </h6>
                             
@@ -207,18 +187,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/07/27/Java注解学习/" rel="prev" title="Java注解学习">
+                                <a href="/2018/11/19/Hibernate-03/" rel="prev" title="Hibernate配置项">
                                     
-                                        Java注解学习
+                                        Hibernate配置项
                                     
                                 </a>
                             </h4>
                             
                                 <h6 class="tags">
                                     
-                                        <i class="fa fa-tag fa-fw"></i>Java
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>注解
+                                        <i class="fa fa-tag fa-fw"></i>Hibernate
                                     
                                 </h6>
                             
@@ -246,15 +224,15 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
-                <li><a href="http://www.maoxin.site/2018/07/27/Linux系统函数学习（更新中）/">Linux系统函数学习</a></li>
+                <li><a href="http://www.maoxin.site/2018/11/21/Hibernate-03-1/">Hibernate-多对一关联</a></li>
             
-                <li><a href="http://www.maoxin.site/2018/07/27/Java反射基础/">Java反射基础</a></li>
+                <li><a href="http://www.maoxin.site/2018/11/19/Hibernate-03/">Hibernate配置项</a></li>
             
-                <li><a href="http://www.maoxin.site/2018/07/27/Java注解学习/">Java注解学习</a></li>
+                <li><a href="http://www.maoxin.site/2018/11/15/Spring-06/">Spring事务相关</a></li>
             
-                <li><a href="http://www.maoxin.site/2018/07/27/动态代理模式/">Java动态代理</a></li>
+                <li><a href="http://www.maoxin.site/2018/11/15/Spring-05/">使用注解的方式配置Bean</a></li>
             
-                <li><a href="http://www.maoxin.site/2018/07/27/观察者模式（Observer pattern）/">观察者模式</a></li>
+                <li><a href="http://www.maoxin.site/2018/11/11/Hibernate-02/">Hibernate-02</a></li>
             
         </ul>
     </div>
@@ -293,7 +271,7 @@
 
 <script>
     window.subData = {
-        title: 'Servlet 执行过程笔记',
+        title: 'Spring总结-AOP',
         tools: true
     }
 </script>
@@ -412,7 +390,7 @@
     <section class='m_widget toc-wrapper'>
         <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web容器"><span class="toc-text">Web容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet容器"><span class="toc-text">Servlet容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整个调用过程"><span class="toc-text">整个调用过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他注意点"><span class="toc-text">其他注意点</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#增强"><span class="toc-text">增强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切面"><span class="toc-text">切面</span></a></li></ol>
         </div>
     </section>
 
