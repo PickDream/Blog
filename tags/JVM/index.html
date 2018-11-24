@@ -155,54 +155,11 @@
     </section>
 
     <section class="article typo">
-        <h2 id="Java启动流程（不断更新）"><a href="#Java启动流程（不断更新）" class="headerlink" title="Java启动流程（不断更新）"></a>Java启动流程（不断更新）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 注册印象笔记</span><br><span class="line">e=&gt;end: 您可以使用markdown</span><br><span class="line">op1=&gt;operation: 登录印象笔记</span><br><span class="line">op2=&gt;operation: 购买并登录马克飞象</span><br><span class="line">cond=&gt;condition: 是否已经购买并登录了马克飞象?</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op2-&gt;e</span><br></pre></td></tr></table></figure>
-<p>PC寄存器</p>
-<ul>
-<li>每一个线程拥有PC寄存器</li>
-<li>在线程创建时创建</li>
-<li>执行本地方法时该值是undefined</li>
-<li>指向下一条指令的地址</li>
-</ul>
-<p>方法区</p>
-<ul>
-<li>保存装载的类信息<ul>
-<li>类型的常量池（JDK6时候，String等常量信息置于方法区，JDK7时候移动到了堆）</li>
-<li>字段，方法信息</li>
-<li>方法字节码</li>
-</ul>
-</li>
-<li>通常和永久区（Perm）关联在一起</li>
-</ul>
-<p>Java堆</p>
-<ul>
-<li>和程序开发密切相关</li>
-<li>应用系统对象都保存在Java堆中</li>
-<li>所有线程共享Java堆</li>
-<li>对于分代GC来说，堆也是分带</li>
-<li>GC主要工作的区间</li>
-<li>eden -&gt;S0-&gt;S1-&gt;tenured</li>
-</ul>
-<p>Java栈</p>
-<ul>
-<li><p>线程私有的</p>
-</li>
-<li><p>栈由一系列帧组成(Java栈也叫帧栈)</p>
-</li>
-<li><p>帧保存一个方法的局部变量，操作数栈，常量池指针</p>
-</li>
-<li><p>每次方法调用创建一个帧并且压栈</p>
-</li>
-<li><p>Java栈-局部变量表（包括函数的参数以及局部变量）</p>
-<ul>
-<li>实例方法传入this</li>
-</ul>
-</li>
-<li><p>Java栈-操作数栈（Java没有寄存器，所有参数传递使用操作数栈）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line">    c = a+b;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对应</p>
-</li>
-</ul>
-
+        <p>在这篇文章主要分析学习JVM的包括启动流程等等重要的知识点，不断更新<br>
+        
+            <div class="readmore">
+                <a href="/2018/11/22/JavaVM-02/" class="flat-box">READ MORE</a>
+            </div>
         
 
         
