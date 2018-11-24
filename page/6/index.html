@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>飞翔的傻瓜</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="baidu-site-verification" content="w8y9i0DLo1" />
+  <meta name="google-site-verification" content="Hg65zzAhYoP1hnVohYgDSs2guJEZGLxOd7tenG74mQ4" />
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+    					
+    						<li>
+    							<a class='nav-about flat-box' href='/'>
+    								<i class='fa fa-home fa-'></i>&nbsp;主页
+  								</a>
+  							</li>
+        			
+    						<li>
+    							<a class='nav-home flat-box' href='/'>
+    								<i class='fa fa-rss fa-'></i>&nbsp;博客
+  								</a>
+  							</li>
+        			
+    						<li>
+    							<a class='nav-archives flat-box' href='/archives'>
+    								<i class='fa fa-archive fa-'></i>&nbsp;归档
+  								</a>
+  							</li>
+        			
+        		
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'>
+                            <i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'>
+                            <i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'>
+                            <i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
+
+<section class="post-list">
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/数组实现栈和队列/">
+                
+                    数组实现栈和队列
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/算法/">算法</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>用数组实现简单线性结构，栈和队列</p>
+<h2 id="实现栈"><a href="#实现栈" class="headerlink" title="实现栈"></a>实现栈</h2><ul>
+<li>由于是数组，因此必然要明确栈的大小</li>
+<li>实现相对简单，但是要注意条件检查，错误处理<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayToStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] array = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    ArrayToStack(<span class="keyword">int</span> initsize)&#123;</span><br><span class="line">        <span class="keyword">if</span>(initsize&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"初始化值小于0！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        array = <span class="keyword">new</span> <span class="keyword">int</span>[initsize];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"栈已空！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array[index-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index == array.length)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalAccessException(<span class="string">"栈已经满了！"</span>)；</span><br><span class="line">        &#125;</span><br><span class="line">        array[index++]= i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"栈已空！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array[--index];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h2><p>实现队列有几个点关键：</p>
+<ul>
+<li>可以使用变量去指向队列头部和指向队列尾部</li>
+<li>可以设置一个size去表示队列是否有空间去push以及是否为空</li>
+<li>只要是在size不为0的情况下，执行push和pop的结果都会导致start和end的值的增加</li>
+<li>当增加到数组最大值的时候注意可以将其置为0，置为0可以有许多方式，可以使用if直接设置也可以进行一个取余数，取余数可以让其在一定的值内循环。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayToQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] array = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> end;</span><br><span class="line">    <span class="keyword">int</span> start;</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ArrayToQueue</span><span class="params">(<span class="keyword">int</span> init)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(init&lt;<span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"不能为负数！"</span>);</span><br><span class="line">        array = <span class="keyword">new</span> <span class="keyword">int</span>[init];</span><br><span class="line">        end = <span class="number">0</span>;</span><br><span class="line">        start = <span class="number">0</span>;</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(size==<span class="number">0</span>) <span class="keyword">throw</span>  <span class="keyword">new</span> IllegalArgumentException(<span class="string">"队列是空的"</span>);</span><br><span class="line">        <span class="keyword">if</span>(end==array.length) end = <span class="number">0</span>;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">return</span> array[end++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(size==array.length) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"队列已满！"</span>);</span><br><span class="line">        <span class="keyword">if</span>(start==array.length) start = <span class="number">0</span>;</span><br><span class="line">        array[start++] = x;</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayToQueue arrayToQueen = <span class="keyword">new</span> ArrayToQueue(<span class="number">3</span>);</span><br><span class="line">        arrayToQueen.push(<span class="number">1</span>);</span><br><span class="line">        arrayToQueen.push(<span class="number">2</span>);</span><br><span class="line">        arrayToQueen.push(<span class="number">3</span>);</span><br><span class="line">        System.out.println(arrayToQueen.pop());</span><br><span class="line">        arrayToQueen.push(<span class="number">4</span>);</span><br><span class="line">        System.out.println(arrayToQueen.pop());</span><br><span class="line">        System.out.println(arrayToQueen.pop());</span><br><span class="line">        System.out.println(arrayToQueen.pop());</span><br><span class="line">        <span class="comment">//为空的时候报错</span></span><br><span class="line">        System.out.println(arrayToQueen.pop());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/栈-队列-算法/"><i class="fa fa-tag fa-fw"></i>&nbsp;栈 队列 算法</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/07/27/递归过程的复杂度计算/">
+                
+                    递归过程的复杂度计算
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/算法/">算法</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="引入：一个简单的例子"><a href="#引入：一个简单的例子" class="headerlink" title="引入：一个简单的例子"></a>引入：一个简单的例子</h2><h3 id="求数组内最大值的递归算法"><a href="#求数组内最大值的递归算法" class="headerlink" title="求数组内最大值的递归算法"></a>求数组内最大值的递归算法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">GetMax</span><span class="params">(<span class="keyword">int</span>[] arrays,<span class="keyword">int</span> L,<span class="keyword">int</span> R)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arrays==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(R-L&lt;=<span class="number">1</span>) <span class="keyword">return</span> Math.max(arrays[L],arrays[R]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = L+((R-L)&gt;&gt;<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Math.max(GetMax(arrays,L,mid),GetMax(arrays,mid+<span class="number">1</span>,R));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] testArray = &#123;<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        System.out.println(GetMax(testArray,<span class="number">0</span>,testArray.length-<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Master-公式"><a href="#Master-公式" class="headerlink" title="Master 公式"></a>Master 公式</h3><p>在满足：T(N)=aT(n/b)+O(n^d) 的时间复杂度的递归行为统一可以使用Master公式来求，在用分治的思想去解决问题的时候，我们将问题分成的规模是n/b，而处理这个问题的规模所需要的次数是a，处理的过程是 O(n^d) </p>
+<ul>
+<li>以二分法查找我们一次将问题规模分为了两个部分，于是b就是2，而我们将我们关注的那一部分再进行分解。不需要处理另一部分，于是a就是1，之后我们对数据的处理是一个常数时间的，因此d就是0</li>
+<li>如上进行一个最大值的查找过程使用了递归，将问题分成了两个规模，b=2，每次都进行处理a=2，处理的操作是常数时间，因此d = 0</li>
+</ul>
+<p>如果满足以上的通式就可以使用Master公式来求解：</p>
+<ul>
+<li>如果log(b,a)&gt;d -&gt;复杂度为O(N^log(b,a))</li>
+<li>如果log(b,a)=d-&gt;复杂度为O(N^d*logN)</li>
+<li>如果log(b,a)<d->复杂度为O(N^d)</d-></li>
+</ul>
+<p>那么上面两个问题的时间复杂度就可以快速计算</p>
+<p>二分法查找是满足第二个条件，因此就是O(logN)<br>递归求最大值的程序满足第一个条件，因此结果就是O(N)</p>
+<p>对于归并排序，首先将问题分成了两个规模，每个规模都要处理，其次处理规模是利用外排的方式进行处理，时间复杂度为O(n)，这样根据Master公式计算出来的结果是O(N*logN)</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/算法-递归/"><i class="fa fa-tag fa-fw"></i>&nbsp;算法 递归</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+    <br>
+    <div class="prev-next">
+        <div class="prev-next">
+            
+                <a class="prev" rel="prev" href="/page/5/">
+                    <section class="post prev" >
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+                    </section>
+                </a>
+            
+            <p class="current">
+                6 / 6
+            </p>
+            
+
+        </div>
+    </div>
+
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='http://www.yangshuai.net/wp-content/uploads/2012/01/812.jpg' />
+            </div>
+        
+        
+            <div class='content'>
+                
+                    <h2>飞翔的傻瓜</h2>
+                
+                
+                    <div>
+                        <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                        一分辛苦一分才
+                    </div>
+                
+            </div>
+        
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JVM/"><div class='name'>JVM</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>15</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/算法/"><div class='name'>算法</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/计算机网络/"><div class='name'>计算机网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/设计模式/"><div class='name'>设计模式</div><div class='badge'>4</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 14px; color: #999">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 19px; color: #777">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 21.5px; color: #666">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=2494951909&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.codergzw.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;GuoZW的博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://codermiya.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Miyang的博客
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:lumaoxin@aliyun.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/pickdream" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="atom" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
