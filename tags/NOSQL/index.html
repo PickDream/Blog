@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Tag: NOSQL | 飞翔的傻瓜</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="飞翔的傻瓜">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="baidu-site-verification" content="w8y9i0DLo1" />
+  <meta name="google-site-verification" content="Hg65zzAhYoP1hnVohYgDSs2guJEZGLxOd7tenG74mQ4" />
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				飞翔的傻瓜
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+            
+    					
+    						<li>
+    							<a class='nav-about flat-box' href='/'>
+    								<i class='fa fa-home fa-'></i>&nbsp;主页
+  								</a>
+  							</li>
+        			
+    						<li>
+    							<a class='nav-home flat-box' href='/'>
+    								<i class='fa fa-rss fa-'></i>&nbsp;博客
+  								</a>
+  							</li>
+        			
+    						<li>
+    							<a class='nav-archives flat-box' href='/archives'>
+    								<i class='fa fa-archive fa-'></i>&nbsp;归档
+  								</a>
+  							</li>
+        			
+        		
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">飞翔的傻瓜</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'>
+                            <i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'>
+                            <i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'>
+                            <i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
+    <script>
+        window.subData= { title:'tag : NOSQL'}
+    </script>
+
+
+<section class="post-list">
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/24/NOSQL-01/">
+                
+                    NOSQL-概述
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-24
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/NOSQL/">NOSQL</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="为什么是NoSQL"><a href="#为什么是NoSQL" class="headerlink" title="为什么是NoSQL"></a>为什么是NoSQL</h2><h3 id="单机数据库的时代"><a href="#单机数据库的时代" class="headerlink" title="单机数据库的时代"></a>单机数据库的时代</h3><p><img src="1.png" alt=""></p>
+<ul>
+<li>数据库的总大小，一个机器放不下</li>
+<li>数据的索引（B+树）一个机器的内存放不下</li>
+<li>访问量（读写混合）一个实例不能承受</li>
+</ul>
+<h3 id="Memcached（缓存）-MYSQL-垂直拆分"><a href="#Memcached（缓存）-MYSQL-垂直拆分" class="headerlink" title="Memcached（缓存）+MYSQL+垂直拆分"></a>Memcached（缓存）+MYSQL+垂直拆分</h3><p><img src="2.png" alt=""></p>
+<p>访问量上升，使用缓存技术来缓解数据库的压力，优化数据库的结构和索引，同时数据库也进行分库处理，之前使用的是文件缓存，但是在访问量继续增大的时候，多台Web机器通过文件缓存不能共享，大量的小文件缓存也带来了比较高的IO压力，这个时候Memcached就自然的成为一个非常时尚的技术产品。</p>
+<h3 id="主从复制与读写分离"><a href="#主从复制与读写分离" class="headerlink" title="主从复制与读写分离"></a>主从复制与读写分离</h3><p><img src="3.png" alt=""></p>
+<p>由于数据库的写入压力增加，Mencached只能缓解数据库的读取压力，读写集中在一个数据库让数据库不堪重负，大部分网站开始使用主从复制技术来达到读写分离，以提供读写性能和读库的可扩展性，mysql的master-slave模式成为了网站的标配。</p>
+<h3 id="分库分表-水平拆分-mysql集群"><a href="#分库分表-水平拆分-mysql集群" class="headerlink" title="分库分表+水平拆分+mysql集群"></a>分库分表+水平拆分+mysql集群</h3><p><img src="4.bmp" alt=""></p>
+<p>在Memcached的高速缓存，MySQL的主从复制，读写分离的基础之上，这时MySQL主库的写压力开始出现瓶颈，而数据量的持续猛增，由于MyISAM使用表锁，在高并发下会出现严重的锁问题，大量的高并发MySQL应用开始使用InnoDB引擎代替MyISAM。（InnoDB使用行锁）</p>
+<p> 同时，开始流行使用分表分库来缓解写压力和数据增长的扩展问题。这个时候，分表分库也就在这个时候，分库分表就是将变化不多的表与经常变化的表分开。</p>
+<p>水平拆分简单的说就是9千万条数据通过某种手段分到多个库中。</p>
+<p>MySQL推出了还不太稳定的表分区，这也给技术实力一般的公司带来了希望。虽然MySQL推出了MySQL Cluster集群，但性能也不能很好满足互联网的要求，只是在高可靠性上提供了非常大的保证。</p>
+<h3 id="Mysql扩展性瓶颈"><a href="#Mysql扩展性瓶颈" class="headerlink" title="Mysql扩展性瓶颈"></a>Mysql扩展性瓶颈</h3><p>MySQL数据库也经常存储一些大文本字段，导致数据库表非常的大，在做数据库恢复的时候就导致非常的慢，不容易快速恢复数据库。比如1000万4KB大小的文本就接近40GB的大小，如果能把这些数据从MySQL省去，MySQL将变得非常的小。关系数据库很强大，但是它并不能很好的应付所有的应用场景。MySQL的扩展性差（需要复杂的技术来实现），大数据下IO压力大，表结构更改困难，正是当前使用MySQL的开发人员面临的问题。</p>
+<p>不在数据库中使用CLOB BLOB这样的大型数据存储</p>
+<h3 id="如今的形式"><a href="#如今的形式" class="headerlink" title="如今的形式"></a>如今的形式</h3><p><img src="5.bmp" alt=""></p>
+<ul>
+<li>用户访问首先经过防火墙</li>
+<li>之后通过Nginx反向代理（其中做了主备）</li>
+<li>通过应用服务器，Tomcat集群</li>
+<li>之后是数据库集群</li>
+<li>其他的服务器</li>
+</ul>
+<h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL"></a>为什么使用NoSQL</h2><h3 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL"></a>什么是NoSQL</h3><p>NoSQL(NoSQL = Not Only SQL )，意即“不仅仅是SQL”，泛指非关系形数据库</p>
+<p>随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS（社交类网站-网状关系）类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题，包括超大规模数据的存储。</p>
+<p><strong>这些类型的数据存储不需要固定的模式，无需多于操作就可以横向扩展</strong></p>
+<h3 id="易扩展"><a href="#易扩展" class="headerlink" title="易扩展"></a>易扩展</h3><p>NoSQL数据库种类繁多，但是一个共同的特点都是去掉关系数据库的关系型特性。<br>数据之间无关系，这样就非常容易扩展。也无形之间，在架构的层面上带来了可扩展的能力。</p>
+<h3 id="大数据量，高性能"><a href="#大数据量，高性能" class="headerlink" title="大数据量，高性能"></a>大数据量，高性能</h3><p>NoSQL数据库都具有非常高的读写性能，尤其在大数据量下，同样表现优秀。<br>这得益于它的无关系性，数据库的结构简单。<br>一般MySQL使用Query Cache，每次表的更新Cache就失效，是一种大粒度的Cache，<br>在针对web2.0的交互频繁的应用，Cache性能不高。而NoSQL的Cache是记录级的，<br>是一种细粒度的Cache，所以NoSQL在这个层面上来说就要性能高很多了</p>
+<h3 id="多样灵活的数据模型"><a href="#多样灵活的数据模型" class="headerlink" title="多样灵活的数据模型"></a>多样灵活的数据模型</h3><p>NoSQL无需事先为要存储的数据建立字段，随时可以存储自定义的数据格式。而在关系数据库里，<br><strong>增删</strong>字段是一件非常麻烦的事情。如果是非常大数据量的表，增加字段简直就是一个噩梦</p>
+<h3 id="传统的RDBMS-VS-NOSQL"><a href="#传统的RDBMS-VS-NOSQL" class="headerlink" title="传统的RDBMS VS NOSQL"></a>传统的RDBMS VS NOSQL</h3><table>
+<thead>
+<tr>
+<th>RDBMS</th>
+<th>NOSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高度组织化结构化数据</td>
+<td>没有声明性查询语言</td>
+</tr>
+<tr>
+<td>结构化查询语言（SQL）</td>
+<td>没有预定义的模式</td>
+</tr>
+<tr>
+<td>数据和关系都存储在单独的表中。</td>
+<td>键 - 值对存储，列存储，文档存储，图形数据库</td>
+</tr>
+<tr>
+<td>数据操纵语言，数据定义语言</td>
+<td>最终一致性，而非ACID属性</td>
+</tr>
+<tr>
+<td>严格的一致性</td>
+<td>CAP+BASE</td>
+</tr>
+<tr>
+<td>基础事务</td>
+<td>高性能，高可用性可伸缩性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="有什么类型"><a href="#有什么类型" class="headerlink" title="有什么类型"></a>有什么类型</h3><ul>
+<li><code>Redis</code></li>
+<li><code>Memcache</code></li>
+<li><code>Mongdb</code></li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/NOSQL/"><i class="fa fa-tag fa-fw"></i>&nbsp;NOSQL</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='http://www.yangshuai.net/wp-content/uploads/2012/01/812.jpg' />
+            </div>
+        
+        
+            <div class='content'>
+                
+                    <h2>飞翔的傻瓜</h2>
+                
+                
+                    <div>
+                        <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                        一分辛苦一分才
+                    </div>
+                
+            </div>
+        
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/C-C/"><div class='name'>C/C++</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JVM/"><div class='name'>JVM</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>15</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/NOSQL/"><div class='name'>NOSQL</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/算法/"><div class='name'>算法</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/计算机网络/"><div class='name'>计算机网络</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/设计模式/"><div class='name'>设计模式</div><div class='badge'>4</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 14px; color: #999">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 19px; color: #777">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 21.5px; color: #666">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=2494951909&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.codergzw.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;GuoZW的博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://codermiya.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Miyang的博客
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:lumaoxin@aliyun.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/pickdream" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="atom" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
