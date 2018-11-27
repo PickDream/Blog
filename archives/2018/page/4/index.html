@@ -137,6 +137,112 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/09/18/HTML5-1/">
+                
+                    HTML5_1
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-18
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="HTML5新增的语义化元素"><a href="#HTML5新增的语义化元素" class="headerlink" title="HTML5新增的语义化元素"></a>HTML5新增的语义化元素</h2>
+        
+            <div class="readmore">
+                <a href="/2018/09/18/HTML5-1/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/前端/"><i class="fa fa-tag fa-fw"></i>&nbsp;前端</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/09/16/WindowsAPI_01/">
+                
+                    WindowsAPI常用概念&amp;结构体&amp;工具函数（一）
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-16
+        </time>
+        
+    
+    <div class='cats'>
+        
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="进程与线程的关系"><a href="#进程与线程的关系" class="headerlink" title="进程与线程的关系"></a>进程与线程的关系</h3><ul>
+<li>进程更像是一个空间上的概念，而线程是真正的代码执行过程，利用进程的的资源，所以在Windows调用<code>CreateProcess</code>来创建一个进程的时候返回的<code>_PROCESS_INFOMATION</code>结构体包含了进程标识和线程标识两方面的信息</li>
+<li>进程在执行过程中可能创建多个新的进程。创建进程成为称为父进程，而新的进程称之为子进程，构成的是一个“进程树”的结构<h3 id="ID与句柄"><a href="#ID与句柄" class="headerlink" title="ID与句柄"></a>ID与句柄</h3></li>
+<li><p>在windows下内核对象的种类很多，物理是文件、进程、线程、事件、管道、互斥锁、信号量等等都是都是内核对象的，具体可以查阅MSDN文档关于<code>CloseHandle</code>函数的解释：<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">点击前往</a></p>
+</li>
+<li><p>在内核中管理这些对象是通过内核对象ID的来维护的，能够通过ID来指向内核区具体的数据结构，不会将地址直接暴露给应用层。</p>
+</li>
+<li>句柄表是进程所拥有的，每个进程都有一个句柄表来维护这个进程所创建&amp;打开的内核对象</li>
+<li>之前提到了进程树，子进程是可以共享父进程的资源（内核对象），共享的方式是继承，在创建进程的时候可以选择继承进程句柄和线程句柄</li>
+<li>内核对象在内核中的ID是一定的，但是句柄中的值是不一定的，就好比两个进程同时打开同一个对象，在进程中记录的句柄表同一个的对象对应的句柄是不一样的，但是ID是一样的。</li>
+<li>每个内核对象都有对应的表示标明是否可以被继承<h2 id="内核对象的生命周期"><a href="#内核对象的生命周期" class="headerlink" title="内核对象的生命周期"></a>内核对象的生命周期</h2>内核对象都有个计数器，计数器计数的值代表的是被引用的次数，一般的内核对象只需要</li>
+<li>内核对象计数器为0</li>
+</ul>
+<p>就可以关闭，但是对于Thread以及Process内核对象情况有些特殊它要满足：</p>
+<ul>
+<li>内核对象计数器为０</li>
+<li>执行流程结束</li>
+</ul>
+<h2 id="相关结构体"><a href="#相关结构体" class="headerlink" title="相关结构体"></a>相关结构体</h2><h3 id="STARTUPINFO"><a href="#STARTUPINFO" class="headerlink" title="STARTUPINFO"></a>STARTUPINFO</h3><p>从名字也可以看出，StartUpInfo保存着一些启动的信息</p>
+<h3 id="PROCESS-INFOMATION"><a href="#PROCESS-INFOMATION" class="headerlink" title="_PROCESS_INFOMATION"></a>_PROCESS_INFOMATION</h3><p>进程结构体类型，具体的内容如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">PROCESS_INFORMATION</span> &#123;</span></span><br><span class="line">  HANDLE hProcess;<span class="comment">//进程句柄</span></span><br><span class="line">  HANDLE hThread;<span class="comment">//线程句柄</span></span><br><span class="line">  DWORD  dwProcessId;<span class="comment">//进程ID</span></span><br><span class="line">  DWORD  dwThreadId;<span class="comment">//线程ID</span></span><br><span class="line">&#125; PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SECURITY-ATTRIBUTES"><a href="#SECURITY-ATTRIBUTES" class="headerlink" title="SECURITY_ATTRIBUTES"></a>SECURITY_ATTRIBUTES</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">SECURITY_ATTRIBUTES</span> &#123;</span></span><br><span class="line">  DWORD  nLength;<span class="comment">//结构体长度</span></span><br><span class="line">  LPVOID lpSecurityDescriptor;<span class="comment">//指向安全描述符，指明当前对象的用户权限信息等等，默认与父进程相同</span></span><br><span class="line">  BOOL   bInheritHandle;<span class="comment">//当前内核对象是否允许继承</span></span><br><span class="line">&#125; SECURITY_ATTRIBUTES, *PSECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;</span><br></pre></td></tr></table></figure>
+<p>如果在创建内核对象的时候不想继承，那么传入该项结构体的值只需要填写<code>NULL</code>即可<br><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa379560%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">文档地址</a></p>
+<h2 id="工具函数"><a href="#工具函数" class="headerlink" title="工具函数"></a>工具函数</h2><h3 id="GetStartupInfo"><a href="#GetStartupInfo" class="headerlink" title="GetStartupInfo()"></a>GetStartupInfo()</h3><p>获取当前进程的初始化信息，由父进程负责填充相关的<code>STARTUPINFO</code>结构体<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">GetStartupInfo(&amp;si)</span><br></pre></td></tr></table></figure></p>
+<p>由于我们即使填写了部分内容也不会都作用到最终的进程创建，我们常规的初始化步骤是：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si;</span><br><span class="line">ZeroMemory(&amp;si,sizeod(si))</span><br><span class="line">si.cb = <span class="keyword">sizeof</span>(si)</span><br></pre></td></tr></table></figure></p>
+<h3 id="CloseHandle"><a href="#CloseHandle" class="headerlink" title="CloseHandle()"></a>CloseHandle()</h3><p>将内核对象计数器的值减一</p>
+<h3 id="GetStdHandle"><a href="#GetStdHandle" class="headerlink" title="GetStdHandle()"></a>GetStdHandle()</h3><p><a href="https://docs.microsoft.com/en-us/windows/console/getstdhandle" target="_blank" rel="noopener">文档地址</a></p>
+<h3 id="WaitForSingleObject"><a href="#WaitForSingleObject" class="headerlink" title="WaitForSingleObject()"></a>WaitForSingleObject()</h3>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/操作系统/"><i class="fa fa-tag fa-fw"></i>&nbsp;操作系统</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/09/14/C-1/">
                 
                     C中sizeof的实现
@@ -900,92 +1006,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/08/05/ClassLoader总结/">
-                
-                    ClassLoader总结
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-05
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>在学习过程中，一次又一次的遇到类加载器的问题，一次又一次的重新去看，感觉有必要对ClassLoader的知识做一个详细的总结，以便于之后能熟练运用ClassLoader。<br>
-        
-            <div class="readmore">
-                <a href="/2018/08/05/ClassLoader总结/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw"></i>&nbsp;Java</a>
-                
-                    <a href="/tags/ClassLoader/"><i class="fa fa-tag fa-fw"></i>&nbsp;ClassLoader</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/08/01/js-1/">
-                
-                    蛋疼的JavaScript(一)：作用域与闭包
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-08-01
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>在使用JavaScript的时候各种奇葩的结果真的让人头大，于是系统的学习一下JavaScript的一些知识。深入了解下JavaScript。（注：以下均为浅尝则止）<br>
-        
-            <div class="readmore">
-                <a href="/2018/08/01/js-1/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -1065,7 +1085,7 @@
                 
                     <li><a class="flat-box" href="/categories/Tools/"><div class='name'>Tools</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>6</div></a></li>
+                    <li><a class="flat-box" href="/categories/java/"><div class='name'>java</div><div class='badge'>7</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/操作系统/"><div class='name'>操作系统</div><div class='badge'>6</div></a></li>
                 
@@ -1086,7 +1106,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16.5px; color: #888">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 14px; color: #999">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 19px; color: #777">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.5px; color: #888">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 21.5px; color: #666">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16px; color: #8b8b8b">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 18px; color: #7e7e7e">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 18px; color: #7e7e7e">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px; color: #8b8b8b">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 22px; color: #636363">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20px; color: #707070">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 

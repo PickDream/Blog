@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.maoxin.site/2018/11/27/hibernate-06/</loc>
+    <lastmod>2018-11-27T12:36:22.381Z</lastmod>
+  </url>  <url>
+    <loc>http://www.maoxin.site/2018/11/10/hibernate-01/</loc>
+    <lastmod>2018-11-27T10:27:43.199Z</lastmod>
+  </url>  <url>
+    <loc>http://www.maoxin.site/2018/11/26/mysql-01/</loc>
+    <lastmod>2018-11-26T11:29:40.293Z</lastmod>
+  </url>  <url>
     <loc>http://www.maoxin.site/2018/11/24/NOSQL-01/</loc>
     <lastmod>2018-11-25T03:30:56.177Z</lastmod>
   </url>  <url>
@@ -33,9 +42,6 @@
   </url>  <url>
     <loc>http://www.maoxin.site/2018/11/11/Hibernate-02/</loc>
     <lastmod>2018-11-11T11:48:24.471Z</lastmod>
-  </url>  <url>
-    <loc>http://www.maoxin.site/2018/11/10/hibernate-01/</loc>
-    <lastmod>2018-11-11T08:36:22.766Z</lastmod>
   </url>  <url>
     <loc>http://www.maoxin.site/2018/11/10/Spring-03/</loc>
     <lastmod>2018-11-10T03:24:11.618Z</lastmod>
