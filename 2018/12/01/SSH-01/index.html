@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: JVM | 飞翔的傻瓜</title>
+  <title>SSH框架整合 | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -123,59 +123,154 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-SSH-01" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-    <script>
-        window.subData= { title:'tag : JVM'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/22/JavaVM-02/">
-                
-                    JVM启动流程
-                
-            </a>
-        </h2>
+                SSH框架整合
+            
+        </h1>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-22
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-12-01&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/JVM/">JVM</a>
+        <a href="/categories/Java/">Java</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <p>在这篇文章主要分析学习JVM的包括启动流程等等重要的知识点，不断更新<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/22/JavaVM-02/" class="flat-box">READ MORE</a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JVM/"><i class="fa fa-tag fa-fw"></i>&nbsp;JVM</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <p>该笔记主要介绍的是配置SSH框架的整合，记录整合的思路与方法，在整合过程中也遇到了许多小问题，在此做一个详细的记录。</p>
+<a id="more"></a>
+<h2 id="xml-相关"><a href="#xml-相关" class="headerlink" title="xml 相关"></a>xml 相关</h2><p>在配置之前，先要明白XML的一些容易被忽视的概念，这在Spring的配置中尤为重要，在一个Spring配置文件中众多复杂的功能通过一系列类似<code>xmlns</code>,<code>xmlns:xsi</code>,<code>xsi:schemaLocation</code>,<code>dtd</code>等等概念串联起来，有必要去了解其本身，这样无论是找出配置文件的问题还是写配置文件的问题都非常的重要。借助与IDEA这样的IDE固然可以自动导入，但是太依赖工具也是很危险的事情，我在使用IDEA导入<code>&lt;tx:advice&gt;</code>标签IDEA导错了，结果浪费了很多时间。</p>
+<h3 id="xmlns"><a href="#xmlns" class="headerlink" title="xmlns"></a>xmlns</h3><p>xmlns的全程是xml namespace，代表xml的命名空间，同其他语言的命名空间的概念一样，xml的也是为了解决命名冲突的，xml标签本身就是一种人类可读的形式，就好比一个<code>&lt;table&gt;&lt;/table&gt;</code>可以代表表格，也可以代表桌子。如果在一个XML中同时有这两种语义不同但是名称完全相同的标签，如何解决这个问题：可以使用<code>xmlns:namespace-prefix=&quot;namespaceURI&quot;</code>冒号后面是自定义的前缀，后面自定义的URI</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:aop</span>=<span class="string">"http://www.springframework.org/schema/aop"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:tx</span>=<span class="string">"http://www.springframework.org/schema/tx"</span></span></span><br></pre></td></tr></table></figure>
+<p>上面截取配置文件的一部分内容，可见用到了四种不同的命名空间，其中最上面的没有用冒号隔开，这是默认的命名空间。不同命名空间的使用也很简单，C++通过使用<code>std::endl</code>两个冒号，而XML使用前缀一个冒号如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"C3P0.properties"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="xmlns-xsi-与-xsi-schemaLocation"><a href="#xmlns-xsi-与-xsi-schemaLocation" class="headerlink" title="xmlns:xsi 与 xsi:schemaLocation"></a>xmlns:xsi 与 xsi:schemaLocation</h3><p>xmlns:xsi当然也是一个命名空间，但是之所以单独拿出来是因为其比较特殊</p>
+<blockquote>
+<p><code>xsi</code> 已经成为了一个业界默认的用于 XSD（XML Schema Definition) 文件的命名空间。 而 XSD 文件（也常常称为 Schema 文件）是用来定义 xml 文档结构的。</p>
+</blockquote>
+<p>从上面的描述中不难看出xsi与xsd关联紧密，如何建立命名空间与文档结构文件的关系呢？需要用到<code>xsi:schemaLocation</code>这个标签下的字符串以key-value的形式关联命名空间与文档结构文件。所以这个部分字符串当然是偶数的。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:aop</span>=<span class="string">"http://www.springframework.org/schema/aop"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:tx</span>=<span class="string">"http://www.springframework.org/schema/tx"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h3><p>这个网上资料非常多</p>
+<blockquote>
+<p>菜鸟教程  <a href="http://www.runoob.com/dtd/dtd-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/dtd/dtd-tutorial.html</a></p>
+</blockquote>
+<h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p><img src="1.png" alt=""></p>
 
         </div>
-    
-</section>
 
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/Java/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Java</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/27/hibernate-06/" rel="prev" title="Hibernate的检索策略">
+                                    
+                                        Hibernate的检索策略
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Hibernate
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://www.maoxin.site/2018/11/27/hibernate-06/">Hibernate的检索策略</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/26/mysql-01/">mysql-01</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/24/NOSQL-01/">NOSQL-概述</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/24/Hibernate-05/">Hibernate-多对多映射关系</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/22/JavaVM-02/">JVM启动流程</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，相互交流!。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。<br>
+                          
+                          留言时填写邮箱可以在被回复时收到邮件提醒。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'SSH框架整合',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -292,6 +387,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-相关"><span class="toc-text">xml 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns"><span class="toc-text">xmlns</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns-xsi-与-xsi-schemaLocation"><span class="toc-text">xmlns:xsi 与 xsi:schemaLocation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DTD"><span class="toc-text">DTD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小总结"><span class="toc-text">小总结</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -385,6 +487,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "pgBuSBODle0hjwgalrOvPfU4-gzGzoHsz",
+                appKey: "3yMl5NERDDSPcl1nAu2kp2v1",
+                placeholder: "快来评论吧~",
+                pageSize:'5',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>

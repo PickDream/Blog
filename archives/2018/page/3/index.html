@@ -137,6 +137,48 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/10/27/design-1/">
+                
+                    7种方式去重构Java的Switch语句
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/设计模式/">设计模式</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>自己翻译的，英语渣，其实看代码意思就都能理解，这里放上原网址<br>
+        
+            <div class="readmore">
+                <a href="/2018/10/27/design-1/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/设计模式/"><i class="fa fa-tag fa-fw"></i>&nbsp;设计模式</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/10/13/NIO-02/">
                 
                     NIO-Selector
@@ -702,76 +744,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/18/js-03/">
-                
-                    蛋疼的JavaScript(三)数据类型&amp;运算符
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <a id="more"></a>
-<h2 id="typeof-探测类型"><a href="#typeof-探测类型" class="headerlink" title="typeof 探测类型"></a>typeof 探测类型</h2><ul>
-<li>type探测的类型是基本的数据类型，对于对象，他分不清是哪种object（除了function）,也就是说它深入不到构造方法级别的类型检测，这也是与instanceof的区别</li>
-<li><img src="1.png" alt="类型检测"></li>
-<li>在控制台下有个好处可以很具体的看到返回的类型都是string的</li>
-</ul>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>从常见的几种转换入手：</p>
-<ul>
-<li>布尔类型的转换</li>
-</ul>
-<p><img src="2.png" alt="布尔类型转换"></p>
-<ul>
-<li>数字类型的强制类型转换</li>
-</ul>
-<p><img src="3.png" alt="整数类型转换"></p>
-<p>注意其可以做数值的进制转换</p>
-<ul>
-<li>转换为字符串</li>
-</ul>
-<p><img src="4.png" alt="字符串类型转换"></p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="一元"><a href="#一元" class="headerlink" title="一元+"></a>一元+</h3><p>如果后面是字符串那么就变为数字</p>
-<h3 id="快捷转换为字符串"><a href="#快捷转换为字符串" class="headerlink" title="快捷转换为字符串"></a>快捷转换为字符串</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="number">1</span>+<span class="string">""</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="逻辑运算符-布尔类型的强制转换"><a href="#逻辑运算符-布尔类型的强制转换" class="headerlink" title="逻辑运算符:布尔类型的强制转换"></a>逻辑运算符:布尔类型的强制转换</h3><ul>
-<li><p>两个逻辑非可以将其他类型转换为布尔类型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(!!<span class="string">""</span>)<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(!<span class="string">""</span>)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.info(![])<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.info(![<span class="number">1</span>])<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成代码的精，利用短路特性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="literal">true</span> &amp;&amp; (a=<span class="number">2</span>);<span class="comment">//加括号是运算符优先级的问题</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用于给一个默认值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认5分</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">score</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s || <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -843,7 +815,7 @@
                 
                     <li><a class="flat-box" href="/categories/JVM/"><div class='name'>JVM</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>15</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>16</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
@@ -872,7 +844,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 16px; color: #8b8b8b">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 18px; color: #7e7e7e">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 18px; color: #7e7e7e">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px; color: #8b8b8b">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 22px; color: #636363">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 20px; color: #707070">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 15.67px; color: #8e8e8e">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 17.33px; color: #828282">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 17.33px; color: #828282">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 22.33px; color: #606060">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15.67px; color: #8e8e8e">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 
