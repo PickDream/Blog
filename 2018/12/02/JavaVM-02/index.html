@@ -242,6 +242,46 @@
 <p><img src="9.png" alt=""></p>
 </li>
 </ul>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p>一个线程修改了变量，其他线程可以立即知道</p>
+<h3 id="保证可见性的方法"><a href="#保证可见性的方法" class="headerlink" title="保证可见性的方法"></a>保证可见性的方法</h3><ul>
+<li>volatile</li>
+<li>synchronized(unlock之前，写变量值回主存)</li>
+<li><p>final(一旦初始化完成，其他线程就可见)</p>
+<h3 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h3></li>
+<li><p>在本线程内部，操作都是有序的，尽管会发生指令重排，但是语义Java编译器负责保证不变</p>
+</li>
+<li>在线程外观察，操作都是无序的。（指令重排或者主内存同步演示，编译器不考虑多线程之间的语义）</li>
+</ul>
+<h3 id="指令重排"><a href="#指令重排" class="headerlink" title="指令重排"></a>指令重排</h3><ul>
+<li>线程内部串行语义<ul>
+<li>写后读 a=1；b=a；</li>
+<li>写后写 a=1; a=2;</li>
+<li>读后写 a=b;b=1；</li>
+</ul>
+</li>
+<li>以上语句不可重排</li>
+<li>编译器不考虑多线程间的语义</li>
+<li>a=1，b=2就可以重排</li>
+</ul>
+<h3 id="指令重排破坏线程之间的有序性"><a href="#指令重排破坏线程之间的有序性" class="headerlink" title="指令重排破坏线程之间的有序性"></a>指令重排破坏线程之间的有序性</h3><p><img src="10.png" alt=""></p>
+<h3 id="指令重排保证有序性的方法"><a href="#指令重排保证有序性的方法" class="headerlink" title="指令重排保证有序性的方法"></a>指令重排保证有序性的方法</h3><p>使用同步机制：(平行变串行)</p>
+<p><img src="11.png" alt=""></p>
+<h3 id="指令重排的基本原则"><a href="#指令重排的基本原则" class="headerlink" title="指令重排的基本原则"></a>指令重排的基本原则</h3><ol>
+<li>程序顺序原则：一个线程内保证语义的串行性</li>
+<li>volatile规则：volatile变量的写，先发生于读</li>
+<li>锁规则：解锁(unlock)必然发生在随后的加锁(lock)前</li>
+<li>传递性：A先于B，B先于C 那么A必然先于C</li>
+<li>线程的start方法先于它的每一个动作</li>
+<li>线程的所有操作先于线程的终结（Thread.join()）</li>
+<li>线程的中断（interrupt()）先于被中断线程的代码</li>
+<li>对象的构造函数执行结束先于finalize()方法</li>
+</ol>
+<h2 id="解释运行与编译运行"><a href="#解释运行与编译运行" class="headerlink" title="解释运行与编译运行"></a>解释运行与编译运行</h2><h3 id="解释运行"><a href="#解释运行" class="headerlink" title="解释运行"></a>解释运行</h3><p>解释执行以解释方式运行字节码</p>
+<p>解释执行的意思是：读一句，执行一句</p>
+<h3 id="编译运行（JIT）"><a href="#编译运行（JIT）" class="headerlink" title="编译运行（JIT）"></a>编译运行（JIT）</h3><p>将字节码编译成机器码</p>
+<p>直接执行机器码</p>
+<p>运行时编译</p>
+<p>编译后性能有数量级的提升</p>
 
         </div>
 
@@ -468,7 +508,7 @@
     <section class='m_widget toc-wrapper'>
         <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM基本结构"><span class="toc-text">JVM基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PC寄存器"><span class="toc-text">PC寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法区"><span class="toc-text">方法区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java堆"><span class="toc-text">Java堆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java栈"><span class="toc-text">Java栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插-关于逃逸分析"><span class="toc-text">[插]关于逃逸分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是逃逸分析"><span class="toc-text">什么是逃逸分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逃逸的场景"><span class="toc-text">逃逸的场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逃逸分析优化JVM的原理"><span class="toc-text">逃逸分析优化JVM的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用栈上分配的优化策略"><span class="toc-text">使用栈上分配的优化策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#另外一个重要的优化，同步消除"><span class="toc-text">另外一个重要的优化，同步消除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆、栈、方法区交互"><span class="toc-text">堆、栈、方法区交互</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-text">Java内存模型</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM基本结构"><span class="toc-text">JVM基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PC寄存器"><span class="toc-text">PC寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法区"><span class="toc-text">方法区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java堆"><span class="toc-text">Java堆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java栈"><span class="toc-text">Java栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插-关于逃逸分析"><span class="toc-text">[插]关于逃逸分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是逃逸分析"><span class="toc-text">什么是逃逸分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逃逸的场景"><span class="toc-text">逃逸的场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逃逸分析优化JVM的原理"><span class="toc-text">逃逸分析优化JVM的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用栈上分配的优化策略"><span class="toc-text">使用栈上分配的优化策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#另外一个重要的优化，同步消除"><span class="toc-text">另外一个重要的优化，同步消除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆、栈、方法区交互"><span class="toc-text">堆、栈、方法区交互</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-text">Java内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性"><span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保证可见性的方法"><span class="toc-text">保证可见性的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性"><span class="toc-text">有序性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令重排"><span class="toc-text">指令重排</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令重排破坏线程之间的有序性"><span class="toc-text">指令重排破坏线程之间的有序性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令重排保证有序性的方法"><span class="toc-text">指令重排保证有序性的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指令重排的基本原则"><span class="toc-text">指令重排的基本原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释运行与编译运行"><span class="toc-text">解释运行与编译运行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解释运行"><span class="toc-text">解释运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译运行（JIT）"><span class="toc-text">编译运行（JIT）</span></a></li></ol></li></ol>
         </div>
     </section>
 
