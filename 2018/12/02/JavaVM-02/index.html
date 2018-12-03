@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2018/11 | 飞翔的傻瓜</title>
+  <title>JVM启动流程 | 飞翔的傻瓜</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -123,376 +123,190 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-JavaVM-02" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-	
-    <script>
-        window.subData= { title:'year : 2018.11'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/11/Hibernate-02/">
-                
-                    Hibernate-02
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-11
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/11/Spring-04/">
-                
-                    Spring-SPEL&amp;Bean的生命周期&amp;从工厂中装配Bean
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-11
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>今天主要关注以下内容：</p>
-<ul>
-<li>如何给更好的给Bean的属性赋值，甚至将简单的赋值逻辑加入-&gt;SPEL</li>
-<li>如何更细粒度的管理对象在IOC容器中的生命周期-&gt;初始化+销毁方法+初始化方法前后进行处理</li>
-<li>通过工厂方法对Bean进行配置-&gt;静态工厂+实例工厂+FactoryBean方式</li>
-</ul>
-        
-            <div class="readmore">
-                <a href="/2018/11/11/Spring-04/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/10/hibernate-01/">
-                
-                    hibernate起步
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-10
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/java/">java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>之前也多多少少接触过Hibernate框架，只限于简单的使用，没有深入的去理解学习，这次从头开始，踏踏实实完成Hibernate的系统学习，起步部分主要完成如何配置环境，大致操作流程，一些注意点。</p>
-        
-            <div class="readmore">
-                <a href="/2018/11/10/hibernate-01/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Hibernate/"><i class="fa fa-tag fa-fw"></i>&nbsp;Hibernate</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/10/Spring-03/">
-                
-                    Spring-Bean的自动装配&amp;关系&amp;作用域&amp;导入外部属性文件
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-10
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/java/">java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>第三天的内容主要继续了解配置beans的方方面面，包括以下内容：</p>
-<ul>
-<li>自动装配(Auto Wire)</li>
-<li>Bean之间的关系(继承&amp;依赖)</li>
-<li>Bean的作用域(scope=singleton|prototype)</li>
-<li>使用外部属性文件</li>
-</ul>
-        
-            <div class="readmore">
-                <a href="/2018/11/10/Spring-03/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/08/Spring-02/">
-                
-                    Spring-属性注入
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-08
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>自学Spring框架第二天，今天主要是更加深入的学习了Spring Bean的配置方式（XML形式的）使用方式以及一些注意的点。简而言之就是如何配置一个Bean，属性如何去注入？引用类型如何去注入？集合属性如何去注入，以及Properties属性如何去注入等等。需要注意的是之下的实例代码为了简化使用了 <code>lombok</code>开源工具。</p>
-        
-            <div class="readmore">
-                <a href="/2018/11/08/Spring-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/07/Spring-01/">
-                
-                    Spring HelloWorld
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-07
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Java/">Java</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>自学Spring第一天，主要目的是使用Spring中的Beans完成依赖注入或者叫做控制反转，之后对所学的内容做一个总结。</p>
-        
-            <div class="readmore">
-                <a href="/2018/11/07/Spring-01/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Spring框架学习/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring框架学习</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/04/HTTP-02/">
-                
-                    CORS跨域问题的认识与解决
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>之前曾经见过跨域问题的解决方式，一个是CORS，一个是JSONP，但是就是处于知其然，不知其所以然的阶段，因此在这里借助网上资料和Node.js来分析和解决如上问题<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/04/HTTP-01/">
-                
-                    HTTP协议的三次握手
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/计算机网络/">计算机网络</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br>
-        
-            <div class="readmore">
-                <a href="/2018/11/04/HTTP-01/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-</section>
-
-
-    <br>
-    <div class="prev-next">
-        <div class="prev-next">
+                JVM启动流程
             
-                <a class="prev" rel="prev" href="/archives/2018/11/">
-                    <section class="post prev" >
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+        </h1>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-12-02&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JVM/">JVM</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>在这篇文章主要分析学习JVM的包括启动流程等等重要的知识点，不断更新<br><a id="more"></a></p>
+<h2 id="JVM基本结构"><a href="#JVM基本结构" class="headerlink" title="JVM基本结构"></a>JVM基本结构</h2><p><img src="1.png" alt=""></p>
+<p>PC寄存器</p>
+<ul>
+<li>每一个线程拥有PC寄存器</li>
+<li>在线程创建时创建</li>
+<li>执行本地方法时该值是undefined</li>
+<li>指向下一条指令的地址</li>
+</ul>
+<p>方法区</p>
+<ul>
+<li>保存装载的类的元信息<ul>
+<li>类型的常量池（JDK6时候，String等常量信息置于方法区，JDK7时候移动到了堆）</li>
+<li>字段，方法信息</li>
+<li>方法字节码</li>
+</ul>
+</li>
+<li>通常和永久区（Perm）关联在一起，Perm保存相对不容易发生变动</li>
+</ul>
+<p>Java堆</p>
+<ul>
+<li>和程序开发密切相关</li>
+<li>应用系统对象都保存在Java堆中</li>
+<li>所有线程共享Java堆</li>
+<li>对于分代GC来说，堆也是分代的</li>
+<li>GC主要工作的区间</li>
+</ul>
+<p><img src="2.png" alt=""></p>
+<ol>
+<li>eden 伊甸园，对象“出身”的地方</li>
+<li>S0和S1</li>
+<li>tenured</li>
+</ol>
+<p>Java栈</p>
+<ul>
+<li><p>线程私有的</p>
+</li>
+<li><p>栈由一系列帧组成(Java栈也叫帧栈)</p>
+</li>
+<li><p>帧保存一个方法的局部变量，操作数栈，常量池指针</p>
+</li>
+<li><p>每次方法调用创建一个帧并且压栈</p>
+</li>
+<li><p>Java栈-局部变量表（包括函数的传入参数以及局部变量）</p>
+<ul>
+<li>注意如果是类的实例方法会传入this</li>
+</ul>
+<p><img src="3.png" alt=""></p>
+</li>
+<li><p>Java栈-操作数栈（Java没有寄存器，所有参数传递使用操作数栈）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line">    c = a+b;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对应</p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/JVM/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;JVM</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/12/01/SSH-01/" rel="prev" title="SSH框架整合">
+                                    
+                                        SSH框架整合
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Java
+                                    
+                                </h6>
+                            
+                        </span>
                     </section>
-                </a>
-            
-            <p class="current">
-                2 / 2
-            </p>
-            
+                
+            </div>
+        
 
-        </div>
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://www.maoxin.site/2018/12/01/SSH-01/">SSH框架整合</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/27/hibernate-06/">Hibernate的检索策略</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/26/mysql-01/">mysql-01</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/24/NOSQL-01/">NOSQL-概述</a></li>
+            
+                <li><a href="http://www.maoxin.site/2018/11/24/Hibernate-05/">Hibernate-多对多映射关系</a></li>
+            
+        </ul>
     </div>
 
 
+            
 
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <div class="subtitle">
+                          <h6><b>文明评论，相互交流!。</b>为了便于区分，请您在留言时至少填写一下 <b>昵称</b> 啊。<br>
+                          
+                          留言时填写邮箱可以在被回复时收到邮件提醒。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'JVM启动流程',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -609,6 +423,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM基本结构"><span class="toc-text">JVM基本结构</span></a></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -702,6 +523,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "pgBuSBODle0hjwgalrOvPfU4-gzGzoHsz",
+                appKey: "3yMl5NERDDSPcl1nAu2kp2v1",
+                placeholder: "快来评论吧~",
+                pageSize:'5',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>

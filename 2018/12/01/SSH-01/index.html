@@ -181,7 +181,7 @@
 <p>其中BuildBean方法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">buildBean</span><span class="params">(String beanName, Map&lt;String, Object&gt; extraContext, <span class="keyword">boolean</span> injectInternal)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Object o;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.appContext.containsBean(beanName)) &#123;</span><br><span class="line">        o = <span class="keyword">this</span>.appContext.getBean(beanName);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        Class beanClazz = <span class="keyword">this</span>.getClassInstance(beanName);</span><br><span class="line">        o = <span class="keyword">this</span>.buildBean(beanClazz, extraContext);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (injectInternal) &#123;</span><br><span class="line">        <span class="keyword">this</span>.injectInternalBeans(o);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可见其先拿着Class名当作是bean的ID去先找，找不到之后再通过反射来创建</p>
-<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="配置Hibernate"><a href="#配置Hibernate" class="headerlink" title="配置Hibernate"></a>配置Hibernate</h3><h3 id="配置Spring"><a href="#配置Spring" class="headerlink" title="配置Spring"></a>配置Spring</h3><h3 id="阶段检验"><a href="#阶段检验" class="headerlink" title="阶段检验"></a>阶段检验</h3><h3 id="整合Struts2"><a href="#整合Struts2" class="headerlink" title="整合Struts2"></a>整合Struts2</h3>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="配置Spring"><a href="#配置Spring" class="headerlink" title="配置Spring"></a>配置Spring</h3><h3 id="配置Hibernate"><a href="#配置Hibernate" class="headerlink" title="配置Hibernate"></a>配置Hibernate</h3><h3 id="配置Struts2"><a href="#配置Struts2" class="headerlink" title="配置Struts2"></a>配置Struts2</h3>
         </div>
 
         
@@ -194,6 +194,26 @@
 
         
             <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/12/02/JavaVM-02/" rel="prev" title="JVM启动流程">
+                                  
+                                      JVM启动流程
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JVM
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -237,6 +257,8 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
+                <li><a href="http://www.maoxin.site/2018/12/02/JavaVM-02/">JVM启动流程</a></li>
+            
                 <li><a href="http://www.maoxin.site/2018/11/27/hibernate-06/">Hibernate的检索策略</a></li>
             
                 <li><a href="http://www.maoxin.site/2018/11/26/mysql-01/">mysql-01</a></li>
@@ -244,8 +266,6 @@
                 <li><a href="http://www.maoxin.site/2018/11/24/NOSQL-01/">NOSQL-概述</a></li>
             
                 <li><a href="http://www.maoxin.site/2018/11/24/Hibernate-05/">Hibernate-多对多映射关系</a></li>
-            
-                <li><a href="http://www.maoxin.site/2018/11/22/JavaVM-02/">JVM启动流程</a></li>
             
         </ul>
     </div>
@@ -407,7 +427,7 @@
     <section class='m_widget toc-wrapper'>
         <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-相关"><span class="toc-text">xml 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns"><span class="toc-text">xmlns</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns-xsi-与-xsi-schemaLocation"><span class="toc-text">xmlns:xsi 与 xsi:schemaLocation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DTD"><span class="toc-text">DTD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小总结"><span class="toc-text">小总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总体思路"><span class="toc-text">总体思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充：Struts的对象工厂"><span class="toc-text">补充：Struts的对象工厂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置过程"><span class="toc-text">配置过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Hibernate"><span class="toc-text">配置Hibernate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Spring"><span class="toc-text">配置Spring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阶段检验"><span class="toc-text">阶段检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整合Struts2"><span class="toc-text">整合Struts2</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml-相关"><span class="toc-text">xml 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns"><span class="toc-text">xmlns</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xmlns-xsi-与-xsi-schemaLocation"><span class="toc-text">xmlns:xsi 与 xsi:schemaLocation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DTD"><span class="toc-text">DTD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小总结"><span class="toc-text">小总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总体思路"><span class="toc-text">总体思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充：Struts的对象工厂"><span class="toc-text">补充：Struts的对象工厂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置过程"><span class="toc-text">配置过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Spring"><span class="toc-text">配置Spring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Hibernate"><span class="toc-text">配置Hibernate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Struts2"><span class="toc-text">配置Struts2</span></a></li></ol></li></ol>
         </div>
     </section>
 
