@@ -137,6 +137,90 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/11/04/HTTP-02/">
+                
+                    CORS跨域问题的认识与解决
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/计算机网络/">计算机网络</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>之前曾经见过跨域问题的解决方式，一个是CORS，一个是JSONP，但是就是处于知其然，不知其所以然的阶段，因此在这里借助网上资料和Node.js来分析和解决如上问题<br>
+        
+            <div class="readmore">
+                <a href="/2018/11/04/HTTP-02/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/04/HTTP-01/">
+                
+                    HTTP协议的三次握手
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-04
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/计算机网络/">计算机网络</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>HTTP协议是基于TCP的，一个TCP请求可以传送多个请求，在HTTP0.9/1.0中，连接建立，请求发送得到响应之后，HTTP链接就被关闭了。而在HTTP/1.1中链接会得到一定的保持（长链接),之所以会有这样的改进是因为创建链接的开销太大，需要三次握手（TCP的三次握手）<br>
+        
+            <div class="readmore">
+                <a href="/2018/11/04/HTTP-01/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/HTTP协议/"><i class="fa fa-tag fa-fw"></i>&nbsp;HTTP协议</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/10/27/design-1/">
                 
                     7种方式去重构Java的Switch语句
@@ -616,134 +700,6 @@
 
         </div>
     
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/23/js-5/">
-                
-                    蛋疼的JavaScript(五)引用类型
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-23
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <a id="more"></a>
-<h2 id="配置式构造对象"><a href="#配置式构造对象" class="headerlink" title="配置式构造对象"></a>配置式构造对象</h2><p>常用的传入参数在不能满足成员是动态的时候的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">name,age,school</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age,</span><br><span class="line">        school:school</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以使用配置式的来满足动态需求<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setObject</span>(<span class="params">configure</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> configure</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="列表的简单操作"><a href="#列表的简单操作" class="headerlink" title="列表的简单操作"></a>列表的简单操作</h2><h3 id="栈方法和队列方法"><a href="#栈方法和队列方法" class="headerlink" title="栈方法和队列方法"></a>栈方法和队列方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.push(<span class="number">4</span>);      <span class="comment">//4加入末尾</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">0</span>)    <span class="comment">//0加入队首</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.pop()         <span class="comment">//4从尾部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//0从队首弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">7</span>)    <span class="comment">//7加入在首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.unshift(<span class="number">8</span>)    <span class="comment">//8加入到首部</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br><span class="line">a.shift()       <span class="comment">//从首部弹出</span></span><br><span class="line"><span class="built_in">console</span>.info(a)</span><br></pre></td></tr></table></figure>
-<p>注意JavaScript不是说队列或者栈方法将整体看作一个队列，而是说通过以上方法来实现栈和队列的操作。</p>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
-<li>倒置:reverse()</li>
-<li>排序:sort()<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line">a.sort(<span class="function"><span class="keyword">function</span>(<span class="params">prev,next</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> prec - next;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul>
-<li><p>foreach方法，传入两个参数，一个是元素的值，一个是下标</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.foreach(<span class="function"><span class="keyword">function</span>(<span class="params">obj,index</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.info(obj,index)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>filter方法，传入一个参数，元素值，返回数组是经过过滤为true的新的数据集</p>
-</li>
-<li><p>map方法，map是将迭代的元素都经过一次操作，最终返回一个新数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.map(<span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c*<span class="number">2</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.info(b)</span><br><span class="line"><span class="comment">//[2,4,6]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>reduce方法</p>
-</li>
-</ul>
-<p>先上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c+d;</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
-<p>就这样完成了数组相加,首先reduce接受两个参数，一个是回调，这个回调负责将问题规模减小，第二个值是初始值，而回调接受两个参数，一个是初始值，一个是当前值，将初始值与当前值相加之后返回到作为初始值继续操作。下面的代码很容易猜到就是10<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c+d;</span><br><span class="line">&#125;,<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br></pre></td></tr></table></figure></p>
-<p>下面这个利用reduce完成map方法的功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">c,d</span>)</span>&#123;</span><br><span class="line">    c.push(d*<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure></p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><ul>
-<li>函数命名在递归程序的耦合<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&lt;=<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> num + <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可见这个<code>callee</code>是在该函数中被调用的方法,<code>caller</code>是调用者的方法，注意在严格模式下无法访问</p>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>表征函数当前作用域，详情见之前的this总结</p>
-<h3 id="call-amp-apply"><a href="#call-amp-apply" class="headerlink" title="call&amp;apply"></a>call&amp;apply</h3><p>其都是说让函数在特定的，apply和call的区别在于call传入的是单个参数，apply是传入的数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">result = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    result:<span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.result = (+a + +b);</span><br><span class="line">&#125;</span><br><span class="line">sum.call(o,<span class="string">'1'</span>,<span class="string">'2'</span>)</span><br><span class="line"><span class="built_in">console</span>.info(o.result);<span class="comment">//3</span></span><br><span class="line">sum.apply(o,[<span class="string">'1'</span>,<span class="string">'3'</span>])</span><br><span class="line"><span class="built_in">console</span>.info(o.result)<span class="comment">//4</span></span><br></pre></td></tr></table></figure></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/19/JS-04/">
-                
-                    蛋疼的JavaScript(四) 语句与函数
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-09-19
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <a id="more"></a>
-<h3 id="JavaScript中的-的语意"><a href="#JavaScript中的-的语意" class="headerlink" title="JavaScript中的()的语意"></a>JavaScript中的<code>()</code>的语意</h3><ol>
-<li>作为函数调用运算符</li>
-<li>函数参数占位符号</li>
-<li>强制运算符，返回结果</li>
-</ol>
-<p>只要以上明白了，下面就很好理解了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
-<p>由于函数是一个作用域块，所以能够做到变量的隐藏。</p>
-<h3 id="void-运算符"><a href="#void-运算符" class="headerlink" title="void()运算符"></a>void()运算符</h3><p>与()的第三个语意相反，是求值但是不返回</p>
-<h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><ul>
-<li>在堆中的对象在函数参数传递的时候是传递指针的值，所以能够做到共享</li>
-<li>但是如果在栈中的值得拷贝就需要注意没有修改原值。</li>
-</ul>
-<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><ul>
-<li>在严格模式下(严格模式下在函数前使用<code>&quot;use strict&quot;;</code>) arguments与传入的形参是没有联系的，修改arguments下的值是不会反映到形参的变化的</li>
-<li>在非严格模式下，有联系</li>
-<li>JS没有函数重载，使用arguments可以模拟重载</li>
-<li>arguments不是数组，想要转换为数组可以使用数组原型对应的方法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].slice.call(<span class="built_in">arguments</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw"></i>&nbsp;JavaScript</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
 </section>
 
 
@@ -815,7 +771,7 @@
                 
                     <li><a class="flat-box" href="/categories/JVM/"><div class='name'>JVM</div><div class='badge'>1</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>16</div></a></li>
+                    <li><a class="flat-box" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>17</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>8</div></a></li>
                 
@@ -844,7 +800,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 15.67px; color: #8e8e8e">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 17.33px; color: #828282">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 17.33px; color: #828282">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 22.33px; color: #606060">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15.67px; color: #8e8e8e">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
+            <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/ClassLoader/" style="font-size: 14px; color: #999">ClassLoader</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTTP协议/" style="font-size: 15.67px; color: #8e8e8e">HTTP协议</a> <a href="/tags/Hibernate/" style="font-size: 17.33px; color: #828282">Hibernate</a> <a href="/tags/Hibernate框架/" style="font-size: 17.33px; color: #828282">Hibernate框架</a> <a href="/tags/JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Java-Servlet/" style="font-size: 14px; color: #999">Java Servlet</a> <a href="/tags/JavaScript/" style="font-size: 22.33px; color: #606060">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15.67px; color: #8e8e8e">Linux</a> <a href="/tags/NIO/" style="font-size: 14px; color: #999">NIO</a> <a href="/tags/NOSQL/" style="font-size: 14px; color: #999">NOSQL</a> <a href="/tags/Server杂项/" style="font-size: 14px; color: #999">Server杂项</a> <a href="/tags/Spring框架学习/" style="font-size: 20.67px; color: #6c6c6c">Spring框架学习</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/jdbc/" style="font-size: 14px; color: #999">jdbc</a> <a href="/tags/保护模式/" style="font-size: 14px; color: #999">保护模式</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/反射/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/安全/" style="font-size: 14px; color: #999">安全</a> <a href="/tags/操作系统/" style="font-size: 19px; color: #777">操作系统</a> <a href="/tags/栈-队列-算法/" style="font-size: 14px; color: #999">栈 队列 算法</a> <a href="/tags/注解/" style="font-size: 14px; color: #999">注解</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/算法-递归/" style="font-size: 14px; color: #999">算法 递归</a> <a href="/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/设计模式-动态代理/" style="font-size: 14px; color: #999">设计模式 动态代理</a> <a href="/tags/设计模式-策略模式/" style="font-size: 14px; color: #999">设计模式 策略模式</a> <a href="/tags/设计模式-观察者模式/" style="font-size: 14px; color: #999">设计模式 观察者模式</a>
         </div>
     </section>
 
